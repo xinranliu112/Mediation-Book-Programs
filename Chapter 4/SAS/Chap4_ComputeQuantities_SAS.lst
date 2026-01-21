@@ -1,0 +1,77 @@
+                    Chapter 4 Analysis Example- Computing Chapter Quantities                    4
+                                                                  10:48 Thursday, January 4, 2007
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read          50
+                             Number of Observations Used          50
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     2       17.49805        8.74903       9.01    0.0005
+         Error                    47       45.62195        0.97068
+         Corrected Total          49       63.12000
+
+
+                      Root MSE              0.98523    R-Square     0.2772
+                      Dependent Mean        3.24000    Adj R-Sq     0.2465
+                      Coeff Var            30.40836
+
+
+                                      Parameter Estimates
+
+                                   Parameter       Standard
+              Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+              Intercept     1      -12.71288        9.19691      -1.38      0.1734
+              x             1        0.20765        0.13326       1.56      0.1259
+              m             1        0.45104        0.14597       3.09      0.0034
+                    Chapter 4 Analysis Example- Computing Chapter Quantities                    5
+                                                                  10:48 Thursday, January 4, 2007
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: m
+
+                             Number of Observations Read          50
+                             Number of Observations Used          50
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        7.26620        7.26620       7.66    0.0080
+         Error                    48       45.55380        0.94904
+         Corrected Total          49       52.82000
+
+
+                      Root MSE              0.97419    R-Square     0.1376
+                      Dependent Mean        3.06000    Adj R-Sq     0.1196
+                      Coeff Var            31.83613
+
+
+                                      Parameter Estimates
+
+                                   Parameter       Standard
+              Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+              Intercept     1      -20.70243        8.58885      -2.41      0.0198
+              x             1        0.33859        0.12237       2.77      0.0080
+                    Chapter 4 Analysis Example- Computing Chapter Quantities                    6
+                                                                  10:48 Thursday, January 4, 2007
+
+   stdx    stdy    stdm    rxm     rmy     rxy      c     cprime    a       b    pcorrcp  pcorrb
+
+ 1.13731 1.13497 1.03825 0.37090 0.48978 0.36111 0.36037 0.20765 0.33859 0.45104 0.22164 0.41090
+
+  betacp   betab   propmed   ratio1   ratio2  rsqrmult  rsquare1  rsquare2  rsquare3  dmeasure
+
+ 0.20765  0.45104  0.42379  0.73547  1.06431   0.27722  0.093059  0.023226  0.083782   0.13456

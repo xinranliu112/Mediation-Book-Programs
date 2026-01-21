@@ -1,0 +1,9 @@
+The PRODCLIN program is available for download at:
+
+http://www.public.asu.edu/~davidpm/ripl/Prodclin/
+
+The proper citation for the PRODCLIN program is:
+
+MacKinnon, D. P., Fritz, M. S., Williams, J., & Lockwood, C. M. (in press).  
+Distribution of the product confidence limits for the indirect effect program PRODCLIN. 
+Behavior Research Methods.

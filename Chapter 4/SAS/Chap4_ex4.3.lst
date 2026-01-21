@@ -1,0 +1,178 @@
+                                         The SAS System         21:08 Sunday, August 26, 2007   1
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read          15
+                             Number of Observations Used          15
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1     0.00006431     0.00006431       0.00    0.9555
+         Error                    13        0.25891        0.01992
+         Corrected Total          14        0.25897
+
+
+                      Root MSE              0.14112    R-Square     0.0002
+                      Dependent Mean        5.02467    Adj R-Sq    -0.0767
+                      Coeff Var             2.80863
+
+
+                                       Parameter Estimates
+
+                                                                                        Squared
+                     Parameter      Standard                        Standardized   Semi-partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|       Estimate    Corr Type I
+
+  Intercept    1       4.91643       1.90517      2.58     0.0228              0              .
+  x            1       0.02173       0.38234      0.06     0.9555        0.01576     0.00024833
+
+                                      Parameter Estimates
+
+                                       Squared         Squared         Squared
+                                       Partial    Semi-partial         Partial
+                  Variable    DF   Corr Type I    Corr Type II    Corr Type II
+
+                  Intercept    1             .               .               .
+                  x            1    0.00024833      0.00024833      0.00024833
+                                         The SAS System         21:08 Sunday, August 26, 2007   2
+
+                                        The REG Procedure
+                                          Model: MODEL2
+                                     Dependent Variable: y
+
+                             Number of Observations Read          15
+                             Number of Observations Used          15
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     2        0.25574        0.12787     475.25    <.0001
+         Error                    12        0.00323     0.00026906
+         Corrected Total          14        0.25897
+
+
+                      Root MSE              0.01640    R-Square     0.9875
+                      Dependent Mean        5.02467    Adj R-Sq     0.9855
+                      Coeff Var             0.32645
+
+
+                                       Parameter Estimates
+
+                                                                                        Squared
+                     Parameter      Standard                        Standardized   Semi-partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|       Estimate    Corr Type I
+
+  Intercept    1     -14.55981       0.66949    -21.75     <.0001              0              .
+  x            1       2.93612       0.10447     28.11     <.0001        2.12961     0.00024833
+  m            1       0.97701       0.03169     30.83     <.0001        2.33573        0.98728
+
+                                      Parameter Estimates
+
+                                       Squared         Squared         Squared
+                                       Partial    Semi-partial         Partial
+                  Variable    DF   Corr Type I    Corr Type II    Corr Type II
+
+                  Intercept    1             .               .               .
+                  x            1    0.00024833         0.82072         0.98504
+                  m            1       0.98753         0.98728         0.98753
+                                         The SAS System         21:08 Sunday, August 26, 2007   3
+
+                                        The REG Procedure
+                                          Model: MODEL3
+                                     Dependent Variable: m
+
+                             Number of Observations Read          15
+                             Number of Observations Used          15
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        1.21228        1.21228      58.84    <.0001
+         Error                    13        0.26785        0.02060
+         Corrected Total          14        1.48013
+
+
+                      Root MSE              0.14354    R-Square     0.8190
+                      Dependent Mean        5.07333    Adj R-Sq     0.8051
+                      Coeff Var             2.82933
+
+
+                                       Parameter Estimates
+
+                                                                                        Squared
+                     Parameter      Standard                        Standardized   Semi-partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|       Estimate    Corr Type I
+
+  Intercept    1      19.93450       1.93780     10.29     <.0001              0              .
+  x            1      -2.98297       0.38889     -7.67     <.0001       -0.90500        0.81903
+
+                                      Parameter Estimates
+
+                                       Squared         Squared         Squared
+                                       Partial    Semi-partial         Partial
+                  Variable    DF   Corr Type I    Corr Type II    Corr Type II
+
+                  Intercept    1             .               .               .
+                  x            1       0.81903         0.81903         0.81903
+                                         The SAS System         21:08 Sunday, August 26, 2007   4
+
+                                       The CORR Procedure
+
+                            3  Variables:    x        m        y
+
+
+                                       Simple Statistics
+
+   Variable           N          Mean       Std Dev           Sum       Minimum       Maximum
+
+   x                 15       4.98200       0.09865      74.73000       4.83000       5.14000
+   m                 15       5.07333       0.32515      76.10000       4.61000       5.75000
+   y                 15       5.02467       0.13601      75.37000       4.73000       5.23000
+
+
+                            Pearson Correlation Coefficients, N = 15
+                                   Prob > |r| under H0: Rho=0
+
+                                         x             m             y
+
+                           x       1.00000      -0.90500       0.01576
+                                                  <.0001        0.9555
+
+                           m      -0.90500       1.00000       0.40843
+                                    <.0001                      0.1307
+
+                           y       0.01576       0.40843       1.00000
+                                    0.9555        0.1307
+                                         The SAS System         21:08 Sunday, August 26, 2007   5
+
+ Obs     c       sec       cp      secp      b       seb        a       sea      rxm     rxy
+
+  1   0.02173  0.38234  2.93612  0.10447  0.97701  0.03169  -2.98297  0.38889  -0.905  0.01576
+
+ Obs    rmy       sx       sm       sy     N   mseyx   mseyxm   msemx     seyx    seyxm    semx
+
+  1   0.40843  0.09865  0.32515  0.13601  15  0.14112  0.0164  0.14354  0.14112  0.0164  0.14354
+
+ Obs   ryxpm    rympx     cps       bs      cpcp      bb      big     cpcalc   bcalc     acalc
+
+  1   0.99247  0.99373  2.12952  2.33564  2.93599  0.97700  0.98751  2.93599  0.97700  -2.98288
+
+ Obs   sacalc    ccalc    sccalc  scpcalc   sbpcalc     ab       diff      se36      tab
+
+  1   0.38888  0.021729  0.38232  0.10444  0.031687  -2.91439  -2.91439  0.39153  -7.44355
+
+ Obs    se38       prop        ratio        r21        r22        r23
+
+  1   0.39168    -134.118    -0.99260    -0.82044    0.80879    0.82419
