@@ -1,0 +1,21 @@
+TITLE: Class Bootstrap Example with N = 6 Single Mediator Model
+
+DATA:
+    File is 'chap8_boot.txt';
+
+VARIABLE:
+    Names are s x m y;
+    Usevariables are x m y;
+
+ANALYSIS:
+    Bootstrap = 1000;
+
+MODEL:
+    m on x;
+    y on m x;
+  
+
+MODEL INDIRECT:
+    y ind x;
+OUTPUT:
+    Cinterval(BCBootstrap);

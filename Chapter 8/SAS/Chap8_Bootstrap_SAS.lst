@@ -1,0 +1,81 @@
+                  Chapter 7 - Memory study data with M Continuous for RMPW Analysis                 20
+                                                                          00:38 Thursday, May 29, 2025
+
+                                       The UNIVARIATE Procedure
+                                            Variable:  ab
+
+                                               Moments
+
+                   N                       10000    Sum Weights              10000
+                   Mean               -5.7641265    Sum Observations    -57641.265
+                   Std Deviation      4.94125622    Variance             24.416013
+                   Skewness           1.74258534    Kurtosis            12.7578365
+                   Uncorrected SS     576387.257    Corrected SS        244135.714
+                   Coeff Variation    -85.724285    Std Error Mean      0.04941256
+
+
+                                      Basic Statistical Measures
+ 
+                            Location                    Variability
+
+                        Mean     -5.76413     Std Deviation            4.94126
+                        Median   -6.25000     Variance                24.41601
+                        Mode     -6.42008     Range                   47.80000
+                                              Interquartile Range      4.76667
+
+
+                                      Tests for Location: Mu0=0
+ 
+                           Test           -Statistic-    -----p Value------
+
+                           Student's t    t  -116.653    Pr > |t|    <.0001
+                           Sign           M     -4451    Pr >= |M|   <.0001
+                           Signed Rank    S  -2.294E7    Pr >= |S|   <.0001
+
+
+                                       Quantiles (Definition 5)
+ 
+                                       Level          Quantile
+
+                                       100% Max       23.00000
+                                       99%            22.05882
+                                       95%             1.33333
+                                       90%            -2.00000
+                                       75% Q3         -3.73333
+                                       50% Median     -6.25000
+                                       25% Q1         -8.50000
+                                       10%            -9.84000
+                                       5%            -10.74038
+                                       1%            -23.36134
+                                       0% Min        -24.80000
+
+
+                  Chapter 7 - Memory study data with M Continuous for RMPW Analysis                 21
+                                                                          00:38 Thursday, May 29, 2025
+
+                                       The UNIVARIATE Procedure
+                                            Variable:  ab
+
+                                         Extreme Observations
+ 
+                                 ----Lowest----        ----Highest---
+ 
+                                 Value      Obs        Value      Obs
+
+                                 -24.8       12           23     9996
+                                 -24.8       11           23     9997
+                                 -24.8       10           23     9998
+                                 -24.8        9           23     9999
+                                 -24.8        8           23    10000
+                  Chapter 7 - Memory study data with M Continuous for RMPW Analysis                 22
+                                                                          00:38 Thursday, May 29, 2025
+
+                                LCL95      UCL95      BCLCL95    BCUCL95
+
+                              -11.9122    3.55615    -13.3333    2.63415
+                  Chapter 7 - Memory study data with M Continuous for RMPW Analysis                 23
+                                                                          00:38 Thursday, May 29, 2025
+
+                          Obs      LCL95      UCL95      BCLCL95    BCUCL95
+
+                           1     -11.9122    3.55615    -13.3333    2.63415

@@ -1,0 +1,20 @@
+/TITLE
+Chapter 12 Bootstrap Example of Chapter 3 Mediation Analysis
+/SPECIFICATIONS
+Cases=50; Variables=4; Method=ML; Datafile='Chap12_cpt3.txt'; Matrix=Raw;
+/LABEL
+V1=s; V2=x; V3=m; V4=y;
+/EQUATIONS
+V4 = 1*V2 + 1*V3 + E2;
+V3 = 1*V2 + E3;
+/VARIANCES
+V2 = 1*;
+E2 to E3 = 2*;
+/SIMULATION
+Replications = 1000;
+Boot = 50;
+DA = 'boot';
+Save = Separate;
+/OUTPUT
+DA = 'Boot.rst'; Standard Errors; Parameter Estimates;
+/END

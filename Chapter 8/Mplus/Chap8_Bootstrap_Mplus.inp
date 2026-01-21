@@ -1,0 +1,22 @@
+TITLE: Chapter 8 Bootstrap Example of Chapter 5 Two Mediator Model
+
+DATA:
+    File is 'Chap8_twomed.txt';
+
+VARIABLE:
+    Names are s x m1 m2 y;
+    Usevariables are x m1 m2 y;
+
+ANALYSIS:
+    Bootstrap = 500;
+
+MODEL:
+    m1 on x;
+    m2 on x;
+    y on m1 m2 x;
+    m1 with m2;
+
+MODEL INDIRECT:
+    y ind x;
+OUTPUT:
+    Cinterval(BCBootstrap);

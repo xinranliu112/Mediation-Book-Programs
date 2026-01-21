@@ -1,0 +1,350 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+05/29/2025   1:42 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Class Bootstrap Example with N = 6 Single Mediator Model
+
+  DATA:
+      File is 'chap8_boot.txt';
+
+  VARIABLE:
+      Names are s x m y;
+      Usevariables are x m y;
+
+  ANALYSIS:
+      Bootstrap = 1000;
+
+  MODEL:
+      m on x;
+      y on m x;
+
+
+  MODEL INDIRECT:
+      y ind x;
+  OUTPUT:
+      Cinterval(BCBootstrap);
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Class Bootstrap Example with N = 6 Single Mediator Model
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                           6
+
+Number of dependent variables                                    2
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   M           Y
+
+Observed independent variables
+   X
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Number of bootstrap draws
+    Requested                                                 1000
+    Completed                                                  719
+
+Input data file(s)
+  chap8_boot.txt
+
+Input data format  FREE
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     M                     2.833      -0.627      -7.000   16.67%      -7.000      0.000      3.500
+               6.000      29.139      -0.724       9.000   16.67%       5.000      8.000
+     Y                    -4.833       0.568     -16.000   16.67%     -16.000    -14.000     -5.000
+               6.000      84.806      -0.610      12.000   16.67%      -4.000     -1.000
+     X                     0.833      -0.488      -1.000   16.67%      -1.000      0.000      1.000
+               6.000       1.139      -1.010       2.000   33.33%       1.000      2.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     THE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES MAY NOT BE
+     TRUSTWORTHY FOR SOME PARAMETERS DUE TO A NON-POSITIVE DEFINITE
+     FIRST-ORDER DERIVATIVE PRODUCT MATRIX.  THIS MAY BE DUE TO THE STARTING
+     VALUES BUT MAY ALSO BE AN INDICATION OF MODEL NONIDENTIFICATION.  THE
+     CONDITION NUMBER IS       0.135D-15.  PROBLEM INVOLVING THE FOLLOWING PARAMETER:
+     Parameter 6, M
+
+     THIS IS MOST LIKELY DUE TO HAVING MORE PARAMETERS THAN THE SAMPLE SIZE.
+
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        7
+
+Loglikelihood
+
+          H0 Value                         -18.112
+          H1 Value                         -18.112
+
+Information Criteria
+
+          Akaike (AIC)                      50.224
+          Bayesian (BIC)                    48.766
+          Sample-Size Adjusted BIC          28.534
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             44.705
+          Degrees of Freedom                     3
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ M        ON
+    X                  4.951      0.363     13.622      0.000
+
+ Y        ON
+    M                 -1.297      0.571     -2.271      0.023
+    X                 -2.043      2.783     -0.734      0.463
+
+ Intercepts
+    M                 -1.293      0.617     -2.096      0.036
+    Y                  0.543      1.253      0.434      0.665
+
+ Residual Variances
+    M                  1.220      0.364      3.353      0.001
+    Y                  1.177      0.597      1.971      0.049
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from X to Y
+
+  Total               -8.463      0.762    -11.102      0.000
+  Total indirect      -6.420      2.750     -2.335      0.020
+
+  Specific indirect 1
+    Y
+    M
+    X                 -6.420      2.750     -2.335      0.020
+
+  Direct
+    Y
+    X                 -2.043      2.783     -0.734      0.463
+
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ M        ON
+    X                3.824       4.000       4.000       4.951       5.310       5.341       5.500
+
+ Y        ON
+    M               -2.163      -2.155      -2.014      -1.297      -0.556      -0.370       0.333
+    X              -10.400      -7.893      -6.949      -2.043       1.176       2.000       2.178
+
+ Intercepts
+    M               -3.000      -2.333      -2.136      -1.293      -0.167       0.172       0.500
+    Y               -1.034      -1.015      -0.931       0.543       3.467       3.895       4.000
+
+ Residual Variances
+    M                0.547       0.805       0.909       1.220       1.889       1.889       1.889
+    Y                0.005       0.055       0.064       1.177       1.841       2.118       2.118
+
+
+CONFIDENCE INTERVALS OF TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from X to Y
+
+  Total            -10.500     -10.000      -9.220      -8.463      -6.897      -6.800      -6.000
+  Total indirect   -11.069     -10.533     -10.376      -6.420      -2.865      -1.929       1.333
+
+  Specific indirect 1
+    Y
+    M
+    X              -11.069     -10.533     -10.376      -6.420      -2.865      -1.929       1.333
+
+  Direct
+    Y
+    X              -10.400      -7.893      -6.949      -2.043       1.176       2.000       2.178
+
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              M             Y             X
+              ________      ________      ________
+                  0             0             0
+
+
+           LAMBDA
+              M             Y             X
+              ________      ________      ________
+ M                  0             0             0
+ Y                  0             0             0
+ X                  0             0             0
+
+
+           THETA
+              M             Y             X
+              ________      ________      ________
+ M                  0
+ Y                  0             0
+ X                  0             0             0
+
+
+           ALPHA
+              M             Y             X
+              ________      ________      ________
+                  1             2             0
+
+
+           BETA
+              M             Y             X
+              ________      ________      ________
+ M                  0             0             3
+ Y                  4             0             5
+ X                  0             0             0
+
+
+           PSI
+              M             Y             X
+              ________      ________      ________
+ M                  6
+ Y                  0             7
+ X                  0             0             0
+
+
+     STARTING VALUES
+
+
+           NU
+              M             Y             X
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           LAMBDA
+              M             Y             X
+              ________      ________      ________
+ M              1.000         0.000         0.000
+ Y              0.000         1.000         0.000
+ X              0.000         0.000         1.000
+
+
+           THETA
+              M             Y             X
+              ________      ________      ________
+ M              0.000
+ Y              0.000         0.000
+ X              0.000         0.000         0.000
+
+
+           ALPHA
+              M             Y             X
+              ________      ________      ________
+                2.833        -4.833         0.833
+
+
+           BETA
+              M             Y             X
+              ________      ________      ________
+ M              0.000         0.000         0.000
+ Y              0.000         0.000         0.000
+ X              0.000         0.000         0.000
+
+
+           PSI
+              M             Y             X
+              ________      ________      ________
+ M             14.569
+ Y              0.000        42.403
+ X              0.000         0.000         1.139
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\asu dropbox\xinran liu\pc (3)\downloads\mediation book 2025-20250527t092340z-1-001\mediation book 202
+
+     Beginning Time:  01:42:33
+        Ending Time:  01:42:33
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen
