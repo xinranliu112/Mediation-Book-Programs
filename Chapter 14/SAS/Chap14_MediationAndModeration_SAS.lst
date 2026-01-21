@@ -1,0 +1,129 @@
+                                  Chapter 14 data with continuous Z                                  1
+                                                                         12:42 Thursday, July 10, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: y 
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     3       13.20513        4.40171       3.70    0.0143
+            Error                    96      114.10487        1.18859                     
+            Corrected Total          99      127.31000                                    
+
+
+                         Root MSE              1.09023    R-Square     0.1037
+                         Dependent Mean        3.13000    Adj R-Sq     0.0757
+                         Coeff Var            34.83150                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        3.12199        0.10953      28.50      <.0001
+                 xcent         1        0.31912        0.10991       2.90      0.0046
+                 zcent         1        0.00724        0.01272       0.57      0.5704
+                 xz            1        0.01004        0.01320       0.76      0.4488
+                                  Chapter 14 data with continuous Z                                  2
+                                                                         12:42 Thursday, July 10, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: y 
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     7       31.19587        4.45655       4.27    0.0004
+            Error                    92       96.11413        1.04472                     
+            Corrected Total          99      127.31000                                    
+
+
+                         Root MSE              1.02211    R-Square     0.2450
+                         Dependent Mean        3.13000    Adj R-Sq     0.1876
+                         Coeff Var            32.65543                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        3.12815        0.11468      27.28      <.0001
+                 xcent         1        0.10561        0.12317       0.86      0.3935
+                 zcent         1        0.01044        0.01296       0.81      0.4226
+                 xz            1        0.02039        0.01425       1.43      0.1559
+                 mcent         1        0.42857        0.10805       3.97      0.0001
+                 mz            1        0.00905        0.01194       0.76      0.4505
+                 xm            1        0.00168        0.08751       0.02      0.9847
+                 xmz           1        0.00591        0.01040       0.57      0.5713
+                                  Chapter 14 data with continuous Z                                  3
+                                                                         12:42 Thursday, July 10, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: m 
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     3       34.44654       11.48218      11.87    <.0001
+            Error                    96       92.86346        0.96733                     
+            Corrected Total          99      127.31000                                    
+
+
+                         Root MSE              0.98353    R-Square     0.2706
+                         Dependent Mean        3.13000    Adj R-Sq     0.2478
+                         Coeff Var            31.42263                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        3.15572        0.09881      31.94      <.0001
+                 xcent         1        0.56238        0.09915       5.67      <.0001
+                 zcent         1       -0.01417        0.01147      -1.24      0.2198
+                 xz            1       -0.03221        0.01191      -2.71      0.0081
+                                  Chapter 14 data with continuous Z                                  4
+                                                                         12:42 Thursday, July 10, 2025
+
+                                         The MEANS Procedure
+
+           Variable      N            Mean         Std Dev         Minimum         Maximum
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+           Obs         100      50.5000000      29.0114920       1.0000000     100.0000000
+           z           100      47.3200000       8.6676922      34.0000000      63.0000000
+           x           100      70.1300000       1.0215358      67.0000000      73.0000000
+           m           100       3.1300000       1.1340016       1.0000000       5.0000000
+           y           100       3.1300000       1.1340016       1.0000000       5.0000000
+           xcent       100    4.547474E-15       1.0215358      -3.1300000       2.8700000
+           mcent       100    7.904788E-16       1.1340016      -2.1300000       1.8700000
+           zcent       100    9.947598E-16       8.6676922     -13.3200000      15.6800000
+           xm          100       0.5131000       1.2304411      -0.9831000       6.6669000
+           xz          100       0.7984000       8.4956658     -21.0084000      26.2416000
+           mz          100      -0.7816000       9.7192292     -24.9084000      26.2416000
+           xmz         100      -1.3917840      10.8479325     -55.8946080      44.5348920
+           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ

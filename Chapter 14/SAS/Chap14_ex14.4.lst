@@ -1,0 +1,1149 @@
+                        Chapter 10 Analysis Example: Mediated-Moderation                        1
+                                                                    18:04 Sunday, August 26, 2007
+
+        Obs    id     x    m    y    fit    record    recordc    fitc    fitrec    group
+
+          1     1    70    4    3     0        1          1       -1       -1        10
+          2     2    71    4    3     0        1          1       -1       -1        10
+          3     3    69    1    3     0        1          1       -1       -1        10
+          4     4    70    1    3     0        1          1       -1       -1        10
+          5     5    71    3    3     0        1          1       -1       -1        10
+          6     6    70    4    2     0        1          1       -1       -1        10
+          7     7    69    3    3     0        1          1       -1       -1        10
+          8     8    70    5    5     0        1          1       -1       -1        10
+          9     9    70    4    4     0        1          1       -1       -1        10
+         10    10    72    5    4     0        1          1       -1       -1        10
+         11    11    71    2    2     0        1          1       -1       -1        10
+         12    12    71    3    4     0        1          1       -1       -1        10
+         13    13    70    5    5     0        1          1       -1       -1        10
+         14    14    71    4    5     0        1          1       -1       -1        10
+         15    15    71    4    5     0        1          1       -1       -1        10
+         16    16    70    2    2     0        1          1       -1       -1        10
+         17    17    70    4    4     0        1          1       -1       -1        10
+         18    18    69    3    5     0        1          1       -1       -1        10
+         19    19    72    3    4     0        1          1       -1       -1        10
+         20    20    71    3    3     0        1          1       -1       -1        10
+         21    21    71    2    4     0        1          1       -1       -1        10
+         22    22    72    3    5     0        1          1       -1       -1        10
+         23    23    67    1    2     0        1          1       -1       -1        10
+         24    24    71    4    4     0        1          1       -1       -1        10
+         25    25    71    3    2     0        1          1       -1       -1        10
+         26    26    70    3    4     0        0         -1       -1        1         0
+         27    27    70    2    3     0        0         -1       -1        1         0
+         28    28    69    3    4     0        0         -1       -1        1         0
+         29    29    69    4    3     0        0         -1       -1        1         0
+         30    30    70    3    3     0        0         -1       -1        1         0
+         31    31    71    2    1     0        0         -1       -1        1         0
+         32    32    70    1    3     0        0         -1       -1        1         0
+         33    33    70    2    5     0        0         -1       -1        1         0
+         34    34    70    2    1     0        0         -1       -1        1         0
+         35    35    71    4    3     0        0         -1       -1        1         0
+         36    36    68    2    1     0        0         -1       -1        1         0
+         37    37    72    4    3     0        0         -1       -1        1         0
+         38    38    69    3    2     0        0         -1       -1        1         0
+         39    39    70    3    3     0        0         -1       -1        1         0
+         40    40    68    3    2     0        0         -1       -1        1         0
+         41    41    68    3    3     0        0         -1       -1        1         0
+         42    42    70    4    3     0        0         -1       -1        1         0
+         43    43    71    4    4     0        0         -1       -1        1         0
+         44    44    69    2    2     0        0         -1       -1        1         0
+         45    45    69    3    3     0        0         -1       -1        1         0
+         46    46    71    3    4     0        0         -1       -1        1         0
+         47    47    71    4    4     0        0         -1       -1        1         0
+         48    48    71    3    2     0        0         -1       -1        1         0
+         49    49    72    4    5     0        0         -1       -1        1         0
+         50    50    70    2    2     0        0         -1       -1        1         0
+                        Chapter 10 Analysis Example: Mediated-Moderation                        2
+                                                                    18:04 Sunday, August 26, 2007
+
+        Obs    id     x    m    y    fit    record    recordc    fitc    fitrec    group
+
+         51     1    69    2    3     1        1          1        1        1        11
+         52     2    70    2    4     1        1          1        1        1        11
+         53     3    69    1    2     1        1          1        1        1        11
+         54     4    70    3    2     1        1          1        1        1        11
+         55     5    69    1    1     1        1          1        1        1        11
+         56     6    70    2    3     1        1          1        1        1        11
+         57     7    69    4    3     1        1          1        1        1        11
+         58     8    70    2    3     1        1          1        1        1        11
+         59     9    70    3    2     1        1          1        1        1        11
+         60    10    69    3    2     1        1          1        1        1        11
+         61    11    69    4    2     1        1          1        1        1        11
+         62    12    71    3    5     1        1          1        1        1        11
+         63    13    71    4    1     1        1          1        1        1        11
+         64    14    71    4    3     1        1          1        1        1        11
+         65    15    69    3    4     1        1          1        1        1        11
+         66    16    70    2    2     1        1          1        1        1        11
+         67    17    70    3    3     1        1          1        1        1        11
+         68    18    71    2    2     1        1          1        1        1        11
+         69    19    70    3    3     1        1          1        1        1        11
+         70    20    71    3    2     1        1          1        1        1        11
+         71    21    69    2    4     1        1          1        1        1        11
+         72    22    71    5    1     1        1          1        1        1        11
+         73    23    69    1    2     1        1          1        1        1        11
+         74    24    70    2    1     1        1          1        1        1        11
+         75    25    70    3    2     1        1          1        1        1        11
+         76    26    71    5    4     1        0         -1        1       -1         1
+         77    27    73    5    3     1        0         -1        1       -1         1
+         78    28    68    1    3     1        0         -1        1       -1         1
+         79    29    70    4    4     1        0         -1        1       -1         1
+         80    30    70    5    4     1        0         -1        1       -1         1
+         81    31    69    4    3     1        0         -1        1       -1         1
+         82    32    70    5    4     1        0         -1        1       -1         1
+         83    33    70    5    5     1        0         -1        1       -1         1
+         84    34    70    2    3     1        0         -1        1       -1         1
+         85    35    71    5    5     1        0         -1        1       -1         1
+         86    36    70    3    5     1        0         -1        1       -1         1
+         87    37    70    4    3     1        0         -1        1       -1         1
+         88    38    69    2    2     1        0         -1        1       -1         1
+         89    39    71    4    4     1        0         -1        1       -1         1
+         90    40    70    5    3     1        0         -1        1       -1         1
+         91    41    70    2    3     1        0         -1        1       -1         1
+         92    42    70    3    4     1        0         -1        1       -1         1
+         93    43    71    4    3     1        0         -1        1       -1         1
+         94    44    69    2    1     1        0         -1        1       -1         1
+         95    45    71    5    4     1        0         -1        1       -1         1
+         96    46    71    3    4     1        0         -1        1       -1         1
+         97    47    71    4    4     1        0         -1        1       -1         1
+         98    48    71    4    5     1        0         -1        1       -1         1
+         99    49    70    3    3     1        0         -1        1       -1         1
+        100    50    71    4    3     1        0         -1        1       -1         1
+                        Chapter 10 Analysis Example: Mediated-Moderation                        3
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The GLM Procedure
+
+                                    Class Level Information
+
+                                 Class         Levels    Values
+
+                                 record             2    0 1
+
+                                 fit                2    0 1
+
+
+                             Number of Observations Read         100
+                             Number of Observations Used         100
+                        Chapter 10 Analysis Example: Mediated-Moderation                        4
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The GLM Procedure
+
+Dependent Variable: m
+
+                                               Sum of
+       Source                      DF         Squares     Mean Square    F Value    Pr > F
+
+       Model                        3      14.9900000       4.9966667       4.27    0.0071
+
+       Error                       96     112.3200000       1.1700000
+
+       Corrected Total             99     127.3100000
+
+
+                       R-Square     Coeff Var      Root MSE        m Mean
+
+                       0.117744      34.55800      1.081665      3.130000
+
+
+       Source                      DF       Type I SS     Mean Square    F Value    Pr > F
+
+       record                       1      3.61000000      3.61000000       3.09    0.0822
+       fit                          1      0.49000000      0.49000000       0.42    0.5191
+       record*fit                   1     10.89000000     10.89000000       9.31    0.0030
+
+
+       Source                      DF     Type III SS     Mean Square    F Value    Pr > F
+
+       record                       1      3.61000000      3.61000000       3.09    0.0822
+       fit                          1      0.49000000      0.49000000       0.42    0.5191
+       record*fit                   1     10.89000000     10.89000000       9.31    0.0030
+                        Chapter 10 Analysis Example: Mediated-Moderation                        5
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The GLM Procedure
+
+                        Level of            --------------m--------------
+                        record        N             Mean          Std Dev
+
+                        0            50       3.32000000       1.11465195
+                        1            50       2.94000000       1.13227241
+
+
+                        Level of            --------------m--------------
+                        fit           N             Mean          Std Dev
+
+                        0            50       3.06000000       1.03824813
+                        1            50       3.20000000       1.22890361
+
+
+                 Level of     Level of            --------------m--------------
+                 record       fit           N             Mean          Std Dev
+
+                 0            0            25       2.92000000       0.86216781
+                 0            1            25       3.72000000       1.20830460
+                 1            0            25       3.20000000       1.19023807
+                 1            1            25       2.68000000       1.02956301
+                        Chapter 10 Analysis Example: Mediated-Moderation                        6
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The GLM Procedure
+
+                                    Class Level Information
+
+                                 Class         Levels    Values
+
+                                 record             2    0 1
+
+                                 fit                2    0 1
+
+
+                             Number of Observations Read         100
+                             Number of Observations Used         100
+                        Chapter 10 Analysis Example: Mediated-Moderation                        7
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The GLM Procedure
+
+Dependent Variable: y
+
+                                               Sum of
+       Source                      DF         Squares     Mean Square    F Value    Pr > F
+
+       Model                        3      20.9100000       6.9700000       6.29    0.0006
+
+       Error                       96     106.4000000       1.1083333
+
+       Corrected Total             99     127.3100000
+
+
+                       R-Square     Coeff Var      Root MSE        y Mean
+
+                       0.164245      33.63496      1.052774      3.130000
+
+
+       Source                      DF       Type I SS     Mean Square    F Value    Pr > F
+
+       record                       1      1.21000000      1.21000000       1.09    0.2987
+       fit                          1      1.21000000      1.21000000       1.09    0.2987
+       record*fit                   1     18.49000000     18.49000000      16.68    <.0001
+
+
+       Source                      DF     Type III SS     Mean Square    F Value    Pr > F
+
+       record                       1      1.21000000      1.21000000       1.09    0.2987
+       fit                          1      1.21000000      1.21000000       1.09    0.2987
+       record*fit                   1     18.49000000     18.49000000      16.68    <.0001
+                        Chapter 10 Analysis Example: Mediated-Moderation                        8
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The GLM Procedure
+
+                        Level of            --------------y--------------
+                        record        N             Mean          Std Dev
+
+                        0            50       3.24000000       1.07968249
+                        1            50       3.02000000       1.18648856
+
+
+                        Level of            --------------y--------------
+                        fit           N             Mean          Std Dev
+
+                        0            50       3.24000000       1.13497280
+                        1            50       3.02000000       1.13371342
+
+
+                 Level of     Level of            --------------y--------------
+                 record       fit           N             Mean          Std Dev
+
+                 0            0            25       2.92000000       1.11504858
+                 0            1            25       3.56000000       0.96090235
+                 1            0            25       3.56000000       1.08320512
+                 1            1            25       2.48000000       1.04562581
+                        Chapter 10 Analysis Example: Mediated-Moderation                        9
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read         100
+                             Number of Observations Used         100
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     4       27.67912        6.91978       6.60    <.0001
+         Error                    95       99.63088        1.04875
+         Corrected Total          99      127.31000
+
+
+                      Root MSE              1.02408    R-Square     0.2174
+                      Dependent Mean        3.13000    Adj R-Sq     0.1845
+                      Coeff Var            32.71831
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -15.24144       7.23196     -2.11     0.0377             .              .
+  x            1       0.26196       0.10311      2.54     0.0127       0.09480        0.06362
+  fitc         1      -0.09690       0.10254     -0.95     0.3470       0.00751        0.00931
+  recordc      1      -0.11262       0.10241     -1.10     0.2743       0.01124        0.01257
+  fitrec       1      -0.37499       0.10467     -3.58     0.0005       0.11902        0.11902
+                        Chapter 10 Analysis Example: Mediated-Moderation                       10
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The REG Procedure
+                                          Model: MODEL2
+                                     Dependent Variable: y
+
+                             Number of Observations Read         100
+                             Number of Observations Used         100
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     5       35.63398        7.12680       7.31    <.0001
+         Error                    94       91.67602        0.97528
+         Corrected Total          99      127.31000
+
+
+                      Root MSE              0.98756    R-Square     0.2799
+                      Dependent Mean        3.13000    Adj R-Sq     0.2416
+                      Coeff Var            31.55147
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1      -6.76452       7.57940     -0.89     0.3744             .              .
+  x            1       0.12795       0.10995      1.16     0.2475       0.09480        0.01420
+  m            1       0.29427       0.10304      2.86     0.0053       0.11524        0.07984
+  fitc         1      -0.12420       0.09934     -1.25     0.2143       0.01604        0.01636
+  recordc      1      -0.05537       0.10078     -0.55     0.5840       0.00171        0.00320
+  fitrec       1      -0.30602       0.10379     -2.95     0.0040       0.08466        0.08466
+                        Chapter 10 Analysis Example: Mediated-Moderation                       11
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The REG Procedure
+                                          Model: MODEL3
+                                     Dependent Variable: m
+
+                             Number of Observations Read         100
+                             Number of Observations Used         100
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     4       35.44627        8.86157       9.16    <.0001
+         Error                    95       91.86373        0.96699
+         Corrected Total          99      127.31000
+
+
+                      Root MSE              0.98335    R-Square     0.2784
+                      Dependent Mean        3.13000    Adj R-Sq     0.2480
+                      Coeff Var            31.41709
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -28.80674       6.94434     -4.15     <.0001             .              .
+  x            1       0.45539       0.09901      4.60     <.0001       0.20017        0.18212
+  fitc         1       0.09277       0.09846      0.94     0.3485       0.00885        0.00926
+  recordc      1      -0.19455       0.09834     -1.98     0.0508       0.03769        0.03957
+  fitrec       1      -0.23437       0.10051     -2.33     0.0218       0.05414        0.05414
+                        Chapter 10 Analysis Example: Mediated-Moderation                       12
+                                                                    18:04 Sunday, August 26, 2007
+
+-------------------------------------------- group=0 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        3.85163        3.85163       3.41    0.0778
+         Error                    23       25.98837        1.12993
+         Corrected Total          24       29.84000
+
+
+                      Root MSE              1.06298    R-Square     0.1291
+                      Dependent Mean        2.92000    Adj R-Sq     0.0912
+                      Coeff Var            36.40347
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -21.75581      13.36687     -1.63     0.1172             .              .
+  x            1       0.35271       0.19104      1.85     0.0778       0.12908        0.12908
+                        Chapter 10 Analysis Example: Mediated-Moderation                       13
+                                                                    18:04 Sunday, August 26, 2007
+
+-------------------------------------------- group=0 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL2
+                                     Dependent Variable: y
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     2        6.99147        3.49574       3.37    0.0530
+         Error                    22       22.84853        1.03857
+         Corrected Total          24       29.84000
+
+
+                      Root MSE              1.01910    R-Square     0.2343
+                      Dependent Mean        2.92000    Adj R-Sq     0.1647
+                      Coeff Var            34.90076
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -15.08235      13.37751     -1.13     0.2717             .              .
+  x            1       0.23873       0.19453      1.23     0.2327       0.12908        0.06407
+  m            1       0.44559       0.25627      1.74     0.0961       0.12082        0.12082
+                        Chapter 10 Analysis Example: Mediated-Moderation                       14
+                                                                    18:04 Sunday, August 26, 2007
+
+-------------------------------------------- group=0 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL3
+                                     Dependent Variable: m
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        2.02605        2.02605       2.95    0.0995
+         Error                    23       15.81395        0.68756
+         Corrected Total          24       17.84000
+
+
+                      Root MSE              0.82919    R-Square     0.1136
+                      Dependent Mean        2.92000    Adj R-Sq     0.0750
+                      Coeff Var            28.39707
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -14.97674      10.42703     -1.44     0.1644             .              .
+  x            1       0.25581       0.14902      1.72     0.0995       0.11357        0.11357
+                        Chapter 10 Analysis Example: Mediated-Moderation                       15
+                                                                    18:04 Sunday, August 26, 2007
+
+-------------------------------------------- group=1 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        2.83361        2.83361       3.37    0.0793
+         Error                    23       19.32639        0.84028
+         Corrected Total          24       22.16000
+
+
+                      Root MSE              0.91667    R-Square     0.1279
+                      Dependent Mean        3.56000    Adj R-Sq     0.0900
+                      Coeff Var            25.74906
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -21.08681      13.42278     -1.57     0.1298             .              .
+  x            1       0.35069       0.19097      1.84     0.0793       0.12787        0.12787
+                        Chapter 10 Analysis Example: Mediated-Moderation                       16
+                                                                    18:04 Sunday, August 26, 2007
+
+-------------------------------------------- group=1 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL2
+                                     Dependent Variable: y
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     2        5.65138        2.82569       3.77    0.0392
+         Error                    22       16.50862        0.75039
+         Corrected Total          24       22.16000
+
+
+                      Root MSE              0.86625    R-Square     0.2550
+                      Dependent Mean        3.56000    Adj R-Sq     0.1873
+                      Coeff Var            24.33291
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1      -4.11638      15.41405     -0.27     0.7919             .              .
+  x            1       0.09052       0.22494      0.40     0.6913       0.12787        0.00731
+  m            1       0.35345       0.18240      1.94     0.0656       0.14580        0.14580
+                        Chapter 10 Analysis Example: Mediated-Moderation                       17
+                                                                    18:04 Sunday, August 26, 2007
+
+-------------------------------------------- group=1 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL3
+                                     Dependent Variable: m
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1       12.48444       12.48444      12.73    0.0016
+         Error                    23       22.55556        0.98068
+         Corrected Total          24       35.04000
+
+
+                      Root MSE              0.99029    R-Square     0.3563
+                      Dependent Mean        3.72000    Adj R-Sq     0.3283
+                      Coeff Var            26.62073
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -48.01389      14.50086     -3.31     0.0030             .              .
+  x            1       0.73611       0.20631      3.57     0.0016       0.35629        0.35629
+                        Chapter 10 Analysis Example: Mediated-Moderation                       18
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- group=10 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        2.35200        2.35200       2.10    0.1612
+         Error                    23       25.80800        1.12209
+         Corrected Total          24       28.16000
+
+
+                      Root MSE              1.05929    R-Square     0.0835
+                      Dependent Mean        3.56000    Adj R-Sq     0.0437
+                      Coeff Var            29.75523
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -16.15200      13.61689     -1.19     0.2477             .              .
+  x            1       0.28000       0.19340      1.45     0.1612       0.08352        0.08352
+                        Chapter 10 Analysis Example: Mediated-Moderation                       19
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- group=10 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL2
+                                     Dependent Variable: y
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     2        7.99808        3.99904       4.36    0.0253
+         Error                    22       20.16192        0.91645
+         Corrected Total          24       28.16000
+
+
+                      Root MSE              0.95731    R-Square     0.2840
+                      Dependent Mean        3.56000    Adj R-Sq     0.2189
+                      Coeff Var            26.89085
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1      -5.17644      13.07640     -0.40     0.6960             .              .
+  x            1       0.10411       0.18860      0.55     0.5865       0.08352        0.01366
+  m            1       0.43973       0.17716      2.48     0.0212       0.21877        0.21877
+                        Chapter 10 Analysis Example: Mediated-Moderation                       20
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- group=10 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL3
+                                     Dependent Variable: m
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        4.80000        4.80000       3.78    0.0642
+         Error                    23       29.20000        1.26957
+         Corrected Total          24       34.00000
+
+
+                      Root MSE              1.12675    R-Square     0.1412
+                      Dependent Mean        3.20000    Adj R-Sq     0.1038
+                      Coeff Var            35.21093
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -24.96000      14.48412     -1.72     0.0983             .              .
+  x            1       0.40000       0.20572      1.94     0.0642       0.14118        0.14118
+                        Chapter 10 Analysis Example: Mediated-Moderation                       21
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- group=11 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        0.16623        0.16623       0.15    0.7053
+         Error                    23       26.07377        1.13364
+         Corrected Total          24       26.24000
+
+
+                      Root MSE              1.06473    R-Square     0.0063
+                      Dependent Mean        2.48000    Adj R-Sq    -0.0369
+                      Coeff Var            42.93251
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1       9.92623      19.44672      0.51     0.6146             .              .
+  x            1      -0.10656       0.27827     -0.38     0.7053       0.00633        0.00633
+                        Chapter 10 Analysis Example: Mediated-Moderation                       22
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- group=11 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL2
+                                     Dependent Variable: y
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     2        0.17060        0.08530       0.07    0.9308
+         Error                    22       26.06940        1.18497
+         Corrected Total          24       26.24000
+
+
+                      Root MSE              1.08856    R-Square     0.0065
+                      Dependent Mean        2.48000    Adj R-Sq    -0.0838
+                      Coeff Var            43.89373
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1       9.41131      21.61289      0.44     0.6675             .              .
+  x            1      -0.09864       0.31295     -0.32     0.7556       0.00633        0.00450
+  m            1      -0.01442       0.23741     -0.06     0.9521    0.00016778     0.00016778
+                        Chapter 10 Analysis Example: Mediated-Moderation                       23
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- group=11 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL3
+                                     Dependent Variable: m
+
+                             Number of Observations Read          25
+                             Number of Observations Used          25
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        4.41541        4.41541       4.83    0.0383
+         Error                    23       21.02459        0.91411
+         Corrected Total          24       25.44000
+
+
+                      Root MSE              0.95609    R-Square     0.1736
+                      Dependent Mean        2.68000    Adj R-Sq     0.1376
+                      Coeff Var            35.67509
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -35.69672      17.46257     -2.04     0.0525             .              .
+  x            1       0.54918       0.24988      2.20     0.0383       0.17356        0.17356
+                        Chapter 10 Analysis Example: Mediated-Moderation                       24
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- record=0 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read          50
+                             Number of Observations Used          50
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        8.40871        8.40871       8.29    0.0059
+         Error                    48       48.71129        1.01482
+         Corrected Total          49       57.12000
+
+
+                      Root MSE              1.00738    R-Square     0.1472
+                      Dependent Mean        3.24000    Adj R-Sq     0.1294
+                      Coeff Var            31.09204
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -24.10781       9.50169     -2.54     0.0145             .              .
+  x            1       0.39001       0.13549      2.88     0.0059       0.14721        0.14721
+                        Chapter 10 Analysis Example: Mediated-Moderation                       25
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- record=0 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL2
+                                     Dependent Variable: y
+
+                             Number of Observations Read          50
+                             Number of Observations Used          50
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     2       16.32356        8.16178       9.40    0.0004
+         Error                    47       40.79644        0.86801
+         Corrected Total          49       57.12000
+
+
+                      Root MSE              0.93167    R-Square     0.2858
+                      Dependent Mean        3.24000    Adj R-Sq     0.2554
+                      Coeff Var            28.75525
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -10.79933       9.83084     -1.10     0.2776             .              .
+  x            1       0.18071       0.14320      1.26     0.2132       0.14721        0.03277
+  m            1       0.41205       0.13646      3.02     0.0041       0.16248        0.16248
+                        Chapter 10 Analysis Example: Mediated-Moderation                       26
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- record=0 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL3
+                                     Dependent Variable: m
+
+                             Number of Observations Read          50
+                             Number of Observations Used          50
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1       14.26350       14.26350      14.69    0.0004
+         Error                    48       46.61650        0.97118
+         Corrected Total          49       60.88000
+
+
+                      Root MSE              0.98548    R-Square     0.2343
+                      Dependent Mean        3.32000    Adj R-Sq     0.2183
+                      Coeff Var            29.68323
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -32.29812       9.29514     -3.47     0.0011             .              .
+  x            1       0.50796       0.13255      3.83     0.0004       0.23429        0.23429
+                        Chapter 10 Analysis Example: Mediated-Moderation                       27
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- record=1 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read          50
+                             Number of Observations Used          50
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1        4.00041        4.00041       2.96    0.0921
+         Error                    48       64.97959        1.35374
+         Corrected Total          49       68.98000
+
+
+                      Root MSE              1.16350    R-Square     0.0580
+                      Dependent Mean        3.02000    Adj R-Sq     0.0384
+                      Coeff Var            38.52662
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -17.22449      11.77782     -1.46     0.1501             .              .
+  x            1       0.28863       0.16790      1.72     0.0921       0.05799        0.05799
+                        Chapter 10 Analysis Example: Mediated-Moderation                       28
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- record=1 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL2
+                                     Dependent Variable: y
+
+                             Number of Observations Read          50
+                             Number of Observations Used          50
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     2        8.55506        4.27753       3.33    0.0445
+         Error                    47       60.42494        1.28564
+         Corrected Total          49       68.98000
+
+
+                      Root MSE              1.13386    R-Square     0.1240
+                      Dependent Mean        3.02000    Adj R-Sq     0.0867
+                      Coeff Var            37.54501
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1      -7.91644      12.49777     -0.63     0.5295             .              .
+  x            1       0.14345       0.18089      0.79     0.4318       0.05799        0.01320
+  m            1       0.29768       0.15816      1.88     0.0660       0.07009        0.07009
+                        Chapter 10 Analysis Example: Mediated-Moderation                       29
+                                                                    18:04 Sunday, August 26, 2007
+
+------------------------------------------- record=1 --------------------------------------------
+
+                                        The REG Procedure
+                                          Model: MODEL3
+                                     Dependent Variable: m
+
+                             Number of Observations Read          50
+                             Number of Observations Used          50
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1       11.42225       11.42225      10.67    0.0020
+         Error                    48       51.39775        1.07079
+         Corrected Total          49       62.82000
+
+
+                      Root MSE              1.03479    R-Square     0.1818
+                      Dependent Mean        2.94000    Adj R-Sq     0.1648
+                      Coeff Var            35.19688
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1     -31.26822      10.47487     -2.99     0.0045             .              .
+  x            1       0.48771       0.14933      3.27     0.0020       0.18183        0.18183
+                        Chapter 10 Analysis Example: Mediated-Moderation                       30
+                                                                    18:04 Sunday, August 26, 2007
+
+                                       The MEANS Procedure
+
+         Variable      N            Mean         Std Dev         Minimum         Maximum
+         ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+         id          100      25.5000000      14.5035697       1.0000000      50.0000000
+         x           100      70.1300000       1.0215358      67.0000000      73.0000000
+         m           100       3.1300000       1.1340016       1.0000000       5.0000000
+         y           100       3.1300000       1.1340016       1.0000000       5.0000000
+         fit         100       0.5000000       0.5025189               0       1.0000000
+         record      100       0.5000000       0.5025189               0       1.0000000
+         recordc     100               0       1.0050378      -1.0000000       1.0000000
+         fitc        100               0       1.0050378      -1.0000000       1.0000000
+         fitrec      100               0       1.0050378      -1.0000000       1.0000000
+         group       100       5.5000000       5.0502525               0      11.0000000
+         cx          100    4.547474E-15       1.0215358      -3.1300000       2.8700000
+         cm          100     3.28626E-16       1.1340016      -2.1300000       1.8700000
+         mod1        100               0       1.0050378      -1.0000000       1.0000000
+         xmod1       100      -0.0500000      70.4906864     -72.0000000      73.0000000
+         cmmod1      100       0.0700000       1.1318172      -2.1300000       2.1300000
+         cxmod1      100      -0.0500000       1.0202990      -2.1300000       3.1300000
+         mmod1       100       0.0700000       3.3431824      -5.0000000       5.0000000
+         mod2        100               0       1.0050378      -1.0000000       1.0000000
+         xmod2       100       0.0100000       1.0214863      -3.1300000       2.1300000
+         cmmod2      100      -0.1900000       1.1178081      -2.1300000       2.1300000
+         cxmod2      100       0.0100000       1.0214863      -3.1300000       2.1300000
+         mmod2       100      -0.1900000       1.1178081      -2.1300000       2.1300000
+         mod12       100               0       1.0050378      -1.0000000       1.0000000
+         mmod12      100      -0.3300000       1.0844167      -2.1300000       2.1300000
+         xmod12      100      -0.2100000       0.9994948      -2.8700000       3.1300000
+         xmmod12     100      -0.1198000       1.3286908      -6.6669000       2.4069000
+         ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                        Chapter 10 Analysis Example: Mediated-Moderation                       31
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: y
+
+                             Number of Observations Read         100
+                             Number of Observations Used         100
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                    11       41.72154        3.79287       3.90    0.0001
+         Error                    88       85.58846        0.97260
+         Corrected Total          99      127.31000
+
+
+                      Root MSE              0.98620    R-Square     0.3277
+                      Dependent Mean        3.13000    Adj R-Sq     0.2437
+                      Coeff Var            31.50808
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1       3.08550       0.10612     29.08     <.0001             .              .
+  cx           1       0.08368       0.11703      0.71     0.4765       0.09480        0.00578
+  cm           1       0.30608       0.10729      2.85     0.0054       0.11524        0.08465
+  mod1         1       6.38843       8.06383      0.79     0.4304       0.01604        0.00708
+  xmod1        1      -0.08774       0.11703     -0.75     0.4554       0.01204        0.00635
+  mmod1        1      -0.13657       0.10729     -1.27     0.2064       0.00260        0.01808
+  mod2         1      -0.11052       0.10612     -1.04     0.3005       0.00566        0.01218
+  xmod2        1      -0.08094       0.11703     -0.69     0.4910       0.00893        0.00541
+  mmod2        1      -0.09343       0.10729     -0.87     0.3862       0.01606        0.00854
+  mmod12       1      -0.09050       0.10729     -0.84     0.4012       0.00660        0.00802
+  xmod12       1      -0.01363       0.11703     -0.12     0.9075    0.00003444     0.00015420
+  mod12        1      -0.33400       0.10612     -3.15     0.0022       0.10118        0.10118
+                        Chapter 10 Analysis Example: Mediated-Moderation                       32
+                                                                    18:04 Sunday, August 26, 2007
+
+                                        The REG Procedure
+                                          Model: MODEL2
+                                     Dependent Variable: m
+
+                             Number of Observations Read         100
+                             Number of Observations Used         100
+
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                    10       42.82387        4.28239       4.51    <.0001
+         Error                    89       84.48613        0.94928
+         Corrected Total          99      127.31000
+
+
+                      Root MSE              0.97431    R-Square     0.3364
+                      Dependent Mean        3.13000    Adj R-Sq     0.2618
+                      Coeff Var            31.12815
+
+
+                                      Parameter Estimates
+
+                                                                        Squared        Squared
+                     Parameter      Standard                            Partial        Partial
+  Variable    DF      Estimate         Error   t Value   Pr > |t|   Corr Type I   Corr Type II
+
+  Intercept    1       3.10127       0.10480     29.59     <.0001             .              .
+  cx           1       0.46801       0.10444      4.48     <.0001       0.20017        0.18409
+  mod1         1     -10.69118       7.88558     -1.36     0.1786       0.00885        0.02024
+  xmod1        1       0.15250       0.11449      1.33     0.1862       0.04316        0.01955
+  mmod1        1       0.02948       0.10595      0.28     0.7815       0.00320     0.00086926
+  mod2         1      -0.14208       0.10375     -1.37     0.1743       0.02209        0.02064
+  xmod2        1      -0.04748       0.11551     -0.41     0.6820    0.00086325        0.00189
+  mmod2        1       0.13602       0.10501      1.30     0.1986       0.01018        0.01850
+  mmod12       1      -0.17012       0.10445     -1.63     0.1069       0.03588        0.02894
+  xmod12       1      -0.02132       0.11560     -0.18     0.8541    0.00003986     0.00038187
+  mod12        1      -0.23954       0.10172     -2.35     0.0207       0.05865        0.05865

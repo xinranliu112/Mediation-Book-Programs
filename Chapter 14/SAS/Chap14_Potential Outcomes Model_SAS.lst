@@ -1,0 +1,731 @@
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025   1
+
+                            Obs    Obs     z     x    m    y    xb    fit
+
+                              1      1    54    67    1    2     0     1 
+                              2      2    54    68    2    1     0     1 
+                              3      3    57    68    3    2     0     1 
+                              4      4    52    68    3    3     0     1 
+                              5      5    35    68    1    3     0     0 
+                              6      6    52    69    1    3     0     1 
+                              7      7    58    69    3    3     0     1 
+                              8      8    51    69    3    5     0     1 
+                              9      9    54    69    3    4     0     1 
+                             10     10    59    69    4    3     0     1 
+                             11     11    55    69    3    2     0     1 
+                             12     12    55    69    2    2     0     1 
+                             13     13    54    69    3    3     0     1 
+                             14     14    38    69    2    3     0     0 
+                             15     15    39    69    1    2     0     0 
+                             16     16    39    69    1    1     0     0 
+                             17     17    46    69    4    3     0     0 
+                             18     18    42    69    3    2     0     0 
+                             19     19    39    69    4    2     0     0 
+                             20     20    40    69    3    4     0     0 
+                             21     21    39    69    2    4     0     0 
+                             22     22    41    69    1    2     0     0 
+                             23     23    34    69    4    3     0     0 
+                             24     24    45    69    2    2     0     0 
+                             25     25    40    69    2    1     0     0 
+                             26     26    56    70    4    3     1     1 
+                             27     27    58    70    1    3     1     1 
+                             28     28    53    70    4    2     1     1 
+                             29     29    53    70    5    5     1     1 
+                             30     30    58    70    4    4     1     1 
+                             31     31    55    70    5    5     1     1 
+                             32     32    61    70    2    2     1     1 
+                             33     33    61    70    4    4     1     1 
+                             34     34    53    70    3    4     1     1 
+                             35     35    51    70    2    3     1     1 
+                             36     36    56    70    3    3     1     1 
+                             37     37    54    70    1    3     1     1 
+                             38     38    50    70    2    5     1     1 
+                             39     39    52    70    2    1     1     1 
+                             40     40    53    70    3    3     1     1 
+                             41     41    54    70    4    3     1     1 
+                             42     42    54    70    2    2     1     1 
+                             43     43    36    70    2    4     1     0 
+                             44     44    36    70    3    2     1     0 
+                             45     45    38    70    2    3     1     0 
+                             46     46    41    70    2    3     1     0 
+                             47     47    36    70    3    2     1     0 
+                             48     48    44    70    2    2     1     0 
+                             49     49    42    70    3    3     1     0 
+                             50     50    34    70    3    3     1     0 
+                             51     51    38    70    2    1     1     0 
+                             52     52    42    70    3    2     1     0 
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025   2
+
+                            Obs    Obs     z     x    m    y    xb    fit
+
+                             53     53    38    70    4    4     1     0 
+                             54     54    44    70    5    4     1     0 
+                             55     55    34    70    5    4     1     0 
+                             56     56    38    70    5    5     1     0 
+                             57     57    39    70    2    3     1     0 
+                             58     58    40    70    3    5     1     0 
+                             59     59    39    70    4    3     1     0 
+                             60     60    37    70    5    3     1     0 
+                             61     61    42    70    2    3     1     0 
+                             62     62    40    70    3    4     1     0 
+                             63     63    34    70    3    3     1     0 
+                             64     64    60    71    4    3     1     1 
+                             65     65    55    71    3    3     1     1 
+                             66     66    59    71    2    2     1     1 
+                             67     67    53    71    3    4     1     1 
+                             68     68    55    71    4    5     1     1 
+                             69     69    53    71    4    5     1     1 
+                             70     70    59    71    3    3     1     1 
+                             71     71    63    71    2    4     1     1 
+                             72     72    52    71    4    4     1     1 
+                             73     73    60    71    3    2     1     1 
+                             74     74    53    71    2    1     1     1 
+                             75     75    53    71    4    3     1     1 
+                             76     76    49    71    4    4     1     0 
+                             77     77    61    71    3    4     1     1 
+                             78     78    58    71    4    4     1     1 
+                             79     79    59    71    3    2     1     1 
+                             80     80    44    71    3    5     1     0 
+                             81     81    42    71    4    1     1     0 
+                             82     82    43    71    4    3     1     0 
+                             83     83    43    71    2    2     1     0 
+                             84     84    38    71    3    2     1     0 
+                             85     85    34    71    5    1     1     0 
+                             86     86    37    71    5    4     1     0 
+                             87     87    38    71    5    5     1     0 
+                             88     88    40    71    4    4     1     0 
+                             89     89    35    71    4    3     1     0 
+                             90     90    39    71    5    4     1     0 
+                             91     91    40    71    3    4     1     0 
+                             92     92    40    71    4    4     1     0 
+                             93     93    44    71    4    5     1     0 
+                             94     94    40    71    4    3     1     0 
+                             95     95    53    72    5    4     1     1 
+                             96     96    52    72    3    4     1     1 
+                             97     97    61    72    3    5     1     1 
+                             98     98    52    72    4    3     1     1 
+                             99     99    59    72    4    5     1     1 
+                            100    100    40    73    5    3     1     0 
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025   3
+
+                                       The CAUSALMED Procedure
+
+                                          Model Information
+
+                              Data Set                        WORK.XBIN
+                              Outcome Variable                        y
+                              Treatment Variable                     xb
+                              Mediator Variable                       m
+                              Outcome Distribution               Normal
+                              Outcome Link Function            Identity
+                              Mediator Distribution              Normal
+                              Mediator Link Function           Identity
+                              Number of Bootstrap Samples          1000
+                              Bootstrap Seed                 1806034610
+
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                       Class Level Information
+ 
+                                     Class      Levels    Values
+
+                                     xb              2    1 0   
+
+
+                                          Treatment Profile
+ 
+                                      Ordered              Total
+                                        Value    xb    Frequency
+
+                                            1    1            75
+                                            2    0            25
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025   4
+
+                                       The CAUSALMED Procedure
+
+                            Number of Bootstrap Samples for Fitting Models
+
+                   Total Generated in 4 Threads                                1000
+                   Converged and Retained                                      1000
+                   Excluded from Model Estimation                                 0
+                   Excluded Due to Non-Convergence                                0
+                   Excluded Due to Dropping of Causal Effect Levels               0
+                   Excluded Due to Dropping of Covariate Effect Levels Only       0
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025   5
+
+                                       The CAUSALMED Procedure
+
+                                          Summary of Effects
+ 
+                                                 Bootstrap                       Bootstrap
+                                        Standard  Standard     Wald 95%        Percentile 95%
+                               Estimate    Error     Error Confidence Limits Confidence Limits       Z
+
+Total Effect                     0.7040   0.2451    0.2416   0.2235   1.1844   0.2466   1.1715    2.87
+Controlled Direct Effect (CDE)   0.3981   0.2690    0.2516  -0.1290   0.9252 -0.09565   0.8582    1.48
+Natural Direct Effect (NDE)      0.3213   0.2535    0.2568  -0.1756   0.8182  -0.1564   0.8142    1.27
+Natural Indirect Effect (NIE)    0.3827   0.1426    0.1501   0.1031   0.6622   0.1255   0.7131    2.68
+Percentage Mediated             54.3576  24.3199    148.28   6.6914   102.02  16.9713   142.17    2.24
+Percentage Due to Interaction    3.6355   7.6755   10.7010 -11.4082  18.6791 -12.7270  26.3059    0.47
+Percentage Eliminated           43.4512  25.0722    157.56  -5.6894  92.5917  11.7702   123.29    1.73
+
+                                         Summary of Effects
+ 
+                                                              Pr > |Z|
+
+                               Total Effect                     0.0041
+                               Controlled Direct Effect (CDE)   0.1388
+                               Natural Direct Effect (NDE)      0.2050
+                               Natural Indirect Effect (NIE)    0.0073
+                               Percentage Mediated              0.0254
+                               Percentage Due to Interaction    0.6357
+                               Percentage Eliminated            0.0831
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025   6
+
+                                       The CAUSALMED Procedure
+
+                                    Decompositions of Total Effect
+ 
+                                                                     Bootstrap
+                                                          Standard    Standard        Wald 95% 
+  Decomposition   Effect                       Estimate      Error       Error    Confidence Limits
+
+  NDE+NIE         Natural Direct                 0.3213     0.2535      0.2568    -0.1756     0.8182
+                  Natural Indirect               0.3827     0.1426      0.1501     0.1031     0.6622
+  CDE+PE          Controlled Direct              0.3981     0.2690      0.2516    -0.1290     0.9252
+                  Portion Eliminated             0.3059     0.1601      0.1396   -0.00784     0.6196
+  TDE+PIE         Total Direct                   0.4237     0.2936      0.2644    -0.1518     0.9992
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+  NDE+PIE+IMD     Natural Direct                 0.3213     0.2535      0.2568    -0.1756     0.8182
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+                  Mediated Interaction           0.1024     0.2098      0.1844    -0.3088     0.5136
+  CDE+PIE+PAI     Controlled Direct              0.3981     0.2690      0.2516    -0.1290     0.9252
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+                  Portion Due to Interaction    0.02559    0.05373     0.05086   -0.07972     0.1309
+  Four-Way        Controlled Direct              0.3981     0.2690      0.2516    -0.1290     0.9252
+                  Reference Interaction        -0.07678     0.1578      0.1419    -0.3860     0.2325
+                  Mediated Interaction           0.1024     0.2098      0.1844    -0.3088     0.5136
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+  Total           Total Effect                   0.7040     0.2451      0.2416     0.2235     1.1844
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+
+                                    Decompositions of Total Effect
+ 
+                                                    Bootstrap Percentile
+                                                       95% Confidence
+       Decomposition   Effect                              Limits                 Z    Pr > |Z|
+
+       NDE+NIE         Natural Direct                -0.1564      0.8142       1.27      0.2050
+                       Natural Indirect               0.1255      0.7131       2.68      0.0073
+       CDE+PE          Controlled Direct            -0.09565      0.8582       1.48      0.1388
+                       Portion Eliminated            0.08237      0.6500       1.91      0.0560
+       TDE+PIE         Total Direct                  -0.1106      0.9318       1.44      0.1490
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+       NDE+PIE+IMD     Natural Direct                -0.1564      0.8142       1.27      0.2050
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+                       Mediated Interaction          -0.2974      0.4581       0.49      0.6256
+       CDE+PIE+PAI     Controlled Direct            -0.09565      0.8582       1.48      0.1388
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+                       Portion Due to Interaction   -0.07300      0.1284       0.48      0.6339
+       Four-Way        Controlled Direct            -0.09565      0.8582       1.48      0.1388
+                       Reference Interaction         -0.3540      0.2305      -0.49      0.6265
+                       Mediated Interaction          -0.2974      0.4581       0.49      0.6256
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+       Total           Total Effect                   0.2466      1.1715       2.87      0.0041
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025   7
+
+                                       The CAUSALMED Procedure
+
+                              Percentage Decompositions of Total Effect
+ 
+                                                                                         Bootstrap
+                                                          Bootstrap                      Percentile
+                                                 Standard  Standard     Wald 95%       95% Confidence
+Decomposition Effect                     Percent    Error     Error Confidence Limits      Limits
+
+NDE+NIE       Natural Direct               45.64    24.32    148.28   -2.02     93.31  -42.17   83.03
+              Natural Indirect             54.36    24.32    148.28    6.69    102.02   16.97  142.17
+CDE+PE        Controlled Direct            56.55    25.07    157.56    7.41    105.69  -23.29   88.23
+              Portion Eliminated           43.45    25.07    157.56   -5.69     92.59   11.77  123.29
+TDE+PIE       Total Direct                 60.18    29.43    155.77    2.51    117.86  -24.09   96.32
+              Pure Indirect                39.82    29.43    155.77  -17.86     97.49    3.68  124.09
+NDE+PIE+IMD   Natural Direct               45.64    24.32    148.28   -2.02     93.31  -42.17   83.03
+              Pure Indirect                39.82    29.43    155.77  -17.86     97.49    3.68  124.09
+              Mediated Interaction         14.54    30.03     65.71  -44.32     73.40  -45.72   82.18
+CDE+PIE+PAI   Controlled Direct            56.55    25.07    157.56    7.41    105.69  -23.29   88.23
+              Pure Indirect                39.82    29.43    155.77  -17.86     97.49    3.68  124.09
+              Portion Due to Interaction    3.64     7.68     10.70  -11.41     18.68  -12.73   26.31
+Four-Way      Controlled Direct            56.55    25.07    157.56    7.41    105.69  -23.29   88.23
+              Reference Interaction       -10.91    22.60     59.45  -55.20     33.38  -66.89   35.96
+              Mediated Interaction         14.54    30.03     65.71  -44.32     73.40  -45.72   82.18
+              Pure Indirect                39.82    29.43    155.77  -17.86     97.49    3.68  124.09
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+
+                              Percentage Decompositions of Total Effect
+ 
+                     Decomposition Effect                           Z    Pr > |Z|
+
+                     NDE+NIE       Natural Direct                1.88      0.0606
+                                   Natural Indirect              2.24      0.0254
+                     CDE+PE        Controlled Direct             2.26      0.0241
+                                   Portion Eliminated            1.73      0.0831
+                     TDE+PIE       Total Direct                  2.05      0.0408
+                                   Pure Indirect                 1.35      0.1761
+                     NDE+PIE+IMD   Natural Direct                1.88      0.0606
+                                   Pure Indirect                 1.35      0.1761
+                                   Mediated Interaction          0.48      0.6282
+                     CDE+PIE+PAI   Controlled Direct             2.26      0.0241
+                                   Pure Indirect                 1.35      0.1761
+                                   Portion Due to Interaction    0.47      0.6357
+                     Four-Way      Controlled Direct             2.26      0.0241
+                                   Reference Interaction        -0.48      0.6293
+                                   Mediated Interaction          0.48      0.6282
+                                   Pure Indirect                 1.35      0.1761
+
+                 Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025   8
+
+                                       The CAUSALMED Procedure
+
+                                      Summary of Effects: CDE@5
+ 
+                                                 Bootstrap                       Bootstrap
+                                        Standard  Standard     Wald 95%        Percentile 95%
+                               Estimate    Error     Error Confidence Limits Confidence Limits       Z
+
+Total Effect                     0.7040   0.2451    0.2416   0.2235   1.1844   0.2466   1.1715    2.87
+Controlled Direct Effect (CDE)   0.6056   0.5825    0.4765  -0.5361   1.7473  -0.3976   1.4907    1.04
+Natural Direct Effect (NDE)      0.3213   0.2535    0.2568  -0.1756   0.8182  -0.1564   0.8142    1.27
+Natural Indirect Effect (NIE)    0.3827   0.1426    0.1501   0.1031   0.6622   0.1255   0.7131    2.68
+Percentage Mediated             54.3576  24.3199    148.28   6.6914   102.02  16.9713   142.17    2.24
+Percentage Due to Interaction  -25.8439  53.4139    159.02  -130.53  78.8455  -167.05  79.7049   -0.48
+Percentage Eliminated           13.9718  76.8080    261.58  -136.57   164.51  -147.64   182.56    0.18
+
+                                      Summary of Effects: CDE@5
+ 
+                                                              Pr > |Z|
+
+                               Total Effect                     0.0041
+                               Controlled Direct Effect (CDE)   0.2985
+                               Natural Direct Effect (NDE)      0.2050
+                               Natural Indirect Effect (NIE)    0.0073
+                               Percentage Mediated              0.0254
+                               Percentage Due to Interaction    0.6285
+                               Percentage Eliminated            0.8557
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025   9
+
+                                       The CAUSALMED Procedure
+
+                                Decompositions of Total Effect: CDE@5
+ 
+                                                                     Bootstrap
+                                                          Standard    Standard        Wald 95% 
+  Decomposition   Effect                       Estimate      Error       Error    Confidence Limits
+
+  NDE+NIE         Natural Direct                 0.3213     0.2535      0.2568    -0.1756     0.8182
+                  Natural Indirect               0.3827     0.1426      0.1501     0.1031     0.6622
+  CDE+PE          Controlled Direct              0.6056     0.5825      0.4765    -0.5361     1.7473
+                  Portion Eliminated            0.09836     0.5414      0.4405    -0.9628     1.1595
+  TDE+PIE         Total Direct                   0.4237     0.2936      0.2644    -0.1518     0.9992
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+  NDE+PIE+IMD     Natural Direct                 0.3213     0.2535      0.2568    -0.1756     0.8182
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+                  Mediated Interaction           0.1024     0.2098      0.1844    -0.3088     0.5136
+  CDE+PIE+PAI     Controlled Direct              0.6056     0.5825      0.4765    -0.5361     1.7473
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+                  Portion Due to Interaction    -0.1819     0.3700      0.3138    -0.9072     0.5433
+  Four-Way        Controlled Direct              0.6056     0.5825      0.4765    -0.5361     1.7473
+                  Reference Interaction         -0.2843     0.5783      0.4912    -1.4178     0.8491
+                  Mediated Interaction           0.1024     0.2098      0.1844    -0.3088     0.5136
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+  Total           Total Effect                   0.7040     0.2451      0.2416     0.2235     1.1844
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+
+                                Decompositions of Total Effect: CDE@5
+ 
+                                                    Bootstrap Percentile
+                                                       95% Confidence
+       Decomposition   Effect                              Limits                 Z    Pr > |Z|
+
+       NDE+NIE         Natural Direct                -0.1564      0.8142       1.27      0.2050
+                       Natural Indirect               0.1255      0.7131       2.68      0.0073
+       CDE+PE          Controlled Direct             -0.3976      1.4907       1.04      0.2985
+                       Portion Eliminated            -0.7218      1.0533       0.18      0.8558
+       TDE+PIE         Total Direct                  -0.1106      0.9318       1.44      0.1490
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+       NDE+PIE+IMD     Natural Direct                -0.1564      0.8142       1.27      0.2050
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+                       Mediated Interaction          -0.2974      0.4581       0.49      0.6256
+       CDE+PIE+PAI     Controlled Direct             -0.3976      1.4907       1.04      0.2985
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+                       Portion Due to Interaction    -0.7871      0.4673      -0.49      0.6229
+       Four-Way        Controlled Direct             -0.3976      1.4907       1.04      0.2985
+                       Reference Interaction         -1.2330      0.7341      -0.49      0.6230
+                       Mediated Interaction          -0.2974      0.4581       0.49      0.6256
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+       Total           Total Effect                   0.2466      1.1715       2.87      0.0041
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025  10
+
+                                       The CAUSALMED Procedure
+
+                          Percentage Decompositions of Total Effect: CDE@5
+ 
+                                                                                         Bootstrap
+                                                          Bootstrap                      Percentile
+                                                 Standard  Standard     Wald 95%       95% Confidence
+Decomposition Effect                     Percent    Error     Error Confidence Limits      Limits
+
+NDE+NIE       Natural Direct               45.64    24.32    148.28   -2.02     93.31  -42.17   83.03
+              Natural Indirect             54.36    24.32    148.28    6.69    102.02   16.97  142.17
+CDE+PE        Controlled Direct            86.03    76.81    261.58  -64.51    236.57  -82.56  247.64
+              Portion Eliminated           13.97    76.81    261.58 -136.57    164.51 -147.64  182.56
+TDE+PIE       Total Direct                 60.18    29.43    155.77    2.51    117.86  -24.09   96.32
+              Pure Indirect                39.82    29.43    155.77  -17.86     97.49    3.68  124.09
+NDE+PIE+IMD   Natural Direct               45.64    24.32    148.28   -2.02     93.31  -42.17   83.03
+              Pure Indirect                39.82    29.43    155.77  -17.86     97.49    3.68  124.09
+              Mediated Interaction         14.54    30.03     65.71  -44.32     73.40  -45.72   82.18
+CDE+PIE+PAI   Controlled Direct            86.03    76.81    261.58  -64.51    236.57  -82.56  247.64
+              Pure Indirect                39.82    29.43    155.77  -17.86     97.49    3.68  124.09
+              Portion Due to Interaction  -25.84    53.41    159.02 -130.53     78.85 -167.05   79.70
+Four-Way      Controlled Direct            86.03    76.81    261.58  -64.51    236.57  -82.56  247.64
+              Reference Interaction       -40.39    83.23    223.54 -203.52    122.75 -247.80  121.09
+              Mediated Interaction         14.54    30.03     65.71  -44.32     73.40  -45.72   82.18
+              Pure Indirect                39.82    29.43    155.77  -17.86     97.49    3.68  124.09
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+
+                           Percentage Decompositions of Total Effect: CDE@5
+ 
+                     Decomposition Effect                           Z    Pr > |Z|
+
+                     NDE+NIE       Natural Direct                1.88      0.0606
+                                   Natural Indirect              2.24      0.0254
+                     CDE+PE        Controlled Direct             1.12      0.2627
+                                   Portion Eliminated            0.18      0.8557
+                     TDE+PIE       Total Direct                  2.05      0.0408
+                                   Pure Indirect                 1.35      0.1761
+                     NDE+PIE+IMD   Natural Direct                1.88      0.0606
+                                   Pure Indirect                 1.35      0.1761
+                                   Mediated Interaction          0.48      0.6282
+                     CDE+PIE+PAI   Controlled Direct             1.12      0.2627
+                                   Pure Indirect                 1.35      0.1761
+                                   Portion Due to Interaction   -0.48      0.6285
+                     Four-Way      Controlled Direct             1.12      0.2627
+                                   Reference Interaction        -0.49      0.6275
+                                   Mediated Interaction          0.48      0.6282
+                                   Pure Indirect                 1.35      0.1761
+
+                 Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025  11
+
+                                       The CAUSALMED Procedure
+
+                                      Summary of Effects: fit@0
+ 
+                                                 Bootstrap                       Bootstrap
+                                        Standard  Standard     Wald 95%        Percentile 95%
+                               Estimate    Error     Error Confidence Limits Confidence Limits       Z
+
+Total Effect                     0.7140   0.2462    0.2418   0.2314   1.1966   0.2414   1.1873    2.90
+Controlled Direct Effect (CDE)   0.3981   0.2690    0.2516  -0.1290   0.9252 -0.09565   0.8582    1.48
+Natural Direct Effect (NDE)      0.3313   0.2505    0.2528  -0.1597   0.8223  -0.1308   0.8260    1.32
+Natural Indirect Effect (NIE)    0.3827   0.1426    0.1501   0.1031   0.6622   0.1255   0.7131    2.68
+Percentage Mediated             53.5954  23.4343    181.72   7.6651  99.5257  17.2119   137.84    2.29
+Percentage Due to Interaction    4.9866  10.3653   41.8012 -15.3290  25.3023 -16.6780  33.5734    0.48
+Percentage Eliminated           44.2441  23.9482    150.16  -2.6936  91.1817  13.4685   124.04    1.85
+
+                                      Summary of Effects: fit@0
+ 
+                                                              Pr > |Z|
+
+                               Total Effect                     0.0037
+                               Controlled Direct Effect (CDE)   0.1388
+                               Natural Direct Effect (NDE)      0.1860
+                               Natural Indirect Effect (NIE)    0.0073
+                               Percentage Mediated              0.0222
+                               Percentage Due to Interaction    0.6305
+                               Percentage Eliminated            0.0647
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025  12
+
+                                       The CAUSALMED Procedure
+
+                                Decompositions of Total Effect: fit@0
+ 
+                                                                     Bootstrap
+                                                          Standard    Standard        Wald 95% 
+  Decomposition   Effect                       Estimate      Error       Error    Confidence Limits
+
+  NDE+NIE         Natural Direct                 0.3313     0.2505      0.2528    -0.1597     0.8223
+                  Natural Indirect               0.3827     0.1426      0.1501     0.1031     0.6622
+  CDE+PE          Controlled Direct              0.3981     0.2690      0.2516    -0.1290     0.9252
+                  Portion Eliminated             0.3159     0.1479      0.1342    0.02609     0.6057
+  TDE+PIE         Total Direct                   0.4337     0.3052      0.2717    -0.1646     1.0320
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+  NDE+PIE+IMD     Natural Direct                 0.3313     0.2505      0.2528    -0.1597     0.8223
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+                  Mediated Interaction           0.1024     0.2098      0.1844    -0.3088     0.5136
+  CDE+PIE+PAI     Controlled Direct              0.3981     0.2690      0.2516    -0.1290     0.9252
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+                  Portion Due to Interaction    0.03560    0.07450     0.07050    -0.1104     0.1816
+  Four-Way        Controlled Direct              0.3981     0.2690      0.2516    -0.1290     0.9252
+                  Reference Interaction        -0.06677     0.1381      0.1285    -0.3375     0.2040
+                  Mediated Interaction           0.1024     0.2098      0.1844    -0.3088     0.5136
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+  Total           Total Effect                   0.7140     0.2462      0.2418     0.2314     1.1966
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+
+                                Decompositions of Total Effect: fit@0
+ 
+                                                    Bootstrap Percentile
+                                                       95% Confidence
+       Decomposition   Effect                              Limits                 Z    Pr > |Z|
+
+       NDE+NIE         Natural Direct                -0.1308      0.8260       1.32      0.1860
+                       Natural Indirect               0.1255      0.7131       2.68      0.0073
+       CDE+PE          Controlled Direct            -0.09565      0.8582       1.48      0.1388
+                       Portion Eliminated            0.09246      0.6367       2.14      0.0326
+       TDE+PIE         Total Direct                  -0.1169      0.9482       1.42      0.1554
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+       NDE+PIE+IMD     Natural Direct                -0.1308      0.8260       1.32      0.1860
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+                       Mediated Interaction          -0.2974      0.4581       0.49      0.6256
+       CDE+PIE+PAI     Controlled Direct            -0.09565      0.8582       1.48      0.1388
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+                       Portion Due to Interaction    -0.1044      0.1842       0.48      0.6327
+       Four-Way        Controlled Direct            -0.09565      0.8582       1.48      0.1388
+                       Reference Interaction         -0.3264      0.1951      -0.48      0.6289
+                       Mediated Interaction          -0.2974      0.4581       0.49      0.6256
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+       Total           Total Effect                   0.2414      1.1873       2.90      0.0037
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025  13
+
+                                       The CAUSALMED Procedure
+
+                          Percentage Decompositions of Total Effect: fit@0
+ 
+                                                                                         Bootstrap
+                                                          Bootstrap                      Percentile
+                                                 Standard  Standard     Wald 95%       95% Confidence
+Decomposition Effect                     Percent    Error     Error Confidence Limits      Limits
+
+NDE+NIE       Natural Direct               46.40    23.43    181.72    0.47     92.33  -37.84   82.79
+              Natural Indirect             53.60    23.43    181.72    7.67     99.53   17.21  137.84
+CDE+PE        Controlled Direct            55.76    23.95    150.16    8.82    102.69  -24.04   86.53
+              Portion Eliminated           44.24    23.95    150.16   -2.69     91.18   13.47  124.04
+TDE+PIE       Total Direct                 60.74    29.82    118.00    2.30    119.18  -29.83   96.10
+              Pure Indirect                39.26    29.82    118.00  -19.18     97.70    3.90  129.83
+NDE+PIE+IMD   Natural Direct               46.40    23.43    181.72    0.47     92.33  -37.84   82.79
+              Pure Indirect                39.26    29.82    118.00  -19.18     97.70    3.90  129.83
+              Mediated Interaction         14.34    29.20     84.50  -42.89     71.57  -46.72   77.10
+CDE+PIE+PAI   Controlled Direct            55.76    23.95    150.16    8.82    102.69  -24.04   86.53
+              Pure Indirect                39.26    29.82    118.00  -19.18     97.70    3.90  129.83
+              Portion Due to Interaction    4.99    10.37     41.80  -15.33     25.30  -16.68   33.57
+Four-Way      Controlled Direct            55.76    23.95    150.16    8.82    102.69  -24.04   86.53
+              Reference Interaction        -9.35    19.24     46.22  -47.05     28.35  -54.71   31.16
+              Mediated Interaction         14.34    29.20     84.50  -42.89     71.57  -46.72   77.10
+              Pure Indirect                39.26    29.82    118.00  -19.18     97.70    3.90  129.83
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+
+                           Percentage Decompositions of Total Effect: fit@0
+ 
+                     Decomposition Effect                           Z    Pr > |Z|
+
+                     NDE+NIE       Natural Direct                1.98      0.0477
+                                   Natural Indirect              2.29      0.0222
+                     CDE+PE        Controlled Direct             2.33      0.0199
+                                   Portion Eliminated            1.85      0.0647
+                     TDE+PIE       Total Direct                  2.04      0.0416
+                                   Pure Indirect                 1.32      0.1880
+                     NDE+PIE+IMD   Natural Direct                1.98      0.0477
+                                   Pure Indirect                 1.32      0.1880
+                                   Mediated Interaction          0.49      0.6234
+                     CDE+PIE+PAI   Controlled Direct             2.33      0.0199
+                                   Pure Indirect                 1.32      0.1880
+                                   Portion Due to Interaction    0.48      0.6305
+                     Four-Way      Controlled Direct             2.33      0.0199
+                                   Reference Interaction        -0.49      0.6269
+                                   Mediated Interaction          0.49      0.6234
+                                   Pure Indirect                 1.32      0.1880
+
+                 Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025  14
+
+                                       The CAUSALMED Procedure
+
+                                      Summary of Effects: fit@1
+ 
+                                                 Bootstrap                       Bootstrap
+                                        Standard  Standard     Wald 95%        Percentile 95%
+                               Estimate    Error     Error Confidence Limits Confidence Limits       Z
+
+Total Effect                     0.6936   0.2463    0.2450   0.2107   1.1764   0.2307   1.1768    2.82
+Controlled Direct Effect (CDE)   0.3981   0.2690    0.2516  -0.1290   0.9252 -0.09565   0.8582    1.48
+Natural Direct Effect (NDE)      0.3109   0.2588    0.2643  -0.1964   0.8182  -0.1815   0.8410    1.20
+Natural Indirect Effect (NIE)    0.3827   0.1426    0.1501   0.1031   0.6622   0.1255   0.7131    2.68
+Percentage Mediated             55.1742  25.4179    200.18   5.3560   104.99  16.9733   154.31    2.17
+Percentage Due to Interaction    2.1877   5.1899   22.4844  -7.9842  12.3597 -10.5640  19.9668    0.42
+Percentage Eliminated           42.6016  26.4258    234.77  -9.1920  94.3952   8.1367   123.73    1.61
+
+                                      Summary of Effects: fit@1
+ 
+                                                              Pr > |Z|
+
+                               Total Effect                     0.0049
+                               Controlled Direct Effect (CDE)   0.1388
+                               Natural Direct Effect (NDE)      0.2297
+                               Natural Indirect Effect (NIE)    0.0073
+                               Percentage Mediated              0.0300
+                               Percentage Due to Interaction    0.6734
+                               Percentage Eliminated            0.1069
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025  15
+
+                                       The CAUSALMED Procedure
+
+                                Decompositions of Total Effect: fit@1
+ 
+                                                                     Bootstrap
+                                                          Standard    Standard        Wald 95% 
+  Decomposition   Effect                       Estimate      Error       Error    Confidence Limits
+
+  NDE+NIE         Natural Direct                 0.3109     0.2588      0.2643    -0.1964     0.8182
+                  Natural Indirect               0.3827     0.1426      0.1501     0.1031     0.6622
+  CDE+PE          Controlled Direct              0.3981     0.2690      0.2516    -0.1290     0.9252
+                  Portion Eliminated             0.2955     0.1752      0.1508   -0.04788     0.6388
+  TDE+PIE         Total Direct                   0.4133     0.2831      0.2599    -0.1415     0.9680
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+  NDE+PIE+IMD     Natural Direct                 0.3109     0.2588      0.2643    -0.1964     0.8182
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+                  Mediated Interaction           0.1024     0.2098      0.1844    -0.3088     0.5136
+  CDE+PIE+PAI     Controlled Direct              0.3981     0.2690      0.2516    -0.1290     0.9252
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+                  Portion Due to Interaction    0.01517    0.03567     0.04294   -0.05474    0.08509
+  Four-Way        Controlled Direct              0.3981     0.2690      0.2516    -0.1290     0.9252
+                  Reference Interaction        -0.08720     0.1792      0.1601    -0.4384     0.2640
+                  Mediated Interaction           0.1024     0.2098      0.1844    -0.3088     0.5136
+                  Pure Indirect                  0.2803     0.1955      0.1617    -0.1028     0.6634
+  Total           Total Effect                   0.6936     0.2463      0.2450     0.2107     1.1764
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+
+                                Decompositions of Total Effect: fit@1
+ 
+                                                    Bootstrap Percentile
+                                                       95% Confidence
+       Decomposition   Effect                              Limits                 Z    Pr > |Z|
+
+       NDE+NIE         Natural Direct                -0.1815      0.8410       1.20      0.2297
+                       Natural Indirect               0.1255      0.7131       2.68      0.0073
+       CDE+PE          Controlled Direct            -0.09565      0.8582       1.48      0.1388
+                       Portion Eliminated            0.05470      0.6678       1.69      0.0917
+       TDE+PIE         Total Direct                  -0.1011      0.9081       1.46      0.1443
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+       NDE+PIE+IMD     Natural Direct                -0.1815      0.8410       1.20      0.2297
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+                       Mediated Interaction          -0.2974      0.4581       0.49      0.6256
+       CDE+PIE+PAI     Controlled Direct            -0.09565      0.8582       1.48      0.1388
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+                       Portion Due to Interaction   -0.06344      0.1182       0.43      0.6706
+       Four-Way        Controlled Direct            -0.09565      0.8582       1.48      0.1388
+                       Reference Interaction         -0.4135      0.2618      -0.49      0.6265
+                       Mediated Interaction          -0.2974      0.4581       0.49      0.6256
+                       Pure Indirect                 0.03164      0.6728       1.43      0.1516
+       Total           Total Effect                   0.2307      1.1768       2.82      0.0049
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025  16
+
+                                       The CAUSALMED Procedure
+
+                          Percentage Decompositions of Total Effect: fit@1
+ 
+                                                                                         Bootstrap
+                                                          Bootstrap                      Percentile
+                                                 Standard  Standard     Wald 95%       95% Confidence
+Decomposition Effect                     Percent    Error     Error Confidence Limits      Limits
+
+NDE+NIE       Natural Direct               44.83    25.42    200.18   -4.99     94.64  -54.31   83.03
+              Natural Indirect             55.17    25.42    200.18    5.36    104.99   16.97  154.31
+CDE+PE        Controlled Direct            57.40    26.43    234.77    5.60    109.19  -23.73   91.86
+              Portion Eliminated           42.60    26.43    234.77   -9.19     94.40    8.14  123.73
+TDE+PIE       Total Direct                 59.59    29.03    228.58    2.69    116.48  -24.78   95.60
+              Pure Indirect                40.41    29.03    228.58  -16.48     97.31    4.40  124.78
+NDE+PIE+IMD   Natural Direct               44.83    25.42    200.18   -4.99     94.64  -54.31   83.03
+              Pure Indirect                40.41    29.03    228.58  -16.48     97.31    4.40  124.78
+              Mediated Interaction         14.76    30.94    110.16  -45.87     75.40  -43.01   95.18
+CDE+PIE+PAI   Controlled Direct            57.40    26.43    234.77    5.60    109.19  -23.73   91.86
+              Pure Indirect                40.41    29.03    228.58  -16.48     97.31    4.40  124.78
+              Portion Due to Interaction    2.19     5.19     22.48   -7.98     12.36  -10.56   19.97
+Four-Way      Controlled Direct            57.40    26.43    234.77    5.60    109.19  -23.73   91.86
+              Reference Interaction       -12.57    26.46    124.62  -64.44     39.30  -88.18   39.15
+              Mediated Interaction         14.76    30.94    110.16  -45.87     75.40  -43.01   95.18
+              Pure Indirect                40.41    29.03    228.58  -16.48     97.31    4.40  124.78
+
+                Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+
+                           Percentage Decompositions of Total Effect: fit@1
+ 
+                     Decomposition Effect                           Z    Pr > |Z|
+
+                     NDE+NIE       Natural Direct                1.76      0.0778
+                                   Natural Indirect              2.17      0.0300
+                     CDE+PE        Controlled Direct             2.17      0.0299
+                                   Portion Eliminated            1.61      0.1069
+                     TDE+PIE       Total Direct                  2.05      0.0401
+                                   Pure Indirect                 1.39      0.1638
+                     NDE+PIE+IMD   Natural Direct                1.76      0.0778
+                                   Pure Indirect                 1.39      0.1638
+                                   Mediated Interaction          0.48      0.6333
+                     CDE+PIE+PAI   Controlled Direct             2.17      0.0299
+                                   Pure Indirect                 1.39      0.1638
+                                   Portion Due to Interaction    0.42      0.6734
+                     Four-Way      Controlled Direct             2.17      0.0299
+                                   Reference Interaction        -0.48      0.6347
+                                   Mediated Interaction          0.48      0.6333
+                                   Pure Indirect                 1.39      0.1638
+
+                 Note: NDE=CDE+IRF, NIE=PIE+IMD, PAI=IRF+IMD, PE=PAI+PIE, TDE=CDE+PAI.
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025  17
+
+                                       The CAUSALMED Procedure
+
+                                       Outcome Model Estimates
+ 
+                                   Standard          Wald 95%                Wald
+     Parameter         Estimate       Error      Confidence Limits     Chi-Square      Pr > ChiSq
+
+     Intercept           1.7327      0.5219      0.7097      2.7557       11.0210          0.0009
+     fit                 0.2622      0.2027     -0.1350      0.6595        1.6743          0.1957
+     xb           1     0.05073      0.6493     -1.2219      1.3234        0.0061          0.9377
+     xb           0           0           .           .           .         .               .    
+     m                   0.3039      0.1962    -0.08069      0.6884        2.3985          0.1215
+     m*xb         1      0.1110      0.2256     -0.3311      0.5531        0.2421          0.6227
+     m*xb         0           0           .           .           .         .               .    
+     Scale               1.0012     0.07079      0.8716      1.1500                              
+                                      Chapter 14: Proc Causalmed     13:17 Thursday, July 10, 2025  18
+
+                                       The CAUSALMED Procedure
+
+                                       Mediator Model Estimates
+ 
+                                   Standard          Wald 95%                Wald
+     Parameter         Estimate       Error      Confidence Limits     Chi-Square      Pr > ChiSq
+
+     Intercept           2.5284      0.2333      2.0711      2.9857      117.4363          <.0001
+     fit                -0.1841      0.2104     -0.5964      0.2282        0.7657          0.3815
+     xb           1      0.9225      0.2429      0.4464      1.3985       14.4246          0.0001
+     xb           0           0           .           .           .         .               .    
+     Scale               1.0516     0.07436      0.9155      1.2080                              

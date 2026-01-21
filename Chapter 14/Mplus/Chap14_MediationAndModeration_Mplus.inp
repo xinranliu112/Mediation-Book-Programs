@@ -1,0 +1,41 @@
+title:      Chapter 14 Mediation and Moderation;
+data:       FILE IS "Chap14_MedModContWater.txt";
+
+variable:   NAMES ARE obs z x m y;
+            USEVAR ARE y zx zm meanx meanm meanz ;
+             
+define:     meanx=x-70.13; meanm=m-3.13; meanz=z-47.32;
+            zx=meanz*meanx; zm=meanz*meanm;
+
+analysis:   ESTIMATOR IS ml;
+            TYPE IS general;
+            
+model:      [Y] (i2); 
+            y on meanm (b1) ; 
+            y on meanx (cp1); 
+            y on meanz (cp2); 
+            y on zx (cp3); 
+            y on zm (b2);
+            [meanm] (i3); 
+            meanm on meanx (a);
+            meanm on meanz (a2); 
+            meanm on zx (a3);
+
+            model indirect: y ind meanx;
+  
+            model constraint:
+            new(lowz medz highz slowz smedz shighz);
+            lowz=-17.249; medz=0; highz=17.249;!Specifies Values of z to compute simple slopes;
+            slowz=a+a3*lowz;
+            smedz=a+a3*medz;
+            shighz=a+a3*highz; !Calculates simple slopes;
+
+            Plot(low med high);
+            loop(XX,-2, 2,.5);
+            low=(i3 + a2*lowz) + (a + a3*lowz)*xx;
+            med=(i3 + a2*medz) + (a + a3*medz)*xx;
+            high=0+(i3 + a2*highz) + (a +a3*highz)*xx;
+
+Plot:       Type=plot2;
+ 
+output:     sampstat tech1 tech3 cinterval;

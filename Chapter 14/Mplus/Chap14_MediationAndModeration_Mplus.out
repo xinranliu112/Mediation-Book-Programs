@@ -1,0 +1,774 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+07/10/2025   1:07 PM
+
+INPUT INSTRUCTIONS
+
+  title:      Chapter 14 Mediation and Moderation;
+  data:       FILE IS "Chap14_MedModContWater.txt";
+
+  variable:   NAMES ARE obs z x m y;
+              USEVAR ARE y zx zm meanx meanm meanz ;
+
+  define:     meanx=x-70.13; meanm=m-3.13; meanz=z-47.32;
+              zx=meanz*meanx; zm=meanz*meanm;
+
+  analysis:   ESTIMATOR IS ml;
+              TYPE IS general;
+
+  model:      [Y] (i2);
+              y on meanm (b1) ;
+              y on meanx (cp1);
+              y on meanz (cp2);
+              y on zx (cp3);
+              y on zm (b2);
+              [meanm] (i3);
+              meanm on meanx (a);
+              meanm on meanz (a2);
+              meanm on zx (a3);
+
+              model indirect: y ind meanx;
+
+              model constraint:
+              new(lowz medz highz slowz smedz shighz);
+              lowz=-17.249; medz=0; highz=17.249;!Specifies Values of z to compute simple sl
+              slowz=a+a3*lowz;
+              smedz=a+a3*medz;
+              shighz=a+a3*highz; !Calculates simple slopes;
+
+              Plot(low med high);
+              loop(XX,-2, 2,.5);
+              low=(i3 + a2*lowz) + (a + a3*lowz)*xx;
+              med=(i3 + a2*medz) + (a + a3*medz)*xx;
+              high=0+(i3 + a2*highz) + (a +a3*highz)*xx;
+
+  Plot:       Type=plot2;
+
+  output:     sampstat tech1 tech3 cinterval;
+
+
+
+*** WARNING
+  Input line exceeded 90 characters. Some input may be truncated.
+              lowz=-17.249; medz=0; highz=17.249;!Specifies Values of z to compute simple slo
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Chapter 14 Mediation and Moderation;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         100
+
+Number of dependent variables                                    2
+Number of independent variables                                  4
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   Y           MEANM
+
+Observed independent variables
+   ZX          ZM          MEANX       MEANZ
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  Chap14_MedModContWater.txt
+
+Input data format  FREE
+
+
+SAMPLE STATISTICS
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+                3.130         0.000         0.798        -0.782         0.000
+
+
+           Means
+              MEANZ
+              ________
+                0.000
+
+
+           Covariances
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y              1.273
+ MEANM          0.543         1.273
+ ZX             1.318        -1.392        71.455
+ ZM             0.262        -2.410        30.762        93.519
+ MEANX          0.353         0.513         1.756        -1.392         1.033
+ MEANZ          0.848        -0.782         5.487         3.898         0.798
+
+
+           Covariances
+              MEANZ
+              ________
+ MEANZ         74.378
+
+
+           Correlations
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y              1.000
+ MEANM          0.427         1.000
+ ZX             0.138        -0.146         1.000
+ ZM             0.024        -0.221         0.376         1.000
+ MEANX          0.308         0.447         0.204        -0.142         1.000
+ MEANZ          0.087        -0.080         0.075         0.047         0.091
+
+
+           Correlations
+              MEANZ
+              ________
+ MEANZ          1.000
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Y                     3.130      -0.048       1.000    8.00%       2.000      3.000      3.000
+             100.000       1.273      -0.707       5.000   13.00%       3.000      4.000
+     MEANM                 0.000      -0.090      -2.130    8.00%      -1.130     -0.130     -0.130
+             100.000       1.273      -0.762       1.870   12.00%      -0.130      0.870
+     ZX                    0.798       0.141     -21.008    1.00%      -6.368     -0.738      0.757
+             100.000      71.455       1.080      26.242    1.00%       1.342      8.272
+     ZM                   -0.782      -0.264     -24.908    2.00%      -7.548     -1.388     -0.673
+             100.000      93.519       0.163      26.242    1.00%       0.952      7.552
+     MEANX                 0.000      -0.205      -3.130    1.00%      -1.130     -0.130     -0.130
+             100.000       1.033       0.351       2.870    1.00%      -0.130      0.870
+     MEANZ                 0.000       0.048     -13.320    5.00%      -8.320     -5.320      0.180
+             100.000      74.378      -1.450      15.680    1.00%       4.680      7.680
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       12
+
+Loglikelihood
+
+          H0 Value                        -278.280
+          H1 Value                        -278.039
+
+Information Criteria
+
+          Akaike (AIC)                     580.560
+          Bayesian (BIC)                   611.822
+          Sample-Size Adjusted BIC         573.923
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.482
+          Degrees of Freedom                     1
+          P-Value                           0.4875
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.233
+          Probability RMSEA <= .05           0.539
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             59.789
+          Degrees of Freedom                     9
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.016
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ Y        ON
+    MEANM              0.435      0.102      4.256      0.000
+    MEANX              0.093      0.116      0.797      0.425
+    MEANZ              0.013      0.012      1.131      0.258
+    ZX                 0.020      0.013      1.499      0.134
+    ZM                 0.008      0.011      0.727      0.467
+
+ MEANM    ON
+    MEANX              0.562      0.097      5.789      0.000
+    MEANZ             -0.014      0.011     -1.261      0.207
+    ZX                -0.032      0.012     -2.761      0.006
+
+ Intercepts
+    Y                  3.120      0.100     31.342      0.000
+    MEANM              0.026      0.097      0.266      0.790
+
+ Residual Variances
+    Y                  0.965      0.136      7.071      0.000
+    MEANM              0.929      0.131      7.071      0.000
+
+New/Additional Parameters
+    LOWZ             -17.249      0.000      0.000      1.000
+    MEDZ               0.000      0.000      0.000      1.000
+    HIGHZ             17.249      0.000      0.000      1.000
+    SLOWZ              1.118      0.240      4.654      0.000
+    SMEDZ              0.562      0.097      5.789      0.000
+    SHIGHZ             0.007      0.205      0.033      0.974
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.830E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from MEANX to Y
+
+  Total                0.337      0.110      3.052      0.002
+  Total indirect       0.245      0.071      3.429      0.001
+
+  Specific indirect 1
+    Y
+    MEANM
+    MEANX              0.245      0.071      3.429      0.001
+
+  Direct
+    Y
+    MEANX              0.093      0.116      0.797      0.425
+
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ Y        ON
+    MEANM            0.172       0.235       0.267       0.435       0.603       0.635       0.698
+    MEANX           -0.207      -0.135      -0.099       0.093       0.284       0.321       0.392
+    MEANZ           -0.017      -0.010      -0.006       0.013       0.032       0.036       0.043
+    ZX              -0.014      -0.006      -0.002       0.020       0.042       0.046       0.055
+    ZM              -0.021      -0.014      -0.010       0.008       0.027       0.030       0.037
+
+ MEANM    ON
+    MEANX            0.312       0.372       0.403       0.562       0.722       0.753       0.813
+    MEANZ           -0.043      -0.036      -0.033      -0.014       0.004       0.008       0.015
+    ZX              -0.062      -0.055      -0.051      -0.032      -0.013      -0.009      -0.002
+
+ Intercepts
+    Y                2.864       2.925       2.957       3.120       3.284       3.316       3.377
+    MEANM           -0.224      -0.164      -0.134       0.026       0.185       0.215       0.275
+
+ Residual Variances
+    Y                0.613       0.697       0.740       0.965       1.189       1.232       1.316
+    MEANM            0.590       0.671       0.713       0.929       1.145       1.186       1.267
+
+New/Additional Parameters
+    LOWZ           -17.249     -17.249     -17.249     -17.249     -17.249     -17.249     -17.249
+    MEDZ             0.000       0.000       0.000       0.000       0.000       0.000       0.000
+    HIGHZ           17.249      17.249      17.249      17.249      17.249      17.249      17.249
+    SLOWZ            0.499       0.647       0.723       1.118       1.513       1.589       1.737
+    SMEDZ            0.312       0.372       0.403       0.562       0.722       0.753       0.813
+    SHIGHZ          -0.522      -0.396      -0.331       0.007       0.344       0.409       0.536
+
+
+CONFIDENCE INTERVALS OF TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from MEANX to Y
+
+  Total              0.053       0.121       0.155       0.337       0.519       0.554       0.622
+  Total indirect     0.061       0.105       0.127       0.245       0.362       0.384       0.428
+
+  Specific indirect 1
+    Y
+    MEANM
+    MEANX            0.061       0.105       0.127       0.245       0.362       0.384       0.428
+
+  Direct
+    Y
+    MEANX           -0.207      -0.135      -0.099       0.093       0.284       0.321       0.392
+
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+                  0             0             0             0             0
+
+
+           NU
+              MEANZ
+              ________
+                  0
+
+
+           LAMBDA
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y                  0             0             0             0             0
+ MEANM              0             0             0             0             0
+ ZX                 0             0             0             0             0
+ ZM                 0             0             0             0             0
+ MEANX              0             0             0             0             0
+ MEANZ              0             0             0             0             0
+
+
+           LAMBDA
+              MEANZ
+              ________
+ Y                  0
+ MEANM              0
+ ZX                 0
+ ZM                 0
+ MEANX              0
+ MEANZ              0
+
+
+           THETA
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y                  0
+ MEANM              0             0
+ ZX                 0             0             0
+ ZM                 0             0             0             0
+ MEANX              0             0             0             0             0
+ MEANZ              0             0             0             0             0
+
+
+           THETA
+              MEANZ
+              ________
+ MEANZ              0
+
+
+           ALPHA
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+                  1             2             0             0             0
+
+
+           ALPHA
+              MEANZ
+              ________
+                  0
+
+
+           BETA
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y                  0             3             4             5             6
+ MEANM              0             0             8             0             9
+ ZX                 0             0             0             0             0
+ ZM                 0             0             0             0             0
+ MEANX              0             0             0             0             0
+ MEANZ              0             0             0             0             0
+
+
+           BETA
+              MEANZ
+              ________
+ Y                  7
+ MEANM             10
+ ZX                 0
+ ZM                 0
+ MEANX              0
+ MEANZ              0
+
+
+           PSI
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y                 11
+ MEANM              0            12
+ ZX                 0             0             0
+ ZM                 0             0             0             0
+ MEANX              0             0             0             0             0
+ MEANZ              0             0             0             0             0
+
+
+           PSI
+              MEANZ
+              ________
+ MEANZ              0
+
+
+     PARAMETER SPECIFICATION FOR THE ADDITIONAL PARAMETERS
+
+
+           New/Additional Parameters
+              LOWZ          MEDZ          HIGHZ         SLOWZ         SMEDZ
+              ________      ________      ________      ________      ________
+                   13            14            15            16            17
+
+
+           New/Additional Parameters
+              SHIGHZ        LOW           MED           HIGH          XX
+              ________      ________      ________      ________      ________
+                   18            19            20            21            22
+
+
+     STARTING VALUES
+
+
+           NU
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           NU
+              MEANZ
+              ________
+                0.000
+
+
+           LAMBDA
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y              1.000         0.000         0.000         0.000         0.000
+ MEANM          0.000         1.000         0.000         0.000         0.000
+ ZX             0.000         0.000         1.000         0.000         0.000
+ ZM             0.000         0.000         0.000         1.000         0.000
+ MEANX          0.000         0.000         0.000         0.000         1.000
+ MEANZ          0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              MEANZ
+              ________
+ Y              0.000
+ MEANM          0.000
+ ZX             0.000
+ ZM             0.000
+ MEANX          0.000
+ MEANZ          1.000
+
+
+           THETA
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y              0.000
+ MEANM          0.000         0.000
+ ZX             0.000         0.000         0.000
+ ZM             0.000         0.000         0.000         0.000
+ MEANX          0.000         0.000         0.000         0.000         0.000
+ MEANZ          0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              MEANZ
+              ________
+ MEANZ          0.000
+
+
+           ALPHA
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+                3.130         0.000         0.798        -0.782         0.000
+
+
+           ALPHA
+              MEANZ
+              ________
+                0.000
+
+
+           BETA
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y              0.000         0.000         0.000         0.000         0.000
+ MEANM          0.000         0.000         0.000         0.000         0.000
+ ZX             0.000         0.000         0.000         0.000         0.000
+ ZM             0.000         0.000         0.000         0.000         0.000
+ MEANX          0.000         0.000         0.000         0.000         0.000
+ MEANZ          0.000         0.000         0.000         0.000         0.000
+
+
+           BETA
+              MEANZ
+              ________
+ Y              0.000
+ MEANM          0.000
+ ZX             0.000
+ ZM             0.000
+ MEANX          0.000
+ MEANZ          0.000
+
+
+           PSI
+              Y             MEANM         ZX            ZM            MEANX
+              ________      ________      ________      ________      ________
+ Y              0.637
+ MEANM          0.000         0.637
+ ZX             0.000         0.000        71.455
+ ZM             0.000         0.000        30.762        93.519
+ MEANX          0.000         0.000         1.756        -1.392         1.033
+ MEANZ          0.000         0.000         5.487         3.898         0.798
+
+
+           PSI
+              MEANZ
+              ________
+ MEANZ         74.378
+
+
+     STARTING VALUES FOR THE ADDITIONAL PARAMETERS
+
+
+           New/Additional Parameters
+              LOWZ          MEDZ          HIGHZ         SLOWZ         SMEDZ
+              ________      ________      ________      ________      ________
+                0.500         0.500         0.500         0.500         0.500
+
+
+           New/Additional Parameters
+              SHIGHZ        LOW           MED           HIGH          XX
+              ________      ________      ________      ________      ________
+                0.500         0.500         0.500         0.500        -2.000
+
+
+TECHNICAL 3 OUTPUT
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+      1     0.991199D-02
+      2    -0.630424D-18  0.937309D-02
+      3    -0.174827D-03  0.185815D-18  0.104367D-01
+      4    -0.189550D-03  0.838188D-20  0.297559D-03  0.179442D-03
+      5     0.147620D-03  0.143229D-19  0.802768D-04 -0.592167D-04  0.128379D-03
+      6     0.609613D-03 -0.828525D-19 -0.569301D-02 -0.531634D-03  0.236895D-03
+      7    -0.213458D-05  0.247166D-20  0.144629D-03 -0.129993D-05 -0.405891D-05
+      8    -0.138970D-19 -0.108653D-03 -0.242878D-18 -0.966315D-20 -0.252455D-19
+      9     0.170748D-18  0.180026D-03  0.266613D-17 -0.484032D-19  0.165032D-18
+     10    -0.285530D-20  0.608259D-05 -0.335152D-19  0.139154D-20 -0.236631D-20
+     11     0.307905D-08 -0.514426D-19 -0.275422D-07  0.161047D-08  0.341147D-08
+     12     0.120533D-18  0.222468D-07  0.955723D-18 -0.105823D-18  0.461190D-19
+     13     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+     14     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+     15     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+     16     0.410458D-18  0.205419D-02  0.685553D-17  0.118276D-18  0.600492D-18
+     17     0.170748D-18  0.180026D-03  0.266613D-17 -0.484032D-19  0.165032D-18
+     18    -0.689614D-19 -0.169414D-02 -0.152327D-17 -0.215083D-18 -0.270428D-18
+     19     0.239743D-18  0.133766D-01  0.144750D-16  0.220932D-18  0.125612D-17
+     20    -0.288927D-18  0.973314D-02  0.551807D-17 -0.884246D-19  0.344386D-18
+     21    -0.817598D-18  0.608973D-02 -0.343883D-17 -0.397781D-18 -0.567350D-18
+     22     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+      6     0.135244D-01
+      7    -0.178200D-03  0.133421D-03
+      8     0.973289D-19 -0.281190D-20  0.136089D-03
+      9    -0.218638D-17  0.215536D-19 -0.225483D-03  0.943760D-02
+     10    -0.602935D-19 -0.591811D-20 -0.761847D-05 -0.846739D-04  0.126325D-03
+     11     0.930739D-08  0.300312D-09  0.644327D-19  0.397632D-18  0.404976D-19
+     12     0.549879D-19 -0.204305D-20 -0.561291D-09  0.198012D-07  0.153948D-09
+     13     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+     14     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+     15     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+     16    -0.386520D-17  0.700561D-19 -0.257288D-02  0.133270D-01  0.467371D-04
+     17    -0.218638D-17  0.215536D-19 -0.225483D-03  0.943760D-02 -0.846739D-04
+     18    -0.507550D-18 -0.269488D-19  0.212192D-02  0.554825D-02 -0.216085D-03
+     19    -0.677326D-17  0.244665D-18 -0.512301D-02  0.282945D-01 -0.207942D-02
+     20    -0.445561D-17  0.455789D-19 -0.559619D-03  0.190552D-01 -0.163265D-03
+     21    -0.213796D-17 -0.153508D-18  0.400377D-02  0.981598D-02  0.175289D-02
+     22     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                 11            12            13            14            15
+              ________      ________      ________      ________      ________
+     11     0.186062D-01
+     12     0.570037D-18  0.172472D-01
+     13     0.000000D+00  0.000000D+00  0.000000D+00
+     14     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+     15     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+     16    -0.713767D-18  0.294829D-07  0.000000D+00  0.000000D+00  0.000000D+00
+     17     0.397632D-18  0.198012D-07  0.000000D+00  0.000000D+00  0.000000D+00
+     18     0.150903D-17  0.101195D-07  0.000000D+00  0.000000D+00  0.000000D+00
+     19    -0.217752D-17  0.785572D-07  0.000000D+00  0.000000D+00  0.000000D+00
+     20     0.743821D-18  0.618492D-07  0.000000D+00  0.000000D+00  0.000000D+00
+     21     0.366516D-17  0.451413D-07  0.000000D+00  0.000000D+00  0.000000D+00
+     22     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                 16            17            18            19            20
+              ________      ________      ________      ________      ________
+     16     0.577066D-01
+     17     0.133270D-01  0.943760D-02
+     18    -0.310527D-01  0.554825D-02  0.421492D-01
+     19     0.116661D+00  0.282945D-01 -0.600723D-01  0.282567D+00
+     20     0.287081D-01  0.190552D-01  0.940236D-02  0.699655D-01  0.478436D-01
+     21    -0.592450D-01  0.981598D-02  0.788770D-01 -0.142636D+00  0.257217D-01
+     22     0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00  0.000000D+00
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                 21            22
+              ________      ________
+     21     0.194079D+00
+     22     0.000000D+00  0.100000D-11
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+      1         1.000
+      2         0.000         1.000
+      3        -0.017         0.000         1.000
+      4        -0.142         0.000         0.217         1.000
+      5         0.131         0.000         0.069        -0.390         1.000
+      6         0.053         0.000        -0.479        -0.341         0.180
+      7        -0.002         0.000         0.123        -0.008        -0.031
+      8         0.000        -0.096         0.000         0.000         0.000
+      9         0.000         0.019         0.000         0.000         0.000
+     10         0.000         0.006         0.000         0.000         0.000
+     11         0.000         0.000         0.000         0.000         0.000
+     12         0.000         0.000         0.000         0.000         0.000
+     13         0.000         0.000         0.000         0.000         0.000
+     14         0.000         0.000         0.000         0.000         0.000
+     15         0.000         0.000         0.000         0.000         0.000
+     16         0.000         0.088         0.000         0.000         0.000
+     17         0.000         0.019         0.000         0.000         0.000
+     18         0.000        -0.085         0.000         0.000         0.000
+     19         0.000         0.260         0.000         0.000         0.000
+     20         0.000         0.460         0.000         0.000         0.000
+     21         0.000         0.143         0.000         0.000         0.000
+     22         0.000         0.000         0.000         0.000         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+      6         1.000
+      7        -0.133         1.000
+      8         0.000         0.000         1.000
+      9         0.000         0.000        -0.199         1.000
+     10         0.000         0.000        -0.058        -0.078         1.000
+     11         0.000         0.000         0.000         0.000         0.000
+     12         0.000         0.000         0.000         0.000         0.000
+     13         0.000         0.000         0.000         0.000         0.000
+     14         0.000         0.000         0.000         0.000         0.000
+     15         0.000         0.000         0.000         0.000         0.000
+     16         0.000         0.000        -0.918         0.571         0.017
+     17         0.000         0.000        -0.199         1.000        -0.078
+     18         0.000         0.000         0.886         0.278        -0.094
+     19         0.000         0.000        -0.826         0.548        -0.348
+     20         0.000         0.000        -0.219         0.897        -0.066
+     21         0.000         0.000         0.779         0.229         0.354
+     22         0.000         0.000         0.000         0.000         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                 11            12            13            14            15
+              ________      ________      ________      ________      ________
+     11         1.000
+     12         0.000         1.000
+     13         0.000         0.000         0.000
+     14         0.000         0.000         0.000         0.000
+     15         0.000         0.000         0.000         0.000         0.000
+     16         0.000         0.000         0.000         0.000         0.000
+     17         0.000         0.000         0.000         0.000         0.000
+     18         0.000         0.000         0.000         0.000         0.000
+     19         0.000         0.000         0.000         0.000         0.000
+     20         0.000         0.000         0.000         0.000         0.000
+     21         0.000         0.000         0.000         0.000         0.000
+     22         0.000         0.000         0.000         0.000         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                 16            17            18            19            20
+              ________      ________      ________      ________      ________
+     16         1.000
+     17         0.571         1.000
+     18        -0.630         0.278         1.000
+     19         0.914         0.548        -0.550         1.000
+     20         0.546         0.897         0.209         0.602         1.000
+     21        -0.560         0.229         0.872        -0.609         0.267
+     22         0.000         0.000         0.000         0.000         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                 21            22
+              ________      ________
+     21         1.000
+     22         0.000         1.000
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Loop plots
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\onedrive\desktop\mediation book programs\chapter 14\mplus\chap14_mediationandmoderation_mplus.dgm
+
+     Beginning Time:  13:07:10
+        Ending Time:  13:07:10
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen
