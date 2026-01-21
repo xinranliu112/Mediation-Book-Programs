@@ -1,0 +1,35 @@
+  TITLE: 
+        Chapter 16 LGC Model;
+  DATA:
+        FILE IS Chap16_ATLASBtoE.csv;
+
+  VARIABLE:
+        Names = group intent nutrit sever media
+        cintent cnutrit csever cmedia dintent dnutrit
+        dsever dmedia eintent enutrit esever emedia;
+        Missing = *;
+        Usevariables= group media cmedia dmedia emedia 
+        nutrit cnutrit dnutrit enutrit;
+  ANALYSIS:
+        iteration=50000;
+        convergence=.000001;
+	    coverage=.05;
+        h1convergence=.000001;
+  MODEL:
+      i1 by media@1 Cmedia@1 Dmedia@1 Emedia@1;
+      s1 by media@0 Cmedia@.3 Dmedia@1 Emedia@1.3;
+      s3 by media@0 Cmedia@1 Dmedia@1 Emedia@1;
+      
+      i2 by nutrit@1 Cnutrit@1 Dnutrit@1 Enutrit@1;
+      s2 by nutrit@0 Cnutrit@.3 Dnutrit@1 Enutrit@1.3;
+      s4 by nutrit@0 Cnutrit@1 Dnutrit@1 Enutrit@1;
+
+      s1 on i2;
+      s2 on i1 s3 group;
+      s3 on i2 group;
+      s4 on s3 i1 group;
+      
+      [media@0 Cmedia@0 Dmedia@0 Emedia@0 
+      nutrit@0 Cnutrit@0 Dnutrit@0 Enutrit@0 
+      i1-s4];
+  OUTPUT:

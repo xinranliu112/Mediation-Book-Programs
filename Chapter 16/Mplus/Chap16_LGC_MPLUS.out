@@ -1,0 +1,346 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+07/10/2025   2:29 PM
+
+INPUT INSTRUCTIONS
+
+    TITLE:
+          Chapter 16 LGC Model;
+    DATA:
+          FILE IS Chap16_ATLASBtoE.csv;
+
+    VARIABLE:
+          Names = group intent nutrit sever media
+          cintent cnutrit csever cmedia dintent dnutrit
+          dsever dmedia eintent enutrit esever emedia;
+          Missing = *;
+          Usevariables= group media cmedia dmedia emedia
+          nutrit cnutrit dnutrit enutrit;
+    ANALYSIS:
+          iteration=50000;
+          convergence=.000001;
+  	    coverage=.05;
+          h1convergence=.000001;
+    MODEL:
+        i1 by media@1 Cmedia@1 Dmedia@1 Emedia@1;
+        s1 by media@0 Cmedia@.3 Dmedia@1 Emedia@1.3;
+        s3 by media@0 Cmedia@1 Dmedia@1 Emedia@1;
+
+        i2 by nutrit@1 Cnutrit@1 Dnutrit@1 Enutrit@1;
+        s2 by nutrit@0 Cnutrit@.3 Dnutrit@1 Enutrit@1.3;
+        s4 by nutrit@0 Cnutrit@1 Dnutrit@1 Enutrit@1;
+
+        s1 on i2;
+        s2 on i1 s3 group;
+        s3 on i2 group;
+        s4 on s3 i1 group;
+
+        [media@0 Cmedia@0 Dmedia@0 Emedia@0
+        nutrit@0 Cnutrit@0 Dnutrit@0 Enutrit@0
+        i1-s4];
+    OUTPUT:
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables except
+  x-variables.  These cases were not included in the analysis.
+  Number of cases with missing on all variables except x-variables:  4
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Chapter 16 LGC Model;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        1502
+
+Number of dependent variables                                    8
+Number of independent variables                                  1
+Number of continuous latent variables                            6
+
+Observed dependent variables
+
+  Continuous
+   MEDIA       CMEDIA      DMEDIA      EMEDIA      NUTRIT      CNUTRIT
+   DNUTRIT     ENUTRIT
+
+Observed independent variables
+   GROUP
+
+Continuous latent variables
+   I1          S1          S3          I2          S2          S4
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                 50000
+Convergence criterion                                    0.100D-05
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-05
+
+Input data file(s)
+  Chap16_ATLASBtoE.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            20
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.050
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              MEDIA         CMEDIA        DMEDIA        EMEDIA        NUTRIT
+              ________      ________      ________      ________      ________
+ MEDIA          0.975
+ CMEDIA         0.780         0.804
+ DMEDIA         0.557         0.498         0.571
+ EMEDIA         0.322         0.296         0.326         0.332
+ NUTRIT         0.975         0.781         0.558         0.323         0.977
+ CNUTRIT        0.782         0.804         0.500         0.298         0.784
+ DNUTRIT        0.561         0.502         0.571         0.328         0.562
+ ENUTRIT        0.324         0.298         0.327         0.332         0.324
+ GROUP          0.975         0.804         0.571         0.332         0.977
+
+
+           Covariance Coverage
+              CNUTRIT       DNUTRIT       ENUTRIT       GROUP
+              ________      ________      ________      ________
+ CNUTRIT        0.806
+ DNUTRIT        0.504         0.575
+ ENUTRIT        0.299         0.329         0.333
+ GROUP          0.806         0.575         0.333         1.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     MEDIA                 2.764       0.361       1.000   14.27%       1.333      2.333      2.667
+            1465.000       1.566      -0.273       7.000    0.61%       3.000      4.000
+     CMEDIA                2.564       0.408       1.000   25.10%       1.000      2.000      2.333
+            1207.000       1.758      -0.656       7.000    0.41%       3.000      4.000
+     DMEDIA                2.580       0.459       1.000   24.85%       1.000      2.000      2.333
+             857.000       1.798      -0.481       7.000    0.82%       3.000      4.000
+     EMEDIA                2.500       0.475       1.000   32.73%       1.000      1.667      2.333
+             498.000       1.970      -0.689       7.000    0.80%       3.000      4.000
+     NUTRIT                3.970      -0.035       1.000    0.68%       3.000      3.857      4.000
+            1467.000       1.271       0.009       7.000    0.55%       4.143      4.857
+     CNUTRIT               4.171       0.037       1.000    0.41%       3.286      4.000      4.143
+            1211.000       1.235       0.264       7.000    0.99%       4.429      5.000
+     DNUTRIT               4.081       0.131       1.000    0.58%       3.143      4.000      4.000
+             863.000       1.335       0.226       7.000    1.51%       4.286      4.857
+     ENUTRIT               4.151      -0.110       1.000    0.80%       3.286      4.000      4.143
+             500.000       1.329       0.303       7.000    0.80%       4.286      5.000
+     GROUP                 0.465       0.139       0.000   53.46%       0.000      0.000      0.000
+            1502.000       0.249      -1.981       1.000   46.54%       1.000      1.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       33
+
+Loglikelihood
+
+          H0 Value                      -12038.781
+          H1 Value                      -12017.639
+
+Information Criteria
+
+          Akaike (AIC)                   24143.562
+          Bayesian (BIC)                 24318.942
+          Sample-Size Adjusted BIC       24214.110
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             42.283
+          Degrees of Freedom                    19
+          P-Value                           0.0016
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.029
+          90 Percent C.I.                    0.017  0.040
+          Probability RMSEA <= .05           0.999
+
+CFI/TLI
+
+          CFI                                0.988
+          TLI                                0.978
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           2037.965
+          Degrees of Freedom                    36
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.032
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ I1       BY
+    MEDIA              1.000      0.000    999.000    999.000
+    CMEDIA             1.000      0.000    999.000    999.000
+    DMEDIA             1.000      0.000    999.000    999.000
+    EMEDIA             1.000      0.000    999.000    999.000
+
+ S1       BY
+    MEDIA              0.000      0.000    999.000    999.000
+    CMEDIA             0.300      0.000    999.000    999.000
+    DMEDIA             1.000      0.000    999.000    999.000
+    EMEDIA             1.300      0.000    999.000    999.000
+
+ S3       BY
+    MEDIA              0.000      0.000    999.000    999.000
+    CMEDIA             1.000      0.000    999.000    999.000
+    DMEDIA             1.000      0.000    999.000    999.000
+    EMEDIA             1.000      0.000    999.000    999.000
+
+ I2       BY
+    NUTRIT             1.000      0.000    999.000    999.000
+    CNUTRIT            1.000      0.000    999.000    999.000
+    DNUTRIT            1.000      0.000    999.000    999.000
+    ENUTRIT            1.000      0.000    999.000    999.000
+
+ S2       BY
+    NUTRIT             0.000      0.000    999.000    999.000
+    CNUTRIT            0.300      0.000    999.000    999.000
+    DNUTRIT            1.000      0.000    999.000    999.000
+    ENUTRIT            1.300      0.000    999.000    999.000
+
+ S4       BY
+    NUTRIT             0.000      0.000    999.000    999.000
+    CNUTRIT            1.000      0.000    999.000    999.000
+    DNUTRIT            1.000      0.000    999.000    999.000
+    ENUTRIT            1.000      0.000    999.000    999.000
+
+ S1       ON
+    I2                -0.012      0.078     -0.152      0.879
+
+ S2       ON
+    I1                -0.159      0.065     -2.458      0.014
+    S3                -0.225      0.362     -0.622      0.534
+
+ S3       ON
+    I2                -0.128      0.067     -1.901      0.057
+
+ S4       ON
+    S3                 0.832      0.428      1.942      0.052
+    I1                -0.060      0.062     -0.976      0.329
+
+ S2       ON
+    GROUP             -0.418      0.210     -1.989      0.047
+
+ S3       ON
+    GROUP             -0.542      0.058     -9.405      0.000
+
+ S4       ON
+    GROUP              0.952      0.247      3.861      0.000
+
+ I2       WITH
+    I1                 0.208      0.038      5.524      0.000
+
+ S2       WITH
+    S1                 0.131      0.057      2.309      0.021
+
+ S4       WITH
+    S1                -0.091      0.059     -1.556      0.120
+    S2                -0.210      0.191     -1.099      0.272
+
+ Means
+    I1                 2.766      0.033     84.857      0.000
+    I2                 3.967      0.029    135.325      0.000
+
+ Intercepts
+    MEDIA              0.000      0.000    999.000    999.000
+    CMEDIA             0.000      0.000    999.000    999.000
+    DMEDIA             0.000      0.000    999.000    999.000
+    EMEDIA             0.000      0.000    999.000    999.000
+    NUTRIT             0.000      0.000    999.000    999.000
+    CNUTRIT            0.000      0.000    999.000    999.000
+    DNUTRIT            0.000      0.000    999.000    999.000
+    ENUTRIT            0.000      0.000    999.000    999.000
+    S1                 0.042      0.314      0.134      0.893
+    S3                 0.575      0.273      2.108      0.035
+    S2                 0.506      0.186      2.724      0.006
+    S4                 0.115      0.188      0.610      0.542
+
+ Variances
+    I1                 0.708      0.046     15.351      0.000
+    I2                 0.757      0.076      9.947      0.000
+
+ Residual Variances
+    MEDIA              0.857      0.049     17.608      0.000
+    CMEDIA             0.811      0.055     14.800      0.000
+    DMEDIA             0.866      0.062     13.885      0.000
+    EMEDIA             0.867      0.091      9.528      0.000
+    NUTRIT             0.513      0.073      7.063      0.000
+    CNUTRIT            0.375      0.114      3.300      0.001
+    DNUTRIT            0.547      0.042     13.102      0.000
+    ENUTRIT            0.484      0.062      7.839      0.000
+    S1                 0.152      0.067      2.265      0.024
+    S3                 0.133      0.059      2.241      0.025
+    S2                 0.334      0.178      1.873      0.061
+    S4                 0.232      0.218      1.066      0.286
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.662E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\onedrive\desktop\mediation book programs\chapter 16\mplus\chap16_lgc_mplus.dgm
+
+     Beginning Time:  14:29:02
+        Ending Time:  14:29:02
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen

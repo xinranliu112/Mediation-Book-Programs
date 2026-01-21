@@ -1,0 +1,87 @@
+  TITLE: 
+        Chapter 16 Example of a Latent Difference Score Model;
+  DATA:
+        FILE IS Chap16_ATLASBtoE.csv;
+  VARIABLE:
+        Names = group intent nutrit sever media
+        cintent cnutrit csever cmedia dintent dnutrit
+        dsever dmedia eintent enutrit esever emedia;
+        Missing = *;
+        Usevariables= group sever csever dsever esever 
+        intent cintent dintent eintent;
+  ANALYSIS:
+        iteration=50000;
+        convergence=.000001;
+        h1convergence=.000001;
+  MODEL:
+  !FIXED @1 AUTOREGRESSIVE RELATIONS;
+        CINTENT ON INTENT@1;
+        DINTENT ON CINTENT@1;
+        EINTENT ON DINTENT@1;
+        CSEVER ON SEVER@1;
+        DSEVER ON CSEVER@1;
+        ESEVER ON DSEVER@1;
+  !FIXED @1 PATH FROM DIFFERENCE SCORES TO EACH WAVE;
+        LDINT2 BY CINTENT@1;
+        LDINT3 BY DINTENT@1;
+        LDINT4 BY EINTENT@1;
+        LDSEV2 BY CSEVER@1;
+        LDSEV3 BY DSEVER@1;
+        LDSEV4 BY ESEVER@1;
+  !PATH FROM PRIOR MEASURE TO DIFFERENCE SCORE;
+        ldint2 on intent;
+        ldint3 on cintent;
+        ldint4 on dintent;
+        ldsev2 on sever;
+        ldsev3 on csever;
+        ldsev4 on dsever;
+  !CROSS SECTIONAL MEDIATION RELATION BETWEEN DIFFERENCE SCORES;
+        ldint2 on ldsev2 ;
+        ldint3 on ldsev3;
+        ldint4 on ldsev4;
+  !PROGRAM EFFECTS ON DIFFERENCE SCORE FOR INTENT (A PATH) AND SEV (C' PATH);
+        ldint2 on group;
+        ldsev2 on group;
+  !LONGITUDINAL RELATIONS;
+        ldint3 on ldsev2 ldint2 ;
+        ldint4 on ldsev3 ldsev2 ldint3;
+        ldsev3 on ldint2 ldsev2;
+        ldsev4 on ldint3 ldint2 ldsev3;
+  !PRIOR MEASURE TO OTHER DIFFERENCE SCORE;
+        ldsev2 on intent;
+        ldsev3 on cintent ;
+        ldsev4 on dintent ;
+        ldint2 on sever;
+        ldint3 on csever;
+        ldint4 on dsever;
+  !COVARIANCE AT TIME 1;
+        sever with intent;
+  !MEANS;
+        [sever intent GROUP];
+  !VARIANCES AT TIME 1;
+        sever;
+        intent;
+  !FIXED @0 VARIANCES;
+        csever@0; dsever@0; esever@0;
+        cintent@0; dintent@0; eintent@0;
+  !CORRELATIONS FIXED @0;
+        ldint3 with ldint2@0;
+        ldint4 with ldint2@0;
+        ldint4 with ldint3@0;
+        ldsev3 with ldsev2@0;
+        ldsev4 with ldsev2@0;
+        ldsev4 with ldsev3@0;
+        intent with ldint2@0;
+        intent with ldint3@0;
+        intent with ldint4@0;
+        intent with ldsev2@0;
+        intent with ldsev3@0;
+        intent with ldsev4@0;
+        sever with ldsev2@0;
+        sever with ldsev3@0;
+        sever with ldsev4@0;
+        sever with ldint2@0;
+        sever with ldint3@0;
+        sever with ldint4@0;
+   OUTPUT:SAMPSTAT;
+

@@ -1,0 +1,150 @@
+> ###################################
+> ###     Autoregressive Model    ###
+> ###################################
+> data <- read.csv("Chap16_ATLASBtoE.csv", na.strings = "*")
+> colnames(data) <- c("group", "intent", "nutrit", "sever", "media",
++                     "cintent", "cnutrit", "csever", "cmedia", "dintent", 
++                     "dnutrit","dsever", "dmedia", "eintent", "enutrit", 
++                     "esever", "emedia")
+> # Define the model
+> model <- '
++   cintent ~ group + intent + sever
++   dintent ~ group + cintent + csever
++   eintent ~ group + dintent + dsever
++ 
++   csever ~ group + sever
++   dsever ~ group + csever
++   esever ~ group + dsever
++ 
++   group ~~ intent + sever
++   intent ~~ sever
++   cintent ~~ csever
++   dintent ~~ dsever
++   eintent ~~ esever
++ '
+> # Fit the model
+> fit <- sem(model, data = data, missing = "fiml")
+> summary(fit, fit.measures = TRUE, standardized = TRUE)
+lavaan 0.6-19 ended normally after 61 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        39
+
+  Number of observations                          1505
+  Number of missing patterns                        26
+
+Model Test User Model:
+                                                      
+  Test statistic                               190.989
+  Degrees of freedom                                15
+  P-value (Chi-square)                           0.000
+
+Model Test Baseline Model:
+
+  Test statistic                              2395.502
+  Degrees of freedom                                36
+  P-value                                        0.000
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.925
+  Tucker-Lewis Index (TLI)                       0.821
+                                                      
+  Robust Comparative Fit Index (CFI)             0.909
+  Robust Tucker-Lewis Index (TLI)                0.782
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)             -13404.771
+  Loglikelihood unrestricted model (H1)     -13309.276
+                                                      
+  Akaike (AIC)                               26887.541
+  Bayesian (BIC)                             27094.887
+  Sample-size adjusted Bayesian (SABIC)      26970.995
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.088
+  90 Percent confidence interval - lower         0.077
+  90 Percent confidence interval - upper         0.100
+  P-value H_0: RMSEA <= 0.050                    0.000
+  P-value H_0: RMSEA >= 0.080                    0.896
+                                                      
+  Robust RMSEA                                   0.132
+  90 Percent confidence interval - lower         0.114
+  90 Percent confidence interval - upper         0.151
+  P-value H_0: Robust RMSEA <= 0.050             0.000
+  P-value H_0: Robust RMSEA >= 0.080             1.000
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.103
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Observed
+  Observed information based on                Hessian
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  cintent ~                                                             
+    group            -0.145    0.056   -2.611    0.009   -0.145   -0.061
+    intent            0.459    0.023   19.993    0.000    0.459    0.496
+    sever            -0.140    0.023   -5.994    0.000   -0.140   -0.152
+  dintent ~                                                             
+    group            -0.030    0.074   -0.407    0.684   -0.030   -0.013
+    cintent           0.391    0.033   11.810    0.000    0.391    0.387
+    csever           -0.126    0.033   -3.830    0.000   -0.126   -0.137
+  eintent ~                                                             
+    group             0.065    0.084    0.773    0.440    0.065    0.028
+    dintent           0.470    0.038   12.415    0.000    0.470    0.479
+    dsever           -0.179    0.038   -4.734    0.000   -0.179   -0.202
+  csever ~                                                              
+    group             0.484    0.065    7.435    0.000    0.484    0.187
+    sever             0.439    0.026   17.194    0.000    0.439    0.435
+  dsever ~                                                              
+    group             0.029    0.081    0.357    0.721    0.029    0.011
+    csever            0.482    0.033   14.769    0.000    0.482    0.473
+  esever ~                                                              
+    group             0.150    0.099    1.511    0.131    0.150    0.058
+    dsever            0.501    0.039   12.956    0.000    0.501    0.512
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  group ~~                                                              
+    intent           -0.039    0.016   -2.356    0.018   -0.039   -0.061
+    sever             0.034    0.017    2.025    0.043    0.034    0.053
+  intent ~~                                                             
+    sever            -0.599    0.045  -13.317    0.000   -0.599   -0.367
+ .cintent ~~                                                            
+   .csever           -0.348    0.033  -10.408    0.000   -0.348   -0.320
+ .dintent ~~                                                            
+   .dsever           -0.463    0.046  -10.143    0.000   -0.463   -0.379
+ .eintent ~~                                                            
+   .esever           -0.369    0.050   -7.355    0.000   -0.369   -0.357
+
+Intercepts:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .cintent           1.818    0.158   11.492    0.000    1.818    1.545
+   .dintent           1.795    0.224    8.006    0.000    1.795    1.510
+   .eintent           1.927    0.261    7.389    0.000    1.927    1.653
+   .csever            3.097    0.154   20.139    0.000    3.097    2.394
+   .dsever            2.915    0.193   15.070    0.000    2.915    2.214
+   .esever            2.825    0.230   12.309    0.000    2.825    2.191
+    group             0.466    0.013   36.224    0.000    0.466    0.934
+    intent            1.733    0.033   52.807    0.000    1.733    1.362
+    sever             5.796    0.033  174.327    0.000    5.796    4.517
+
+Variances:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .cintent           0.924    0.038   24.457    0.000    0.924    0.667
+   .dintent           1.112    0.055   20.323    0.000    1.112    0.787
+   .eintent           0.881    0.056   15.751    0.000    0.881    0.649
+   .csever            1.283    0.052   24.610    0.000    1.283    0.767
+   .dsever            1.342    0.066   20.291    0.000    1.342    0.774
+   .esever            1.210    0.077   15.779    0.000    1.210    0.728
+    group             0.249    0.009   27.432    0.000    0.249    1.000
+    intent            1.617    0.059   27.407    0.000    1.617    1.000
+    sever             1.647    0.060   27.267    0.000    1.647    1.000

@@ -1,0 +1,263 @@
+> ########################
+> ###     LDS Model    ###
+> ########################
+> # Read data
+> data <- read.csv("Chap16_ATLASBtoE.csv", na.strings = "*")
+> colnames(data) <- c("group", "intent", "nutrit", "sever", "media",
++                     "cintent", "cnutrit", "csever", "cmedia", "dintent", 
++                     "dnutrit","dsever", "dmedia", "eintent", "enutrit", 
++                     "esever", "emedia")
+> # Load package
+> # install.packages("lavaan")
+> library(lavaan)
+> 
+> # Define the model
+> model <- '
++   cintent ~ 1*intent
++   dintent ~ 1*cintent
++   eintent ~ 1*dintent
++   csever ~ 1*sever
++   dsever ~ 1*csever
++   esever ~ 1*dsever
++ 
++   ldint2 =~ 1*cintent
++   ldint3 =~ 1*dintent
++   ldint4 =~ 1*eintent
++   ldsev2 =~ 1*csever
++   ldsev3 =~ 1*dsever
++   ldsev4 =~ 1*esever
++ 
++   ldint2 ~ intent + sever + group + ldsev2
++   ldint3 ~ cintent + csever + ldint2 + ldsev2 + ldsev3
++   ldint4 ~ dintent + dsever + ldint3 + ldsev2 + ldsev3 + ldsev4
++   ldsev2 ~ sever + intent + group
++   ldsev3 ~ csever + cintent + ldsev2 + ldint2
++   ldsev4 ~ dsever + dintent + ldsev3 + ldint2 + ldint3
++   
++   sever ~~ intent
++   group ~~ intent
++   sever ~~ group
++   
++   sever ~ 1 
++   intent ~ 1 
++   group ~ 1 
++ 
++   sever ~~ sever
++   intent ~~ intent
++ 
++   cintent ~~ 0*cintent
++   dintent ~~ 0*dintent
++   eintent ~~ 0*eintent
++   csever ~~ 0*csever
++   dsever ~~ 0*dsever
++   esever ~~ 0*esever
++ 
++   ldint2 ~~ 0*ldint3
++   ldint2 ~~ 0*ldint4
++   ldint3 ~~ 0*ldint4
++   ldsev2 ~~ 0*ldsev3
++   ldsev2 ~~ 0*ldsev4
++   ldsev3 ~~ 0*ldsev4
++   intent ~~ 0*ldint2 + 0*ldint3 + 0*ldint4 + 0*ldsev2 + 0*ldsev3 + 0*ldsev4
++   sever ~~ 0*ldint2 + 0*ldint3 + 0*ldint4 + 0*ldsev2 + 0*ldsev3 + 0*ldsev4
++ '
+> 
+> # Fit the model
+> fit <- sem(model, data = data, missing = "fiml")
+> summary(fit, fit.measures = TRUE, standardized = TRUE)
+lavaan 0.6-19 ended normally after 98 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        48
+
+  Number of observations                          1505
+  Number of missing patterns                        26
+
+Model Test User Model:
+                                                      
+  Test statistic                                 7.934
+  Degrees of freedom                                 6
+  P-value (Chi-square)                           0.243
+
+Model Test Baseline Model:
+
+  Test statistic                              2395.502
+  Degrees of freedom                                36
+  P-value                                        0.000
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.999
+  Tucker-Lewis Index (TLI)                       0.995
+                                                      
+  Robust Comparative Fit Index (CFI)             0.998
+  Robust Tucker-Lewis Index (TLI)                0.986
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)             -13313.243
+  Loglikelihood unrestricted model (H1)     -13309.276
+                                                      
+  Akaike (AIC)                               26722.487
+  Bayesian (BIC)                             26977.681
+  Sample-size adjusted Bayesian (SABIC)      26825.198
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.015
+  90 Percent confidence interval - lower         0.000
+  90 Percent confidence interval - upper         0.039
+  P-value H_0: RMSEA <= 0.050                    0.996
+  P-value H_0: RMSEA >= 0.080                    0.000
+                                                      
+  Robust RMSEA                                   0.033
+  90 Percent confidence interval - lower         0.000
+  90 Percent confidence interval - upper         0.071
+  P-value H_0: Robust RMSEA <= 0.050             0.724
+  P-value H_0: Robust RMSEA >= 0.080             0.018
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.011
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Observed
+  Observed information based on                Hessian
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  ldint2 =~                                                             
+    cintent           1.000                               1.128    0.938
+  ldint3 =~                                                             
+    dintent           1.000                               1.223    1.006
+  ldint4 =~                                                             
+    eintent           1.000                               1.059    0.869
+  ldsev2 =~                                                             
+    csever            1.000                               1.360    1.051
+  ldsev3 =~                                                             
+    dsever            1.000                               1.338    1.012
+  ldsev4 =~                                                             
+    esever            1.000                               1.280    0.986
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  cintent ~                                                             
+    intent            1.000                               1.000    1.057
+  dintent ~                                                             
+    cintent           1.000                               1.000    0.989
+  eintent ~                                                             
+    dintent           1.000                               1.000    0.999
+  csever ~                                                              
+    sever             1.000                               1.000    0.991
+  dsever ~                                                              
+    csever            1.000                               1.000    0.979
+  esever ~                                                              
+    dsever            1.000                               1.000    1.018
+  ldint2 ~                                                              
+    intent           -0.546    0.023  -23.707    0.000   -0.484   -0.615
+    sever            -0.296    0.027  -11.064    0.000   -0.262   -0.336
+    group            -0.008    0.054   -0.154    0.878   -0.007   -0.004
+    ldsev2           -0.274    0.024  -11.560    0.000   -0.330   -0.330
+  ldint3 ~                                                              
+    cintent          -0.531    0.036  -14.670    0.000   -0.434   -0.522
+    csever           -0.257    0.039   -6.636    0.000   -0.210   -0.272
+    ldint2           -0.167    0.034   -4.837    0.000   -0.154   -0.154
+    ldsev2           -0.065    0.030   -2.173    0.030   -0.072   -0.072
+    ldsev3           -0.341    0.029  -11.681    0.000   -0.373   -0.373
+  ldint4 ~                                                              
+    dintent          -0.389    0.045   -8.570    0.000   -0.367   -0.447
+    dsever           -0.298    0.050   -5.950    0.000   -0.281   -0.372
+    ldint3           -0.224    0.042   -5.352    0.000   -0.259   -0.259
+    ldsev2            0.066    0.036    1.852    0.064    0.085    0.085
+    ldsev3           -0.023    0.047   -0.502    0.616   -0.030   -0.030
+    ldsev4           -0.285    0.036   -7.911    0.000   -0.344   -0.344
+  ldsev2 ~                                                              
+    sever            -0.630    0.027  -23.356    0.000   -0.463   -0.595
+    intent           -0.185    0.027   -6.758    0.000   -0.136   -0.173
+    group             0.476    0.064    7.436    0.000    0.350    0.175
+  ldsev3 ~                                                              
+    csever           -0.481    0.043  -11.109    0.000   -0.359   -0.465
+    cintent          -0.131    0.043   -3.046    0.002   -0.098   -0.118
+    ldsev2           -0.151    0.035   -4.287    0.000   -0.153   -0.153
+    ldint2            0.033    0.041    0.813    0.416    0.028    0.028
+  ldsev4 ~                                                              
+    dsever           -0.488    0.053   -9.196    0.000   -0.381   -0.504
+    dintent          -0.245    0.057   -4.313    0.000   -0.192   -0.233
+    ldsev3           -0.174    0.047   -3.704    0.000   -0.182   -0.182
+    ldint2            0.038    0.054    0.698    0.485    0.033    0.033
+    ldint3            0.086    0.055    1.557    0.119    0.082    0.082
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  intent ~~                                                             
+    sever            -0.598    0.045  -13.309    0.000   -0.598   -0.367
+    group            -0.039    0.016   -2.349    0.019   -0.039   -0.061
+  sever ~~                                                              
+    group             0.033    0.017    2.014    0.044    0.033    0.052
+ .ldint2 ~~                                                             
+   .ldint3            0.000                               0.000    0.000
+   .ldint4            0.000                               0.000    0.000
+ .ldint3 ~~                                                             
+   .ldint4            0.000                               0.000    0.000
+ .ldsev2 ~~                                                             
+   .ldsev3            0.000                               0.000    0.000
+   .ldsev4            0.000                               0.000    0.000
+ .ldsev3 ~~                                                             
+   .ldsev4            0.000                               0.000    0.000
+ .ldint2 ~~                                                             
+    intent            0.000                               0.000    0.000
+ .ldint3 ~~                                                             
+    intent            0.000                               0.000    0.000
+ .ldint4 ~~                                                             
+    intent            0.000                               0.000    0.000
+ .ldsev2 ~~                                                             
+    intent            0.000                               0.000    0.000
+ .ldsev3 ~~                                                             
+    intent            0.000                               0.000    0.000
+ .ldsev4 ~~                                                             
+    intent            0.000                               0.000    0.000
+ .ldint2 ~~                                                             
+    sever             0.000                               0.000    0.000
+ .ldint3 ~~                                                             
+    sever             0.000                               0.000    0.000
+ .ldint4 ~~                                                             
+    sever             0.000                               0.000    0.000
+ .ldsev2 ~~                                                             
+    sever             0.000                               0.000    0.000
+ .ldsev3 ~~                                                             
+    sever             0.000                               0.000    0.000
+ .ldsev4 ~~                                                             
+    sever             0.000                               0.000    0.000
+
+Intercepts:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+    sever             5.796    0.033  174.355    0.000    5.796    4.518
+    intent            1.733    0.033   52.801    0.000    1.733    1.362
+    group             0.466    0.013   36.224    0.000    0.466    0.934
+   .cintent           1.641    0.160   10.240    0.000    1.641    1.364
+   .dintent           1.039    0.373    2.785    0.005    1.039    0.854
+   .eintent           1.530    0.537    2.850    0.004    1.530    1.256
+   .csever            3.820    0.184   20.743    0.000    3.820    2.952
+   .dsever            2.411    0.410    5.878    0.000    2.411    1.824
+   .esever            2.945    0.490    6.005    0.000    2.945    2.268
+
+Variances:
+                   Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+    sever             1.646    0.060   27.273    0.000    1.646    1.000
+    intent            1.618    0.059   27.405    0.000    1.618    1.000
+   .cintent           0.000                               0.000    0.000
+   .dintent           0.000                               0.000    0.000
+   .eintent           0.000                               0.000    0.000
+   .csever            0.000                               0.000    0.000
+   .dsever            0.000                               0.000    0.000
+   .esever            0.000                               0.000    0.000
+    group             0.249    0.009   27.432    0.000    0.249    1.000
+   .ldint2            0.831    0.034   24.491    0.000    0.653    0.653
+   .ldint3            0.926    0.045   20.558    0.000    0.619    0.619
+   .ldint4            0.712    0.045   15.717    0.000    0.635    0.635
+   .ldsev2            1.237    0.050   24.595    0.000    0.669    0.669
+   .ldsev3            1.294    0.064   20.349    0.000    0.723    0.723
+   .ldsev4            1.115    0.071   15.754    0.000    0.681    0.681

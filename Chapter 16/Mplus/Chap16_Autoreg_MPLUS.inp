@@ -1,0 +1,28 @@
+  TITLE: 
+        Chapter 16 Autoregressive Model;
+  DATA:
+        FILE IS Chap16_ATLASBtoE.csv;
+  VARIABLE:
+        Names = group intent nutrit sever media
+        cintent cnutrit csever cmedia dintent dnutrit
+        dsever dmedia eintent enutrit esever emedia;
+        Missing = *;
+        Usevariables = group sever csever dsever esever 
+        intent cintent dintent eintent;
+  ANALYSIS:
+        iteration=50000;
+        convergence=.000001;
+        h1convergence=.000001;
+  MODEL:
+        cintent on group intent sever;
+        dintent on group cintent csever;
+        eintent on group dintent dsever;
+        csever on group sever;
+        dsever on group csever;
+        esever on group dsever;
+        group with intent sever;
+        intent with sever;
+        cintent with csever;
+        dintent with dsever;
+        eintent with esever;
+  OUTPUT:

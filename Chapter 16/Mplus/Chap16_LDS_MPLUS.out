@@ -1,0 +1,925 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+07/10/2025   2:29 PM
+
+INPUT INSTRUCTIONS
+
+    TITLE:
+          Chapter 16 Example of a Latent Difference Score Model;
+    DATA:
+          FILE IS Chap16_ATLASBtoE.csv;
+    VARIABLE:
+          Names = group intent nutrit sever media
+          cintent cnutrit csever cmedia dintent dnutrit
+          dsever dmedia eintent enutrit esever emedia;
+          Missing = *;
+          Usevariables= group sever csever dsever esever
+          intent cintent dintent eintent;
+    ANALYSIS:
+          iteration=50000;
+          convergence=.000001;
+          h1convergence=.000001;
+    MODEL:
+    !FIXED @1 AUTOREGRESSIVE RELATIONS;
+          CINTENT ON INTENT@1;
+          DINTENT ON CINTENT@1;
+          EINTENT ON DINTENT@1;
+          CSEVER ON SEVER@1;
+          DSEVER ON CSEVER@1;
+          ESEVER ON DSEVER@1;
+    !FIXED @1 PATH FROM DIFFERENCE SCORES TO EACH WAVE;
+          LDINT2 BY CINTENT@1;
+          LDINT3 BY DINTENT@1;
+          LDINT4 BY EINTENT@1;
+          LDSEV2 BY CSEVER@1;
+          LDSEV3 BY DSEVER@1;
+          LDSEV4 BY ESEVER@1;
+    !PATH FROM PRIOR MEASURE TO DIFFERENCE SCORE;
+          ldint2 on intent;
+          ldint3 on cintent;
+          ldint4 on dintent;
+          ldsev2 on sever;
+          ldsev3 on csever;
+          ldsev4 on dsever;
+    !CROSS SECTIONAL MEDIATION RELATION BETWEEN DIFFERENCE SCORES;
+          ldint2 on ldsev2 ;
+          ldint3 on ldsev3;
+          ldint4 on ldsev4;
+    !PROGRAM EFFECTS ON DIFFERENCE SCORE FOR INTENT (A PATH) AND SEV (C' PATH);
+          ldint2 on group;
+          ldsev2 on group;
+    !LONGITUDINAL RELATIONS;
+          ldint3 on ldsev2 ldint2 ;
+          ldint4 on ldsev3 ldsev2 ldint3;
+          ldsev3 on ldint2 ldsev2;
+          ldsev4 on ldint3 ldint2 ldsev3;
+    !PRIOR MEASURE TO OTHER DIFFERENCE SCORE;
+          ldsev2 on intent;
+          ldsev3 on cintent ;
+          ldsev4 on dintent ;
+          ldint2 on sever;
+          ldint3 on csever;
+          ldint4 on dsever;
+    !COVARIANCE AT TIME 1;
+          sever with intent;
+    !MEANS;
+          [sever intent GROUP];
+    !VARIANCES AT TIME 1;
+          sever;
+          intent;
+    !FIXED @0 VARIANCES;
+          csever@0; dsever@0; esever@0;
+          cintent@0; dintent@0; eintent@0;
+    !CORRELATIONS FIXED @0;
+          ldint3 with ldint2@0;
+          ldint4 with ldint2@0;
+          ldint4 with ldint3@0;
+          ldsev3 with ldsev2@0;
+          ldsev4 with ldsev2@0;
+          ldsev4 with ldsev3@0;
+          intent with ldint2@0;
+          intent with ldint3@0;
+          intent with ldint4@0;
+          intent with ldsev2@0;
+          intent with ldsev3@0;
+          intent with ldsev4@0;
+          sever with ldsev2@0;
+          sever with ldsev3@0;
+          sever with ldsev4@0;
+          sever with ldint2@0;
+          sever with ldint3@0;
+          sever with ldint4@0;
+     OUTPUT:SAMPSTAT;
+
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+
+Chapter 16 Example of a Latent Difference Score Model;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        1506
+
+Number of dependent variables                                    6
+Number of independent variables                                  3
+Number of continuous latent variables                            6
+
+Observed dependent variables
+
+  Continuous
+   CSEVER      DSEVER      ESEVER      CINTENT     DINTENT     EINTENT
+
+Observed independent variables
+   GROUP       SEVER       INTENT
+
+Continuous latent variables
+   LDINT2      LDINT3      LDINT4      LDSEV2      LDSEV3      LDSEV4
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                 50000
+Convergence criterion                                    0.100D-05
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-05
+
+Input data file(s)
+  Chap16_ATLASBtoE.csv
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            26
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              CSEVER        DSEVER        ESEVER        CINTENT       DINTENT
+              ________      ________      ________      ________      ________
+ CSEVER         0.807
+ DSEVER         0.505         0.574
+ ESEVER         0.299         0.329         0.332
+ CINTENT        0.799         0.501         0.297         0.801
+ DINTENT        0.505         0.572         0.329         0.501         0.574
+ EINTENT        0.300         0.331         0.332         0.297         0.331
+ GROUP          0.807         0.574         0.332         0.801         0.574
+ SEVER          0.799         0.568         0.328         0.793         0.569
+ INTENT         0.804         0.572         0.331         0.799         0.572
+
+
+           Covariance Coverage
+              EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________
+ EINTENT        0.333
+ GROUP          0.333         1.000
+ SEVER          0.329         0.987         0.987
+ INTENT         0.332         0.997         0.985         0.997
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              CSEVER        DSEVER        ESEVER        CINTENT       DINTENT
+              ________      ________      ________      ________      ________
+                5.863         5.741         5.751         1.738         1.728
+
+
+           Means
+              EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________
+                1.766         0.466         5.796         1.734
+
+
+           Covariances
+              CSEVER        DSEVER        ESEVER        CINTENT       DINTENT
+              ________      ________      ________      ________      ________
+ CSEVER         1.674
+ DSEVER         0.816         1.749
+ ESEVER         0.702         0.899         1.687
+ CINTENT       -0.720        -0.513        -0.511         1.446
+ DINTENT       -0.507        -0.770        -0.645         0.714         1.481
+ EINTENT       -0.496        -0.705        -0.851         0.733         0.923
+ GROUP          0.137         0.078         0.080        -0.058        -0.050
+ SEVER          0.734         0.590         0.483        -0.509        -0.335
+ INTENT        -0.539        -0.432        -0.445         0.895         0.639
+
+
+           Covariances
+              EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________
+ EINTENT        1.492
+ GROUP         -0.023         0.249
+ SEVER         -0.451         0.033         1.645
+ INTENT         0.663        -0.038        -0.599         1.618
+
+
+           Correlations
+              CSEVER        DSEVER        ESEVER        CINTENT       DINTENT
+              ________      ________      ________      ________      ________
+ CSEVER         1.000
+ DSEVER         0.477         1.000
+ ESEVER         0.418         0.523         1.000
+ CINTENT       -0.463        -0.323        -0.327         1.000
+ DINTENT       -0.322        -0.479        -0.408         0.488         1.000
+ EINTENT       -0.314        -0.437        -0.537         0.499         0.621
+ GROUP          0.212         0.118         0.123        -0.096        -0.083
+ SEVER          0.443         0.348         0.290        -0.330        -0.215
+ INTENT        -0.327        -0.257        -0.269         0.585         0.413
+
+
+           Correlations
+              EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________
+ EINTENT        1.000
+ GROUP         -0.038         1.000
+ SEVER         -0.288         0.052         1.000
+ INTENT         0.427        -0.060        -0.367         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS -13313.101
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     CSEVER                5.866      -0.844       1.000    0.49%       4.333      6.000      6.333
+            1215.000       1.658      -0.183       7.000   43.37%       7.000      7.000
+     DSEVER                5.779      -0.796       1.000    0.46%       4.000      5.667      6.000
+             864.000       1.727      -0.222       7.000   38.77%       6.667      7.000
+     ESEVER                5.799      -0.887       1.000    1.00%       4.333      5.667      6.000
+             500.000       1.637       0.291       7.000   37.00%       6.667      7.000
+     CINTENT               1.720       1.647       1.000   61.06%       1.000      1.000      1.000
+            1207.000       1.418       1.809       7.000    0.17%       1.000      2.600
+     DINTENT               1.690       1.799       1.000   63.35%       1.000      1.000      1.000
+             865.000       1.463       2.415       7.000    0.12%       1.000      2.600
+     EINTENT               1.735       1.748       1.000   59.16%       1.000      1.000      1.000
+             502.000       1.465       2.487       7.000    0.40%       1.200      2.600
+     GROUP                 0.466       0.136       0.000   53.39%       0.000      0.000      0.000
+            1506.000       0.249      -1.982       1.000   46.61%       1.000      1.000
+     SEVER                 5.796      -0.831       1.000    0.47%       4.333      5.667      6.000
+            1486.000       1.646      -0.071       7.000   37.69%       6.667      7.000
+     INTENT                1.734       1.857       1.000   61.78%       1.000      1.000      1.000
+            1502.000       1.618       2.786       7.000    0.53%       1.000      2.600
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     THE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES MAY NOT BE
+     TRUSTWORTHY FOR SOME PARAMETERS DUE TO A NON-POSITIVE DEFINITE
+     FIRST-ORDER DERIVATIVE PRODUCT MATRIX.  THIS MAY BE DUE TO THE STARTING
+     VALUES BUT MAY ALSO BE AN INDICATION OF MODEL NONIDENTIFICATION.  THE
+     CONDITION NUMBER IS       0.910D-17.  PROBLEM INVOLVING THE FOLLOWING PARAMETER:
+     Parameter 48, INTENT
+
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       48
+
+Loglikelihood
+
+          H0 Value                      -13317.068
+          H1 Value                      -13313.101
+
+Information Criteria
+
+          Akaike (AIC)                   26730.136
+          Bayesian (BIC)                 26985.362
+          Sample-Size Adjusted BIC       26832.879
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              7.934
+          Degrees of Freedom                     6
+          P-Value                           0.2430
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.015
+          90 Percent C.I.                    0.000  0.039
+          Probability RMSEA <= .05           0.996
+
+CFI/TLI
+
+          CFI                                0.999
+          TLI                                0.995
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           2174.256
+          Degrees of Freedom                    33
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.011
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ LDINT2   BY
+    CINTENT            1.000      0.000    999.000    999.000
+
+ LDINT3   BY
+    DINTENT            1.000      0.000    999.000    999.000
+
+ LDINT4   BY
+    EINTENT            1.000      0.000    999.000    999.000
+
+ LDSEV2   BY
+    CSEVER             1.000      0.000    999.000    999.000
+
+ LDSEV3   BY
+    DSEVER             1.000      0.000    999.000    999.000
+
+ LDSEV4   BY
+    ESEVER             1.000      0.000    999.000    999.000
+
+ LDINT2   ON
+    LDSEV2            -0.274      0.024    -11.560      0.000
+
+ LDINT3   ON
+    LDSEV3            -0.341      0.029    -11.681      0.000
+    LDSEV2            -0.065      0.030     -2.173      0.030
+    LDINT2            -0.167      0.034     -4.837      0.000
+
+ LDINT4   ON
+    LDSEV4            -0.285      0.036     -7.911      0.000
+    LDSEV3            -0.023      0.047     -0.502      0.616
+    LDSEV2             0.066      0.036      1.852      0.064
+    LDINT3            -0.224      0.042     -5.352      0.000
+
+ LDSEV3   ON
+    LDINT2             0.033      0.041      0.813      0.416
+    LDSEV2            -0.151      0.035     -4.287      0.000
+
+ LDSEV4   ON
+    LDINT3             0.086      0.055      1.557      0.119
+    LDINT2             0.038      0.054      0.698      0.485
+    LDSEV3            -0.174      0.047     -3.704      0.000
+
+ LDINT2   ON
+    INTENT            -0.546      0.023    -23.707      0.000
+    GROUP             -0.008      0.054     -0.154      0.878
+    SEVER             -0.296      0.027    -11.064      0.000
+
+ LDINT3   ON
+    CINTENT           -0.531      0.036    -14.670      0.000
+    CSEVER            -0.257      0.039     -6.636      0.000
+
+ LDINT4   ON
+    DINTENT           -0.389      0.045     -8.570      0.000
+    DSEVER            -0.298      0.050     -5.950      0.000
+
+ LDSEV2   ON
+    SEVER             -0.630      0.027    -23.356      0.000
+    GROUP              0.476      0.064      7.436      0.000
+    INTENT            -0.185      0.027     -6.758      0.000
+
+ LDSEV3   ON
+    CSEVER            -0.481      0.043    -11.109      0.000
+    CINTENT           -0.131      0.043     -3.046      0.002
+
+ LDSEV4   ON
+    DSEVER            -0.488      0.053     -9.196      0.000
+    DINTENT           -0.245      0.057     -4.313      0.000
+
+ CINTENT  ON
+    INTENT             1.000      0.000    999.000    999.000
+
+ DINTENT  ON
+    CINTENT            1.000      0.000    999.000    999.000
+
+ EINTENT  ON
+    DINTENT            1.000      0.000    999.000    999.000
+
+ CSEVER   ON
+    SEVER              1.000      0.000    999.000    999.000
+
+ DSEVER   ON
+    CSEVER             1.000      0.000    999.000    999.000
+
+ ESEVER   ON
+    DSEVER             1.000      0.000    999.000    999.000
+
+ SEVER    WITH
+    LDSEV2             0.000      0.000    999.000    999.000
+    LDSEV3             0.000      0.000    999.000    999.000
+    LDSEV4             0.000      0.000    999.000    999.000
+    LDINT2             0.000      0.000    999.000    999.000
+    LDINT3             0.000      0.000    999.000    999.000
+    LDINT4             0.000      0.000    999.000    999.000
+
+ LDINT3   WITH
+    LDINT2             0.000      0.000    999.000    999.000
+    LDINT4             0.000      0.000    999.000    999.000
+    INTENT             0.000      0.000    999.000    999.000
+
+ LDINT4   WITH
+    LDINT2             0.000      0.000    999.000    999.000
+    INTENT             0.000      0.000    999.000    999.000
+
+ LDSEV3   WITH
+    LDSEV2             0.000      0.000    999.000    999.000
+    LDSEV4             0.000      0.000    999.000    999.000
+    INTENT             0.000      0.000    999.000    999.000
+
+ LDSEV4   WITH
+    LDSEV2             0.000      0.000    999.000    999.000
+    INTENT             0.000      0.000    999.000    999.000
+
+ INTENT   WITH
+    LDINT2             0.000      0.000    999.000    999.000
+    LDSEV2             0.000      0.000    999.000    999.000
+
+ SEVER    WITH
+    INTENT            -0.599      0.045    -13.322      0.000
+    GROUP              0.033      0.017      1.996      0.046
+
+ INTENT   WITH
+    GROUP             -0.038      0.016     -2.316      0.021
+
+ Means
+    GROUP              0.466      0.013     36.262      0.000
+    SEVER              5.796      0.033    174.434      0.000
+    INTENT             1.734      0.033     52.843      0.000
+
+ Intercepts
+    CSEVER             3.820      0.184     20.742      0.000
+    DSEVER             2.411      0.410      5.878      0.000
+    ESEVER             2.945      0.490      6.005      0.000
+    CINTENT            1.641      0.160     10.240      0.000
+    DINTENT            1.039      0.373      2.785      0.005
+    EINTENT            1.530      0.537      2.850      0.004
+
+ Variances
+    GROUP              0.249      0.009     27.441      0.000
+    SEVER              1.645      0.060     27.282      0.000
+    INTENT             1.618      0.059     27.414      0.000
+
+ Residual Variances
+    CSEVER             0.000      0.000    999.000    999.000
+    DSEVER             0.000      0.000    999.000    999.000
+    ESEVER             0.000      0.000    999.000    999.000
+    CINTENT            0.000      0.000    999.000    999.000
+    DINTENT            0.000      0.000    999.000    999.000
+    EINTENT            0.000      0.000    999.000    999.000
+    LDINT2             0.831      0.034     24.491      0.000
+    LDINT3             0.926      0.045     20.558      0.000
+    LDINT4             0.712      0.045     15.717      0.000
+    LDSEV2             1.237      0.050     24.595      0.000
+    LDSEV3             1.294      0.064     20.349      0.000
+    LDSEV4             1.115      0.071     15.754      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.392E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              CSEVER        DSEVER        ESEVER        CINTENT       DINTENT
+              ________      ________      ________      ________      ________
+                  0             0             0             0             0
+
+
+           NU
+              EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________
+                  0             0             0             0
+
+
+           LAMBDA
+              LDINT2        LDINT3        LDINT4        LDSEV2        LDSEV3
+              ________      ________      ________      ________      ________
+ CSEVER             0             0             0             0             0
+ DSEVER             0             0             0             0             0
+ ESEVER             0             0             0             0             0
+ CINTENT            0             0             0             0             0
+ DINTENT            0             0             0             0             0
+ EINTENT            0             0             0             0             0
+ GROUP              0             0             0             0             0
+ SEVER              0             0             0             0             0
+ INTENT             0             0             0             0             0
+
+
+           LAMBDA
+              LDSEV4        CSEVER        DSEVER        ESEVER        CINTENT
+              ________      ________      ________      ________      ________
+ CSEVER             0             0             0             0             0
+ DSEVER             0             0             0             0             0
+ ESEVER             0             0             0             0             0
+ CINTENT            0             0             0             0             0
+ DINTENT            0             0             0             0             0
+ EINTENT            0             0             0             0             0
+ GROUP              0             0             0             0             0
+ SEVER              0             0             0             0             0
+ INTENT             0             0             0             0             0
+
+
+           LAMBDA
+              DINTENT       EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________      ________
+ CSEVER             0             0             0             0             0
+ DSEVER             0             0             0             0             0
+ ESEVER             0             0             0             0             0
+ CINTENT            0             0             0             0             0
+ DINTENT            0             0             0             0             0
+ EINTENT            0             0             0             0             0
+ GROUP              0             0             0             0             0
+ SEVER              0             0             0             0             0
+ INTENT             0             0             0             0             0
+
+
+           THETA
+              CSEVER        DSEVER        ESEVER        CINTENT       DINTENT
+              ________      ________      ________      ________      ________
+ CSEVER             0
+ DSEVER             0             0
+ ESEVER             0             0             0
+ CINTENT            0             0             0             0
+ DINTENT            0             0             0             0             0
+ EINTENT            0             0             0             0             0
+ GROUP              0             0             0             0             0
+ SEVER              0             0             0             0             0
+ INTENT             0             0             0             0             0
+
+
+           THETA
+              EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________
+ EINTENT            0
+ GROUP              0             0
+ SEVER              0             0             0
+ INTENT             0             0             0             0
+
+
+           ALPHA
+              LDINT2        LDINT3        LDINT4        LDSEV2        LDSEV3
+              ________      ________      ________      ________      ________
+                  0             0             0             0             0
+
+
+           ALPHA
+              LDSEV4        CSEVER        DSEVER        ESEVER        CINTENT
+              ________      ________      ________      ________      ________
+                  0             1             2             3             4
+
+
+           ALPHA
+              DINTENT       EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________      ________
+                  5             6             7             8             9
+
+
+           BETA
+              LDINT2        LDINT3        LDINT4        LDSEV2        LDSEV3
+              ________      ________      ________      ________      ________
+ LDINT2             0             0             0            10             0
+ LDINT3            14             0             0            15            16
+ LDINT4             0            19             0            20            21
+ LDSEV2             0             0             0             0             0
+ LDSEV3            28             0             0            29             0
+ LDSEV4            32            33             0             0            34
+ CSEVER             0             0             0             0             0
+ DSEVER             0             0             0             0             0
+ ESEVER             0             0             0             0             0
+ CINTENT            0             0             0             0             0
+ DINTENT            0             0             0             0             0
+ EINTENT            0             0             0             0             0
+ GROUP              0             0             0             0             0
+ SEVER              0             0             0             0             0
+ INTENT             0             0             0             0             0
+
+
+           BETA
+              LDSEV4        CSEVER        DSEVER        ESEVER        CINTENT
+              ________      ________      ________      ________      ________
+ LDINT2             0             0             0             0             0
+ LDINT3             0            17             0             0            18
+ LDINT4            22             0            23             0             0
+ LDSEV2             0             0             0             0             0
+ LDSEV3             0            30             0             0            31
+ LDSEV4             0             0            35             0             0
+ CSEVER             0             0             0             0             0
+ DSEVER             0             0             0             0             0
+ ESEVER             0             0             0             0             0
+ CINTENT            0             0             0             0             0
+ DINTENT            0             0             0             0             0
+ EINTENT            0             0             0             0             0
+ GROUP              0             0             0             0             0
+ SEVER              0             0             0             0             0
+ INTENT             0             0             0             0             0
+
+
+           BETA
+              DINTENT       EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________      ________
+ LDINT2             0             0            11            12            13
+ LDINT3             0             0             0             0             0
+ LDINT4            24             0             0             0             0
+ LDSEV2             0             0            25            26            27
+ LDSEV3             0             0             0             0             0
+ LDSEV4            36             0             0             0             0
+ CSEVER             0             0             0             0             0
+ DSEVER             0             0             0             0             0
+ ESEVER             0             0             0             0             0
+ CINTENT            0             0             0             0             0
+ DINTENT            0             0             0             0             0
+ EINTENT            0             0             0             0             0
+ GROUP              0             0             0             0             0
+ SEVER              0             0             0             0             0
+ INTENT             0             0             0             0             0
+
+
+           PSI
+              LDINT2        LDINT3        LDINT4        LDSEV2        LDSEV3
+              ________      ________      ________      ________      ________
+ LDINT2            37
+ LDINT3             0            38
+ LDINT4             0             0            39
+ LDSEV2             0             0             0            40
+ LDSEV3             0             0             0             0            41
+ LDSEV4             0             0             0             0             0
+ CSEVER             0             0             0             0             0
+ DSEVER             0             0             0             0             0
+ ESEVER             0             0             0             0             0
+ CINTENT            0             0             0             0             0
+ DINTENT            0             0             0             0             0
+ EINTENT            0             0             0             0             0
+ GROUP              0             0             0             0             0
+ SEVER              0             0             0             0             0
+ INTENT             0             0             0             0             0
+
+
+           PSI
+              LDSEV4        CSEVER        DSEVER        ESEVER        CINTENT
+              ________      ________      ________      ________      ________
+ LDSEV4            42
+ CSEVER             0             0
+ DSEVER             0             0             0
+ ESEVER             0             0             0             0
+ CINTENT            0             0             0             0             0
+ DINTENT            0             0             0             0             0
+ EINTENT            0             0             0             0             0
+ GROUP              0             0             0             0             0
+ SEVER              0             0             0             0             0
+ INTENT             0             0             0             0             0
+
+
+           PSI
+              DINTENT       EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________      ________
+ DINTENT            0
+ EINTENT            0             0
+ GROUP              0             0            43
+ SEVER              0             0            44            45
+ INTENT             0             0            46            47            48
+
+
+     STARTING VALUES
+
+
+           NU
+              CSEVER        DSEVER        ESEVER        CINTENT       DINTENT
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           NU
+              EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              LDINT2        LDINT3        LDINT4        LDSEV2        LDSEV3
+              ________      ________      ________      ________      ________
+ CSEVER         0.000         0.000         0.000         0.000         0.000
+ DSEVER         0.000         0.000         0.000         0.000         0.000
+ ESEVER         0.000         0.000         0.000         0.000         0.000
+ CINTENT        0.000         0.000         0.000         0.000         0.000
+ DINTENT        0.000         0.000         0.000         0.000         0.000
+ EINTENT        0.000         0.000         0.000         0.000         0.000
+ GROUP          0.000         0.000         0.000         0.000         0.000
+ SEVER          0.000         0.000         0.000         0.000         0.000
+ INTENT         0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              LDSEV4        CSEVER        DSEVER        ESEVER        CINTENT
+              ________      ________      ________      ________      ________
+ CSEVER         0.000         1.000         0.000         0.000         0.000
+ DSEVER         0.000         0.000         1.000         0.000         0.000
+ ESEVER         0.000         0.000         0.000         1.000         0.000
+ CINTENT        0.000         0.000         0.000         0.000         1.000
+ DINTENT        0.000         0.000         0.000         0.000         0.000
+ EINTENT        0.000         0.000         0.000         0.000         0.000
+ GROUP          0.000         0.000         0.000         0.000         0.000
+ SEVER          0.000         0.000         0.000         0.000         0.000
+ INTENT         0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              DINTENT       EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________      ________
+ CSEVER         0.000         0.000         0.000         0.000         0.000
+ DSEVER         0.000         0.000         0.000         0.000         0.000
+ ESEVER         0.000         0.000         0.000         0.000         0.000
+ CINTENT        0.000         0.000         0.000         0.000         0.000
+ DINTENT        1.000         0.000         0.000         0.000         0.000
+ EINTENT        0.000         1.000         0.000         0.000         0.000
+ GROUP          0.000         0.000         1.000         0.000         0.000
+ SEVER          0.000         0.000         0.000         1.000         0.000
+ INTENT         0.000         0.000         0.000         0.000         1.000
+
+
+           THETA
+              CSEVER        DSEVER        ESEVER        CINTENT       DINTENT
+              ________      ________      ________      ________      ________
+ CSEVER         0.000
+ DSEVER         0.000         0.000
+ ESEVER         0.000         0.000         0.000
+ CINTENT        0.000         0.000         0.000         0.000
+ DINTENT        0.000         0.000         0.000         0.000         0.000
+ EINTENT        0.000         0.000         0.000         0.000         0.000
+ GROUP          0.000         0.000         0.000         0.000         0.000
+ SEVER          0.000         0.000         0.000         0.000         0.000
+ INTENT         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________
+ EINTENT        0.000
+ GROUP          0.000         0.000
+ SEVER          0.000         0.000         0.000
+ INTENT         0.000         0.000         0.000         0.000
+
+
+           ALPHA
+              LDINT2        LDINT3        LDINT4        LDSEV2        LDSEV3
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           ALPHA
+              LDSEV4        CSEVER        DSEVER        ESEVER        CINTENT
+              ________      ________      ________      ________      ________
+                0.000         5.866         5.779         5.799         1.720
+
+
+           ALPHA
+              DINTENT       EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________      ________
+                1.690         1.735         0.466         5.796         1.734
+
+
+           BETA
+              LDINT2        LDINT3        LDINT4        LDSEV2        LDSEV3
+              ________      ________      ________      ________      ________
+ LDINT2         0.000         0.000         0.000         0.000         0.000
+ LDINT3         0.000         0.000         0.000         0.000         0.000
+ LDINT4         0.000         0.000         0.000         0.000         0.000
+ LDSEV2         0.000         0.000         0.000         0.000         0.000
+ LDSEV3         0.000         0.000         0.000         0.000         0.000
+ LDSEV4         0.000         0.000         0.000         0.000         0.000
+ CSEVER         0.000         0.000         0.000         1.000         0.000
+ DSEVER         0.000         0.000         0.000         0.000         1.000
+ ESEVER         0.000         0.000         0.000         0.000         0.000
+ CINTENT        1.000         0.000         0.000         0.000         0.000
+ DINTENT        0.000         1.000         0.000         0.000         0.000
+ EINTENT        0.000         0.000         1.000         0.000         0.000
+ GROUP          0.000         0.000         0.000         0.000         0.000
+ SEVER          0.000         0.000         0.000         0.000         0.000
+ INTENT         0.000         0.000         0.000         0.000         0.000
+
+
+           BETA
+              LDSEV4        CSEVER        DSEVER        ESEVER        CINTENT
+              ________      ________      ________      ________      ________
+ LDINT2         0.000         0.000         0.000         0.000         0.000
+ LDINT3         0.000         0.000         0.000         0.000         0.000
+ LDINT4         0.000         0.000         0.000         0.000         0.000
+ LDSEV2         0.000         0.000         0.000         0.000         0.000
+ LDSEV3         0.000         0.000         0.000         0.000         0.000
+ LDSEV4         0.000         0.000         0.000         0.000         0.000
+ CSEVER         0.000         0.000         0.000         0.000         0.000
+ DSEVER         0.000         1.000         0.000         0.000         0.000
+ ESEVER         1.000         0.000         1.000         0.000         0.000
+ CINTENT        0.000         0.000         0.000         0.000         0.000
+ DINTENT        0.000         0.000         0.000         0.000         1.000
+ EINTENT        0.000         0.000         0.000         0.000         0.000
+ GROUP          0.000         0.000         0.000         0.000         0.000
+ SEVER          0.000         0.000         0.000         0.000         0.000
+ INTENT         0.000         0.000         0.000         0.000         0.000
+
+
+           BETA
+              DINTENT       EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________      ________
+ LDINT2         0.000         0.000         0.000         0.000         0.000
+ LDINT3         0.000         0.000         0.000         0.000         0.000
+ LDINT4         0.000         0.000         0.000         0.000         0.000
+ LDSEV2         0.000         0.000         0.000         0.000         0.000
+ LDSEV3         0.000         0.000         0.000         0.000         0.000
+ LDSEV4         0.000         0.000         0.000         0.000         0.000
+ CSEVER         0.000         0.000         0.000         1.000         0.000
+ DSEVER         0.000         0.000         0.000         0.000         0.000
+ ESEVER         0.000         0.000         0.000         0.000         0.000
+ CINTENT        0.000         0.000         0.000         0.000         1.000
+ DINTENT        0.000         0.000         0.000         0.000         0.000
+ EINTENT        1.000         0.000         0.000         0.000         0.000
+ GROUP          0.000         0.000         0.000         0.000         0.000
+ SEVER          0.000         0.000         0.000         0.000         0.000
+ INTENT         0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              LDINT2        LDINT3        LDINT4        LDSEV2        LDSEV3
+              ________      ________      ________      ________      ________
+ LDINT2         0.050
+ LDINT3         0.000         0.050
+ LDINT4         0.000         0.000         0.050
+ LDSEV2         0.000         0.000         0.000         0.050
+ LDSEV3         0.000         0.000         0.000         0.000         0.050
+ LDSEV4         0.000         0.000         0.000         0.000         0.000
+ CSEVER         0.000         0.000         0.000         0.000         0.000
+ DSEVER         0.000         0.000         0.000         0.000         0.000
+ ESEVER         0.000         0.000         0.000         0.000         0.000
+ CINTENT        0.000         0.000         0.000         0.000         0.000
+ DINTENT        0.000         0.000         0.000         0.000         0.000
+ EINTENT        0.000         0.000         0.000         0.000         0.000
+ GROUP          0.000         0.000         0.000         0.000         0.000
+ SEVER          0.000         0.000         0.000         0.000         0.000
+ INTENT         0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              LDSEV4        CSEVER        DSEVER        ESEVER        CINTENT
+              ________      ________      ________      ________      ________
+ LDSEV4         0.050
+ CSEVER         0.000         0.000
+ DSEVER         0.000         0.000         0.000
+ ESEVER         0.000         0.000         0.000         0.000
+ CINTENT        0.000         0.000         0.000         0.000         0.000
+ DINTENT        0.000         0.000         0.000         0.000         0.000
+ EINTENT        0.000         0.000         0.000         0.000         0.000
+ GROUP          0.000         0.000         0.000         0.000         0.000
+ SEVER          0.000         0.000         0.000         0.000         0.000
+ INTENT         0.000         0.000         0.000         0.000         0.000
+
+
+           PSI
+              DINTENT       EINTENT       GROUP         SEVER         INTENT
+              ________      ________      ________      ________      ________
+ DINTENT        0.000
+ EINTENT        0.000         0.000
+ GROUP          0.000         0.000         0.124
+ SEVER          0.000         0.000         0.000         0.823
+ INTENT         0.000         0.000         0.000         0.000         0.809
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\onedrive\desktop\mediation book programs\chapter 16\mplus\chap16_lds_mplus.dgm
+
+     Beginning Time:  14:29:49
+        Ending Time:  14:29:49
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen
