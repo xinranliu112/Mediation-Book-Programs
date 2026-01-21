@@ -1,0 +1,169 @@
+                        Chapter 7 Analysis Example - Potential Outcomes Model                        8
+                                                                         23:35 Wednesday, July 2, 2025
+
+                             Obs    id    x       y       xstar    xxstar
+
+                               1     1    0    13.0000      0         0  
+                               2     2    0    11.0000      0         0  
+                               3     3    0    13.0000      0         0  
+                               4     4    0    15.0000      0         0  
+                               5     5    0    19.0000      0         0  
+                               6     6    0    13.0000      0         0  
+                               7     7    0     9.0000      0         0  
+                               8     8    0     9.0000      0         0  
+                               9     9    0    10.0000      0         0  
+                              10    10    0    16.0000      0         0  
+                              11    11    0     9.0000      0         0  
+                              12    12    0     6.0000      0         0  
+                              13    13    0    11.0000      0         0  
+                              14    14    0    12.0000      0         0  
+                              15    15    0    15.0000      0         0  
+                              16    16    0    18.0000      0         0  
+                              17    17    0    10.0000      0         0  
+                              18    18    0     4.0000      0         0  
+                              19    19    0     8.0000      0         0  
+                              20    20    0    18.0000      0         0  
+                              21    21    0    14.0000      0         0  
+                              22    22    0    10.0000      0         0  
+                              23    23    0    15.0000      0         0  
+                              24    24    0    12.0000      0         0  
+                              25    25    1    10.0000      1         1  
+                              26    26    1    15.0000      1         1  
+                              27    27    1    17.0000      1         1  
+                              28    28    1    19.0000      1         1  
+                              29    29    1    16.0000      1         1  
+                              30    30    1    14.0000      1         1  
+                              31    31    1    14.0000      1         1  
+                              32    32    1    16.0000      1         1  
+                              33    33    1    12.0000      1         1  
+                              34    34    1    16.0000      1         1  
+                              35    35    1    18.0000      1         1  
+                              36    36    1     9.0000      1         1  
+                              37    37    1    10.0000      1         1  
+                              38    38    1    19.0000      1         1  
+                              39    39    1    19.0000      1         1  
+                              40    40    1    13.0000      1         1  
+                              41    41    1    10.0000      1         1  
+                              42    42    1    17.0000      1         1  
+                              43    43    1    11.0000      1         1  
+                              44    44    1    17.0000      1         1  
+                              45     1    0    13.8988      1         0  
+                              46     2    0    13.8988      1         0  
+                              47     3    0    13.8988      1         0  
+                              48     4    0    13.8988      1         0  
+                              49     5    0    13.8988      1         0  
+                              50     6    0    13.8988      1         0  
+                              51     7    0    13.8988      1         0  
+                        Chapter 7 Analysis Example - Potential Outcomes Model                        9
+                                                                         23:35 Wednesday, July 2, 2025
+
+                             Obs    id    x       y       xstar    xxstar
+
+                              52     8    0    13.8988      1         0  
+                              53     9    0    13.8988      1         0  
+                              54    10    0    13.8988      1         0  
+                              55    11    0    13.8988      1         0  
+                              56    12    0    13.8988      1         0  
+                              57    13    0    13.8988      1         0  
+                              58    14    0    13.8988      1         0  
+                              59    15    0    13.8988      1         0  
+                              60    16    0    13.8988      1         0  
+                              61    17    0    13.8988      1         0  
+                              62    18    0    13.8988      1         0  
+                              63    19    0    13.8988      1         0  
+                              64    20    0    13.8988      1         0  
+                              65    21    0    13.8988      1         0  
+                              66    22    0    13.8988      1         0  
+                              67    23    0    13.8988      1         0  
+                              68    24    0    13.8988      1         0  
+                              69    25    1     9.8897      0         0  
+                              70    26    1     9.8897      0         0  
+                              71    27    1     9.8897      0         0  
+                              72    28    1     9.8897      0         0  
+                              73    29    1     9.8897      0         0  
+                              74    30    1     9.8897      0         0  
+                              75    31    1     9.8897      0         0  
+                              76    32    1     9.8897      0         0  
+                              77    33    1     9.8897      0         0  
+                              78    34    1     9.8897      0         0  
+                              79    35    1     9.8897      0         0  
+                              80    36    1     9.8897      0         0  
+                              81    37    1     9.8897      0         0  
+                              82    38    1     9.8897      0         0  
+                              83    39    1     9.8897      0         0  
+                              84    40    1     9.8897      0         0  
+                              85    41    1     9.8897      0         0  
+                              86    42    1     9.8897      0         0  
+                              87    43    1     9.8897      0         0  
+                              88    44    1     9.8897      0         0  
+                        Chapter 7 Analysis Example - Potential Outcomes Model                       10
+                                                                         23:35 Wednesday, July 2, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                                    Data Set              WORK.ALL
+                                    Distribution            Normal
+                                    Link Function         Identity
+                                    Dependent Variable           y
+
+
+                               Number of Observations Read          88
+                               Number of Observations Used          88
+
+
+                                       Class Level Information
+ 
+               Class      Levels    Values
+
+               id             44    1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+                                    21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37
+                                    38 39 40 41 42 43 44                              
+
+
+                                        Parameter Information
+ 
+                                      Parameter       Effect
+
+                                      Prm1            Intercept
+                                      Prm2            x        
+                                      Prm3            xstar    
+                                      Prm4            xxstar   
+
+
+             Algorithm converged.                                                       
+
+
+                                        GEE Model Information
+
+                            Correlation Structure              Independent
+                            Subject Effect                  id (44 levels)
+                            Number of Clusters                          44
+                            Correlation Matrix Dimension                 2
+                            Maximum Cluster Size                         2
+                            Minimum Cluster Size                         2
+
+
+             Algorithm converged.                                                       
+
+
+                                          GEE Fit Criteria
+
+                                        QIC           91.5479
+                                        QICu          92.0000
+                        Chapter 7 Analysis Example - Potential Outcomes Model                       11
+                                                                         23:35 Wednesday, July 2, 2025
+
+                                         The GENMOD Procedure
+
+                                 Analysis Of GEE Parameter Estimates
+                                  Empirical Standard Error Estimates
+ 
+                                       Standard   95% Confidence
+                    Parameter Estimate    Error       Limits            Z Pr > |Z|
+
+                    Intercept  12.0833   0.7544  10.6047  13.5620   16.02   <.0001
+                    x          -2.1936   0.7544  -3.6723  -0.7150   -2.91   0.0036
+                    xstar       1.8155   0.7544   0.3368   3.2941    2.41   0.0161
+                    xxstar      2.8948   1.0470   0.8428   4.9469    2.76   0.0057

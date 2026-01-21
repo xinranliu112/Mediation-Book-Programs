@@ -1,0 +1,71 @@
+> library(medflex)
+> 
+> memory <- read.table("Chap7_Memory.txt")
+> colnames(memory) <- c("id", "x", "m", "r", "y")
+> 
+> impData <- neImpute(y ~ factor(x) * m, data = memory)
+> neImpFit <- neModel(y ~ x0*x1,
++                     expData = impData,
++                     se = "bootstrap",
++                     nBoot = 1000)
+  |=======================================================================================| 100%> neImpEff <- neEffdecomp(neImpFit)
+> summary(neImpEff)
+Effect decomposition on the scale of the linear predictor
+with standard errors based on the non-parametric bootstrap
+---
+with x* = 0, x = 1 
+---
+                      Estimate Std. Error z value Pr(>|z|)  
+pure direct effect     -2.1936     2.1606  -1.015   0.3100  
+total direct effect     0.7012     1.4247   0.492   0.6226  
+pure indirect effect    1.8155     0.8956   2.027   0.0426 *
+total indirect effect   4.7103     2.2671   2.078   0.0377 *
+total effect            2.5167     1.0795   2.331   0.0197 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+(Univariate p-values reported)
+
+> confint(neImpEff, level = 0.95, type = "perc")
+                          95% LCL  95% UCL
+pure direct effect    -5.41995749 3.218888
+total direct effect   -1.84276832 3.872445
+pure indirect effect  -0.05112528 3.503291
+total indirect effect -0.72116130 8.678195
+total effect           0.44644830 4.594844
+---
+bootstrap percentile confidence intervals
+based on 1000 bootstrap samples
+
+> 
+> weightData <- neWeight(m ~ factor(x), data = memory)
+> neWeightFit <- neModel(y ~ x0*x1,
++                        expData = weightData,
++                        se = "bootstrap",
++                        nBoot = 1000)
+  |=======================================================================================| 100%> neWeightEff <- neEffdecomp(neWeightFit)
+> summary(neWeightEff)
+Effect decomposition on the scale of the linear predictor
+with standard errors based on the non-parametric bootstrap
+---
+with x* = 0, x = 1 
+---
+                      Estimate Std. Error z value Pr(>|z|)  
+pure direct effect      0.5773     1.1853   0.487   0.6262  
+total direct effect    -0.2725     1.4332  -0.190   0.8492  
+pure indirect effect    2.7891     1.2009   2.322   0.0202 *
+total indirect effect   1.9394     0.9127   2.125   0.0336 *
+total effect            2.5167     1.0416   2.416   0.0157 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+(Univariate p-values reported)
+
+> confint(neWeightEff, level = 0.95, type = "perc")
+                          95% LCL  95% UCL
+pure direct effect    -1.24306036 3.428594
+total direct effect   -3.05621046 2.696455
+pure indirect effect   0.55741209 5.289643
+total indirect effect  0.05430427 3.866369
+total effect           0.43412177 4.514013
+---
+bootstrap percentile confidence intervals
+based on 1000 bootstrap samples

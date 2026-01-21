@@ -1,0 +1,41 @@
+TITLE: 
+WORD EXPERIMENT;
+
+DATA:
+File is 'Chap7_WorddataFulln.txt';
+listwise=on;!Complete cases only;
+      
+VARIABLE:
+MISSING are .;
+Names are s X concrete abstract Y i r gender verbal quant 
+remember understa enjoy enjoygen knmnemo usmnemo knmnemo1 
+knmnemo2 usmnemo1 usmnemo2;
+!x=condition, i=image, y=total score;
+Usevariables are x i y xi;
+
+DEFINE: 
+xi=x*i;
+
+ANALYSIS:
+	MODEL: 
+	[y*1] (beta0);
+	i on x (gamma1);
+	[i*2](gamma0);
+	y on i (beta1); 
+    y on x (beta2); 
+    y on xi(beta3);
+	i*1;
+    y*.5;
+    MODEL INDIRECT:
+    y MOD i xi x ;
+    MODEL CONSTRAINT:
+    NEW(tie de pie tnie tnde pnie pnde);
+    tie = 0.35;
+    de = 0.8;
+    pie = 0.25;
+    tnie = beta1*gamma1 + beta3*gamma1;
+    tnde = beta2 + beta3*gamma0 + beta3*gamma1;
+    pnie = beta1*gamma1;
+    pnde = beta2 + beta3*gamma0;
+
+OUTPUT:

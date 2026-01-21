@@ -1,0 +1,122 @@
+                                            The SAS System           02:23 Thursday, June 12, 2025   8
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: Y 
+
+                               Number of Observations Read          44
+                               Number of Observations Used          44
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     2      151.20399       75.60199       6.79    0.0028
+            Error                    41      456.52329       11.13471                     
+            Corrected Total          43      607.72727                                    
+
+
+                         Root MSE              3.33687    R-Square     0.2488
+                         Dependent Mean       13.22727    Adj R-Sq     0.2122
+                         Coeff Var            25.22721                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        9.29448        1.23234       7.54      <.0001
+                 X             1        0.33164        1.29156       0.26      0.7986
+                 M             1        0.61406        0.22613       2.72      0.0096
+                                            The SAS System           02:23 Thursday, June 12, 2025   9
+
+                               Obs    Intercept        X           M
+
+                                1       9.29448     0.33164     0.61406
+                                2       1.51866     0.36241    -0.23223
+                                3       0.36241     1.66812    -0.18195
+                                4      -0.23223    -0.18195     0.05113
+                                            The SAS System           02:23 Thursday, June 12, 2025  10
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: M 
+
+                               Number of Observations Read          44
+                               Number of Observations Used          44
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1      138.12803      138.12803      26.64    <.0001
+            Error                    42      217.75833        5.18472                     
+            Corrected Total          43      355.88636                                    
+
+
+                         Root MSE              2.27700    R-Square     0.3881
+                         Dependent Mean        6.15909    Adj R-Sq     0.3736
+                         Coeff Var            36.96972                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        4.54167        0.46479       9.77      <.0001
+                 X             1        3.55833        0.68940       5.16      <.0001
+                                            The SAS System           02:23 Thursday, June 12, 2025  11
+
+                                     Obs    Intercept        X
+
+                                      1       4.54167     3.55833
+                                      2       0.21603    -0.21603
+                                      3      -0.21603     0.47527
+                                            The SAS System           02:23 Thursday, June 12, 2025  12
+
+                                                                     _95__CI_    _95__CI_
+            Obs    Effect          Estimate      s_e_     p_value      lower       upper
+
+             1     cde=nde          0.33164    1.29156    0.79735    -2.19981     2.86309
+             2     nie              2.18503    0.90920    0.01625     0.40300     3.96706
+             3     total effect     2.51667    1.09540    0.02159     0.36969     4.66364
+                                            The SAS System           02:23 Thursday, June 12, 2025  13
+
+                                         The MEANS Procedure
+
+                                        Analysis Variable : M 
+ 
+                   N            Mean         Std Dev         Minimum         Maximum
+                  ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                  44       6.1590909       2.8768780       1.0000000       9.0000000
+                  ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                            The SAS System           02:23 Thursday, June 12, 2025  14
+
+------------------------------------------------ X=0 -------------------------------------------------
+
+                                         The MEANS Procedure
+
+            Variable     N            Mean         Std Dev         Minimum         Maximum
+            ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+            X           24               0               0               0               0
+            M           24       4.5416667       2.8738577       1.0000000       9.0000000
+            Y           24      12.0833333       3.7753971       4.0000000      19.0000000
+            gender      24       0.7083333       0.4643056               0       1.0000000
+            ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+
+
+------------------------------------------------ X=1 -------------------------------------------------
+
+            Variable     N            Mean         Std Dev         Minimum         Maximum
+            ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+            X           20       1.0000000               0       1.0000000       1.0000000
+            M           20       8.1000000       1.2096106       5.0000000       9.0000000
+            Y           20      14.6000000       3.3308763       9.0000000      19.0000000
+            gender      20       0.8000000       0.4103913               0       1.0000000
+            ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ

@@ -1,0 +1,99 @@
+> library(mediation)
+> Memory <- read.table("Chap7_Memory.txt")
+> colnames(Memory) = c("id", "x", "m", "r", "y")
+> model.mMemory <- lm(m~x, data=Memory)
+> model.yMemory <- lm(y~x+m+x:m, data=Memory)
+> out.Memory <- mediate(model.mMemory, model.yMemory, sims=1000, treat="x", mediator="m", boot = TRUE)
+Running nonparametric bootstrap
+> summary(model.mMemory)
+
+Call:
+lm(formula = m ~ x, data = Memory)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.5417 -1.6813  0.1792  0.9000  4.4583 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   4.5417     0.4648   9.771 2.23e-12 ***
+x             3.5583     0.6894   5.162 6.29e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.277 on 42 degrees of freedom
+Multiple R-squared:  0.3881,	Adjusted R-squared:  0.3736 
+F-statistic: 26.64 on 1 and 42 DF,  p-value: 6.292e-06
+
+> summary(model.yMemory)
+
+Call:
+lm(formula = y ~ x + m + x:m, data = Memory)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-8.3172 -1.9444  0.7134  1.8296  5.7236 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   9.7662     1.2863   7.592 2.84e-09 ***
+x            -5.8885     5.3098  -1.109   0.2741    
+m             0.5102     0.2408   2.119   0.0403 *  
+x:m           0.8135     0.6739   1.207   0.2344    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 3.318 on 40 degrees of freedom
+Multiple R-squared:  0.2752,	Adjusted R-squared:  0.2209 
+F-statistic: 5.063 on 3 and 40 DF,  p-value: 0.004572
+
+> summary(out.Memory)
+
+Causal Mediation Analysis 
+
+Nonparametric Bootstrap Confidence Intervals with the Percentile Method
+
+                         Estimate 95% CI Lower 95% CI Upper p-value  
+ACME (control)              1.815       -0.129         3.44   0.056 .
+ACME (treated)              4.710       -0.281         8.87   0.054 .
+ADE (control)              -2.160       -5.942         2.92   0.232  
+ADE (treated)               0.735       -1.675         3.38   0.604  
+Total Effect                2.550        0.331         4.50   0.014 *
+Prop. Mediated (control)    0.712       -0.117         4.08   0.070 .
+Prop. Mediated (treated)    1.847       -0.600         7.80   0.068 .
+ACME (average)              3.263        0.753         5.68   0.026 *
+ADE (average)              -0.713       -3.012         2.15   0.574  
+Prop. Mediated (average)    1.279        0.135         6.13   0.040 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Sample Size Used: 44 
+
+
+Simulations: 1000 
+
+> out.Memory.QuasiBayes <- mediate(model.mMemory, model.yMemory, sims=1000, treat="x", mediator="m", boot = FALSE)
+> summary(out.Memory.QuasiBayes)
+
+Causal Mediation Analysis 
+
+Quasi-Bayesian Confidence Intervals
+
+                         Estimate 95% CI Lower 95% CI Upper p-value   
+ACME (control)              1.757        0.193         3.62   0.026 * 
+ACME (treated)              4.641        0.360         9.58   0.032 * 
+ADE (control)              -2.200       -7.169         2.44   0.370   
+ADE (treated)               0.683       -2.148         3.60   0.664   
+Total Effect                2.440       -0.237         5.11   0.070 . 
+Prop. Mediated (control)    0.680       -1.707         4.13   0.096 . 
+Prop. Mediated (treated)    1.766       -5.225        13.74   0.102   
+ACME (average)              3.199        0.898         5.91   0.006 **
+ADE (average)              -0.759       -4.085         2.33   0.664   
+Prop. Mediated (average)    1.223       -3.574         8.69   0.076 . 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Sample Size Used: 44 
+
+
+Simulations: 1000 

@@ -1,0 +1,171 @@
+                  Chapter 7 - Memory study data with M Continuous for RMPW Analysis                 12
+                                                                         23:35 Wednesday, July 2, 2025
+
+                       Obs     weight    x    m     y    xst    xstar    xxstar
+
+                         1    1.00000    0    3    13     0       0         0  
+                         2    1.00000    0    7    11     0       0         0  
+                         3    1.00000    0    2    13     0       0         0  
+                         4    1.00000    0    1    15     0       0         0  
+                         5    1.00000    0    7    19     0       0         0  
+                         6    1.00000    0    4    13     0       0         0  
+                         7    1.00000    0    1     9     0       0         0  
+                         8    1.00000    0    1     9     0       0         0  
+                         9    1.00000    0    5    10     0       0         0  
+                        10    1.00000    0    1    16     0       0         0  
+                        11    1.00000    0    6     9     0       0         0  
+                        12    1.00000    0    2     6     0       0         0  
+                        13    1.00000    0    1    11     0       0         0  
+                        14    1.00000    0    3    12     0       0         0  
+                        15    1.00000    0    7    15     0       0         0  
+                        16    1.00000    0    9    18     0       0         0  
+                        17    1.00000    0    7    10     0       0         0  
+                        18    1.00000    0    5     4     0       0         0  
+                        19    1.00000    0    3     8     0       0         0  
+                        20    1.00000    0    9    18     0       0         0  
+                        21    1.00000    0    6    14     0       0         0  
+                        22    1.00000    0    2    10     0       0         0  
+                        23    1.00000    0    8    15     0       0         0  
+                        24    1.00000    0    9    12     0       0         0  
+                        25    1.00000    1    9    10     1       1         1  
+                        26    1.00000    1    9    15     1       1         1  
+                        27    1.00000    1    7    17     1       1         1  
+                        28    1.00000    1    9    19     1       1         1  
+                        29    1.00000    1    8    16     1       1         1  
+                        30    1.00000    1    9    14     1       1         1  
+                        31    1.00000    1    8    14     1       1         1  
+                        32    1.00000    1    8    16     1       1         1  
+                        33    1.00000    1    6    12     1       1         1  
+                        34    1.00000    1    8    16     1       1         1  
+                        35    1.00000    1    9    18     1       1         1  
+                        36    1.00000    1    9     9     1       1         1  
+                        37    1.00000    1    6    10     1       1         1  
+                        38    1.00000    1    9    19     1       1         1  
+                        39    1.00000    1    9    19     1       1         1  
+                        40    1.00000    1    8    13     1       1         1  
+                        41    1.00000    1    5    10     1       1         1  
+                        42    1.00000    1    9    17     1       1         1  
+                        43    1.00000    1    8    11     1       1         1  
+                        44    1.00000    1    9    17     1       1         1  
+                        45    0.15902    1    9    10     1       0         0  
+                        46    0.15902    1    9    15     1       0         0  
+                        47    0.62743    1    7    17     1       0         0  
+                        48    0.15902    1    9    19     1       0         0  
+                        49    0.31587    1    8    16     1       0         0  
+                        50    0.15902    1    9    14     1       0         0  
+                        51    0.31587    1    8    14     1       0         0  
+                  Chapter 7 - Memory study data with M Continuous for RMPW Analysis                 13
+                                                                         23:35 Wednesday, July 2, 2025
+
+                       Obs     weight    x    m     y    xst    xstar    xxstar
+
+                        52    0.31587    1    8    16     1       0         0  
+                        53    1.24632    1    6    12     1       0         0  
+                        54    0.31587    1    8    16     1       0         0  
+                        55    0.15902    1    9    18     1       0         0  
+                        56    0.15902    1    9     9     1       0         0  
+                        57    1.24632    1    6    10     1       0         0  
+                        58    0.15902    1    9    19     1       0         0  
+                        59    0.15902    1    9    19     1       0         0  
+                        60    0.31587    1    8    13     1       0         0  
+                        61    2.47565    1    5    10     1       0         0  
+                        62    0.15902    1    9    17     1       0         0  
+                        63    0.31587    1    8    11     1       0         0  
+                        64    0.15902    1    9    17     1       0         0  
+                        65    0.10237    0    3    13     0       1         0  
+                        66    1.59380    0    7    11     0       1         0  
+                        67    0.05154    0    2    13     0       1         0  
+                        68    0.02595    0    1    15     0       1         0  
+                        69    1.59380    0    7    19     0       1         0  
+                        70    0.20335    0    4    13     0       1         0  
+                        71    0.02595    0    1     9     0       1         0  
+                        72    0.02595    0    1     9     0       1         0  
+                        73    0.40393    0    5    10     0       1         0  
+                        74    0.02595    0    1    16     0       1         0  
+                        75    0.80237    0    6     9     0       1         0  
+                        76    0.05154    0    2     6     0       1         0  
+                        77    0.02595    0    1    11     0       1         0  
+                        78    0.10237    0    3    12     0       1         0  
+                        79    1.59380    0    7    15     0       1         0  
+                        80    6.28861    0    9    18     0       1         0  
+                        81    1.59380    0    7    10     0       1         0  
+                        82    0.40393    0    5     4     0       1         0  
+                        83    0.10237    0    3     8     0       1         0  
+                        84    6.28861    0    9    18     0       1         0  
+                        85    0.80237    0    6    14     0       1         0  
+                        86    0.05154    0    2    10     0       1         0  
+                        87    3.16588    0    8    15     0       1         0  
+                        88    6.28861    0    9    12     0       1         0  
+                  Chapter 7 - Memory study data with M Continuous for RMPW Analysis                 14
+                                                                         23:35 Wednesday, July 2, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                                 Data Set                 WORK.ALLIN
+                                 Distribution                 Normal
+                                 Link Function              Identity
+                                 Dependent Variable                y
+                                 Scale Weight Variable        weight
+
+
+                               Number of Observations Read          88
+                               Number of Observations Used          88
+                               Sum of Weights                 84.69541
+
+
+                                       Class Level Information
+ 
+               Class      Levels    Values
+
+               id             44    1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+                                    21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37
+                                    38 39 40 41 42 43 44                              
+
+
+                                        Parameter Information
+ 
+                                      Parameter       Effect
+
+                                      Prm1            Intercept
+                                      Prm2            xst      
+                                      Prm3            xstar    
+                                      Prm4            xxstar   
+
+
+             Algorithm converged.                                                       
+
+
+                                        GEE Model Information
+
+                            Correlation Structure              Independent
+                            Subject Effect                  id (44 levels)
+                            Number of Clusters                          44
+                            Correlation Matrix Dimension                 2
+                            Maximum Cluster Size                         2
+                            Minimum Cluster Size                         2
+
+
+             Algorithm converged.                                                       
+                  Chapter 7 - Memory study data with M Continuous for RMPW Analysis                 15
+                                                                         23:35 Wednesday, July 2, 2025
+
+                                         The GENMOD Procedure
+
+                                          GEE Fit Criteria
+
+                                        QIC           96.3967
+                                        QICu          92.0000
+
+
+                                 Analysis Of GEE Parameter Estimates
+                                  Empirical Standard Error Estimates
+ 
+                                       Standard   95% Confidence
+                    Parameter Estimate    Error       Limits            Z Pr > |Z|
+
+                    Intercept  12.0833   0.7544  10.6047  13.5620   16.02   <.0001
+                    xst         0.5773   1.1994  -1.7735   2.9281    0.48   0.6303
+                    xstar       2.7891   0.9483   0.9304   4.6478    2.94   0.0033
+                    xxstar     -0.8497   1.1668  -3.1366   1.4371   -0.73   0.4664
