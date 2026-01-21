@@ -1,0 +1,206 @@
+                              Chapter 5 Analysis Example- XM Interaction                             1
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: y 
+
+                               Number of Observations Read          44
+                               Number of Observations Used          44
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1       69.09394       69.09394       5.39    0.0252
+            Error                    42      538.63333       12.82460                     
+            Corrected Total          43      607.72727                                    
+
+
+                         Root MSE              3.58115    R-Square     0.1137
+                         Dependent Mean       13.22727    Adj R-Sq     0.0926
+                         Coeff Var            27.07395                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1       12.08333        0.73100      16.53      <.0001
+                 x             1        2.51667        1.08425       2.32      0.0252
+                              Chapter 5 Analysis Example- XM Interaction                             2
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: m 
+
+                               Number of Observations Read          44
+                               Number of Observations Used          44
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1      138.12803      138.12803      26.64    <.0001
+            Error                    42      217.75833        5.18472                     
+            Corrected Total          43      355.88636                                    
+
+
+                         Root MSE              2.27700    R-Square     0.3881
+                         Dependent Mean        6.15909    Adj R-Sq     0.3736
+                         Coeff Var            36.96972                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        4.54167        0.46479       9.77      <.0001
+                 x             1        3.55833        0.68940       5.16      <.0001
+                              Chapter 5 Analysis Example- XM Interaction                             3
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: y 
+
+                               Number of Observations Read          44
+                               Number of Observations Used          44
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     3      167.25445       55.75148       5.06    0.0046
+            Error                    40      440.47282       11.01182                     
+            Corrected Total          43      607.72727                                    
+
+
+                         Root MSE              3.31841    R-Square     0.2752
+                         Dependent Mean       13.22727    Adj R-Sq     0.2209
+                         Coeff Var            25.08761                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        9.76618        1.28629       7.59      <.0001
+                 x             1       -5.88848        5.30979      -1.11      0.2741
+                 m             1        0.51020        0.24077       2.12      0.0403
+                 xm            1        0.81354        0.67385       1.21      0.2344
+                              Chapter 5 Analysis Example- XM Interaction                             4
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: y 
+
+                               Number of Observations Read          44
+                               Number of Observations Used          44
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     3      167.25445       55.75148       5.06    0.0046
+            Error                    40      440.47282       11.01182                     
+            Corrected Total          43      607.72727                                    
+
+
+                         Root MSE              3.31841    R-Square     0.2752
+                         Dependent Mean       13.22727    Adj R-Sq     0.2209
+                         Coeff Var            25.08761                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        3.87770        5.15163       0.75      0.4560
+                 xnew          1       -5.88848        5.30979      -1.11      0.2741
+                 m             1        1.32374        0.62937       2.10      0.0418
+                 xnewm         1        0.81354        0.67385       1.21      0.2344
+                              Chapter 5 Analysis Example- XM Interaction                             5
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: y 
+
+                               Number of Observations Read          44
+                               Number of Observations Used          44
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     3      167.25445       55.75148       5.06    0.0046
+            Error                    40      440.47282       11.01182                     
+            Corrected Total          43      607.72727                                    
+
+
+                         Root MSE              3.31841    R-Square     0.2752
+                         Dependent Mean       13.22727    Adj R-Sq     0.2209
+                         Coeff Var            25.08761                       
+
+
+                                         Parameter Estimates
+ 
+                                       Parameter       Standard
+               Variable        DF       Estimate          Error    t Value    Pr > |t|
+
+               Intercept        1       12.08335        0.67737      17.84      <.0001
+               x                1       -2.19362        2.45454      -0.89      0.3768
+               mnewcontrol      1        0.51020        0.24077       2.12      0.0403
+               xmnewcontrol     1        0.81354        0.67385       1.21      0.2344
+                              Chapter 5 Analysis Example- XM Interaction                             6
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: y 
+
+                               Number of Observations Read          44
+                               Number of Observations Used          44
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     3      167.25445       55.75148       5.06    0.0046
+            Error                    40      440.47282       11.01182                     
+            Corrected Total          43      607.72727                                    
+
+
+                         Root MSE              3.31841    R-Square     0.2752
+                         Dependent Mean       13.22727    Adj R-Sq     0.2209
+                         Coeff Var            25.08761                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                Variable      DF       Estimate          Error    t Value    Pr > |t|
+
+                Intercept      1       13.89879        1.09216      12.73      <.0001
+                x              1        0.70121        1.32038       0.53      0.5983
+                mnewtreat      1        0.51020        0.24077       2.12      0.0403
+                xmnewtreat     1        0.81354        0.67385       1.21      0.2344
