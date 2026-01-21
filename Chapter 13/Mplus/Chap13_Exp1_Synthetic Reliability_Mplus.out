@@ -1,0 +1,782 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+05/29/2025  12:27 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:  Chapter 13 Three Factor Latent Variable Model Synthetic Reliability Estimation;
+
+  DATA:
+    FILE IS Chap13_Exp1 Raw Data.txt;
+
+  VARIABLE:
+    NAMES ARE id coach1 coach2 coach3 severe1 severe2 severe3 intent1
+    intent2 intent3;
+    USEVARIABLES ARE coachs severes intents;
+
+  DEFINE:
+    coachs = coach1 + coach2 + coach3;
+    severes = severe1 + severe2 + severe3;
+    intents = intent1 + intent2 + intent3;
+
+  ANALYSIS:
+    TYPE IS GENERAL;
+    ESTIMATOR IS ML;
+    ITERATIONS = 1000;
+    CONVERGENCE = 0.00005;
+
+  Model:
+     severe by severes@1; severes@.2828;
+     coach by coachs@1; coachs@.1784;
+     intent by intents@1; intents@.5629;
+     intent on severe coach;
+     severe on coach;
+
+  Model indirect:
+  intent ind coach;
+
+  OUTPUT:  SAMPSTAT STANDARDIZED CINTERVAL TECH4;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Chapter 13 Three Factor Latent Variable Model Synthetic Reliability Estimation;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         547
+
+Number of dependent variables                                    3
+Number of independent variables                                  0
+Number of continuous latent variables                            3
+
+Observed dependent variables
+
+  Continuous
+   COACHS      SEVERES     INTENTS
+
+Continuous latent variables
+   SEVERE      COACH       INTENT
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  Chap13_Exp1 Raw Data.txt
+
+Input data format  FREE
+
+
+SAMPLE STATISTICS
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              COACHS        SEVERES       INTENTS
+              ________      ________      ________
+                6.157        17.892        18.938
+
+
+           Covariances
+              COACHS        SEVERES       INTENTS
+              ________      ________      ________
+ COACHS        13.200
+ SEVERES       -3.380        14.012
+ INTENTS       -1.319         3.511        13.996
+
+
+           Correlations
+              COACHS        SEVERES       INTENTS
+              ________      ________      ________
+ COACHS         1.000
+ SEVERES       -0.249         1.000
+ INTENTS       -0.097         0.251         1.000
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     COACHS                6.157       1.918       3.000   30.16%       3.000      5.000      6.000
+             547.000      13.200       4.660      21.000    2.01%       6.000      9.000
+     SEVERES              17.892      -1.024       3.000    0.55%      14.000     18.000     20.000
+             547.000      14.012       0.350      21.000   45.70%      21.000     21.000
+     INTENTS              18.938      -1.914       3.000    0.55%      17.000     21.000     21.000
+             547.000      13.996       3.035      21.000   66.73%      21.000     21.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        9
+
+Loglikelihood
+
+          H0 Value                       -4442.334
+          H1 Value                       -4442.334
+
+Information Criteria
+
+          Akaike (AIC)                    8902.667
+          Bayesian (BIC)                  8941.407
+          Sample-Size Adjusted BIC        8912.838
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             71.125
+          Degrees of Freedom                     3
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SEVERE   BY
+    SEVERES            1.000      0.000    999.000    999.000
+
+ COACH    BY
+    COACHS             1.000      0.000    999.000    999.000
+
+ INTENT   BY
+    INTENTS            1.000      0.000    999.000    999.000
+
+ INTENT   ON
+    SEVERE             0.247      0.044      5.646      0.000
+    COACH             -0.037      0.045     -0.836      0.403
+
+ SEVERE   ON
+    COACH             -0.260      0.043     -6.001      0.000
+
+ Intercepts
+    COACHS             6.157      0.155     39.636      0.000
+    SEVERES           17.892      0.160    111.789      0.000
+    INTENTS           18.938      0.160    118.390      0.000
+
+ Variances
+    COACH             13.022      0.798     16.314      0.000
+
+ Residual Variances
+    COACHS             0.178      0.000    999.000    999.000
+    SEVERES            0.283      0.000    999.000    999.000
+    INTENTS            0.563      0.000    999.000    999.000
+    SEVERE            12.852      0.795     16.167      0.000
+    INTENT            12.519      0.792     15.805      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.139E-01
+       (ratio of smallest to largest eigenvalue)
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SEVERE   BY
+    SEVERES            0.990      0.001   1605.755      0.000
+
+ COACH    BY
+    COACHS             0.993      0.000   2414.254      0.000
+
+ INTENT   BY
+    INTENTS            0.980      0.001    789.331      0.000
+
+ INTENT   ON
+    SEVERE             0.249      0.043      5.817      0.000
+    COACH             -0.037      0.044     -0.836      0.403
+
+ SEVERE   ON
+    COACH             -0.253      0.041     -6.202      0.000
+
+ Intercepts
+    COACHS             1.695      0.067     25.395      0.000
+    SEVERES            4.780      0.151     31.716      0.000
+    INTENTS            5.062      0.159     31.855      0.000
+
+ Variances
+    COACH              1.000      0.000    999.000    999.000
+
+ Residual Variances
+    COACHS             0.014      0.001     16.538      0.000
+    SEVERES            0.020      0.001     16.538      0.000
+    INTENTS            0.040      0.002     16.538      0.000
+    SEVERE             0.936      0.021     45.430      0.000
+    INTENT             0.932      0.021     43.397      0.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SEVERE   BY
+    SEVERES            0.990      0.001   1605.755      0.000
+
+ COACH    BY
+    COACHS             0.993      0.000   2414.254      0.000
+
+ INTENT   BY
+    INTENTS            0.980      0.001    789.331      0.000
+
+ INTENT   ON
+    SEVERE             0.249      0.043      5.817      0.000
+    COACH             -0.037      0.044     -0.836      0.403
+
+ SEVERE   ON
+    COACH             -0.253      0.041     -6.202      0.000
+
+ Intercepts
+    COACHS             1.695      0.067     25.395      0.000
+    SEVERES            4.780      0.151     31.716      0.000
+    INTENTS            5.062      0.159     31.855      0.000
+
+ Variances
+    COACH              1.000      0.000    999.000    999.000
+
+ Residual Variances
+    COACHS             0.014      0.001     16.538      0.000
+    SEVERES            0.020      0.001     16.538      0.000
+    INTENTS            0.040      0.002     16.538      0.000
+    SEVERE             0.936      0.021     45.430      0.000
+    INTENT             0.932      0.021     43.397      0.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SEVERE   BY
+    SEVERES            3.705      0.114     32.408      0.000
+
+ COACH    BY
+    COACHS             3.609      0.111     32.629      0.000
+
+ INTENT   BY
+    INTENTS            3.665      0.115     31.745      0.000
+
+ INTENT   ON
+    SEVERE             0.249      0.043      5.817      0.000
+    COACH             -0.037      0.044     -0.836      0.403
+
+ SEVERE   ON
+    COACH             -0.253      0.041     -6.202      0.000
+
+ Intercepts
+    COACHS             6.157      0.155     39.636      0.000
+    SEVERES           17.892      0.160    111.789      0.000
+    INTENTS           18.938      0.160    118.390      0.000
+
+ Variances
+    COACH              1.000      0.000    999.000    999.000
+
+ Residual Variances
+    COACHS             0.178      0.000    999.000    999.000
+    SEVERES            0.283      0.000    999.000    999.000
+    INTENTS            0.563      0.000    999.000    999.000
+    SEVERE             0.936      0.021     45.430      0.000
+    INTENT             0.932      0.021     43.397      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    COACHS             0.986      0.001   1207.127      0.000
+    SEVERES            0.980      0.001    802.878      0.000
+    INTENTS            0.960      0.002    394.665      0.000
+
+     Latent                                         Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    SEVERE             0.064      0.021      3.101      0.002
+    INTENT             0.068      0.021      3.171      0.002
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from COACH to INTENT
+
+  Total               -0.101      0.044     -2.281      0.023
+  Total indirect      -0.064      0.016     -4.113      0.000
+
+  Specific indirect 1
+    INTENT
+    SEVERE
+    COACH             -0.064      0.016     -4.113      0.000
+
+  Direct
+    INTENT
+    COACH             -0.037      0.045     -0.836      0.403
+
+
+
+STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from COACH to INTENT
+
+  Total               -0.100      0.044     -2.292      0.022
+  Total indirect      -0.063      0.015     -4.186      0.000
+
+  Specific indirect 1
+    INTENT
+    SEVERE
+    COACH             -0.063      0.015     -4.186      0.000
+
+  Direct
+    INTENT
+    COACH             -0.037      0.044     -0.836      0.403
+
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from COACH to INTENT
+
+  Total               -0.100      0.044     -2.292      0.022
+  Total indirect      -0.063      0.015     -4.186      0.000
+
+  Specific indirect 1
+    INTENT
+    SEVERE
+    COACH             -0.063      0.015     -4.186      0.000
+
+  Direct
+    INTENT
+    COACH             -0.037      0.044     -0.836      0.403
+
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from COACH to INTENT
+
+  Total               -0.100      0.044     -2.292      0.022
+  Total indirect      -0.063      0.015     -4.186      0.000
+
+  Specific indirect 1
+    INTENT
+    SEVERE
+    COACH             -0.063      0.015     -4.186      0.000
+
+  Direct
+    INTENT
+    COACH             -0.037      0.044     -0.836      0.403
+
+
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ SEVERE   BY
+    SEVERES          1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ COACH    BY
+    COACHS           1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ INTENT   BY
+    INTENTS          1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ INTENT   ON
+    SEVERE           0.134       0.161       0.175       0.247       0.318       0.332       0.359
+    COACH           -0.152      -0.125      -0.111      -0.037       0.036       0.050       0.078
+
+ SEVERE   ON
+    COACH           -0.371      -0.344      -0.331      -0.260      -0.188      -0.175      -0.148
+
+ Intercepts
+    COACHS           5.757       5.853       5.902       6.157       6.413       6.462       6.557
+    SEVERES         17.480      17.578      17.629      17.892      18.155      18.206      18.304
+    INTENTS         18.526      18.624      18.675      18.938      19.201      19.251      19.350
+
+ Variances
+    COACH           10.966      11.457      11.709      13.022      14.335      14.586      15.078
+
+ Residual Variances
+    COACHS           0.178       0.178       0.178       0.178       0.178       0.178       0.178
+    SEVERES          0.283       0.283       0.283       0.283       0.283       0.283       0.283
+    INTENTS          0.563       0.563       0.563       0.563       0.563       0.563       0.563
+    SEVERE          10.805      11.294      11.545      12.852      14.160      14.410      14.900
+    INTENT          10.479      10.966      11.216      12.519      13.822      14.071      14.559
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ SEVERE   BY
+    SEVERES          0.988       0.989       0.989       0.990       0.991       0.991       0.991
+
+ COACH    BY
+    COACHS           0.992       0.992       0.993       0.993       0.994       0.994       0.994
+
+ INTENT   BY
+    INTENTS          0.976       0.977       0.978       0.980       0.982       0.982       0.983
+
+ INTENT   ON
+    SEVERE           0.139       0.165       0.179       0.249       0.320       0.333       0.360
+    COACH           -0.150      -0.123      -0.109      -0.037       0.036       0.049       0.076
+
+ SEVERE   ON
+    COACH           -0.358      -0.333      -0.320      -0.253      -0.186      -0.173      -0.148
+
+ Intercepts
+    COACHS           1.523       1.564       1.585       1.695       1.804       1.825       1.867
+    SEVERES          4.392       4.484       4.532       4.780       5.028       5.075       5.168
+    INTENTS          4.653       4.751       4.801       5.062       5.323       5.373       5.471
+
+ Variances
+    COACH            1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    COACHS           0.011       0.012       0.012       0.014       0.015       0.015       0.016
+    SEVERES          0.017       0.018       0.018       0.020       0.022       0.023       0.023
+    INTENTS          0.034       0.035       0.036       0.040       0.044       0.045       0.046
+    SEVERE           0.883       0.896       0.902       0.936       0.970       0.976       0.989
+    INTENT           0.877       0.890       0.897       0.932       0.967       0.974       0.987
+
+
+STDY Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ SEVERE   BY
+    SEVERES          0.988       0.989       0.989       0.990       0.991       0.991       0.991
+
+ COACH    BY
+    COACHS           0.992       0.992       0.993       0.993       0.994       0.994       0.994
+
+ INTENT   BY
+    INTENTS          0.976       0.977       0.978       0.980       0.982       0.982       0.983
+
+ INTENT   ON
+    SEVERE           0.139       0.165       0.179       0.249       0.320       0.333       0.360
+    COACH           -0.150      -0.123      -0.109      -0.037       0.036       0.049       0.076
+
+ SEVERE   ON
+    COACH           -0.358      -0.333      -0.320      -0.253      -0.186      -0.173      -0.148
+
+ Intercepts
+    COACHS           1.523       1.564       1.585       1.695       1.804       1.825       1.867
+    SEVERES          4.392       4.484       4.532       4.780       5.028       5.075       5.168
+    INTENTS          4.653       4.751       4.801       5.062       5.323       5.373       5.471
+
+ Variances
+    COACH            1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    COACHS           0.011       0.012       0.012       0.014       0.015       0.015       0.016
+    SEVERES          0.017       0.018       0.018       0.020       0.022       0.023       0.023
+    INTENTS          0.034       0.035       0.036       0.040       0.044       0.045       0.046
+    SEVERE           0.883       0.896       0.902       0.936       0.970       0.976       0.989
+    INTENT           0.877       0.890       0.897       0.932       0.967       0.974       0.987
+
+
+STD Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ SEVERE   BY
+    SEVERES          3.411       3.481       3.517       3.705       3.893       3.929       4.000
+
+ COACH    BY
+    COACHS           3.324       3.392       3.427       3.609       3.791       3.825       3.893
+
+ INTENT   BY
+    INTENTS          3.368       3.439       3.475       3.665       3.855       3.891       3.963
+
+ INTENT   ON
+    SEVERE           0.139       0.165       0.179       0.249       0.320       0.333       0.360
+    COACH           -0.150      -0.123      -0.109      -0.037       0.036       0.049       0.076
+
+ SEVERE   ON
+    COACH           -0.358      -0.333      -0.320      -0.253      -0.186      -0.173      -0.148
+
+ Intercepts
+    COACHS           5.757       5.853       5.902       6.157       6.413       6.462       6.557
+    SEVERES         17.480      17.578      17.629      17.892      18.155      18.206      18.304
+    INTENTS         18.526      18.624      18.675      18.938      19.201      19.251      19.350
+
+ Variances
+    COACH            1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    COACHS           0.178       0.178       0.178       0.178       0.178       0.178       0.178
+    SEVERES          0.283       0.283       0.283       0.283       0.283       0.283       0.283
+    INTENTS          0.563       0.563       0.563       0.563       0.563       0.563       0.563
+    SEVERE           0.883       0.896       0.902       0.936       0.970       0.976       0.989
+    INTENT           0.877       0.890       0.897       0.932       0.967       0.974       0.987
+
+
+CONFIDENCE INTERVALS OF TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from COACH to INTENT
+
+  Total             -0.216      -0.188      -0.174      -0.101      -0.028      -0.014       0.013
+  Total indirect    -0.104      -0.094      -0.090      -0.064      -0.038      -0.033      -0.024
+
+  Specific indirect 1
+    INTENT
+    SEVERE
+    COACH           -0.104      -0.094      -0.090      -0.064      -0.038      -0.033      -0.024
+
+  Direct
+    INTENT
+    COACH           -0.152      -0.125      -0.111      -0.037       0.036       0.050       0.078
+
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from COACH to INTENT
+
+  Total             -0.212      -0.185      -0.171      -0.100      -0.028      -0.014       0.012
+  Total indirect    -0.102      -0.092      -0.088      -0.063      -0.038      -0.033      -0.024
+
+  Specific indirect 1
+    INTENT
+    SEVERE
+    COACH           -0.102      -0.092      -0.088      -0.063      -0.038      -0.033      -0.024
+
+  Direct
+    INTENT
+    COACH           -0.150      -0.123      -0.109      -0.037       0.036       0.049       0.076
+
+
+
+STDY Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from COACH to INTENT
+
+  Total             -0.212      -0.185      -0.171      -0.100      -0.028      -0.014       0.012
+  Total indirect    -0.102      -0.092      -0.088      -0.063      -0.038      -0.033      -0.024
+
+  Specific indirect 1
+    INTENT
+    SEVERE
+    COACH           -0.102      -0.092      -0.088      -0.063      -0.038      -0.033      -0.024
+
+  Direct
+    INTENT
+    COACH           -0.150      -0.123      -0.109      -0.037       0.036       0.049       0.076
+
+
+
+STD Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from COACH to INTENT
+
+  Total             -0.212      -0.185      -0.171      -0.100      -0.028      -0.014       0.012
+  Total indirect    -0.102      -0.092      -0.088      -0.063      -0.038      -0.033      -0.024
+
+  Specific indirect 1
+    INTENT
+    SEVERE
+    COACH           -0.102      -0.092      -0.088      -0.063      -0.038      -0.033      -0.024
+
+  Direct
+    INTENT
+    COACH           -0.150      -0.123      -0.109      -0.037       0.036       0.049       0.076
+
+
+
+
+TECHNICAL 4 OUTPUT
+
+
+     ESTIMATES DERIVED FROM THE MODEL
+
+
+           ESTIMATED MEANS FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           S.E. FOR ESTIMATED MEANS FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           EST./S.E. FOR ESTIMATED MEANS FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+                0.000         0.000         0.000
+
+
+           TWO-TAILED P-VALUE FOR ESTIMATED MEANS FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+                1.000         1.000         1.000
+
+
+           ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+ SEVERE        13.730
+ COACH         -3.380        13.022
+ INTENT         3.511        -1.319        13.434
+
+
+           S.E. FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+ SEVERE         0.847
+ COACH          0.599         0.798
+ INTENT         0.617         0.584         0.846
+
+
+           EST./S.E. FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+ SEVERE        16.204
+ COACH         -5.641        16.314
+ INTENT         5.687        -2.260        15.872
+
+
+           TWO-TAILED P-VALUE FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+ SEVERE         0.000
+ COACH          0.000         0.000
+ INTENT         0.000         0.024         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+ SEVERE         1.000
+ COACH         -0.253         1.000
+ INTENT         0.259        -0.100         1.000
+
+
+           S.E. FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+ SEVERE         0.000
+ COACH          0.041         0.000
+ INTENT         0.041         0.044         0.000
+
+
+           EST./S.E. FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+ SEVERE       999.000
+ COACH         -6.202       999.000
+ INTENT         6.269        -2.292       999.000
+
+
+           TWO-TAILED P-VALUE FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              SEVERE        COACH         INTENT
+              ________      ________      ________
+ SEVERE         0.000
+ COACH          0.000         0.000
+ INTENT         0.000         0.022         0.000
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\asu dropbox\xinran liu\pc (3)\downloads\mediation book 2025-20250527t092340z-1-001\mediation book 202
+
+     Beginning Time:  00:27:23
+        Ending Time:  00:27:23
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen

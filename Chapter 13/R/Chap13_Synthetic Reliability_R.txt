@@ -1,0 +1,131 @@
+> #########################################
+> ### Synthetic Reliability Estimation  ###
+> #########################################
+> # Read data
+> chap13Data <- read.table("Chap13_Exp1 Raw Data.txt",
++                          quote = "\"", 
++                          comment.char = "")
+> colnames(chap13Data) <- c("id", "coach1", "coach2", "coach3", 
++                           "severe1", "severe2", "severe3", 
++                            "intent1", "intent2", "intent3")
+> chap13Data$coachs <- chap13Data$coach1 + chap13Data$coach2 + chap13Data$coach3
+> chap13Data$severes <- chap13Data$severe1 + chap13Data$severe2 + chap13Data$severe3
+> chap13Data$intents <- chap13Data$intent1 + chap13Data$intent2 + chap13Data$intent3
+> 
+> # Load package
+> library(lavaan)
+This is lavaan 0.6-19
+lavaan is FREE software! Please report any bugs.
+> 
+> # Model syntax
+> syntheticReliabilityModel <- '
++ # Measurement model
++ severe =~ 1*severes
++ coach  =~ 1*coachs
++ intent =~ 1*intents
++ 
++ # Fix residual variances of indicators
++ severes ~~ 0.2828*severes
++ coachs ~~ 0.1784*coachs
++ intents ~~ 0.5629*intents
++ 
++ # Structural regressions
++ intent ~ severe + coach
++ severe ~ coach
++ '
+> 
+> syntheticReliabilityFit <- sem(model = syntheticReliabilityModel, 
++                                data = chap13Data,
++                                estimator = "ML")
+> summary(syntheticReliabilityFit, 
++         ci = TRUE,
++         standardized = TRUE)
+lavaan 0.6-19 ended normally after 41 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                         6
+
+  Number of observations                           547
+
+Model Test User Model:
+                                                      
+  Test statistic                                 0.000
+  Degrees of freedom                                 0
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(>|z|) ci.lower ci.upper   Std.lv  Std.all
+  severe =~                                                                               
+    severes           1.000                               1.000    1.000    3.705    0.990
+  coach =~                                                                                
+    coachs            1.000                               1.000    1.000    3.609    0.993
+  intent =~                                                                               
+    intents           1.000                               1.000    1.000    3.665    0.980
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(>|z|) ci.lower ci.upper   Std.lv  Std.all
+  intent ~                                                                                
+    severe            0.247    0.044    5.646    0.000    0.161    0.332    0.249    0.249
+    coach            -0.037    0.045   -0.836    0.403   -0.125    0.050   -0.037   -0.037
+  severe ~                                                                                
+    coach            -0.260    0.043   -6.000    0.000   -0.344   -0.175   -0.253   -0.253
+
+Variances:
+                   Estimate  Std.Err  z-value  P(>|z|) ci.lower ci.upper   Std.lv  Std.all
+   .severes           0.283                               0.283    0.283    0.283    0.020
+   .coachs            0.178                               0.178    0.178    0.178    0.014
+   .intents           0.563                               0.563    0.563    0.563    0.040
+   .severe           12.852    0.795   16.167    0.000   11.294   14.410    0.936    0.936
+    coach            13.022    0.798   16.314    0.000   11.457   14.586    1.000    1.000
+   .intent           12.519    0.792   15.805    0.000   10.966   14.071    0.932    0.932
+
+> 
+> notAdjustedforMeasurementErrorModel <- '
++ # Structural regressions
++ intents ~ severes + coachs
++ severes ~ coachs
++ '
+> 
+> notAdjustedforMeasurementErrorFit <- sem(model = notAdjustedforMeasurementErrorModel, 
++                                          data = chap13Data,
++                                          estimator = "ML")
+> summary(notAdjustedforMeasurementErrorFit, 
++         ci = TRUE,
++         standardized = TRUE)
+lavaan 0.6-19 ended normally after 1 iteration
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                         5
+
+  Number of observations                           547
+
+Model Test User Model:
+                                                      
+  Test statistic                                 0.000
+  Degrees of freedom                                 0
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(>|z|) ci.lower ci.upper   Std.lv  Std.all
+  intents ~                                                                               
+    severes           0.241    0.043    5.655    0.000    0.158    0.325    0.241    0.241
+    coachs           -0.038    0.044   -0.868    0.386   -0.124    0.048   -0.038   -0.037
+  severes ~                                                                               
+    coachs           -0.256    0.043   -6.000    0.000   -0.340   -0.172   -0.256   -0.249
+
+Variances:
+                   Estimate  Std.Err  z-value  P(>|z|) ci.lower ci.upper   Std.lv  Std.all
+   .intents          13.099    0.792   16.538    0.000   11.546   14.651   13.099    0.936
+   .severes          13.147    0.795   16.538    0.000   11.589   14.705   13.147    0.938

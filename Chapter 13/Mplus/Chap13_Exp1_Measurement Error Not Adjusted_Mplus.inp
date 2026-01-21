@@ -1,0 +1,29 @@
+TITLE:  Chapter 13 Summary Scores not Adjusted for Measurement Error;
+
+DATA:
+  FILE IS Chap13_Exp1 Raw Data.txt;
+
+VARIABLE:
+  NAMES ARE id coach1 coach2 coach3 severe1 severe2 severe3 intent1
+  intent2 intent3;
+  USEVARIABLES ARE coachs severes intents;
+
+DEFINE:
+  coachs = coach1 + coach2 + coach3;
+  severes = severe1 + severe2 + severe3;
+  intents = intent1 + intent2 + intent3;
+
+ANALYSIS:
+  TYPE IS GENERAL;
+  ESTIMATOR IS ML;
+  ITERATIONS = 1000;
+  CONVERGENCE = 0.00005;
+
+Model:
+   intents on severes coachs;
+   severes on coachs;
+
+Model indirect:
+intents ind coachs;
+
+OUTPUT:  SAMPSTAT STANDARDIZED CINTERVAL TECH4;

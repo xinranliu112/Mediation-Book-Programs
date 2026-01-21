@@ -1,0 +1,288 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+05/29/2025  12:30 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:  Chapter 13 Three Factor Latent Variable Model Binary X;
+    !Chapter 13 example with summary measures of X, M, and Y.
+    !The mediator is perceived severity and it is latent;
+    !X is dichotomized and Y is made to be categorical in the define statement;
+  DATA:
+      FILE IS Chap13_Exp1 Raw Data.txt;
+      format is free;
+    VARIABLE:
+      NAMES ARE obs coach1 coach2 coach3 severe1 severe2 severe3 intent1
+      intent2 intent3;
+      USEVARIABLES ARE severe1 severe2 severe3 intents coachs ;
+    categorical is intents;
+    Define:
+    if (coach1+coach2+coach3) >4.5 then coachs=1;
+    if (coach1+coach2+coach3) <4.5 then coachs=0;
+    !severes=severe1+severe2+severe3;
+    intents=intent1+intent2+intent3;
+    Cut intents (2 12 20);
+    ANALYSIS:
+      TYPE IS GENERAL;
+      ESTIMATOR IS ML;
+      ITERATIONS = 1000;
+      CONVERGENCE = 0.00005;
+
+    Model:
+    severe by severe1 severe2 severe3;
+    severe@1;
+     intents on severe coachs;
+     severe on coachs;
+
+    Model indirect:
+    intents ind severe coachs;
+
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Chapter 13 Three Factor Latent Variable Model Binary X;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         547
+
+Number of dependent variables                                    4
+Number of independent variables                                  1
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   SEVERE1     SEVERE2     SEVERE3
+
+  Binary and ordered categorical (ordinal)
+   INTENTS
+
+Observed independent variables
+   COACHS
+
+Continuous latent variables
+   SEVERE
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                1000
+  Convergence criterion                                  0.500D-04
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-02
+    Relative loglikelihood change                        0.100D-05
+    Derivative                                           0.100D-02
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-02
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Optimization algorithm                                         EMA
+Integration Specifications
+  Type                                                    STANDARD
+  Number of integration points                                  15
+  Dimensions of numerical integration                            1
+  Adaptive quadrature                                           ON
+Link                                                         LOGIT
+Cholesky                                                       OFF
+
+Input data file(s)
+  Chap13_Exp1 Raw Data.txt
+Input data format  FREE
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    INTENTS
+      Category 1    0.121           66.000
+      Category 2    0.212          116.000
+      Category 3    0.667          365.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     SEVERE1               6.055      -1.473       1.000    2.19%       4.000      7.000      7.000
+             547.000       2.070       1.590       7.000   61.97%       7.000      7.000
+     SEVERE2               5.868      -1.099       1.000    1.46%       4.000      6.000      7.000
+             547.000       2.202       0.346       7.000   54.48%       7.000      7.000
+     SEVERE3               5.969      -1.363       1.000    2.38%       4.000      6.000      7.000
+             547.000       2.092       1.362       7.000   56.86%       7.000      7.000
+     COACHS                0.603      -0.422       0.000   39.67%       0.000      1.000      1.000
+             547.000       0.239      -1.822       1.000   60.33%       1.000      1.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       13
+
+Loglikelihood
+
+          H0 Value                       -3083.630
+
+Information Criteria
+
+          Akaike (AIC)                    6193.260
+          Bayesian (BIC)                  6249.218
+          Sample-Size Adjusted BIC        6207.950
+            (n* = (n + 2) / 24)
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ SEVERE   BY
+    SEVERE1            1.000      0.000    999.000    999.000
+    SEVERE2            1.151      0.056     20.708      0.000
+    SEVERE3            1.224      0.054     22.662      0.000
+
+ SEVERE     ON
+    COACHS            -0.471      0.097     -4.869      0.000
+
+ INTENTS    ON
+    SEVERE             0.574      0.104      5.500      0.000
+
+ INTENTS    ON
+    COACHS            -0.073      0.195     -0.373      0.709
+
+ Intercepts
+    SEVERE1            6.338      0.085     74.578      0.000
+    SEVERE2            6.195      0.093     66.914      0.000
+    SEVERE3            6.316      0.093     67.555      0.000
+
+ Thresholds
+    INTENTS$1         -2.304      0.188    -12.231      0.000
+    INTENTS$2         -0.932      0.156     -5.973      0.000
+
+ Residual Variances
+    SEVERE1            1.090      0.079     13.846      0.000
+    SEVERE2            0.839      0.081     10.358      0.000
+    SEVERE3            0.551      0.077      7.162      0.000
+    SEVERE             1.000      0.000    999.000    999.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.137E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+RESULTS IN PROBABILITY SCALE
+
+                    Estimate
+
+ INTENTS
+    Category 1         0.123
+    Category 2         0.216
+    Category 3         0.662
+
+
+LOGISTIC REGRESSION ODDS RATIO RESULTS
+
+                                                95% C.I.
+                    Estimate       S.E.  Lower 2.5% Upper 2.5%
+
+ INTENTS    ON
+    SEVERE             1.775      0.185      1.447      2.178
+
+ INTENTS    ON
+    COACHS             0.930      0.181      0.635      1.362
+
+
+BRANT WALD TEST FOR PROPORTIONAL ODDS
+
+                                   Degrees of
+                      Chi-Square     Freedom   P-Value
+
+  INTENTS
+    Overall test           2.189         1      0.139
+    COACHS                 2.189         1      0.139
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS FOR LATENT RESPONSE VARIABLES
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from COACHS to INTENTS
+
+  Indirect            -0.270      0.074     -3.664      0.000
+  Direct effect       -0.073      0.195     -0.373      0.709
+
+
+TOTAL, INDIRECT, AND DIRECT EFFECTS BASED ON COUNTERFACTUALS (CAUSALLY-DEFINED EFFECTS, CONDITIONAL ON ALL OTHER COVARIATES BEING ZERO)
+
+
+Effects from COACHS to INTENTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+  Tot natural IE      -0.084      0.022     -3.863      0.000
+  Pure natural DE     -0.021      0.056     -0.373      0.709
+  Total effect        -0.105      0.059     -1.784      0.074
+
+ Other effects
+
+  Pure natural IE     -0.082      0.023     -3.602      0.000
+  Tot natural DE      -0.024      0.063     -0.374      0.709
+  Total effect        -0.105      0.059     -1.784      0.074
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\asu dropbox\xinran liu\pc (3)\downloads\mediation book 2025-20250527t092340z-1-001\mediation book 202
+
+     Beginning Time:  00:30:13
+        Ending Time:  00:30:13
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen

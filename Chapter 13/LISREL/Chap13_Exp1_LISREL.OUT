@@ -1,0 +1,1157 @@
+
+                                DATE:  7/26/2007
+                                  TIME:  0:39
+
+
+                                L I S R E L  8.51
+
+                                       BY
+
+                         Karl G. J”reskog & Dag S”rbom
+
+
+
+                    This program is published exclusively by
+                    Scientific Software International, Inc.
+                       7383 N. Lincoln Avenue, Suite 100
+                        Lincolnwood, IL 60712, U.S.A. 
+            Phone: (800)247-6113, (847)675-0720, Fax: (847)675-2140
+        Copyright by Scientific Software International, Inc., 1981-2001 
+          Use of this program is subject to the terms specified in the
+                        Universal Copyright Convention.
+                          Website: www.ssicentral.com
+
+ The following lines were read from file F:\Code for the CD 7_17_2007\Chapter 7\Chap7_Exp1_LISREL.LS8:
+
+ Chapter 7 Three Factor Latent Variable Model
+ DA NI=9 NO=547
+ KM
+ 1.00000
+ 0.26471   1.00000
+ 0.28632   0.62004   1.00000
+ -0.16839  -0.16309  -0.13774   1.00000
+ -0.14364  -0.18831  -0.17279   0.53254   1.00000
+ -0.12833  -0.20156  -0.17097   0.59639   0.67350   1.00000
+ -0.11335  -0.06592  -0.11003   0.15927   0.19443   0.21261   1.00000
+ -0.04452  -0.03775  -0.06406   0.16619   0.23220   0.23696   0.70284   1.00000
+ -0.07918  -0.03466  -0.06772   0.11044   0.22294   0.21583   0.65218   0.82221  1.00000
+ SD
+ *
+ 1.932 1.534 1.294 1.440 1.485 1.448 1.197 1.397 1.536
+ LA
+ coach1 coach2 coach3 severe1 severe2 severe3 intent1 intent2 intent3
+ SE
+ 4 5 6 7 8 9 1 2 3
+ MO NX=3 NK=1 NY=6 NE=2 PS=SY,FI GA=FU,FI PH=FU,FI TE=DI,FR LX=FU,FI LY=FU,FI BE=FU,FI
+ FR LX(2)LX(3)
+ FR LY(2,1) LY(3,1)
+ FR LY(5,2) LY(6,2)
+ VA 1 LX(1) LY(1,1) LY(4,2)
+ FR BE(2,1)
+ FR GA(1) GA(2)
+ FR PS(1,1) PS(2,2)
+ FR PH(1,1)
+ OU MI RS EF MR SS SC pc nd=6
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+                           Number of Input Variables  9
+                           Number of Y - Variables    6
+                           Number of X - Variables    3
+                           Number of ETA - Variables  2
+                           Number of KSI - Variables  1
+                           Number of Observations   547
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+         Covariance Matrix       
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+  severe1   2.073600
+  severe2   1.138784   2.205225
+  severe3   1.243545   1.448214   2.096704
+  intent1   0.274531   0.345608   0.368508   1.432809
+  intent2   0.334321   0.481709   0.479336   1.175295   1.951609
+  intent3   0.244276   0.508517   0.480034   1.199093   1.764292   2.359296
+   coach1  -0.468474  -0.412106  -0.359008  -0.262134  -0.120160  -0.234971
+   coach2  -0.360259  -0.428968  -0.447712  -0.121042  -0.080898  -0.081667
+   coach3  -0.256659  -0.332032  -0.320349  -0.170427  -0.115802  -0.134599
+
+         Covariance Matrix       
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+   coach1   3.732624
+   coach2   0.784518   2.353156
+   coach3   0.715802   1.230777   1.674436
+
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+ Parameter Specifications
+
+         LAMBDA-Y    
+
+               ETA 1      ETA 2
+            --------   --------
+  severe1          0          0
+  severe2          1          0
+  severe3          2          0
+  intent1          0          0
+  intent2          0          3
+  intent3          0          4
+
+         LAMBDA-X    
+
+               KSI 1
+            --------
+   coach1          0
+   coach2          5
+   coach3          6
+
+         BETA        
+
+               ETA 1      ETA 2
+            --------   --------
+    ETA 1          0          0
+    ETA 2          7          0
+
+         GAMMA       
+
+               KSI 1
+            --------
+    ETA 1          8
+    ETA 2          9
+
+         PHI         
+
+               KSI 1
+            --------
+                  10
+
+         PSI         
+         Note: This matrix is diagonal.
+
+               ETA 1      ETA 2
+            --------   --------
+                  11         12
+
+         THETA-EPS   
+
+             severe1    severe2    severe3    intent1    intent2    intent3
+            --------   --------   --------   --------   --------   --------
+                  13         14         15         16         17         18
+
+         THETA-DELTA 
+
+              coach1     coach2     coach3
+            --------   --------   --------
+                  19         20         21
+ 
+
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+ Number of Iterations =  6
+
+ LISREL Estimates (Maximum Likelihood)               
+
+         LAMBDA-Y    
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1   1.000000    - -    
+ 
+  severe2   1.175376    - -    
+          (0.076844)
+           15.295534
+ 
+  severe3   1.268895    - -    
+          (0.082175)
+           15.441326
+ 
+  intent1    - -       1.000000
+ 
+  intent2    - -       1.469859
+                     (0.068655)
+                      21.409336
+ 
+  intent3    - -       1.498830
+                     (0.071473)
+                      20.970653
+ 
+
+         LAMBDA-X    
+
+               KSI 1   
+            --------
+   coach1   1.000000
+ 
+   coach2   1.745943
+          (0.251007)
+            6.955759
+ 
+   coach3   1.481896
+          (0.213662)
+            6.935698
+ 
+
+         BETA        
+
+               ETA 1      ETA 2   
+            --------   --------
+    ETA 1    - -        - -    
+ 
+    ETA 2   0.266294    - -    
+          (0.048115)
+            5.534499
+ 
+
+         GAMMA       
+
+               KSI 1   
+            --------
+    ETA 1  -0.414584
+          (0.092993)
+           -4.458226
+ 
+    ETA 2   0.001388
+          (0.067630)
+            0.020524
+ 
+
+         Covariance Matrix of ETA and KSI        
+
+               ETA 1      ETA 2      KSI 1   
+            --------   --------   --------
+    ETA 1   0.973410
+    ETA 2   0.258940   0.800435
+    KSI 1  -0.196633  -0.051704   0.474290
+
+         PHI         
+
+               KSI 1   
+            --------
+            0.474290
+          (0.125329)
+            3.784348
+ 
+
+         PSI         
+         Note: This matrix is diagonal.
+
+               ETA 1      ETA 2   
+            --------   --------
+            0.891890   0.731553
+          (0.107634) (0.074351)
+            8.286313   9.839236
+ 
+
+         Squared Multiple Correlations for Structural Equations  
+
+               ETA 1      ETA 2   
+            --------   --------
+            0.083748   0.086056
+
+         Squared Multiple Correlations for Reduced Form          
+
+               ETA 1      ETA 2   
+            --------   --------
+            0.083748   0.007042
+
+         Reduced Form                
+
+               KSI 1   
+            --------
+    ETA 1  -0.414584
+          (0.092993)
+           -4.458226
+ 
+    ETA 2  -0.109013
+          (0.067229)
+           -1.621508
+ 
+
+         THETA-EPS   
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+            1.100191   0.860450   0.529422   0.632374   0.222280   0.561125
+          (0.081099) (0.080858) (0.078111) (0.043706) (0.046701) (0.057681)
+           13.565979  10.641453   6.777784  14.468734   4.759692   9.728111
+ 
+
+         Squared Multiple Correlations for Y - Variables         
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+            0.469430   0.609813   0.747498   0.558647   0.886104   0.762164
+
+         THETA-DELTA 
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+            3.258336   0.907373   0.632885
+          (0.206037) (0.160606) (0.115265)
+           15.814356   5.649672   5.490704
+ 
+
+         Squared Multiple Correlations for X - Variables         
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+            0.127066   0.614402   0.622030
+
+
+                           Goodness of Fit Statistics
+
+                             Degrees of Freedom = 24
+            Minimum Fit Function Chi-Square = 29.111491 (P = 0.215963)
+    Normal Theory Weighted Least Squares Chi-Square = 28.441000 (P = 0.241880)
+               Estimated Non-centrality Parameter (NCP) = 4.441000
+            90 Percent Confidence Interval for NCP = (0.0 ; 22.001397)
+ 
+                      Minimum Fit Function Value = 0.0533177
+             Population Discrepancy Function Value (F0) = 0.00813370
+            90 Percent Confidence Interval for F0 = (0.0 ; 0.0402956)
+           Root Mean Square Error of Approximation (RMSEA) = 0.0184093
+           90 Percent Confidence Interval for RMSEA = (0.0 ; 0.0409754)
+             P-Value for Test of Close Fit (RMSEA < 0.05) = 0.993300
+ 
+                Expected Cross-Validation Index (ECVI) = 0.129013
+         90 Percent Confidence Interval for ECVI = (0.120879 ; 0.161175)
+                       ECVI for Saturated Model = 0.164835
+                      ECVI for Independence Model = 3.731957
+ 
+    Chi-Square for Independence Model with 36 Degrees of Freedom = 2019.648587
+                          Independence AIC = 2037.648587
+                              Model AIC = 70.441000
+                            Saturated AIC = 90.000000
+                         Independence CAIC = 2085.388626
+                             Model CAIC = 181.834425
+                           Saturated CAIC = 328.700196
+ 
+                        Normed Fit Index (NFI) = 0.985586
+                      Non-Normed Fit Index (NNFI) = 0.996135
+                   Parsimony Normed Fit Index (PNFI) = 0.657057
+                      Comparative Fit Index (CFI) = 0.997423
+                      Incremental Fit Index (IFI) = 0.997439
+                       Relative Fit Index (RFI) = 0.978379
+ 
+                           Critical N (CN) = 807.110481
+ 
+ 
+                   Root Mean Square Residual (RMR) = 0.0734648
+                           Standardized RMR = 0.0297687
+                      Goodness of Fit Index (GFI) = 0.988557
+                 Adjusted Goodness of Fit Index (AGFI) = 0.978544
+                Parsimony Goodness of Fit Index (PGFI) = 0.527230
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+         Fitted Covariance Matrix
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+  severe1   2.073602
+  severe2   1.144123   2.205225
+  severe3   1.235156   1.451773   2.096705
+  intent1   0.258940   0.304352   0.328568   1.432809
+  intent2   0.380606   0.447355   0.482949   1.176527   1.951609
+  intent3   0.388107   0.456172   0.492468   1.199716   1.763414   2.359297
+   coach1  -0.196633  -0.231118  -0.249506  -0.051704  -0.075997  -0.077495
+   coach2  -0.343310  -0.403518  -0.435624  -0.090272  -0.132687  -0.135302
+   coach3  -0.291389  -0.342492  -0.369743  -0.076620  -0.112620  -0.114840
+
+         Fitted Covariance Matrix
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+   coach1   3.732626
+   coach2   0.828083   2.353160
+   coach3   0.702848   1.227133   1.674433
+
+         Fitted Residuals
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+  severe1  -0.000002
+  severe2  -0.005340   0.000000
+  severe3   0.008389  -0.003559  -0.000001
+  intent1   0.015590   0.041256   0.039940   0.000000
+  intent2  -0.046285   0.034354  -0.003613  -0.001232   0.000000
+  intent3  -0.143832   0.052345  -0.012434  -0.000623   0.000877  -0.000001
+   coach1  -0.271842  -0.180988  -0.109501  -0.210430  -0.044162  -0.157476
+   coach2  -0.016950  -0.025450  -0.012087  -0.030770   0.051789   0.053635
+   coach3   0.034730   0.010461   0.049394  -0.093808  -0.003182  -0.019759
+
+         Fitted Residuals
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+   coach1  -0.000002
+   coach2  -0.043565  -0.000004
+   coach3   0.012954   0.003644   0.000003
+
+ Summary Statistics for Fitted Residuals
+
+ Smallest Fitted Residual =   -0.271842
+   Median Fitted Residual =   -0.000004
+  Largest Fitted Residual =    0.053635
+
+ Stemleaf Plot
+
+ - 2|7 
+ - 2|1 
+ - 1|86 
+ - 1|41 
+ - 0|95 
+ - 0|4433221110000000000000000 
+   0|11123344 
+   0|5555
+
+         Standardized Residuals  
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+  severe1    - -    
+  severe2  -0.359996    - -    
+  severe3   1.066038  -0.805486    - -    
+  intent1   0.269430   0.755733   0.827445    - -    
+  intent2  -0.832599   0.750401  -0.116341  -0.573467    - -    
+  intent3  -2.171766   0.897567  -0.268760  -0.107812   0.978473    - -    
+   coach1  -2.465051  -1.629162  -1.034485  -2.246560  -0.418364  -1.338622
+   coach2  -0.258022  -0.445135  -0.274194  -0.546837   1.177353   0.916562
+   coach3   0.629314   0.218456   1.346437  -1.987588  -0.087527  -0.405066
+
+         Standardized Residuals  
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+   coach1    - -    
+   coach2  -1.373175    - -    
+   coach3   0.497166   1.788959    - -    
+
+ Summary Statistics for Standardized Residuals
+
+ Smallest Standardized Residual =   -2.465051
+   Median Standardized Residual =    0.000000
+  Largest Standardized Residual =    1.788959
+
+ Stemleaf Plot
+
+ - 2|5 
+ - 2|220 
+ - 1|6 
+ - 1|430 
+ - 0|8865 
+ - 0|4444333111000000000 
+   0|23 
+   0|5688899 
+   1|0123 
+   1|8
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+                         Qplot of Standardized Residuals
+
+  3.5..........................................................................
+     .                                                                       ..
+     .                                                                      . .
+     .                                                                    .   .
+     .                                                                  .     .
+     .                                                                 .      .
+     .                                                               .        .
+     .                                                             .          .
+     .                                                            .           .
+     .                                                          .             .
+     .                                                      x .               .
+     .                                                       .                .
+     .                                                     .                  .
+     .                                                  x.                    .
+     .                                                x .                     .
+ N   .                                               x.                       .
+ o   .                                             xx                         .
+ r   .                                            xx                          .
+ m   .                                           *                            .
+ a   .                                         xx                             .
+ l   .                                      * .                               .
+     .                                  xx  .                                 .
+ Q   .                                 xx .                                   .
+ u   .                                 * .                                    .
+ a   .                               xx.                                      .
+ n   .                               *                                        .
+ t   .                              *                                         .
+ i   .                           *.                                           .
+ l   .                      x  x.                                             .
+ e   .                   x x   .                                              .
+ s   .               x       .                                                .
+     .             x       .                                                  .
+     .            x       .                                                   .
+     .                  .                                                     .
+     .                .                                                       .
+     .          x    .                                                        .
+     .             .                                                          .
+     .           .                                                            .
+     .          .                                                             .
+     .        .                                                               .
+     .      .                                                                 .
+     .     .                                                                  .
+     .   .                                                                    .
+     . .                                                                      .
+ -3.5..........................................................................
+   -3.5                                                                      3.5
+                             Standardized Residuals
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+ Modification Indices and Expected Change
+
+         Modification Indices for LAMBDA-Y       
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1    - -       1.456981
+  severe2    - -       0.957670
+  severe3    - -       0.000494
+  intent1   0.970544    - -    
+  intent2   0.012519    - -    
+  intent3   0.328297    - -    
+
+         Expected Change for LAMBDA-Y    
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1    - -      -0.073534
+  severe2    - -       0.058212
+  severe3    - -       0.001315
+  intent1   0.041425    - -    
+  intent2  -0.004483    - -    
+  intent3  -0.025463    - -    
+
+         Standardized Expected Change for LAMBDA-Y       
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1    - -      -0.065789
+  severe2    - -       0.052081
+  severe3    - -       0.001176
+  intent1   0.040871    - -    
+  intent2  -0.004423    - -    
+  intent3  -0.025122    - -    
+
+         Completely Standardized Expected Change for LAMBDA-Y    
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1    - -      -0.045687
+  severe2    - -       0.035071
+  severe3    - -       0.000812
+  intent1   0.034144    - -    
+  intent2  -0.003166    - -    
+  intent3  -0.016355    - -    
+
+ No Non-Zero Modification Indices for LAMBDA-X    
+
+ No Non-Zero Modification Indices for BETA        
+
+ No Non-Zero Modification Indices for GAMMA       
+
+ No Non-Zero Modification Indices for PHI         
+
+ No Non-Zero Modification Indices for PSI         
+
+         Modification Indices for THETA-EPS      
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+  severe1    - -    
+  severe2   0.129541    - -    
+  severe3   1.136836   0.648454    - -    
+  intent1   0.807835   0.399913   0.087169    - -    
+  intent2   1.145072   0.053490   0.154374   0.328660    - -    
+  intent3   6.753603   1.660205   0.065678   0.011606   0.958766    - -    
+
+         Expected Change for THETA-EPS   
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+  severe1    - -    
+  severe2  -0.042069    - -    
+  severe3   0.144543  -0.152043    - -    
+  intent1   0.036271  -0.024061   0.010391    - -    
+  intent2   0.037889  -0.007755  -0.012300  -0.068719    - -    
+  intent3  -0.107945   0.050517   0.009321  -0.012107   0.249487    - -    
+
+         Completely Standardized Expected Change for THETA-EPS   
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+  severe1    - -    
+  severe2  -0.019673    - -    
+  severe3   0.069321  -0.070708    - -    
+  intent1   0.021043  -0.013536   0.005995    - -    
+  intent2   0.018834  -0.003738  -0.006080  -0.041095    - -    
+  intent3  -0.048803   0.022147   0.004191  -0.006585   0.116268    - -    
+
+         Modification Indices for THETA-DELTA-EPS
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+   coach1   4.259458   0.363983   0.555673   3.496578   3.517082   1.526803
+   coach2   0.000050   0.003055   0.344543   0.135987   0.011709   0.314887
+   coach3   0.404414   0.047168   0.541455   1.505708   0.156405   0.026692
+
+         Expected Change for THETA-DELTA-EPS 
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+   coach1  -0.182865  -0.050400   0.057607  -0.122773   0.107704  -0.083427
+   coach2  -0.000410   0.003040  -0.030588   0.015686  -0.004065   0.024584
+   coach3   0.030999  -0.010074   0.032351  -0.043997   0.012530  -0.006034
+
+         Completely Standardized Expected Change for THETA-DELTA-EPS 
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+   coach1  -0.065730  -0.017567   0.020592  -0.053089   0.039905  -0.028113
+   coach2  -0.000186   0.001335  -0.013771   0.008543  -0.001897   0.010434
+   coach3   0.016636  -0.005242   0.017266  -0.028405   0.006931  -0.003036
+
+         Modification Indices for THETA-DELTA    
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+   coach1    - -    
+   coach2   1.885501    - -    
+   coach3   0.247154   3.200396    - -    
+
+         Expected Change for THETA-DELTA 
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+   coach1    - -    
+   coach2  -0.234362    - -    
+   coach3   0.072062   0.923769    - -    
+
+         Completely Standardized Expected Change for THETA-DELTA 
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+   coach1    - -    
+   coach2  -0.079078    - -    
+   coach3   0.028825   0.465376    - -    
+
+ Maximum Modification Index is    6.75 for Element ( 6, 1) of THETA-EPS
+
+         Covariance Matrix of Parameter Estimates    
+
+              LY 2,1     LY 3,1     LY 5,2     LY 6,2     LX 2,1     LX 3,1   
+            --------   --------   --------   --------   --------   --------
+   LY 2,1   0.005905
+   LY 3,1   0.003709   0.006753
+   LY 5,2   0.000000   0.000000   0.004714
+   LY 6,2   0.000000   0.000000   0.003361   0.005108
+   LX 2,1   0.000000   0.000000   0.000000   0.000000   0.063004
+   LX 3,1   0.000000   0.000000   0.000000   0.000000   0.037509   0.045651
+   BE 2,1   0.000818   0.000895  -0.000699  -0.000624   0.000000   0.000000
+   GA 1,1   0.001265   0.001586   0.000000   0.000000  -0.011984  -0.010174
+   GA 2,1   0.000002  -0.000051  -0.000004  -0.000003   0.000040   0.000034
+   PH 1,1   0.000000   0.000000   0.000000   0.000000  -0.027605  -0.023540
+   PS 1,1  -0.005462  -0.006410   0.000000   0.000000   0.000032   0.000045
+   PS 2,2  -0.000001   0.000029  -0.003639  -0.003462   0.000000   0.000000
+   TE 1,1   0.001223   0.001920   0.000000   0.000000   0.000000   0.000000
+   TE 2,2  -0.001574   0.001230   0.000000   0.000000   0.000000   0.000000
+   TE 3,3   0.000434  -0.002896   0.000000   0.000000   0.000000   0.000000
+   TE 4,4   0.000000   0.000000   0.000595   0.000313   0.000000   0.000000
+   TE 5,5   0.000000   0.000000  -0.001252   0.000269   0.000000   0.000000
+   TE 6,6   0.000000   0.000000   0.000921  -0.000673   0.000000   0.000000
+   TD 1,1   0.000000   0.000000   0.000000   0.000000   0.006766   0.005853
+   TD 2,2   0.000000   0.000000   0.000000   0.000000  -0.014395   0.009638
+   TD 3,3   0.000000   0.000000   0.000000   0.000000   0.007895  -0.009042
+
+         Covariance Matrix of Parameter Estimates    
+
+              BE 2,1     GA 1,1     GA 2,1     PH 1,1     PS 1,1     PS 2,2   
+            --------   --------   --------   --------   --------   --------
+   BE 2,1   0.002315
+   GA 1,1   0.000231   0.008648
+   GA 2,1   0.001054  -0.000264   0.004574
+   PH 1,1   0.000000   0.006509  -0.000022   0.015707
+   PS 1,1  -0.001267  -0.001211  -0.000093   0.000002   0.011585
+   PS 2,2   0.000420   0.000005  -0.000066   0.000000  -0.000002   0.005528
+   TE 1,1   0.000284   0.000468  -0.000007   0.000000  -0.001959   0.000004
+   TE 2,2   0.000003   0.000060  -0.000015   0.000000  -0.000139   0.000008
+   TE 3,3  -0.000026  -0.000474   0.000115   0.000000   0.001105  -0.000066
+   TE 4,4  -0.000083   0.000000   0.000000   0.000000   0.000000  -0.000402
+   TE 5,5   0.000132   0.000000   0.000001   0.000000   0.000000   0.000370
+   TE 6,6  -0.000075   0.000000   0.000000   0.000000   0.000000  -0.000210
+   TD 1,1   0.000000  -0.001561   0.000005  -0.003562  -0.000002   0.000000
+   TD 2,2   0.000000   0.000006   0.000000   0.000348  -0.000057   0.000000
+   TD 3,3   0.000000   0.000007   0.000000   0.000406  -0.000067   0.000000
+
+         Covariance Matrix of Parameter Estimates    
+
+              TE 1,1     TE 2,2     TE 3,3     TE 4,4     TE 5,5     TE 6,6   
+            --------   --------   --------   --------   --------   --------
+   TE 1,1   0.006577
+   TE 2,2   0.000162   0.006538
+   TE 3,3  -0.001292  -0.002777   0.006101
+   TE 4,4   0.000000   0.000000   0.000000   0.001910
+   TE 5,5   0.000000   0.000000   0.000000  -0.000438   0.002181
+   TE 6,6   0.000000   0.000000   0.000000   0.000249  -0.001630   0.003327
+   TD 1,1   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000
+   TD 2,2   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000
+   TD 3,3   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000
+
+         Covariance Matrix of Parameter Estimates    
+
+              TD 1,1     TD 2,2     TD 3,3   
+            --------   --------   --------
+   TD 1,1   0.042451
+   TD 2,2  -0.000348   0.025794
+   TD 3,3  -0.000406  -0.014313   0.013286
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+         Correlation Matrix of Parameter Estimates   
+
+              LY 2,1     LY 3,1     LY 5,2     LY 6,2     LX 2,1     LX 3,1   
+            --------   --------   --------   --------   --------   --------
+   LY 2,1   1.000000
+   LY 3,1   0.587342   1.000000
+   LY 5,2   0.000000   0.000000   1.000000
+   LY 6,2   0.000000   0.000000   0.684983   1.000000
+   LX 2,1   0.000000   0.000000   0.000000   0.000000   1.000000
+   LX 3,1   0.000000   0.000000   0.000000   0.000000   0.699387   1.000000
+   BE 2,1   0.221285   0.226413  -0.211465  -0.181495  -0.000010  -0.000016
+   GA 1,1   0.177061   0.207521   0.000000   0.000000  -0.513427  -0.512048
+   GA 2,1   0.000436  -0.009204  -0.000784  -0.000673   0.002361   0.002352
+   PH 1,1   0.000000   0.000000   0.000000   0.000000  -0.877494  -0.879082
+   PS 1,1  -0.660405  -0.724697   0.000000   0.000000   0.001171   0.001958
+   PS 2,2  -0.000227   0.004796  -0.712822  -0.651540   0.000000   0.000000
+   TE 1,1   0.196257   0.288075   0.000000   0.000000   0.000000   0.000000
+   TE 2,2  -0.253329   0.185110   0.000000   0.000000   0.000000   0.000000
+   TE 3,3   0.072273  -0.451195   0.000000   0.000000   0.000000   0.000000
+   TE 4,4   0.000000   0.000000   0.198372   0.100306   0.000000   0.000000
+   TE 5,5   0.000000   0.000000  -0.390617   0.080542   0.000000   0.000000
+   TE 6,6   0.000000   0.000000   0.232584  -0.163248   0.000000   0.000000
+   TD 1,1   0.000000   0.000000   0.000000   0.000000   0.130834   0.132963
+   TD 2,2   0.000000   0.000000   0.000000   0.000000  -0.357080   0.280850
+   TD 3,3   0.000000   0.000000   0.000000   0.000000   0.272865  -0.367152
+
+         Correlation Matrix of Parameter Estimates   
+
+              BE 2,1     GA 1,1     GA 2,1     PH 1,1     PS 1,1     PS 2,2   
+            --------   --------   --------   --------   --------   --------
+   BE 2,1   1.000000
+   GA 1,1   0.051518   1.000000
+   GA 2,1   0.323864  -0.041930   1.000000
+   PH 1,1  -0.000001   0.558490  -0.002571   1.000000
+   PS 1,1  -0.244623  -0.121008  -0.012805   0.000121   1.000000
+   PS 2,2   0.117320   0.000749  -0.013093   0.000000  -0.000229   1.000000
+   TE 1,1   0.072871   0.062061  -0.001231   0.000000  -0.224452   0.000641
+   TE 2,2   0.000831   0.007917  -0.002654   0.000000  -0.015959   0.001383
+   TE 3,3  -0.006843  -0.065222   0.021863   0.000000   0.131471  -0.011393
+   TE 4,4  -0.039493   0.000000  -0.000146   0.000000   0.000000  -0.123846
+   TE 5,5   0.058569   0.000000   0.000217   0.000000   0.000000   0.106634
+   TE 6,6  -0.026914   0.000000  -0.000100   0.000000   0.000000  -0.049001
+   TD 1,1   0.000001  -0.081466   0.000375  -0.137937  -0.000073   0.000000
+   TD 2,2   0.000028   0.000427   0.000006   0.017309  -0.003319   0.000000
+   TD 3,3   0.000045   0.000694   0.000010   0.028108  -0.005390   0.000000
+
+         Correlation Matrix of Parameter Estimates   
+
+              TE 1,1     TE 2,2     TE 3,3     TE 4,4     TE 5,5     TE 6,6   
+            --------   --------   --------   --------   --------   --------
+   TE 1,1   1.000000
+   TE 2,2   0.024751   1.000000
+   TE 3,3  -0.203898  -0.439695   1.000000
+   TE 4,4   0.000000   0.000000   0.000000   1.000000
+   TE 5,5   0.000000   0.000000   0.000000  -0.214756   1.000000
+   TE 6,6   0.000000   0.000000   0.000000   0.098686  -0.605027   1.000000
+   TD 1,1   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000
+   TD 2,2   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000
+   TD 3,3   0.000000   0.000000   0.000000   0.000000   0.000000   0.000000
+
+         Correlation Matrix of Parameter Estimates   
+
+              TD 1,1     TD 2,2     TD 3,3   
+            --------   --------   --------
+   TD 1,1   1.000000
+   TD 2,2  -0.010529   1.000000
+   TD 3,3  -0.017098  -0.773138   1.000000
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+ Covariances
+
+         Y - ETA 
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+    ETA 1   0.973410   1.144123   1.235156   0.258940   0.380606   0.388107
+    ETA 2   0.258940   0.304352   0.328568   0.800435   1.176527   1.199716
+
+         Y - KSI 
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+    KSI 1  -0.196633  -0.231118  -0.249506  -0.051704  -0.075997  -0.077495
+
+         X - ETA 
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+    ETA 1  -0.196633  -0.343310  -0.291389
+    ETA 2  -0.051704  -0.090272  -0.076620
+
+         X - KSI 
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+    KSI 1   0.474290   0.828083   0.702848
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+ Standardized Solution           
+
+         LAMBDA-Y    
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1   0.986616    - -    
+  severe2   1.159645    - -    
+  severe3   1.251912    - -    
+  intent1    - -       0.894670
+  intent2    - -       1.315040
+  intent3    - -       1.340959
+
+         LAMBDA-X    
+
+               KSI 1   
+            --------
+   coach1   0.688687
+   coach2   1.202409
+   coach3   1.020563
+
+         BETA        
+
+               ETA 1      ETA 2   
+            --------   --------
+    ETA 1    - -        - -    
+    ETA 2   0.293661    - -    
+
+         GAMMA       
+
+               KSI 1   
+            --------
+    ETA 1  -0.289392
+    ETA 2   0.001068
+
+         Correlation Matrix of ETA and KSI       
+
+               ETA 1      ETA 2      KSI 1   
+            --------   --------   --------
+    ETA 1   1.000000
+    ETA 2   0.293352   1.000000
+    KSI 1  -0.289392  -0.083915   1.000000
+
+         PSI         
+         Note: This matrix is diagonal.
+
+               ETA 1      ETA 2   
+            --------   --------
+            0.916252   0.913944
+
+         Regression Matrix ETA on KSI (Standardized) 
+
+               KSI 1   
+            --------
+    ETA 1  -0.289392
+    ETA 2  -0.083915
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+ Completely Standardized Solution
+
+         LAMBDA-Y    
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1   0.685149    - -    
+  severe2   0.780905    - -    
+  severe3   0.864580    - -    
+  intent1    - -       0.747427
+  intent2    - -       0.941331
+  intent3    - -       0.873020
+
+         LAMBDA-X    
+
+               KSI 1   
+            --------
+   coach1   0.356463
+   coach2   0.783838
+   coach3   0.788689
+
+         BETA        
+
+               ETA 1      ETA 2   
+            --------   --------
+    ETA 1    - -        - -    
+    ETA 2   0.293661    - -    
+
+         GAMMA       
+
+               KSI 1   
+            --------
+    ETA 1  -0.289392
+    ETA 2   0.001068
+
+         Correlation Matrix of ETA and KSI       
+
+               ETA 1      ETA 2      KSI 1   
+            --------   --------   --------
+    ETA 1   1.000000
+    ETA 2   0.293352   1.000000
+    KSI 1  -0.289392  -0.083915   1.000000
+
+         PSI         
+         Note: This matrix is diagonal.
+
+               ETA 1      ETA 2   
+            --------   --------
+            0.916252   0.913944
+
+         THETA-EPS   
+
+             severe1    severe2    severe3    intent1    intent2    intent3   
+            --------   --------   --------   --------   --------   --------
+            0.530570   0.390187   0.252502   0.441353   0.113896   0.237836
+
+         THETA-DELTA 
+
+              coach1     coach2     coach3   
+            --------   --------   --------
+            0.872934   0.385598   0.377970
+
+         Regression Matrix ETA on KSI (Standardized) 
+
+               KSI 1   
+            --------
+    ETA 1  -0.289392
+    ETA 2  -0.083915
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+ Total and Indirect Effects
+
+         Total Effects of KSI on ETA 
+
+               KSI 1   
+            --------
+    ETA 1  -0.414584
+          (0.092993)
+           -4.458226
+ 
+    ETA 2  -0.109013
+          (0.067229)
+           -1.621508
+ 
+
+         Indirect Effects of KSI on ETA  
+
+               KSI 1   
+            --------
+    ETA 1    - -    
+ 
+    ETA 2  -0.110401
+          (0.030988)
+           -3.562723
+ 
+
+         Total Effects of ETA on ETA 
+
+               ETA 1      ETA 2   
+            --------   --------
+    ETA 1    - -        - -    
+ 
+    ETA 2   0.266294    - -    
+          (0.048115)
+            5.534499
+ 
+
+    Largest Eigenvalue of B*B' (Stability Index) is   0.071
+
+         Total Effects of ETA on Y   
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1   1.000000    - -    
+ 
+  severe2   1.175376    - -    
+          (0.076844)
+           15.295534
+ 
+  severe3   1.268895    - -    
+          (0.082175)
+           15.441326
+ 
+  intent1   0.266294   1.000000
+          (0.048115)
+            5.534499
+ 
+  intent2   0.391414   1.469859
+          (0.069203) (0.068655)
+            5.656006  21.409336
+ 
+  intent3   0.399129   1.498830
+          (0.071168) (0.071473)
+            5.608306  20.970653
+ 
+
+         Indirect Effects of ETA on Y    
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1    - -        - -    
+ 
+  severe2    - -        - -    
+ 
+  severe3    - -        - -    
+ 
+  intent1   0.266294    - -    
+          (0.048115)
+            5.534499
+ 
+  intent2   0.391414    - -    
+          (0.069203)
+            5.656006
+ 
+  intent3   0.399129    - -    
+          (0.071168)
+            5.608306
+ 
+
+         Total Effects of KSI on Y   
+
+               KSI 1   
+            --------
+  severe1  -0.414584
+          (0.092993)
+           -4.458226
+ 
+  severe2  -0.487292
+          (0.108299)
+           -4.499497
+ 
+  severe3  -0.526063
+          (0.115827)
+           -4.541819
+ 
+  intent1  -0.109013
+          (0.067229)
+           -1.621508
+ 
+  intent2  -0.160234
+          (0.098637)
+           -1.624474
+ 
+  intent3  -0.163392
+          (0.100652)
+           -1.623331
+ 
+
+ Chapter 7 Three Factor Latent Variable Model                                   
+
+ Standardized Total and Indirect Effects
+
+         Standardized Total Effects of KSI on ETA
+
+               KSI 1   
+            --------
+    ETA 1  -0.289392
+    ETA 2  -0.083915
+
+         Standardized Indirect Effects of KSI on ETA 
+
+               KSI 1   
+            --------
+    ETA 1    - -    
+    ETA 2  -0.084983
+
+         Standardized Total Effects of ETA on ETA
+
+               ETA 1      ETA 2   
+            --------   --------
+    ETA 1    - -        - -    
+    ETA 2   0.293661    - -    
+
+         Standardized Total Effects of ETA on Y  
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1   0.986616    - -    
+  severe2   1.159645    - -    
+  severe3   1.251912    - -    
+  intent1   0.262730   0.894670
+  intent2   0.386176   1.315040
+  intent3   0.393787   1.340959
+
+         Completely Standardized Total Effects of ETA on Y   
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1   0.685149    - -    
+  severe2   0.780905    - -    
+  severe3   0.864580    - -    
+  intent1   0.219490   0.747427
+  intent2   0.276432   0.941331
+  intent3   0.256372   0.873020
+
+         Standardized Indirect Effects of ETA on Y   
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1    - -        - -    
+  severe2    - -        - -    
+  severe3    - -        - -    
+  intent1   0.262730    - -    
+  intent2   0.386176    - -    
+  intent3   0.393787    - -    
+
+         Completely Standardized Indirect Effects of ETA on Y    
+
+               ETA 1      ETA 2   
+            --------   --------
+  severe1    - -        - -    
+  severe2    - -        - -    
+  severe3    - -        - -    
+  intent1   0.219490    - -    
+  intent2   0.276432    - -    
+  intent3   0.256372    - -    
+
+         Standardized Total Effects of KSI on Y  
+
+               KSI 1   
+            --------
+  severe1  -0.285518
+  severe2  -0.335592
+  severe3  -0.362293
+  intent1  -0.075076
+  intent2  -0.110351
+  intent3  -0.112526
+
+         Completely Standardized Total Effects of KSI on Y   
+
+               KSI 1   
+            --------
+  severe1  -0.198277
+  severe2  -0.225988
+  severe3  -0.250202
+  intent1  -0.062720
+  intent2  -0.078991
+  intent3  -0.073259
+
+                           Time used:    0.031 Seconds

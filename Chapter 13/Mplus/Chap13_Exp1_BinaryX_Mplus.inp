@@ -1,0 +1,33 @@
+TITLE:  Chapter 13 Three Factor Latent Variable Model Binary X;
+  !Chapter 13 example with summary measures of X, M, and Y.
+  !The mediator is perceived severity and it is latent;
+  !X is dichotomized and Y is made to be categorical in the define statement;
+DATA:
+    FILE IS Chap13_Exp1 Raw Data.txt;
+    format is free;
+  VARIABLE:
+    NAMES ARE obs coach1 coach2 coach3 severe1 severe2 severe3 intent1
+    intent2 intent3;
+    USEVARIABLES ARE severe1 severe2 severe3 intents coachs ;
+  categorical is intents;
+  Define:
+  if (coach1+coach2+coach3) >4.5 then coachs=1;
+  if (coach1+coach2+coach3) <4.5 then coachs=0;
+  !severes=severe1+severe2+severe3;
+  intents=intent1+intent2+intent3;
+  Cut intents (2 12 20);
+  ANALYSIS:
+    TYPE IS GENERAL;
+    ESTIMATOR IS ML;
+    ITERATIONS = 1000;
+    CONVERGENCE = 0.00005;
+
+  Model:
+  severe by severe1 severe2 severe3;
+  severe@1;
+   intents on severe coachs;
+   severe on coachs;
+
+  Model indirect:
+  intents ind severe coachs;
+

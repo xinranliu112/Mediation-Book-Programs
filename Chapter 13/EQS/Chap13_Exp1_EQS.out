@@ -1,0 +1,627 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fprq12\fcharset238{\*\fname Courier New;}Courier New CE;}}
+{\colortbl ;\red0\green0\blue255;\red0\green128\blue0;}
+\viewkind4\uc1\pard\tx288\tx576\tx864\tx1152\tx1440\tx1728\tx2016\tx2304\tx2592\tx2880\tx3168\tx3456\tx3744\tx4032\tx4320\tx4608\tx4896\tx5184\tx5472\tx5760\tx6048\tx6336\tx6624\tx6912\tx7200\tx7488\tx7776\tx8064\tx8352\tx8640\tx8928\tx9216\f0\fs20 1
+\par   EQS, A STRUCTURAL EQUATION PROGRAM          MULTIVARIATE SOFTWARE, INC.
+\par   COPYRIGHT BY P.M. BENTLER                   VERSION 6.1 (\cf1 C\cf0 ) 1985 - 2006 (B90).
+\par 
+\par 
+\par     PROGRAM CONTROL INFORMATION
+\par 
+\par      1  /TITLE                                                                          
+\par      2  \tab Chapter 7 Three Factor Latent Variable Model                                   
+\par      3  /SPECIFICATIONS                                                                 
+\par      4  VARIABLES=9 ; CASES=547 ;                                                       
+\par      5  MATRIX=CORRELATION; ANALYSIS=COVARIANCE;                                        
+\par      6  METHOD=ML;                                                                      
+\par      7  /LABELS                                                                         
+\par      8  \tab V1=COACH1; V2=COACH2; V3=COACH3;                                               
+\par      9  \tab V4=SEVERE1; V5=SEVERE2; V6=SEVERE3;                                            
+\par     10  \tab V7=INTENT1; V8=INTENT2; V9=INTENT3;                                            
+\par     11  \tab F1=COACHTOL; F2=SEVERE; F3=INTENT;                                             
+\par     12  /EQUATIONS                                                                      
+\par     13  \tab V1 = 1 F1 + E1;                                                                
+\par     14  \tab V2 = *F1 + E2;                                                                 
+\par     15  \tab V3 = *F1 + E3;                                                                 
+\par     16  \tab V4 = 1 F2 + E4;                                                                
+\par     17  \tab V5 = *F2 + E5;                                                                 
+\par     18  \tab V6 = *F2 + E6;                                                                 
+\par     19  \tab V7 = 1 F3 + E7;                                                                
+\par     20  \tab V8 = *F3 + E8;                                                                 
+\par     21  \tab V9 = *F3 + E9;                                                                 
+\par     22  \tab F2 = *F1 + D2;                                                                 
+\par     23  \tab F3 = *F1 + *F2 + D3;                                                           
+\par     24                                                                                  
+\par     25  /VARIANCES                                                                      
+\par     26  \tab F1 = *;                                                                        
+\par     27  \tab D2 TO D3 = *;                                                                  
+\par     28  \tab E1 TO E9 = *;                                                                  
+\par     29                                                                                  
+\par     30  /MATRIX                                                                         
+\par     31  1.00000                                                                         
+\par     32  0.26471   1.00000                                                               
+\par     33  0.28632   0.62004   1.00000                                                     
+\par     34  -0.16839  -0.16309  -0.13774   1.00000                                          
+\par     35  -0.14364  -0.18831  -0.17279   0.53254   1.00000                                
+\par     36  -0.12833  -0.20156  -0.17097   0.59639   0.67350   1.00000                      
+\par     37  -0.11335  -0.06592  -0.11003   0.15927   0.19443   0.21261   1.00000            
+\par     38  -0.04452  -0.03775  -0.06406   0.16619   0.23220   0.23696   0.70284   1.00000  
+\par     39  -0.07918  -0.03466  -0.06772   0.11044   0.22294   0.21583   0.65218   0.82221  
+\par     40                                                                                  
+\par     41  /STANDARD DEVIATIONS                                                            
+\par     42  1.932 1.534 1.294 1.440 1.485 1.448 1.197 1.397 1.536                           
+\par     43                                                                                  
+\par     44  /PRINT                                                                          
+\par     45  EFFECTS = YES;                                                                  
+\par     46                                                                                  
+\par     47  /END                                                                            
+\par 
+\par 
+\par        47 RECORDS OF INPUT MODEL FILE WERE READ
+\par \page 
+\par  25-Jun-07      PAGE :  2  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   COVARIANCE  MATRIX TO BE ANALYZED:   9 VARIABLES (SELECTED FROM   9 VARIABLES)
+\par   BASED ON   547 CASES.
+\par 
+\par 
+\par                        COACH1     COACH2     COACH3     SEVERE1    SEVERE2 
+\par                           V1         V2         V3         V4         V5  
+\par      COACH1   V1         3.733
+\par      COACH2   V2          .785      2.353
+\par      COACH3   V3          .716      1.231      1.674
+\par      SEVERE1  V4         -.468      -.360      -.257      2.074
+\par      SEVERE2  V5         -.412      -.429      -.332      1.139      2.205
+\par      SEVERE3  V6         -.359      -.448      -.320      1.244      1.448
+\par      INTENT1  V7         -.262      -.121      -.170       .275       .346
+\par      INTENT2  V8         -.120      -.081      -.116       .334       .482
+\par      INTENT3  V9         -.235      -.082      -.135       .244       .509
+\par 
+\par 
+\par                        SEVERE3    INTENT1    INTENT2    INTENT3 
+\par                           V6         V7         V8         V9  
+\par      SEVERE3  V6         2.097
+\par      INTENT1  V7          .369      1.433
+\par      INTENT2  V8          .479      1.175      1.952
+\par      INTENT3  V9          .480      1.199      1.764      2.359
+\par 
+\par 
+\par 
+\par   BENTLER-WEEKS STRUCTURAL REPRESENTATION:
+\par 
+\par         NUMBER OF DEPENDENT VARIABLES = 11
+\par             DEPENDENT V'S :     1    2    3    4    5    6    7    8    9
+\par             DEPENDENT F'S :     2    3
+\par 
+\par         NUMBER OF INDEPENDENT VARIABLES = 12
+\par             INDEPENDENT F'S :     1
+\par             INDEPENDENT E'S :     1    2    3    4    5    6    7    8    9
+\par             INDEPENDENT D'S :     2    3
+\par 
+\par         NUMBER OF FREE PARAMETERS =  21
+\par         NUMBER OF FIXED NONZERO PARAMETERS =  14
+\par 
+\par  *** WARNING MESSAGES ABOVE, IF ANY, REFER TO THE MODEL PROVIDED.
+\par      CALCULATIONS FOR INDEPENDENCE MODEL NOW BEGIN.
+\par 
+\par  *** WARNING MESSAGES ABOVE, IF ANY, REFER TO INDEPENDENCE MODEL.
+\par      CALCULATIONS FOR USER'S MODEL NOW BEGIN.
+\par 
+\par 
+\par   3RD STAGE OF COMPUTATION REQUIRED      8826 WORDS OF MEMORY.
+\par   PROGRAM ALLOCATED   2000000 WORDS
+\par 
+\par   DETERMINANT OF INPUT MATRIX IS    .23023D+02
+\par 
+\par   PARAMETER ESTIMATES APPEAR IN ORDER,
+\par   NO SPECIAL PROBLEMS WERE ENCOUNTERED DURING OPTIMIZATION.
+\par 
+\par 
+\par 
+\par   RESIDUAL COVARIANCE MATRIX  (S-SIGMA) :       
+\par 
+\par 
+\par                        COACH1     COACH2     COACH3     SEVERE1    SEVERE2 
+\par                           V1         V2         V3         V4         V5  
+\par      COACH1   V1          .000
+\par      COACH2   V2         -.044       .000
+\par      COACH3   V3          .013       .004       .000
+\par      SEVERE1  V4         -.272      -.017       .035       .000
+\par      SEVERE2  V5         -.181      -.025       .010      -.005       .000
+\par      SEVERE3  V6         -.110      -.012       .049       .008      -.004
+\par      INTENT1  V7         -.210      -.031      -.094       .016       .041
+\par      INTENT2  V8         -.044       .052      -.003      -.046       .034
+\par      INTENT3  V9         -.157       .054      -.020      -.144       .052
+\par 
+\par 
+\par                        SEVERE3    INTENT1    INTENT2    INTENT3 
+\par                           V6         V7         V8         V9  
+\par      SEVERE3  V6          .000
+\par      INTENT1  V7          .040       .000
+\par      INTENT2  V8         -.004      -.001       .000
+\par      INTENT3  V9         -.012      -.001       .001       .000
+\par 
+\par                                   AVERAGE ABSOLUTE RESIDUAL =          .0410
+\par                      AVERAGE OFF-DIAGONAL ABSOLUTE RESIDUAL =          .0513
+\par 
+\par 
+\par 
+\par   STANDARDIZED RESIDUAL MATRIX:                 
+\par 
+\par 
+\par                        COACH1     COACH2     COACH3     SEVERE1    SEVERE2 
+\par                           V1         V2         V3         V4         V5  
+\par      COACH1   V1          .000
+\par      COACH2   V2         -.015       .000
+\par      COACH3   V3          .005       .002       .000
+\par      SEVERE1  V4         -.098      -.008       .019       .000
+\par      SEVERE2  V5         -.063      -.011       .005      -.002       .000
+\par      SEVERE3  V6         -.039      -.005       .026       .004      -.002
+\par      INTENT1  V7         -.091      -.017      -.061       .009       .023
+\par      INTENT2  V8         -.016       .024      -.002      -.023       .017
+\par      INTENT3  V9         -.053       .023      -.010      -.065       .023
+\par 
+\par 
+\par                        SEVERE3    INTENT1    INTENT2    INTENT3 
+\par                           V6         V7         V8         V9  
+\par      SEVERE3  V6          .000
+\par      INTENT1  V7          .023       .000
+\par      INTENT2  V8         -.002      -.001       .000
+\par      INTENT3  V9         -.006       .000       .000       .000
+\par 
+\par                      AVERAGE ABSOLUTE STANDARDIZED RESIDUAL =          .0176
+\par         AVERAGE OFF-DIAGONAL ABSOLUTE STANDARDIZED RESIDUAL =          .0220
+\par \page 
+\par  25-Jun-07      PAGE :  3  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par   LARGEST STANDARDIZED RESIDUALS:
+\par 
+\par       NO.    PARAMETER   ESTIMATE      NO.    PARAMETER   ESTIMATE
+\par       ---    ---------   --------      ---    ---------   --------
+\par        1     V4,  V1        -.098      11     V7,  V6         .023
+\par        2     V7,  V1        -.091      12     V8,  V4        -.023
+\par        3     V9,  V4        -.065      13     V9,  V5         .023
+\par        4     V5,  V1        -.063      14     V9,  V2         .023
+\par        5     V7,  V3        -.061      15     V4,  V3         .019
+\par        6     V9,  V1        -.053      16     V7,  V2        -.017
+\par        7     V6,  V1        -.039      17     V8,  V5         .017
+\par        8     V6,  V3         .026      18     V8,  V1        -.016
+\par        9     V8,  V2         .024      19     V2,  V1        -.015
+\par       10     V7,  V5         .023      20     V5,  V2        -.011
+\par 
+\par 
+\par 
+\par   DISTRIBUTION OF STANDARDIZED RESIDUALS
+\par 
+\par 
+\par 
+\par      ----------------------------------------                     
+\par      \cf2 !                                      !                     \cf0 
+\par    40-                                      -                     
+\par      \cf2 !                                      !                     \cf0 
+\par      \cf2 !                                      !                     \cf0 
+\par      \cf2 !                                      !                     \cf0 
+\par      \cf2 !                                      !            RANGE      FREQ PERCENT\cf0 
+\par    30-                                      -                     
+\par      \cf2 !                                      !    1   -0.5  -  --       0    .00%\cf0 
+\par      \cf2 !                 *                    !    2   -0.4  -  -0.5     0    .00%\cf0 
+\par      \cf2 !                 *                    !    3   -0.3  -  -0.4     0    .00%\cf0 
+\par      \cf2 !                 *                    !    4   -0.2  -  -0.3     0    .00%\cf0 
+\par    20-                 *  *                 -    5   -0.1  -  -0.2     0    .00%
+\par      \cf2 !                 *  *                 !    6    0.0  -  -0.1    26  57.78%\cf0 
+\par      \cf2 !                 *  *                 !    7    0.1  -   0.0    19  42.22%\cf0 
+\par      \cf2 !                 *  *                 !    8    0.2  -   0.1     0    .00%\cf0 
+\par      \cf2 !                 *  *                 !    9    0.3  -   0.2     0    .00%\cf0 
+\par    10-                 *  *                 -    A    0.4  -   0.3     0    .00%
+\par      \cf2 !                 *  *                 !    B    0.5  -   0.4     0    .00%\cf0 
+\par      \cf2 !                 *  *                 !    C     ++  -   0.5     0    .00%\cf0 
+\par      \cf2 !                 *  *                 !    -------------------------------\cf0 
+\par      \cf2 !                 *  *                 !            TOTAL        45 100.00%\cf0 
+\par      ----------------------------------------                     
+\par         1  2  3  4  5  6  7  8  9  A  B  \cf1 C\cf0     EACH "*" REPRESENTS    2 RESIDUALS
+\par \page 
+\par  25-Jun-07      PAGE :  4  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par 
+\par 
+\par   GOODNESS OF FIT SUMMARY FOR METHOD = ML    
+\par 
+\par   INDEPENDENCE MODEL CHI-SQUARE        =    2019.649 ON    36 DEGREES OF FREEDOM
+\par 
+\par   INDEPENDENCE AIC =    1947.649   INDEPENDENCE CAIC =    1756.688
+\par          MODEL AIC =     -18.889          MODEL CAIC =    -146.195
+\par 
+\par   CHI-SQUARE =       29.111 BASED ON      24 DEGREES OF FREEDOM
+\par   PROBABILITY VALUE FOR THE CHI-SQUARE STATISTIC IS       .21596
+\par 
+\par   THE NORMAL THEORY RLS CHI-SQUARE FOR THIS ML SOLUTION IS         28.441.
+\par 
+\par   FIT INDICES
+\par   -----------
+\par   BENTLER-BONETT     NORMED FIT INDEX =      .986
+\par   BENTLER-BONETT NON-NORMED FIT INDEX =      .996
+\par   COMPARATIVE FIT INDEX (CFI)         =      .997
+\par 
+\par   RELIABILITY COEFFICIENTS
+\par   ------------------------
+\par   CRONBACH'S ALPHA                    =      .550
+\par   RELIABILITY COEFFICIENT RHO         =      .787
+\par 
+\par   STANDARDIZED FACTOR LOADINGS FOR THE FACTOR THAT GENERATES
+\par   MAXIMAL RELIABILITY FOR THE UNIT-WEIGHT COMPOSITE
+\par   BASED ON THE MODEL (RHO):
+\par   COACH1    COACH2    COACH3    SEVERE1   SEVERE2   SEVERE3 
+\par       .102      .225      .226      .434      .495      .548
+\par   INTENT1   INTENT2   INTENT3 
+\par       .566      .713      .662
+\par 
+\par 
+\par 
+\par 
+\par                          ITERATIVE SUMMARY
+\par 
+\par                      PARAMETER
+\par   ITERATION          ABS CHANGE         ALPHA                FUNCTION
+\par       1                .829620         1.00000               1.34431
+\par       2                .278995         1.00000                .56689
+\par       3                .181963         1.00000                .15801
+\par       4                .078059         1.00000                .06444
+\par       5                .017480         1.00000                .05334
+\par       6                .001486         1.00000                .05332
+\par       7                .000136         1.00000                .05332
+\par \page 
+\par  25-Jun-07      PAGE :  5  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par   MEASUREMENT EQUATIONS WITH STANDARD ERRORS AND TEST STATISTICS
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par 
+\par 
+\par  COACH1  =V1  =   1.000 F1    + 1.000 E1  
+\par                                       
+\par                                       
+\par 
+\par  COACH2  =V2  =   1.746*F1    + 1.000 E2  
+\par                    .251               
+\par                   6.956@              
+\par 
+\par  COACH3  =V3  =   1.482*F1    + 1.000 E3  
+\par                    .214               
+\par                   6.936@              
+\par 
+\par  SEVERE1 =V4  =   1.000 F2    + 1.000 E4  
+\par                                       
+\par                                       
+\par 
+\par  SEVERE2 =V5  =   1.175*F2    + 1.000 E5  
+\par                    .077               
+\par                  15.296@              
+\par 
+\par  SEVERE3 =V6  =   1.269*F2    + 1.000 E6  
+\par                    .082               
+\par                  15.441@              
+\par 
+\par  INTENT1 =V7  =   1.000 F3    + 1.000 E7  
+\par                                       
+\par                                       
+\par 
+\par  INTENT2 =V8  =   1.470*F3    + 1.000 E8  
+\par                    .069               
+\par                  21.409@              
+\par 
+\par  INTENT3 =V9  =   1.499*F3    + 1.000 E9  
+\par                    .071               
+\par                  20.971@              
+\par 
+\par \page 
+\par  25-Jun-07      PAGE :  6  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par   CONSTRUCT EQUATIONS WITH STANDARD ERRORS AND TEST STATISTICS 
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par 
+\par 
+\par  SEVERE  =F2  =   -.415*F1    + 1.000 D2  
+\par                    .093               
+\par                  -4.458@              
+\par 
+\par  INTENT  =F3  =    .266*F2    +  .001*F1    + 1.000 D3  
+\par                    .048          .068               
+\par                   5.534@         .020               
+\par 
+\par \page 
+\par  25-Jun-07      PAGE :  7  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   VARIANCES OF INDEPENDENT VARIABLES
+\par   ----------------------------------
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par                   V                                F
+\par                  ---                              ---
+\par                                 I F1  -COACHTOL             .474*I              
+\par                                 I                           .125 I              
+\par                                 I                          3.784@I              
+\par                                 I                                I              
+\par \page 
+\par  25-Jun-07      PAGE :  8  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   VARIANCES OF INDEPENDENT VARIABLES
+\par   ----------------------------------
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par                   E                                D
+\par                  ---                              ---
+\par  E1  -COACH1              3.258*I D2  -SEVERE               .892*I              
+\par                            .206 I                           .108 I              
+\par                          15.814@I                          8.286@I              
+\par                                 I                                I              
+\par  E2  -COACH2               .907*I D3  -INTENT               .732*I              
+\par                            .161 I                           .074 I              
+\par                           5.649@I                          9.839@I              
+\par                                 I                                I              
+\par  E3  -COACH3               .633*I                                I              
+\par                            .115 I                                I              
+\par                           5.492@I                                I              
+\par                                 I                                I              
+\par  E4  -SEVERE1             1.100*I                                I              
+\par                            .081 I                                I              
+\par                          13.566@I                                I              
+\par                                 I                                I              
+\par  E5  -SEVERE2              .860*I                                I              
+\par                            .081 I                                I              
+\par                          10.641@I                                I              
+\par                                 I                                I              
+\par  E6  -SEVERE3              .529*I                                I              
+\par                            .078 I                                I              
+\par                           6.778@I                                I              
+\par                                 I                                I              
+\par  E7  -INTENT1              .632*I                                I              
+\par                            .044 I                                I              
+\par                          14.469@I                                I              
+\par                                 I                                I              
+\par  E8  -INTENT2              .222*I                                I              
+\par                            .047 I                                I              
+\par                           4.760@I                                I              
+\par                                 I                                I              
+\par  E9  -INTENT3              .561*I                                I              
+\par                            .058 I                                I              
+\par                           9.728@I                                I              
+\par                                 I                                I              
+\par \page 
+\par  25-Jun-07      PAGE :  9  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   DECOMPOSITION OF EFFECTS WITH NONSTANDARDIZED VALUES
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par   PARAMETER TOTAL EFFECTS
+\par   -----------------------
+\par 
+\par  COACH1  =V1  =   1.000 F1    + 1.000 E1  
+\par                                       
+\par                                       
+\par 
+\par  COACH2  =V2  =   1.746*F1    + 1.000 E2  
+\par                                       
+\par                                       
+\par 
+\par  COACH3  =V3  =   1.482*F1    + 1.000 E3  
+\par                                       
+\par                                       
+\par 
+\par  SEVERE1 =V4  =   1.000 F2    -  .415 F1    + 1.000 E4    + 1.000 D2  
+\par                                  .093                             
+\par                                -4.458@                            
+\par 
+\par 
+\par  SEVERE2 =V5  =   1.175*F2    -  .487 F1    + 1.000 E5    + 1.175 D2  
+\par                    .077          .108                        .077 
+\par                  15.296@       -4.499@                     15.296@
+\par 
+\par 
+\par  SEVERE3 =V6  =   1.269*F2    -  .526 F1    + 1.000 E6    + 1.269 D2  
+\par                    .082          .116                        .082 
+\par                  15.441@       -4.542@                     15.441@
+\par 
+\par 
+\par  INTENT1 =V7  =    .266 F2    + 1.000 F3    -  .109 F1    + 1.000 E7  
+\par                    .048                        .067               
+\par                   5.534@                     -1.622               
+\par 
+\par                 +  .266 D2    + 1.000 D3  
+\par                    .048               
+\par                   5.534@              
+\par 
+\par  INTENT2 =V8  =    .391 F2    + 1.470*F3    -  .160 F1    + 1.000 E8  
+\par                    .069          .069          .099               
+\par                   5.656@       21.409@       -1.625               
+\par 
+\par                 +  .391 D2    + 1.470 D3  
+\par                    .069          .069 
+\par                   5.656@       21.409@
+\par 
+\par  INTENT3 =V9  =    .399 F2    + 1.499*F3    -  .163 F1    + 1.000 E9  
+\par                    .071          .071          .101               
+\par                   5.608@       20.971@       -1.624               
+\par 
+\par                 +  .399 D2    + 1.499 D3  
+\par                    .071          .071 
+\par                   5.608@       20.971@
+\par 
+\par  SEVERE  =F2  =   -.415*F1    + 1.000 D2  
+\par                                       
+\par                                       
+\par 
+\par  INTENT  =F3  =    .266*F2    -  .109*F1    +  .266 D2    + 1.000 D3  
+\par                    .048          .067          .048               
+\par                   5.534@       -1.622         5.534@              
+\par 
+\par 
+\par \page 
+\par  25-Jun-07      PAGE : 10  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   DECOMPOSITION OF EFFECTS WITH NONSTANDARDIZED VALUES
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par   PARAMETER INDIRECT EFFECTS
+\par   --------------------------
+\par 
+\par  SEVERE1 =V4  =   -.415 F1    + 1.000 D2  
+\par                    .093               
+\par                  -4.458@              
+\par 
+\par  SEVERE2 =V5  =   -.487 F1    + 1.175 D2  
+\par                    .108          .077 
+\par                  -4.499@       15.296@
+\par 
+\par  SEVERE3 =V6  =   -.526 F1    + 1.269 D2  
+\par                    .116          .082 
+\par                  -4.542@       15.441@
+\par 
+\par  INTENT1 =V7  =    .266 F2    -  .109 F1    +  .266 D2    + 1.000 D3  
+\par                    .048          .067          .048               
+\par                   5.534@       -1.622         5.534@              
+\par 
+\par 
+\par  INTENT2 =V8  =    .391 F2    -  .160 F1    +  .391 D2    + 1.470 D3  
+\par                    .069          .099          .069          .069 
+\par                   5.656@       -1.625         5.656@       21.409@
+\par 
+\par 
+\par  INTENT3 =V9  =    .399 F2    -  .163 F1    +  .399 D2    + 1.499 D3  
+\par                    .071          .101          .071          .071 
+\par                   5.608@       -1.624         5.608@       20.971@
+\par 
+\par 
+\par  INTENT  =F3  =   -.110*F1    +  .266 D2  
+\par                    .031          .048 
+\par                  -3.563@        5.534@
+\par 
+\par \page 
+\par  25-Jun-07      PAGE : 11  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   DECOMPOSITION OF EFFECTS WITH STANDARDIZED VALUES
+\par 
+\par   PARAMETER TOTAL EFFECTS
+\par   -----------------------
+\par 
+\par  COACH1  =V1  =    .356 F1    +  .934 E1  
+\par 
+\par  COACH2  =V2  =    .784*F1    +  .621 E2  
+\par 
+\par  COACH3  =V3  =    .789*F1    +  .615 E3  
+\par 
+\par  SEVERE1 =V4  =    .685 F2    -  .198 F1    +  .728 E4    +  .656 D2  
+\par 
+\par  SEVERE2 =V5  =    .781*F2    -  .226 F1    +  .625 E5    +  .747 D2  
+\par 
+\par  SEVERE3 =V6  =    .865*F2    -  .250 F1    +  .502 E6    +  .828 D2  
+\par 
+\par  INTENT1 =V7  =    .219 F2    +  .747 F3    -  .063 F1    +  .664 E7  
+\par                 +  .210 D2    +  .715 D3  
+\par 
+\par  INTENT2 =V8  =    .276 F2    +  .941*F3    -  .079 F1    +  .337 E8  
+\par                 +  .265 D2    +  .900 D3  
+\par 
+\par  INTENT3 =V9  =    .256 F2    +  .873*F3    -  .073 F1    +  .488 E9  
+\par                 +  .245 D2    +  .835 D3  
+\par 
+\par  SEVERE  =F2  =   -.289*F1    +  .957 D2  
+\par 
+\par  INTENT  =F3  =    .294*F2    -  .084*F1    +  .281 D2    +  .956 D3  
+\par 
+\par \page 
+\par  25-Jun-07      PAGE : 12  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   DECOMPOSITION OF EFFECTS WITH STANDARDIZED VALUES
+\par 
+\par   PARAMETER INDIRECT EFFECTS
+\par   --------------------------
+\par 
+\par  SEVERE1 =V4  =   -.198 F1    +  .656 D2  
+\par 
+\par  SEVERE2 =V5  =   -.226 F1    +  .747 D2  
+\par 
+\par  SEVERE3 =V6  =   -.250 F1    +  .828 D2  
+\par 
+\par  INTENT1 =V7  =    .219 F2    -  .063 F1    +  .210 D2    +  .715 D3  
+\par 
+\par  INTENT2 =V8  =    .276 F2    -  .079 F1    +  .265 D2    +  .900 D3  
+\par 
+\par  INTENT3 =V9  =    .256 F2    -  .073 F1    +  .245 D2    +  .835 D3  
+\par 
+\par  INTENT  =F3  =   -.085*F1    +  .281 D2  
+\par 
+\par \page 
+\par  25-Jun-07      PAGE : 13  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 7 Three Factor Latent Variable Model               
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par   STANDARDIZED SOLUTION:                                              R-SQUARED
+\par 
+\par 
+\par 
+\par  COACH1  =V1  =   .356 F1    + .934 E1                                     .127 
+\par  COACH2  =V2  =   .784*F1    + .621 E2                                     .614 
+\par  COACH3  =V3  =   .789*F1    + .615 E3                                     .622 
+\par  SEVERE1 =V4  =   .685 F2    + .728 E4                                     .469 
+\par  SEVERE2 =V5  =   .781*F2    + .625 E5                                     .610 
+\par  SEVERE3 =V6  =   .865*F2    + .502 E6                                     .747 
+\par  INTENT1 =V7  =   .747 F3    + .664 E7                                     .559 
+\par  INTENT2 =V8  =   .941*F3    + .337 E8                                     .886 
+\par  INTENT3 =V9  =   .873*F3    + .488 E9                                     .762 
+\par  SEVERE  =F2  =  -.289*F1    + .957 D2                                     .084 
+\par  INTENT  =F3  =   .294*F2    + .001*F1    + .956 D3                        .086 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par  -------------------------------------------------------------------------------
+\par                            E N D    O F    M E T H O D
+\par  -------------------------------------------------------------------------------
+\par 1
+\par   Execution begins at 14:57:31   
+\par   Execution ends   at 14:57:31   
+\par   Elapsed time =        .00 seconds 
+\par 
+\par }
+ 

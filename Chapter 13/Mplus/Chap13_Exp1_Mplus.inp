@@ -1,0 +1,31 @@
+TITLE:  Chapter 13 Three Factor Latent Variable Model;
+
+DATA:
+  FILE IS Chap13_Exp1.txt;
+  TYPE IS CORRELATION STD;
+  NGROUPS = 1;
+  NOBSERVATIONS = 547;
+
+VARIABLE:
+  NAMES ARE coach1 coach2 coach3 severe1 severe2 severe3 intent1
+  intent2 intent3;
+  USEVARIABLES ARE coach1 coach2 coach3 severe1 severe2 severe3 intent1 
+  intent2 intent3;
+
+ANALYSIS:
+  TYPE IS GENERAL;
+  ESTIMATOR IS ML;
+  ITERATIONS = 1000;
+  CONVERGENCE = 0.00005;
+
+Model:
+ coach by coach1@1 coach2 coach3;
+ severe by severe1@1 severe2 severe3;
+ intent by intent1@1 intent2 intent3;
+ intent on severe coach;
+ severe on coach;
+
+Model indirect:
+intent ind coach;
+
+OUTPUT:  SAMPSTAT STANDARDIZED;
