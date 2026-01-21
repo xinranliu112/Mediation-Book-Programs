@@ -1,0 +1,37 @@
+TITLE: Bayesian Causal Mediation;
+data: file is Chap9_worddata.txt;
+variable:  names are id x m r y xm;
+  usevariables are x m y xm;
+Analysis: estimator = bayes;
+chains = 2; fbiterations = 20000;
+model:
+y on m (b)
+x (c)
+xm (h);
+m on x (a);
+ m (sigma_m);
+y (sigma_y);
+[m] (intm);
+ [y] (inty);
+
+ MODEL PRIORS:
+ a ~ N(0,1000);
+ b ~ N(0,1000);
+ c ~ N(0,1000);
+ h ~ N(0,1000);
+ sigma_m ~ IG(.01,.01);
+ sigma_y ~ IG(.01,.01);
+intm ~ N(10,25);
+ inty ~ N(10,25);
+
+MODEL CONSTRAINT:
+new(ab pnde pnie tnde tnie cde);
+ab=a*b;
+pnde = c + h*intm;
+pnie = a*b;
+tnde = c + a*h + h*intm;
+tnie = a*b + a*h;
+cde = c; !the m value is at the mean, which is zero
+ Output: sampstat tech8;
+plot: type = plot2;
+         

@@ -1,0 +1,30 @@
+title: Bayesian Mediation analysis with diffuse prior;
+
+data: file=chap9_worddata.txt;
+
+variable:
+    names= id x m r y xm;
+    usev= x m y;
+
+analysis:
+    estimator=bayes;fbiteration=25000;
+    process=2;
+
+model priors:
+    a ~ N (3.8883, 0.5914);
+    b ~ N (0.769, 0.0424);
+    cpr ~ N (1.341, 1.7983);
+
+model:
+    m on x (a);
+    y on m (b)
+    x (cpr);
+
+model constraint:
+    new (indirect);
+    indirect=a*b;
+
+output: tech1 tech8 standardized;
+
+plot:
+    type=plot2;
