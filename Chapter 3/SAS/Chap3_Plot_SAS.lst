@@ -1,0 +1,210 @@
+                                            The SAS System           23:35 Wednesday, July 2, 2025   1
+
+------------------------------------------------ x=0 -------------------------------------------------
+
+                                          The CORR Procedure
+
+                                   2  Variables:    m        y        
+
+
+                                          Simple Statistics
+ 
+      Variable           N          Mean       Std Dev           Sum       Minimum       Maximum
+
+      m                 12       2.58333       0.90034      31.00000       1.00000       4.00000
+      y                 12       2.75000       1.05529      33.00000       1.00000       5.00000
+
+
+                              Pearson Correlation Coefficients, N = 12 
+                                     Prob > |r| under H0: Rho=0
+ 
+                                                  m             y
+
+                                    m       1.00000       0.35881
+                                                           0.2521
+
+                                    y       0.35881       1.00000
+                                             0.2521              
+                                            The SAS System           23:35 Wednesday, July 2, 2025   2
+
+------------------------------------------------ x=1 -------------------------------------------------
+
+                                          The CORR Procedure
+
+                                   2  Variables:    m        y        
+
+
+                                          Simple Statistics
+ 
+      Variable           N          Mean       Std Dev           Sum       Minimum       Maximum
+
+      m                 38       3.21053       1.04385     122.00000       1.00000       5.00000
+      y                 38       3.39474       1.12801     129.00000       1.00000       5.00000
+
+
+                              Pearson Correlation Coefficients, N = 38 
+                                     Prob > |r| under H0: Rho=0
+ 
+                                                  m             y
+
+                                    m       1.00000       0.47840
+                                                           0.0024
+
+                                    y       0.47840       1.00000
+                                             0.0024              
+                                            The SAS System           23:35 Wednesday, July 2, 2025   3
+
+                               Obs    id    x    m    y    dichx    xm
+
+                                 1     3    0    1    3      0       0
+                                 2     7    0    3    3      0       0
+                                 3    18    0    3    5      0       0
+                                 4    23    0    1    2      0       0
+                                 5    28    0    3    4      0       0
+                                 6    29    0    4    3      0       0
+                                 7    36    0    2    1      0       0
+                                 8    38    0    3    2      0       0
+                                 9    40    0    3    2      0       0
+                                10    41    0    3    3      0       0
+                                11    44    0    2    2      0       0
+                                12    45    0    3    3      0       0
+                                13     1    1    4    3      1       4
+                                14     2    1    4    3      1       4
+                                15     4    1    1    3      1       1
+                                16     5    1    3    3      1       3
+                                17     6    1    4    2      1       4
+                                18     8    1    5    5      1       5
+                                19     9    1    4    4      1       4
+                                20    10    1    5    4      1       5
+                                21    11    1    2    2      1       2
+                                22    12    1    3    4      1       3
+                                23    13    1    5    5      1       5
+                                24    14    1    4    5      1       4
+                                25    15    1    4    5      1       4
+                                26    16    1    2    2      1       2
+                                27    17    1    4    4      1       4
+                                28    19    1    3    4      1       3
+                                29    20    1    3    3      1       3
+                                30    21    1    2    4      1       2
+                                31    22    1    3    5      1       3
+                                32    24    1    4    4      1       4
+                                33    25    1    3    2      1       3
+                                34    26    1    3    4      1       3
+                                35    27    1    2    3      1       2
+                                36    30    1    3    3      1       3
+                                37    31    1    2    1      1       2
+                                38    32    1    1    3      1       1
+                                39    33    1    2    5      1       2
+                                40    34    1    2    1      1       2
+                                41    35    1    4    3      1       4
+                                42    37    1    4    3      1       4
+                                43    39    1    3    3      1       3
+                                44    42    1    4    3      1       4
+                                45    43    1    4    4      1       4
+                                46    46    1    3    4      1       3
+                                47    47    1    4    4      1       4
+                                48    48    1    3    2      1       3
+                                49    49    1    4    5      1       4
+                                50    50    1    2    2      1       2
+                                            The SAS System           23:35 Wednesday, July 2, 2025   4
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: y 
+
+                               Number of Observations Read          50
+                               Number of Observations Used          50
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1        3.79105        3.79105       3.07    0.0863
+            Error                    48       59.32895        1.23602                     
+            Corrected Total          49       63.12000                                    
+
+
+                         Root MSE              1.11176    R-Square     0.0601
+                         Dependent Mean        3.24000    Adj R-Sq     0.0405
+                         Coeff Var            34.31371                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        2.75000        0.32094       8.57      <.0001
+                 x             1        0.64474        0.36814       1.75      0.0863
+                                            The SAS System           23:35 Wednesday, July 2, 2025   5
+
+                                          The REG Procedure
+                                            Model: MODEL2
+                                        Dependent Variable: m 
+
+                               Number of Observations Read          50
+                               Number of Observations Used          50
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1        3.58754        3.58754       3.50    0.0676
+            Error                    48       49.23246        1.02568                     
+            Corrected Total          49       52.82000                                    
+
+
+                         Root MSE              1.01276    R-Square     0.0679
+                         Dependent Mean        3.06000    Adj R-Sq     0.0485
+                         Coeff Var            33.09662                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        2.58333        0.29236       8.84      <.0001
+                 x             1        0.62719        0.33536       1.87      0.0676
+                                            The SAS System           23:35 Wednesday, July 2, 2025   6
+
+                                          The REG Procedure
+                                            Model: MODEL3
+                                        Dependent Variable: y 
+
+                               Number of Observations Read          50
+                               Number of Observations Used          50
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     2       16.07506        8.03753       8.03    0.0010
+            Error                    47       47.04494        1.00096                     
+            Corrected Total          49       63.12000                                    
+
+
+                         Root MSE              1.00048    R-Square     0.2547
+                         Dependent Mean        3.24000    Adj R-Sq     0.2230
+                         Coeff Var            30.87895                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        1.45960        0.46808       3.12      0.0031
+                 x             1        0.33145        0.34315       0.97      0.3390
+                 m             1        0.49951        0.14259       3.50      0.0010
+                                            The SAS System           23:35 Wednesday, July 2, 2025   7
+
+          Obs     i1        c          i2         a          i3        cpr         b       g
+
+           1     2.75    0.64474    2.58333    0.62719    1.45960    0.33145    0.49951    .
