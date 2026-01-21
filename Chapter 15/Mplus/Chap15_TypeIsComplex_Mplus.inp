@@ -1,0 +1,22 @@
+TITLE: Chapter 15 Group Example with TYPE=Complex
+
+DATA: 
+    File is 'Chap15_grpexam.txt';
+
+VARIABLE:
+    Names are obs x m y i j;
+    Usevariables are x m y;
+    Cluster is j;
+
+ANALYSIS:
+    Type is complex;
+    Estimator is MLR;
+    Iterations = 1000;
+    Convergence = 0.00005;
+
+MODEL:
+    y on x m;
+    m on x;
+
+OUTPUT:
+    standardized;

@@ -1,0 +1,238 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+05/29/2025   4:21 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Chapter 15 Group Example with TYPE=Twolevel
+
+  DATA:
+      File is 'chap15_grpexam.txt';
+
+  VARIABLE:
+      Names are obs x m y i j;
+      Usevariables are x m y;
+      Cluster is j;
+      Between = x;
+      Within = m;
+
+  DEFINE:
+      CENTER M (GRANDMEAN);
+
+  ANALYSIS:
+      Type is Twolevel Random;
+      Estimator is MLR;
+      Iterations = 1000;
+      Convergence = 0.00005;
+
+  MODEL:
+      %Within%
+      y on m ;
+      %Between%
+      y on x;
+
+  OUTPUT:
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Chapter 15 Group Example with TYPE=Twolevel
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         112
+
+Number of dependent variables                                    1
+Number of independent variables                                  2
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   Y
+
+Observed independent variables
+   X           M
+
+Variables with special functions
+
+  Cluster variable      J
+
+  Within variables
+   M
+
+  Between variables
+   X
+
+  Centering (GRANDMEAN)
+   M
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of EM iterations                                500
+Convergence criteria for the EM algorithm
+  Loglikelihood change                                   0.100D-02
+  Relative loglikelihood change                          0.100D-05
+  Derivative                                             0.100D-03
+Minimum variance                                         0.100D-03
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+
+Input data file(s)
+  chap15_grpexam.txt
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of clusters                         16
+
+     Average cluster size        7.000
+
+     Estimated Intraclass Correlations for the Y Variables
+
+                Intraclass
+     Variable  Correlation
+
+     Y            0.207
+
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Y                    41.857       0.240       2.000    0.89%      29.000     40.000     43.000
+             112.000     209.051       0.506      82.000    0.89%      44.000     51.000
+     M                     0.000       0.106     -31.304    0.89%     -11.304     -3.304     -0.304
+             112.000     135.658      -0.323      30.696    0.89%       2.696      8.696
+     X                     0.500       0.000       0.000   50.00%       0.000      0.000      0.500
+              16.000       0.250      -2.000       1.000   50.00%       1.000      1.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        5
+
+Loglikelihood
+
+          H0 Value                        -402.846
+          H0 Scaling Correction Factor      1.0559
+            for MLR
+          H1 Value                        -402.846
+          H1 Scaling Correction Factor      1.0559
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                     815.693
+          Bayesian (BIC)                   829.285
+          Sample-Size Adjusted BIC         813.483
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000*
+          Degrees of Freedom                     0
+          P-Value                           1.0000
+          Scaling Correction Factor         1.0000
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            115.459
+          Degrees of Freedom                     2
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value for Within                   0.000
+          Value for Between                  0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Within Level
+
+ Y          ON
+    M                  0.820      0.093      8.789      0.000
+
+ Residual Variances
+    Y                 62.215     10.320      6.029      0.000
+
+Between Level
+
+ Y          ON
+    X                  4.885      3.422      1.428      0.153
+
+ Intercepts
+    Y                 39.415      2.391     16.486      0.000
+
+ Residual Variances
+    Y                 34.111     12.651      2.696      0.007
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.209E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for multilevel analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  04:21:31
+        Ending Time:  04:21:31
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen

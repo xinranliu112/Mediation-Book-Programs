@@ -1,0 +1,543 @@
+                                    Output for Eqs. 15.3 and 15.4                                   13
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                          Model Information
+
+                        Data Set                     WORK.BOTH                
+                        Dependent Variable           y                        
+                        Covariance Structure         Unstructured             
+                        Subject Effect               j                        
+                        Estimation Method            REML                     
+                        Residual Variance Method     Profile                  
+                        Fixed Effects SE Method      Model-Based              
+                        Degrees of Freedom Method    Between-Within           
+
+
+                                       Class Level Information
+ 
+                          Class    Levels    Values
+
+                          j            16    1 2 3 4 5 6 7 8 9 10 11 12 13 
+                                             14 15 16                      
+
+
+                                             Dimensions
+
+                                 Covariance Parameters             2
+                                 Columns in X                      2
+                                 Columns in Z per Subject          1
+                                 Subjects                         16
+                                 Max Obs per Subject               7
+
+
+                                       Number of Observations
+
+                             Number of Observations Read             112
+                             Number of Observations Used             112
+                             Number of Observations Not Used           0
+
+
+                                          Iteration History
+ 
+                     Iteration    Evaluations    -2 Res Log Like       Criterion
+
+                             0              1       878.20894206                
+                             1              1       866.39597993      0.00000000
+
+
+                                      Convergence criteria met.                    
+
+
+                                    Output for Eqs. 15.3 and 15.4                                   14
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                    Covariance Parameter Estimates
+ 
+                                                      Standard         Z
+                  Cov Parm     Subject    Estimate       Error     Value      Pr > Z
+
+                  UN(1,1)      j           41.1518     22.3361      1.84      0.0327
+                  Residual                  122.93     17.7441      6.93      <.0001
+
+
+                                           Fit Statistics
+
+                                -2 Res Log Likelihood           866.4
+                                AIC (Smaller is Better)         870.4
+                                AICC (Smaller is Better)        870.5
+                                BIC (Smaller is Better)         871.9
+
+
+                                   Null Model Likelihood Ratio Test
+ 
+                                     DF    Chi-Square      Pr > ChiSq
+
+                                      1         11.81          0.0006
+
+
+                                      Solution for Fixed Effects
+ 
+                                            Standard
+                   Effect       Estimate       Error      DF    t Value    Pr > |t|
+
+                   Intercept     34.6250      2.7091      14      12.78      <.0001
+                   x             14.4643      3.8313      14       3.78      0.0020
+                          Output for Eqs. 15.6 and 15.7: Grand mean centered                        15
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                          Model Information
+
+                        Data Set                     WORK.BOTH                
+                        Dependent Variable           y                        
+                        Covariance Structure         Unstructured             
+                        Subject Effect               j                        
+                        Estimation Method            REML                     
+                        Residual Variance Method     Profile                  
+                        Fixed Effects SE Method      Model-Based              
+                        Degrees of Freedom Method    Between-Within           
+
+
+                                       Class Level Information
+ 
+                          Class    Levels    Values
+
+                          j            16    1 2 3 4 5 6 7 8 9 10 11 12 13 
+                                             14 15 16                      
+
+
+                                             Dimensions
+
+                                 Covariance Parameters             2
+                                 Columns in X                      3
+                                 Columns in Z per Subject          1
+                                 Subjects                         16
+                                 Max Obs per Subject               7
+
+
+                                       Number of Observations
+
+                             Number of Observations Read             112
+                             Number of Observations Used             112
+                             Number of Observations Not Used           0
+
+
+                                          Iteration History
+ 
+                     Iteration    Evaluations    -2 Res Log Like       Criterion
+
+                             0              1       827.30380244                
+                             1              2       801.63901455      0.00000001
+                             2              1       801.63901074      0.00000000
+
+
+                                      Convergence criteria met.                    
+
+
+                          Output for Eqs. 15.6 and 15.7: Grand mean centered                        16
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                    Covariance Parameter Estimates
+ 
+                                                      Standard         Z
+                  Cov Parm     Subject    Estimate       Error     Value      Pr > Z
+
+                  UN(1,1)      j           40.4209     18.7552      2.16      0.0156
+                  Residual                 62.8216      9.1120      6.89      <.0001
+
+
+                                           Fit Statistics
+
+                                -2 Res Log Likelihood           801.6
+                                AIC (Smaller is Better)         805.6
+                                AICC (Smaller is Better)        805.8
+                                BIC (Smaller is Better)         807.2
+
+
+                                   Null Model Likelihood Ratio Test
+ 
+                                     DF    Chi-Square      Pr > ChiSq
+
+                                      1         25.66          <.0001
+
+
+                                      Solution for Fixed Effects
+ 
+                                            Standard
+                   Effect       Estimate       Error      DF    t Value    Pr > |t|
+
+                   Intercept     39.4272      2.5330      14      15.57      <.0001
+                   x              4.8598      3.6489      14       1.33      0.2042
+                   cm             0.8224     0.08415      95       9.77      <.0001
+                          Output for Eqs. 15.6 and 15.7: Group mean centered                        17
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                          Model Information
+
+                        Data Set                     WORK.BOTH                
+                        Dependent Variable           y                        
+                        Covariance Structure         Unstructured             
+                        Subject Effect               j                        
+                        Estimation Method            REML                     
+                        Residual Variance Method     Profile                  
+                        Fixed Effects SE Method      Model-Based              
+                        Degrees of Freedom Method    Between-Within           
+
+
+                                       Class Level Information
+ 
+                          Class    Levels    Values
+
+                          j            16    1 2 3 4 5 6 7 8 9 10 11 12 13 
+                                             14 15 16                      
+
+
+                                             Dimensions
+
+                                 Covariance Parameters             2
+                                 Columns in X                      3
+                                 Columns in Z per Subject          1
+                                 Subjects                         16
+                                 Max Obs per Subject               7
+
+
+                                       Number of Observations
+
+                             Number of Observations Read             112
+                             Number of Observations Used             112
+                             Number of Observations Not Used           0
+
+
+                                          Iteration History
+ 
+                     Iteration    Evaluations    -2 Res Log Like       Criterion
+
+                             0              1       836.31264549                
+                             1              1       804.02633172      0.00000000
+
+
+                                      Convergence criteria met.                    
+
+
+                          Output for Eqs. 15.6 and 15.7: Group mean centered                        18
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                    Covariance Parameter Estimates
+ 
+                                                      Standard         Z
+                  Cov Parm     Subject    Estimate       Error     Value      Pr > Z
+
+                  UN(1,1)      j           49.7363     22.2300      2.24      0.0126
+                  Residual                 62.8432      9.1182      6.89      <.0001
+
+
+                                           Fit Statistics
+
+                                -2 Res Log Likelihood           804.0
+                                AIC (Smaller is Better)         808.0
+                                AICC (Smaller is Better)        808.1
+                                BIC (Smaller is Better)         809.6
+
+
+                                   Null Model Likelihood Ratio Test
+ 
+                                     DF    Chi-Square      Pr > ChiSq
+
+                                      1         32.29          <.0001
+
+
+                                      Solution for Fixed Effects
+ 
+                                            Standard
+                   Effect       Estimate       Error      DF    t Value    Pr > |t|
+
+                   Intercept     34.6250      2.7091      14      12.78      <.0001
+                   x             14.4643      3.8313      14       3.78      0.0020
+                   withinm        0.8375     0.08694      95       9.63      <.0001
+                                    Output for Eqs. 15.8 and 15.9                                   19
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                          Model Information
+
+                        Data Set                     WORK.BOTH                
+                        Dependent Variable           m                        
+                        Covariance Structure         Unstructured             
+                        Subject Effect               j                        
+                        Estimation Method            REML                     
+                        Residual Variance Method     Profile                  
+                        Fixed Effects SE Method      Model-Based              
+                        Degrees of Freedom Method    Between-Within           
+
+
+                                       Class Level Information
+ 
+                          Class    Levels    Values
+
+                          j            16    1 2 3 4 5 6 7 8 9 10 11 12 13 
+                                             14 15 16                      
+
+
+                                             Dimensions
+
+                                 Covariance Parameters             2
+                                 Columns in X                      2
+                                 Columns in Z per Subject          1
+                                 Subjects                         16
+                                 Max Obs per Subject               7
+
+
+                                       Number of Observations
+
+                             Number of Observations Read             112
+                             Number of Observations Used             112
+                             Number of Observations Not Used           0
+
+
+                                          Iteration History
+ 
+                     Iteration    Evaluations    -2 Res Log Like       Criterion
+
+                             0              1       830.47132504                
+                             1              1       823.93374022      0.00000000
+
+
+                                      Convergence criteria met.                    
+
+
+                                    Output for Eqs. 15.8 and 15.9                                   20
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                    Covariance Parameter Estimates
+ 
+                                                      Standard         Z
+                  Cov Parm     Subject    Estimate       Error     Value      Pr > Z
+
+                  UN(1,1)      j           18.8538     11.9369      1.58      0.0571
+                  Residual                 86.6101     12.5011      6.93      <.0001
+
+
+                                           Fit Statistics
+
+                                -2 Res Log Likelihood           823.9
+                                AIC (Smaller is Better)         827.9
+                                AICC (Smaller is Better)        828.0
+                                BIC (Smaller is Better)         829.5
+
+
+                                   Null Model Likelihood Ratio Test
+ 
+                                     DF    Chi-Square      Pr > ChiSq
+
+                                      1          6.54          0.0106
+
+
+                                      Solution for Fixed Effects
+ 
+                                            Standard
+                   Effect       Estimate       Error      DF    t Value    Pr > |t|
+
+                   Intercept     29.4643      1.9757      14      14.91      <.0001
+                   x             11.6786      2.7940      14       4.18      0.0009
+                               Output for Eqs. 15.10, 15.11, and 15.12                              21
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                          Model Information
+
+                        Data Set                     WORK.BOTH                
+                        Dependent Variable           y                        
+                        Covariance Structure         Unstructured             
+                        Subject Effect               j                        
+                        Estimation Method            REML                     
+                        Residual Variance Method     Profile                  
+                        Fixed Effects SE Method      Model-Based              
+                        Degrees of Freedom Method    Between-Within           
+
+
+                                       Class Level Information
+ 
+                          Class    Levels    Values
+
+                          j            16    1 2 3 4 5 6 7 8 9 10 11 12 13 
+                                             14 15 16                      
+
+
+                                             Dimensions
+
+                                 Covariance Parameters             4
+                                 Columns in X                      3
+                                 Columns in Z per Subject          2
+                                 Subjects                         16
+                                 Max Obs per Subject               7
+
+
+                                       Number of Observations
+
+                             Number of Observations Read             112
+                             Number of Observations Used             112
+                             Number of Observations Not Used           0
+
+
+                                          Iteration History
+ 
+                     Iteration    Evaluations    -2 Res Log Like       Criterion
+
+                             0              1       836.31264549                
+                             1              2       797.92195201      0.00010187
+                             2              1       797.88911257      0.00000188
+                             3              1       797.88854396      0.00000000
+
+
+                                      Convergence criteria met.                    
+                               Output for Eqs. 15.10, 15.11, and 15.12                              22
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                    Covariance Parameter Estimates
+ 
+                                                      Standard         Z
+                  Cov Parm     Subject    Estimate       Error     Value        Pr Z
+
+                  UN(1,1)      j           48.5354     21.2022      2.29      0.0110
+                  UN(2,1)      j            1.9903      1.0326      1.93      0.0539
+                  UN(2,2)      j           0.05166     0.06075      0.85      0.1975
+                  Residual                 60.3643      9.3262      6.47      <.0001
+
+
+                                           Fit Statistics
+
+                                -2 Res Log Likelihood           797.9
+                                AIC (Smaller is Better)         805.9
+                                AICC (Smaller is Better)        806.3
+                                BIC (Smaller is Better)         809.0
+
+
+                                   Null Model Likelihood Ratio Test
+ 
+                                     DF    Chi-Square      Pr > ChiSq
+
+                                      3         38.42          <.0001
+
+
+                                      Solution for Fixed Effects
+ 
+                                            Standard
+                   Effect       Estimate       Error      DF    t Value    Pr > |t|
+
+                   Intercept     34.2359      2.3734      14      14.42      <.0001
+                   x             15.2425      2.8710      14       5.31      0.0001
+                   withinm        0.7333      0.1004      95       7.31      <.0001
+                                   Output for Eqs. 15.13 and 15.14                                  23
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                          Model Information
+
+                        Data Set                     WORK.BOTH                
+                        Dependent Variable           y                        
+                        Covariance Structure         Unstructured             
+                        Subject Effect               j                        
+                        Estimation Method            REML                     
+                        Residual Variance Method     Profile                  
+                        Fixed Effects SE Method      Model-Based              
+                        Degrees of Freedom Method    Between-Within           
+
+
+                                       Class Level Information
+ 
+                          Class    Levels    Values
+
+                          j            16    1 2 3 4 5 6 7 8 9 10 11 12 13 
+                                             14 15 16                      
+
+
+                                             Dimensions
+
+                                 Covariance Parameters             2
+                                 Columns in X                      4
+                                 Columns in Z per Subject          1
+                                 Subjects                         16
+                                 Max Obs per Subject               7
+
+
+                                       Number of Observations
+
+                             Number of Observations Read             112
+                             Number of Observations Used             112
+                             Number of Observations Not Used           0
+
+
+                                          Iteration History
+ 
+                     Iteration    Evaluations    -2 Res Log Like       Criterion
+
+                             0              1       827.27501963                
+                             1              1       801.42795022      0.00000000
+
+
+                                      Convergence criteria met.                    
+
+
+                                   Output for Eqs. 15.13 and 15.14                                  24
+                                                                     02:28 Wednesday, November 5, 2025
+
+                                         The Mixed Procedure
+
+                                          Estimated G Matrix
+ 
+                                  Row    Effect       j         Col1
+
+                                    1    Intercept     1     42.2698
+
+
+                                    Covariance Parameter Estimates
+ 
+                                                      Standard         Z
+                  Cov Parm     Subject    Estimate       Error     Value      Pr > Z
+
+                  UN(1,1)      j           42.2698     20.1430      2.10      0.0179
+                  Residual                 62.8432      9.1182      6.89      <.0001
+
+
+                                           Fit Statistics
+
+                                -2 Res Log Likelihood           801.4
+                                AIC (Smaller is Better)         805.4
+                                AICC (Smaller is Better)        805.5
+                                BIC (Smaller is Better)         807.0
+
+
+                                   Null Model Likelihood Ratio Test
+ 
+                                     DF    Chi-Square      Pr > ChiSq
+
+                                      1         25.85          <.0001
+
+
+                                      Solution for Fixed Effects
+ 
+                                            Standard
+                   Effect       Estimate       Error      DF    t Value    Pr > |t|
+
+                   Intercept     17.0367     10.4007      13       1.64      0.1254
+                   x              7.4929      5.3666      13       1.40      0.1860
+                   withinm        0.8375     0.08694      95       9.63      <.0001
+                   meanm          0.5969      0.3424      13       1.74      0.1048

@@ -1,0 +1,26 @@
+TITLE: Chapter 15 Group Example Using the Kenny (2003) Data
+
+DATA: 
+    File is 'Chap15_Kenny.txt';
+
+VARIABLE:
+    Names are subjid meas x m y constant;
+    Usevariables are x m y;
+    Cluster is subjid;
+    Within = x;
+
+ANALYSIS:
+    Type is Twolevel Random;
+    Algorithm = Integration;
+    Ghfiml = On;    
+
+MODEL:
+    %Within%
+    cprime | y on x;
+    a | m on x;
+    b | y on m;
+    %Between%
+    a with b;
+
+OUTPUT:
+    sampstat tech1 tech3 tech8;

@@ -1,0 +1,182 @@
+/*Chapter 15 Group Example*/
+
+data both;
+input obs x m y i j;
+cm=m-35.3035714;
+cards;
+  1    1    23    31    1    1
+  2    1    32    41    2    1
+  3    1    32    41    3    1
+  4    1    35    50    4    1
+  5    1    42    41    5    1
+  6    1    38    44    6    1
+  7    1    38    44    7    1
+  8    0    54    61    1    2
+  9    0    32    42    2    2
+ 10    0    54    61    3    2
+ 11    0    15    33    4    2
+ 12    0    32    14    5    2
+ 13    0    22    26    6    2
+ 14    0    38    44    7    2
+ 15    0    24    44    1    3
+ 16    0    27    45    2    3
+ 17    0    24    44    3    3
+ 18    0    27    35    4    3
+ 19    0    31    35    5    3
+ 20    0    27    35    6    3
+ 21    0     4    25    7    3
+ 22    1    40    31    1    4
+ 23    1    33    47    2    4
+ 24    1    33    47    3    4
+ 25    1    33    50    4    4
+ 26    1    53    59    5    4
+ 27    1    53    59    6    4
+ 28    1    42    73    7    4
+ 29    1    47    74    1    5
+ 30    1    38    43    2    5
+ 31    1    18    45    3    5
+ 32    1    47    74    4    5
+ 33    1    38    43    5    5
+ 34    1    38    56    6    5
+ 35    1    26    57    7    5
+ 36    0    20    26    1    6
+ 37    0    32    43    2    6
+ 38    0    20    26    3    6
+ 39    0    32    43    4    6
+ 40    0    41    47    5    6
+ 41    0    33    45    6    6
+ 42    0    57    82    7    6
+ 43    1    35    43    1    7
+ 44    1    35    43    2    7
+ 45    1    43    54    3    7
+ 46    1    46    77    4    7
+ 47    1    55    72    5    7
+ 48    1    35    43    6    7
+ 49    1    48    51    7    7
+ 50    0    16    40    1    8
+ 51    0    45    57    2     8
+ 52    0    16    40    3     8
+ 53    0    29    31    4     8
+ 54    0    24    35    5     8
+ 55    0    30    38    6     8
+ 56    0    24    35    7     8
+ 57    0    23     2    1     9
+ 58    0    28    24    2     9
+ 59    0    28    24    3     9
+ 60    0    14    20    4     9
+ 61    0    28    24    5     9
+ 62    0    18    20    6     9
+ 63    0    23    10    7     9
+ 64    1    41    38    1    10
+ 65    1    41    38    2    10
+ 66    1    54    50    3    10
+ 67    1    44    25    4    10
+ 68    1    54    50    5    10
+ 69    1    44    42    6    10
+ 70    1    61    53    7    10
+ 71    0    28    19    1    11
+ 72    0    21    36    2    11
+ 73    0    28    19    3    11
+ 74    0    25    22    4    11
+ 75    0    25    22    5    11
+ 76    0    34    43    6    11
+ 77    0    16    31    7    11
+ 78    1    44    39    1    12
+ 79    1    44    45    2    12
+ 80    1    22    36    3    12
+ 81    1    44    45    4    12
+ 82    1    40    50    5    12
+ 83    1    44    45    6    12
+ 84    1    25    38    7    12
+ 85    1    42    47    1    13
+ 86    1    42    47    2    13
+ 87    1    47    45    3    13
+ 88    1    39    40    4    13
+ 89    1    39    45    5    13
+ 90    1    39    53    6    13
+ 91    1    39    45    7    13
+ 92    0    28    29    1    14
+ 93    0    24    24    2    14
+ 94    0    28    29    3    14
+ 95    0    37    37    4    14
+ 96    0    37    37    5    14
+ 97    0    33    36    6    14
+ 98    0    22    34    7    14
+ 99    1    53    59    1    15
+100    1    53    59    2    15
+101    1    37    45    3    15
+102    1    37    45    4    15
+103    1    38    57    5    15
+104    1    66    75    6    15
+105    1    55    60    7    15
+106    0    41    40    1    16
+107    0    41    40    2    16
+108    0    41    40    3    16
+109    0    53    59    4    16
+110    0    49    41    5    16
+111    0    18    16    6    16
+112    0    29    29    7    16
+;
+
+*Saves out mean of m by group;
+proc means data=both noprint;
+var m;
+by j;
+output out=out1 mean(m)=meanm;
+
+data both; merge both out1;
+by j;
+drop _TYPE_ _FREQ_;
+withinm=m-meanm;
+run;
+quit;
+
+
+*Code for Equations 15.3 and 15.4;
+title 'Output for Eqs. 15.3 and 15.4';
+proc mixed data=both covtest;
+class j;
+model y = x /solution ddfm=bw notest;
+random intercept /type=un sub=j;
+run;
+
+*Code for Equations 15.6 and 15.7: Grand mean centered;
+title 'Output for Eqs. 15.6 and 15.7: Grand mean centered';
+proc mixed data=both covtest;
+class j;
+model y = x cm /solution ddfm=bw notest;
+random intercept /type=un sub=j;
+run;
+
+*Code for Equations 15.6 and 15.7: Group mean centered;
+title 'Output for Eqs. 15.6 and 15.7: Group mean centered';
+proc mixed data=both covtest;
+class j;
+model y = x withinm /solution ddfm=bw notest;
+random intercept /type=un sub=j;
+run;
+
+*Code for Equations 15.8 and 15.9;
+title 'Output for Eqs. 15.8 and 15.9';
+proc mixed data=both covtest;
+class j;
+model m = x/solution ddfm=bw notest;
+random intercept /type=un sub=j;
+run;
+
+*Code for Equations 15.10, 15.11, and 15.12;
+title 'Output for Eqs. 15.10, 15.11, and 15.12';
+proc mixed data=both covtest;
+class j;
+model y = x withinm /solution ddfm=bw notest;
+random intercept withinm /type=un sub=j;
+run;
+
+*Code for Equations 15.13 and 15.14;
+title 'Output for Eqs. 15.13 and 15.14';
+proc mixed data=both covtest;
+class j;
+model y = x withinm meanm /solution ddfm=bw notest;
+random intercept /type=un sub=j g;
+run;
+quit;

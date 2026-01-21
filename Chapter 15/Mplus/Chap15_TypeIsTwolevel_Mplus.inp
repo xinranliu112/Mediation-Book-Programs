@@ -1,0 +1,28 @@
+TITLE: Chapter 15 Group Example with TYPE=Twolevel
+
+DATA: 
+    File is 'chap15_grpexam.txt';
+
+VARIABLE:
+    Names are obs x m y i j;
+    Usevariables are x m y;
+    Cluster is j;
+    Between = x;
+    Within = m;
+
+DEFINE:
+    CENTER M (GRANDMEAN);
+
+ANALYSIS:
+    Type is Twolevel Random;
+    Estimator is MLR;
+    Iterations = 1000;
+    Convergence = 0.00005;
+
+MODEL:
+    %Within%
+    y on m ;
+    %Between%
+    y on x;
+
+OUTPUT:
