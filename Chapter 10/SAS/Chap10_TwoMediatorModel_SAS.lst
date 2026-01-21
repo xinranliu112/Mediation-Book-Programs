@@ -1,0 +1,189 @@
+                           Chapter 10 Analysis Example- Two Mediator Model                          24
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: y 
+
+                               Number of Observations Read          40
+                               Number of Observations Used          40
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1     1657.61029     1657.61029      16.65    0.0002
+            Error                    38     3782.16471       99.53065                     
+            Corrected Total          39     5439.77500                                    
+
+
+                         Root MSE              9.97650    R-Square     0.3047
+                         Dependent Mean       70.57500    Adj R-Sq     0.2864
+                         Coeff Var            14.13603                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1       34.72693        8.92472       3.89      0.0004
+                 x             1        0.70776        0.17343       4.08      0.0002
+                           Chapter 10 Analysis Example- Two Mediator Model                          25
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL2
+                                        Dependent Variable: y 
+
+                               Number of Observations Read          40
+                               Number of Observations Used          40
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     3     2906.95288      968.98429      13.77    <.0001
+            Error                    36     2532.82212       70.35617                     
+            Corrected Total          39     5439.77500                                    
+
+
+                         Root MSE              8.38786    R-Square     0.5344
+                         Dependent Mean       70.57500    Adj R-Sq     0.4956
+                         Coeff Var            11.88503                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        9.12333       10.47839       0.87      0.3897
+                 x             1        0.11215        0.20731       0.54      0.5919
+                 m1            1        0.56903        0.15681       3.63      0.0009
+                 m2            1        0.52972        0.16964       3.12      0.0035
+
+
+                                       Covariance of Estimates
+ 
+          Variable          Intercept                 x                m1                m2
+
+          Intercept      109.79673207      -0.387895193      -0.495870555      -1.227545009
+          x              -0.387895193      0.0429780463      -0.022410629      -0.013017423
+          m1             -0.495870555      -0.022410629        0.02459002      0.0078936364
+          m2             -1.227545009      -0.013017423      0.0078936364      0.0287768709
+                           Chapter 10 Analysis Example- Two Mediator Model                          26
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL3
+                                       Dependent Variable: m1 
+
+                               Number of Observations Read          40
+                               Number of Observations Used          40
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1     2335.66710     2335.66710      28.29    <.0001
+            Error                    38     3137.43290       82.56402                     
+            Corrected Total          39     5473.10000                                    
+
+
+                         Root MSE              9.08647    R-Square     0.4268
+                         Dependent Mean       49.65000    Adj R-Sq     0.4117
+                         Coeff Var            18.30106                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        7.09702        8.12853       0.87      0.3881
+                 x             1        0.84014        0.15796       5.32      <.0001
+                           Chapter 10 Analysis Example- Two Mediator Model                          27
+                                                                          00:38 Thursday, May 29, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL4
+                                       Dependent Variable: m2 
+
+                               Number of Observations Read          40
+                               Number of Observations Used          40
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1      162.94355      162.94355       2.31    0.1369
+            Error                    38     2680.95645       70.55149                     
+            Corrected Total          39     2843.90000                                    
+
+
+                         Root MSE              8.39949    R-Square     0.0573
+                         Dependent Mean       51.95000    Adj R-Sq     0.0325
+                         Coeff Var            16.16842                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1       40.71060        7.51397       5.42      <.0001
+                 x             1        0.22190        0.14602       1.52      0.1369
+                           Chapter 10 Analysis Example- Two Mediator Model                          28
+                                                                          00:38 Thursday, May 29, 2025
+
+                                  Obs     s     x    m1    m2     y
+
+                                    1     1    51    41    54    59
+                                    2     2    40    34    51    60
+                                    3     3    55    42    53    60
+                                    4     4    35    22    56    61
+                                    5     5    47    34    45    47
+                                    6     6    58    52    79    84
+                                    7     7    56    57    55    69
+                                    8     8    53    49    55    85
+                                    9     9    38    42    46    75
+                                   10    10    73    80    48    87
+                                   11    11    57    42    65    85
+                                   12    12    54    62    55    73
+                                   13    13    68    54    55    77
+                                   14    14    46    41    62    50
+                                   15    15    48    44    43    58
+                                   16    16    56    54    54    69
+                                   17    17    67    73    61    99
+                                   18    18    47    61    38    64
+                                   19    19    60    59    42    65
+                                   20    20    54    51    55    68
+                                   21    21    53    69    44    84
+                                   22    22    53    67    40    82
+                                   23    23    40    49    45    74
+                                   24    24    34    40    37    62
+                                   25    25    32    40    49    54
+                                   26    26    56    60    51    81
+                                   27    27    55    46    65    89
+                                   28    28    51    58    54    83
+                                   29    29    50    53    56    75
+                                   30    30    45    61    52    72
+                                   31    31    63    42    40    63
+                                   32    32    46    39    51    69
+                                   33    33    60    62    53    66
+                                   34    34    48    41    56    72
+                                   35    35    46    40    46    68
+                                   36    36    50    51    52    73
+                                   37    37    49    51    55    69
+                                   38    38    35    39    46    46
+                                   39    39    50    44    46    70
+                                   40    40    47    40    68    76

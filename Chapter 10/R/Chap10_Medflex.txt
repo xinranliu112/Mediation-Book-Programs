@@ -1,0 +1,123 @@
+> library(medflex)
+> memory <- read.table("Chap10_memory.txt", header = T)
+> 
+> ### imputation
+> set.seed(8292019)
+> #Creating the extended dataset
+> impword<-neImpute(Y~factor(X)*M*R,nMed=2, data=memory)
+> #Use the neModel instruction using X0 and X1 as predictors of Y
+> modcov<-neModel(Y~X0*X1,expData=impword, se="bootstrap",type="perc", nboot=1000)
+  |================================================================================| 100%> summary(modcov)
+Natural effect model
+with standard errors based on the non-parametric bootstrap
+---
+Exposure: X 
+Mediator(s): M, R 
+---
+Parameter estimates:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept) 12.083333   0.766354  15.767   <2e-16 ***
+X01          1.210161   9.818747   0.123    0.902    
+X11          1.297152   4.215685   0.308    0.758    
+X01:X11      0.009354  10.631346   0.001    0.999    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> ### weighting
+> set.seed(8292019)
+> fitM1 <- glm(M ~ X, family = gaussian("identity"), data = memory)
+> fitM2 <- glm(R ~ X * M, family = gaussian("identity"), data = memory)
+> fitY <- glm(Y ~ X * M * R, family = gaussian("identity"), data = memory)
+> summary(fitM1)
+
+Call:
+glm(formula = M ~ X, family = gaussian("identity"), data = memory)
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   4.5417     0.4648   9.771 2.23e-12 ***
+X             3.5583     0.6894   5.162 6.29e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for gaussian family taken to be 5.184722)
+
+    Null deviance: 355.89  on 43  degrees of freedom
+Residual deviance: 217.76  on 42  degrees of freedom
+AIC: 201.23
+
+Number of Fisher Scoring iterations: 2
+
+> summary(fitY)
+
+Call:
+glm(formula = Y ~ X * M * R, family = gaussian("identity"), data = memory)
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) -11.2396    18.2200  -0.617    0.541
+X             7.0313    25.9622   0.271    0.788
+M             2.9317     2.1882   1.340    0.189
+R             2.4376     2.1111   1.155    0.256
+X:M          -0.8066     3.0831  -0.262    0.795
+X:R          -0.7217     4.2373  -0.170    0.866
+M:R          -0.2785     0.2567  -1.085    0.285
+X:M:R         0.1061     0.4993   0.212    0.833
+
+(Dispersion parameter for gaussian family taken to be 11.60445)
+
+    Null deviance: 607.73  on 43  degrees of freedom
+Residual deviance: 417.76  on 36  degrees of freedom
+AIC: 241.9
+
+Number of Fisher Scoring iterations: 2
+
+> extdat <- data.frame(replicate = rep(1:4, times = nrow(memory)), 
++                      X = rep(memory$X, each = 4),
++                      R = rep(memory$R, each = 4),
++                      Y = rep(memory$Y, each = 4),
++                      M = rep(memory$M, each = 4),
++                      XM = rep(memory$XM, each = 4),
++                      a0 = NA, a1 = NA, a2 = NA)
+> extdat2 <- within(extdat, {
++   # let a0 take on counterfactual exposure level 1-X
++   # for the 2nd and 4th duplicate
++   a0 <- ifelse(replicate %in% c(2, 4), 1 - X, X)
++   # let a1 take on the observed exposure level X
++   a1 <- X
++   # let a2 take on counterfactual exposure level 1-X
++   # for the 3rd and 4th duplicate
++   a2 <- ifelse(replicate %in% c(3, 4), 1 - X, X)
++ })
+> # calculate W2
+> num2 <- with(extdat2, dnorm(M, mean = predict(fitM1, newdata = within(extdat2, X <- a2), type = "response"), sd = sqrt(summary(fitM1)$dispersion)))
+> denom2 <- with(extdat2, dnorm(M, mean = predict(fitM1, newdata = within(extdat2, X <- a1), type = "response"), sd = sqrt(summary(fitM1)$dispersion)))
+> W2 <- num2/denom2
+> extdat2$Y <- predict(fitY, newdata = within(extdat2, X <- a0), type = "response")
+> fitNEM2 <- glm(Y ~ a0 * a1 * a2 , family = gaussian("identity"), data = extdat2, weights = W2)
+> summary(fitNEM2)
+
+Call:
+glm(formula = Y ~ a0 * a1 * a2, family = gaussian("identity"), 
+    data = extdat2, weights = W2)
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 12.08333    0.32416  37.276  < 2e-16 ***
+a0           1.21016    0.45843   2.640  0.00908 ** 
+a1          -0.88995    0.61869  -1.438  0.15217    
+a2           2.00152    0.42994   4.655 6.54e-06 ***
+a0:a1        0.38246    0.87496   0.437  0.66259    
+a0:a2        0.02353    0.60802   0.039  0.96918    
+a1:a2        0.18558    0.76723   0.242  0.80917    
+a0:a1:a2    -0.39664    1.08503  -0.366  0.71516    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for gaussian family taken to be 2.521858)
+
+    Null deviance: 660.62  on 175  degrees of freedom
+Residual deviance: 423.67  on 168  degrees of freedom
+AIC: 779.53
+
+Number of Fisher Scoring iterations: 2

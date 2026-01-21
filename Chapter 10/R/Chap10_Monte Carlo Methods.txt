@@ -1,0 +1,92 @@
+> memory <- read.delim("memory.txt")
+> library(mediation)
+> set.seed(8292019)
+> 
+> datasets <- list(T1 = memory)
+> mediators <- c("M", "R")
+> outcome <- c("Y")
+> treatment <- ("X")
+> covariates <- c()
+> 
+> 
+> x.1 <- mediations(datasets, treatment, mediators, outcome, covariates, families=c("gaussian", "gaussian"), interaction=TRUE, conf.level=.95, sims=1000)
+> 
+> summary(x.1)
+Specification Y.X.M 
+
+Causal Mediation Analysis 
+
+Quasi-Bayesian Confidence Intervals
+
+                         Estimate 95% CI Lower 95% CI Upper p-value   
+ACME (control)            1.82166      0.10342      3.79476   0.038 * 
+ACME (treated)            4.59090     -0.01718      9.77750   0.052 . 
+ADE (control)            -2.05303     -7.19039      2.97068   0.398   
+ADE (treated)             0.71621     -2.16388      3.60092   0.624   
+Total Effect              2.53786     -0.19111      5.24702   0.074 . 
+Prop. Mediated (control)  0.67978     -2.27783      4.00362   0.108   
+Prop. Mediated (treated)  1.67119     -9.01000     10.15888   0.126   
+ACME (average)            3.20628      0.54519      6.23688   0.010 **
+ADE (average)            -0.66841     -3.94230      2.42166   0.726   
+Prop. Mediated (average)  1.17549     -5.63695      7.28227   0.084 . 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Sample Size Used: 44 
+
+
+Simulations: 1000 
+
+Specification Y.X.R 
+
+Causal Mediation Analysis 
+
+Quasi-Bayesian Confidence Intervals
+
+                          Estimate 95% CI Lower 95% CI Upper p-value  
+ACME (control)            1.336669    -1.704934     4.563852   0.422  
+ACME (treated)           -0.825682    -3.116951     1.467998   0.444  
+ADE (control)             3.381216     0.453935     6.565776   0.026 *
+ADE (treated)             1.218865    -2.443276     5.131491   0.556  
+Total Effect              2.555534     0.328068     4.845549   0.020 *
+Prop. Mediated (control)  0.509078    -0.927355     3.793825   0.438  
+Prop. Mediated (treated) -0.315170    -3.040726     0.720413   0.452  
+ACME (average)            0.255493    -1.535143     2.196811   0.812  
+ADE (average)             2.300040    -0.622385     5.372004   0.110  
+Prop. Mediated (average)  0.096954    -1.163452     1.411430   0.816  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Sample Size Used: 44 
+
+
+Simulations: 1000 
+
+> 
+> 
+> allmult <- multimed(outcome = "Y", med.main = "M", med.alt = "R", treat = "X", covariates = NULL, data = memory)
+> summary(allmult)
+
+Causal Mediation Analysis with Confounding by an Alternative Mechanism
+
+Estimates under the Homogeneous Interaction Assumption:
+                Estimate 95% CI Lower 95% CI Upper
+ACME (treated)  4.591712     0.059663     9.123762
+ACME (control)  2.064664     0.084014     4.045313
+ACME (average)  3.213322     0.885963     5.540681
+ADE (treated)   0.452003    -2.428197     3.332204
+ADE (control)  -2.075046    -6.287506     2.137415
+ADE (average)  -0.926387    -3.723983     1.871209
+Total Effect    2.516667     0.439268     4.457610
+
+Sensitivity Analysis: 
+Values of the sensitivity parameters at which ACME first crosses zero:
+               sigma(bounds) sigma(CI) R2s(bounds) R2s(CI) R2t(bounds) R2t(CI)
+ACME (treated)            NA   0.13682          NA 0.05000          NA 0.04034
+ACME (control)            NA   0.22895          NA 0.14000          NA 0.11295
+ACME (average)            NA        NA          NA      NA          NA      NA
+Values of the sensitivity parameters at which ADE first crosses zero:
+              sigma(bounds) sigma(CI) R2s(bounds) R2s(CI) R2t(bounds) R2t(CI)
+ADE (treated)       0.36714   0.00000     0.36000 0.00000     0.29045 0.00000
+ADE (control)            NA   0.00000          NA 0.00000          NA 0.00000
+ADE (average)       0.42833   0.00000     0.49000 0.00000     0.39534 0.00000
