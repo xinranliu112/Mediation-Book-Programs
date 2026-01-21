@@ -1,0 +1,396 @@
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 136
+
+                                          The FREQ Procedure
+
+                                          Table 1 of m by y
+                                         Controlling for x=0
+
+                                 m         y
+
+                                 Frequency‚
+                                 Percent  ‚
+                                 Row Pct  ‚
+                                 Col Pct  ‚       0‚       1‚  Total
+                                 ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                        0 ‚     23 ‚     40 ‚     63
+                                          ‚   6.20 ‚  10.78 ‚  16.98
+                                          ‚  36.51 ‚  63.49 ‚
+                                          ‚   7.99 ‚  48.19 ‚
+                                 ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                        1 ‚    265 ‚     43 ‚    308
+                                          ‚  71.43 ‚  11.59 ‚  83.02
+                                          ‚  86.04 ‚  13.96 ‚
+                                          ‚  92.01 ‚  51.81 ‚
+                                 ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                 Total         288       83      371
+                                             77.63    22.37   100.00
+
+
+                                          Table 2 of m by y
+                                         Controlling for x=1
+
+                                 m         y
+
+                                 Frequency‚
+                                 Percent  ‚
+                                 Row Pct  ‚
+                                 Col Pct  ‚       0‚       1‚  Total
+                                 ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                        0 ‚     24 ‚     39 ‚     63
+                                          ‚   3.99 ‚   6.48 ‚  10.47
+                                          ‚  38.10 ‚  61.90 ‚
+                                          ‚   4.62 ‚  47.56 ‚
+                                 ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                        1 ‚    496 ‚     43 ‚    539
+                                          ‚  82.39 ‚   7.14 ‚  89.53
+                                          ‚  92.02 ‚   7.98 ‚
+                                          ‚  95.38 ‚  52.44 ‚
+                                 ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                                 Total         520       82      602
+                                             86.38    13.62   100.00
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 137
+
+                                        The LOGISTIC Procedure
+
+                                          Model Information
+
+                            Data Set                      WORK.DATA1      
+                            Response Variable             y               
+                            Number of Response Levels     2               
+                            Model                         binary logit    
+                            Optimization Technique        Fisher's scoring
+
+
+                               Number of Observations Read         973
+                               Number of Observations Used         973
+
+
+                                           Response Profile
+ 
+                                  Ordered                      Total
+                                    Value            y     Frequency
+
+                                        1            1           165
+                                        2            0           808
+
+                                     Probability modeled is y=1.
+
+
+                                       Model Convergence Status
+
+                            Convergence criterion (GCONV=1E-8) satisfied.          
+
+
+                                         Model Fit Statistics
+ 
+                                                             Intercept
+                                              Intercept            and
+                                Criterion          Only     Covariates
+
+                                AIC             887.853        723.371
+                                SC              892.734        742.892
+                                -2 Log L        885.853        715.371
+
+
+                               Testing Global Null Hypothesis: BETA=0
+ 
+                       Test                 Chi-Square       DF     Pr > ChiSq
+
+                       Likelihood Ratio       170.4824        3         <.0001
+                       Score                  220.0860        3         <.0001
+                       Wald                   158.2612        3         <.0001
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 138
+
+                                        The LOGISTIC Procedure
+
+                              Analysis of Maximum Likelihood Estimates
+ 
+                                                Standard          Wald
+                 Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+                 Intercept     1      0.5534      0.2617        4.4717        0.0345
+                 x             1     -0.0679      0.3685        0.0339        0.8539
+                 m             1     -2.3719      0.3090       58.9052        <.0001
+                 int           1     -0.5590      0.4337        1.6613        0.1974
+
+
+                                         Odds Ratio Estimates
+                                                   
+                                           Point          95% Wald
+                              Effect    Estimate      Confidence Limits
+
+                              x            0.934       0.454       1.924
+                              m            0.093       0.051       0.171
+                              int          0.572       0.244       1.338
+
+
+                     Association of Predicted Probabilities and Observed Responses
+
+                          Percent Concordant      61.8    Somers' D    0.496
+                          Percent Discordant      12.3    Gamma        0.669
+                          Percent Tied            25.9    Tau-a        0.140
+                          Pairs                 133320    c            0.748
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 139
+
+                                        The LOGISTIC Procedure
+
+                                          Model Information
+
+                            Data Set                      WORK.DATA1      
+                            Response Variable             m               
+                            Number of Response Levels     2               
+                            Model                         binary logit    
+                            Optimization Technique        Fisher's scoring
+
+
+                               Number of Observations Read         973
+                               Number of Observations Used         973
+
+
+                                           Response Profile
+ 
+                                  Ordered                      Total
+                                    Value            m     Frequency
+
+                                        1            1           847
+                                        2            0           126
+
+                                     Probability modeled is m=1.
+
+
+                                       Model Convergence Status
+
+                            Convergence criterion (GCONV=1E-8) satisfied.          
+
+
+                                         Model Fit Statistics
+ 
+                                                             Intercept
+                                              Intercept            and
+                                Criterion          Only     Covariates
+
+                                AIC             752.043        745.607
+                                SC              756.924        755.368
+                                -2 Log L        750.043        741.607
+
+
+                               Testing Global Null Hypothesis: BETA=0
+ 
+                       Test                 Chi-Square       DF     Pr > ChiSq
+
+                       Likelihood Ratio         8.4363        1         0.0037
+                       Score                    8.6456        1         0.0033
+                       Wald                     8.4989        1         0.0036
+
+
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 140
+
+                                        The LOGISTIC Procedure
+
+                              Analysis of Maximum Likelihood Estimates
+ 
+                                                Standard          Wald
+                 Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+                 Intercept     1      1.5870      0.1383      131.7201        <.0001
+                 x             1      0.5596      0.1920        8.4989        0.0036
+
+
+                                         Odds Ratio Estimates
+                                                   
+                                           Point          95% Wald
+                              Effect    Estimate      Confidence Limits
+
+                              x            1.750       1.201       2.549
+
+
+                     Association of Predicted Probabilities and Observed Responses
+
+                          Percent Concordant      31.8    Somers' D    0.136
+                          Percent Discordant      18.2    Gamma        0.273
+                          Percent Tied            50.0    Tau-a        0.031
+                          Pairs                 106722    c            0.568
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 141
+
+                                                                _95__CI_    _95__CI_
+                  Obs    effect          Estimate    p_value      lower       upper
+
+                   1     cde              0.93439    0.85388     0.45380     1.92395
+                   2     pnde             0.80905    0.44972     0.46704     1.40151
+                   3     pnie             0.76107    0.00704     0.62400     0.92825
+                   4     tnde             0.75677    0.25922     0.46634     1.22809
+                   5     tnie             0.71190    0.00475     0.56231     0.90127
+                   6     total effect     0.57596    0.05150     0.33054     1.00360
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 142
+
+                                        The LOGISTIC Procedure
+
+                                          Model Information
+
+                            Data Set                      WORK.DATA1      
+                            Response Variable             y               
+                            Number of Response Levels     2               
+                            Model                         binary logit    
+                            Optimization Technique        Fisher's scoring
+
+
+                               Number of Observations Read         973
+                               Number of Observations Used         973
+
+
+                                           Response Profile
+ 
+                                  Ordered                      Total
+                                    Value            y     Frequency
+
+                                        1            1           165
+                                        2            0           808
+
+                                     Probability modeled is y=1.
+
+
+                                       Model Convergence Status
+
+                            Convergence criterion (GCONV=1E-8) satisfied.          
+
+
+                                         Model Fit Statistics
+ 
+                                                             Intercept
+                                              Intercept            and
+                                Criterion          Only     Covariates
+
+                                AIC             887.853        723.028
+                                SC              892.734        737.669
+                                -2 Log L        885.853        717.028
+
+
+                               Testing Global Null Hypothesis: BETA=0
+ 
+                       Test                 Chi-Square       DF     Pr > ChiSq
+
+                       Likelihood Ratio       168.8255        2         <.0001
+                       Score                  219.7136        2         <.0001
+                       Wald                   156.4289        2         <.0001
+
+
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 143
+
+                                        The LOGISTIC Procedure
+
+                              Analysis of Maximum Likelihood Estimates
+ 
+                                                Standard          Wald
+                 Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+                 Intercept     1      0.7624      0.2123       12.8961        0.0003
+                 x             1     -0.4720      0.1950        5.8574        0.0155
+                 m             1     -2.6633      0.2177      149.6529        <.0001
+
+
+                                         Odds Ratio Estimates
+                                                   
+                                           Point          95% Wald
+                              Effect    Estimate      Confidence Limits
+
+                              x            0.624       0.426       0.914
+                              m            0.070       0.046       0.107
+
+
+                     Association of Predicted Probabilities and Observed Responses
+
+                          Percent Concordant      61.8    Somers' D    0.496
+                          Percent Discordant      12.3    Gamma        0.669
+                          Percent Tied            25.9    Tau-a        0.140
+                          Pairs                 133320    c            0.748
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 144
+
+                                        The LOGISTIC Procedure
+
+                                          Model Information
+
+                            Data Set                      WORK.DATA1      
+                            Response Variable             m               
+                            Number of Response Levels     2               
+                            Model                         binary logit    
+                            Optimization Technique        Fisher's scoring
+
+
+                               Number of Observations Read         973
+                               Number of Observations Used         973
+
+
+                                           Response Profile
+ 
+                                  Ordered                      Total
+                                    Value            m     Frequency
+
+                                        1            1           847
+                                        2            0           126
+
+                                     Probability modeled is m=1.
+
+
+                                       Model Convergence Status
+
+                            Convergence criterion (GCONV=1E-8) satisfied.          
+
+
+                                         Model Fit Statistics
+ 
+                                                             Intercept
+                                              Intercept            and
+                                Criterion          Only     Covariates
+
+                                AIC             752.043        745.607
+                                SC              756.924        755.368
+                                -2 Log L        750.043        741.607
+
+
+                               Testing Global Null Hypothesis: BETA=0
+ 
+                       Test                 Chi-Square       DF     Pr > ChiSq
+
+                       Likelihood Ratio         8.4363        1         0.0037
+                       Score                    8.6456        1         0.0033
+                       Wald                     8.4989        1         0.0036
+
+
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 145
+
+                                        The LOGISTIC Procedure
+
+                              Analysis of Maximum Likelihood Estimates
+ 
+                                                Standard          Wald
+                 Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+                 Intercept     1      1.5870      0.1383      131.7201        <.0001
+                 x             1      0.5596      0.1920        8.4989        0.0036
+
+
+                                         Odds Ratio Estimates
+                                                   
+                                           Point          95% Wald
+                              Effect    Estimate      Confidence Limits
+
+                              x            1.750       1.201       2.549
+
+
+                     Association of Predicted Probabilities and Observed Responses
+
+                          Percent Concordant      31.8    Somers' D    0.136
+                          Percent Discordant      18.2    Gamma        0.273
+                          Percent Tied            50.0    Tau-a        0.031
+                          Pairs                 106722    c            0.568
+                                         STAR allbinary data         02:23 Thursday, June 12, 2025 146
+
+                                                                _95__CI_    _95__CI_
+                 Obs    effect          Estimate     p_value      lower       upper
+
+                  1     cde              0.62378    0.015512     0.42563     0.91416
+                  2     pnde             0.62378    0.015512     0.42563     0.91416
+                  3     pnie             0.73378    0.004313     0.59326     0.90757
+                  4     tnde             0.62378    0.015512     0.42563     0.91416
+                  5     tnie             0.73378    0.004451     0.59282     0.90825
+                  6     total effect     0.45771    0.000457     0.29565     0.70860

@@ -1,0 +1,259 @@
+Mplus VERSION 4.2
+MUTHEN & MUTHEN
+08/27/2007   2:10 PM
+
+INPUT INSTRUCTIONS
+
+  title: Exercise 11.3
+  Data:
+  File is "c:\Bookfinal\Chap11_ex11.3.txt";
+  Variable:
+  names are id x m y;
+  usevariables are x m y;
+  categorical y;
+  analysis:
+  type is general;
+  !bootstrap=1000;
+  estimator is wlsmv;
+  iterations=1000;
+  convergence=.00005;
+  model:
+  Y on x m;
+  m on x;
+  model indirect:
+  y ind x;
+  output: samp mod standardized cinterval(symmetric)
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Exercise 11.3
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         234
+
+Number of dependent variables                                    2
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   M
+
+  Binary and ordered categorical (ordinal)
+   Y
+
+Observed independent variables
+   X
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Parameterization                                             DELTA
+
+Input data file(s)
+  c:\Bookfinal\Chap11_ex11.3.txt
+
+Input data format  FREE
+
+
+SUMMARY OF CATEGORICAL DATA PROPORTIONS
+
+    Y
+      Category 1    0.590
+      Category 2    0.410
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              M             Y$1
+              ________      ________
+      1         1.782         0.399
+
+
+           SLOPES
+              X
+              ________
+ M              0.337
+ Y              0.173
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              M             Y
+              ________      ________
+ M              1.218
+ Y              0.288
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+TESTS OF MODEL FIT
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000*
+          Degrees of Freedom                     0**
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULS, WLSM and WLSMV cannot be used
+    for chi-square difference tests.  MLM, MLR and WLSM chi-square difference
+    testing is described in the Mplus Technical Appendices at www.statmodel.com.
+    See chi-square difference testing in the index of the Mplus User's Guide.
+
+**  The degrees of freedom for MLMV, ULS and WLSMV are estimated according to
+    a formula given in the Mplus Technical Appendices at www.statmodel.com.
+    See degrees of freedom in the index of the Mplus User's Guide.
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             38.315
+          Degrees of Freedom                     3
+          P-Value                           0.0000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Number of Free Parameters                        4
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+
+WRMR (Weighted Root Mean Square Residual)
+
+          Value                              0.001
+
+
+
+MODEL RESULTS
+
+                   Estimates     S.E.  Est./S.E.    Std     StdYX
+
+ Y        ON
+    X                  0.085    0.072      1.169    0.085    0.099
+    M                  0.261    0.066      3.926    0.261    0.300
+
+ M        ON
+    X                  0.337    0.073      4.618    0.337    0.344
+
+ Residual Variances
+    M                  1.218    0.203      6.004    1.218    0.882
+
+
+R-SQUARE
+
+    Observed  Residual
+    Variable  Variance  R-Square
+
+    M                      0.118
+    Y            0.917     0.121
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.768E-01
+       (ratio of smallest to largest eigenvalue)
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                   Estimates     S.E.  Est./S.E.     Std     StdYX
+
+Effects from X to Y
+
+  Total                0.173    0.069      2.488    0.173    0.202
+  Total indirect       0.088    0.030      2.969    0.088    0.103
+
+  Specific indirect
+
+    Y
+    M
+    X                  0.088    0.030      2.969    0.088    0.103
+
+  Direct
+    Y
+    X                  0.085    0.072      1.169    0.085    0.099
+
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                   Lower .5%  Lower 2.5%  Estimates  Upper 2.5%  Upper .5%
+
+ Y        ON
+    X                -0.102      -0.057      0.085       0.227      0.271
+    M                 0.090       0.131      0.261       0.391      0.432
+
+ M        ON
+    X                 0.149       0.194      0.337       0.481      0.526
+
+ Residual Variances
+    M                 0.695       0.820      1.218       1.615      1.740
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                   Lower .5%  Lower 2.5%  Estimates  Upper 2.5%  Upper .5%
+
+Effects from X to Y
+
+  Total              -0.006       0.037      0.173       0.309      0.352
+  Total indirect      0.012       0.030      0.088       0.146      0.164
+
+  Specific indirect
+
+    Y
+    M
+    X                 0.012       0.030      0.088       0.146      0.164
+
+  Direct
+    Y
+    X                -0.102      -0.057      0.085       0.227      0.271
+
+
+
+MODEL MODIFICATION INDICES
+
+Minimum M.I. value for printing the modification index    10.000
+
+                            M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+No modification indices above the minimum value.
+
+
+
+     Beginning Time:  14:10:08
+        Ending Time:  14:10:08
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2006 Muthen & Muthen

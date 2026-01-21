@@ -1,0 +1,764 @@
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      114
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                                   Data Set              WORK.DATA1
+                                   Distribution             Poisson
+                                   Link Function                Log
+                                   Dependent Variable             y
+
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                        Parameter Information
+ 
+                                      Parameter       Effect
+
+                                      Prm1            Intercept
+                                      Prm2            x        
+                                      Prm3            m        
+
+
+                                Criteria For Assessing Goodness Of Fit
+ 
+                   Criterion                     DF           Value        Value/DF
+
+                   Deviance                      97        115.9763          1.1956
+                   Scaled Deviance               97        115.9763          1.1956
+                   Pearson Chi-Square            97        120.7352          1.2447
+                   Scaled Pearson X2             97        120.7352          1.2447
+                   Log Likelihood                           91.9149                
+                   Full Log Likelihood                    -124.3180                
+                   AIC (smaller is better)                 254.6359                
+                   AICC (smaller is better)                254.8859                
+                   BIC (smaller is better)                 262.4514                
+
+
+             Algorithm converged.                                                       
+
+
+                                     Estimated Covariance Matrix
+ 
+                                         Prm1           Prm2           Prm3
+
+                          Prm1        0.09384       0.002816       -0.02058
+                          Prm2       0.002816        0.07199       -0.01444
+                          Prm3       -0.02058       -0.01444       0.007459
+
+
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      115
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                         Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                    Standard     Wald 95% Confidence          Wald
+     Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+     Intercept     1     -4.2088      0.3063     -4.8092     -3.6084        188.77        <.0001
+     x             1     -0.0948      0.2683     -0.6207      0.4311          0.12        0.7239
+     m             1      1.3284      0.0864      1.1591      1.4976        236.58        <.0001
+     Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      116
+                                                                         02:23 Thursday, June 12, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: m 
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1       47.42360       47.42360     103.08    <.0001
+            Error                    98       45.08640        0.46007                     
+            Corrected Total          99       92.51000                                    
+
+
+                         Root MSE              0.67828    R-Square     0.5126
+                         Dependent Mean        2.93000    Adj R-Sq     0.5077
+                         Coeff Var            23.14953                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        2.35593        0.08830      26.68      <.0001
+                 x             1        1.40017        0.13791      10.15      <.0001
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      117
+                                                                         02:23 Thursday, June 12, 2025
+
+                               Obs     _RMSE_    Intercept        x
+
+                                1     0.67828      2.35593     1.40017
+                                2     0.67828      0.00780    -0.00780
+                                3     0.67828     -0.00780     0.01902
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      118
+                                                                         02:23 Thursday, June 12, 2025
+
+                                                                _95__CI_    _95__CI_
+                  Obs    Effect          Estimate    p_value      lower       upper
+
+                   1     cde=nde          0.90956    0.72386     0.53757      1.5389
+                   2     nie              6.42340    0.00000     4.17751      9.8767
+                   3     total effect     5.84246    0.00000     3.35921     10.1614
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      119
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                               Data Set                     WORK.DATA1
+                               Distribution          Negative Binomial
+                               Link Function                       Log
+                               Dependent Variable                    y
+
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                        Parameter Information
+ 
+                                      Parameter       Effect
+
+                                      Prm1            Intercept
+                                      Prm2            x        
+                                      Prm3            m        
+                                      Prm4            int      
+
+
+                                Criteria For Assessing Goodness Of Fit
+ 
+                   Criterion                     DF           Value        Value/DF
+
+                   Deviance                      96         96.5728          1.0060
+                   Scaled Deviance               96         96.5728          1.0060
+                   Pearson Chi-Square            96        104.4088          1.0876
+                   Scaled Pearson X2             96        104.4088          1.0876
+                   Log Likelihood                           94.2732                
+                   Full Log Likelihood                    -121.9597                
+                   AIC (smaller is better)                 253.9194                
+                   AICC (smaller is better)                254.5577                
+                   BIC (smaller is better)                 266.9453                
+
+
+             Algorithm converged.                                                       
+
+
+                                     Estimated Covariance Matrix
+ 
+                             Prm1           Prm2           Prm3           Prm4      Dispersion
+
+        Prm1              1.58262       -1.58265       -0.55794        0.55795       -0.000428
+        Prm2             -1.58265        2.02021        0.55795       -0.65769        0.001084
+        Prm3             -0.55794        0.55795        0.20181       -0.20181       0.0001673
+        Prm4              0.55795       -0.65769       -0.20181        0.22526       -0.000453
+        Dispersion      -0.000428       0.001084      0.0001673      -0.000453        0.009107
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      120
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                          Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+     Parameter     DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+     Intercept      1     -4.4708      1.2580     -6.9364     -2.0051         12.63        0.0004
+     x              1     -0.0732      1.4213     -2.8590      2.7126          0.00        0.9589
+     m              1      1.4232      0.4492      0.5427      2.3036         10.04        0.0015
+     int            1     -0.0397      0.4746     -0.9699      0.8906          0.01        0.9334
+     Dispersion     1      0.1229      0.0954      0.0268      0.5630                            
+
+NOTE: The negative binomial dispersion parameter was estimated by maximum likelihood.
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      121
+                                                                         02:23 Thursday, June 12, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: m 
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1       47.42360       47.42360     103.08    <.0001
+            Error                    98       45.08640        0.46007                     
+            Corrected Total          99       92.51000                                    
+
+
+                         Root MSE              0.67828    R-Square     0.5126
+                         Dependent Mean        2.93000    Adj R-Sq     0.5077
+                         Coeff Var            23.14953                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        2.35593        0.08830      26.68      <.0001
+                 x             1        1.40017        0.13791      10.15      <.0001
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      122
+                                                                         02:23 Thursday, June 12, 2025
+
+                               Obs     _RMSE_    Intercept        x
+
+                                1     0.67828      2.35593     1.40017
+                                2     0.67828      0.00780    -0.00780
+                                3     0.67828     -0.00780     0.01902
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      123
+                                                                         02:23 Thursday, June 12, 2025
+
+                                                                _95__CI_    _95__CI_
+                  Obs    effect          Estimate    p_value      lower       upper
+
+                   1     cde              0.92939    0.94163     0.13091      6.5980
+                   2     pnde             0.82504    0.84749     0.11621      5.8572
+                   3     pnie             7.33501    0.04630     1.03320     52.0736
+                   4     tnde             0.78046    0.80423     0.10993      5.5407
+                   5     tnie             6.93862    0.05273     0.97736     49.2595
+                   6     total effect     5.72466    0.08102     0.80637     40.6412
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      124
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The MEANS Procedure
+
+               Variable            Mean        Variance        Skewness        Kurtosis
+               ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+               x              0.4100000       0.2443434       0.3715747      -1.9003511
+               m              2.9300000       0.9344444       0.2791193       0.1655331
+               y              1.7000000      18.4949495       5.4465889      34.0872368
+               ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      125
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         Obs    x    m     y
+
+                                           1    0    2     0
+                                           2    0    1     0
+                                           3    1    5    13
+                                           4    0    3     0
+                                           5    1    3     1
+                                           6    0    3     0
+                                           7    0    2     0
+                                           8    0    2     0
+                                           9    0    3     0
+                                          10    0    2     1
+                                          11    1    4     3
+                                          12    1    3     0
+                                          13    0    3     0
+                                          14    0    1     0
+                                          15    1    4     3
+                                          16    0    2     0
+                                          17    1    3     1
+                                          18    0    3     0
+                                          19    1    4     2
+                                          20    1    4     5
+                                          21    0    3     2
+                                          22    1    4     3
+                                          23    1    5     8
+                                          24    0    2     1
+                                          25    0    1     0
+                                          26    0    2     1
+                                          27    1    6    33
+                                          28    0    2     0
+                                          29    0    2     0
+                                          30    0    2     0
+                                          31    0    2     0
+                                          32    1    3     0
+                                          33    1    4     0
+                                          34    0    2     0
+                                          35    1    4     2
+                                          36    0    2     0
+                                          37    1    3     0
+                                          38    1    4     4
+                                          39    0    3     2
+                                          40    0    2     0
+                                          41    1    4     3
+                                          42    0    2     1
+                                          43    0    3     2
+                                          44    0    3     2
+                                          45    0    3     1
+                                          46    0    2     0
+                                          47    0    2     0
+                                          48    0    2     0
+                                          49    1    4     7
+                                          50    0    3     0
+                                          51    1    3     3
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      126
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         Obs    x    m     y
+
+                                          52    0    3     2
+                                          53    1    4     4
+                                          54    0    3     1
+                                          55    1    4     1
+                                          56    1    3     1
+                                          57    0    2     0
+                                          58    1    4     1
+                                          59    0    2     0
+                                          60    1    3     0
+                                          61    0    2     0
+                                          62    0    1     0
+                                          63    0    3     1
+                                          64    0    3     0
+                                          65    1    3     0
+                                          66    1    4     2
+                                          67    0    2     0
+                                          68    0    3     1
+                                          69    0    3     0
+                                          70    0    2     1
+                                          71    1    4     2
+                                          72    0    3     1
+                                          73    1    4     3
+                                          74    0    3     0
+                                          75    1    4     1
+                                          76    1    2     2
+                                          77    1    3     0
+                                          78    1    4     2
+                                          79    0    2     0
+                                          80    0    1     0
+                                          81    1    3     0
+                                          82    0    3     1
+                                          83    1    4     0
+                                          84    0    2     0
+                                          85    0    2     0
+                                          86    0    3     0
+                                          87    0    3     1
+                                          88    0    3     0
+                                          89    0    2     1
+                                          90    1    4     0
+                                          91    1    3     0
+                                          92    1    4     1
+                                          93    1    4     5
+                                          94    0    3     1
+                                          95    0    3     3
+                                          96    1    3     1
+                                          97    1    4     3
+                                          98    0    2     0
+                                          99    0    3     0
+                                         100    1    5    23
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      127
+                                                                         02:23 Thursday, June 12, 2025
+
+                                          The FREQ Procedure
+
+                                           Table of m by y
+
+               m         y
+
+               Frequency‚
+               Percent  ‚
+               Row Pct  ‚
+               Col Pct  ‚       0‚       1‚       2‚       3‚       4‚       5‚  Total
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      1 ‚      5 ‚      0 ‚      0 ‚      0 ‚      0 ‚      0 ‚      5
+                        ‚   5.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   5.00
+                        ‚ 100.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+                        ‚  10.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      2 ‚     22 ‚      6 ‚      1 ‚      0 ‚      0 ‚      0 ‚     29
+                        ‚  22.00 ‚   6.00 ‚   1.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚  29.00
+                        ‚  75.86 ‚  20.69 ‚   3.45 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+                        ‚  44.00 ‚  27.27 ‚   9.09 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      3 ‚     20 ‚     12 ‚      5 ‚      2 ‚      0 ‚      0 ‚     39
+                        ‚  20.00 ‚  12.00 ‚   5.00 ‚   2.00 ‚   0.00 ‚   0.00 ‚  39.00
+                        ‚  51.28 ‚  30.77 ‚  12.82 ‚   5.13 ‚   0.00 ‚   0.00 ‚
+                        ‚  40.00 ‚  54.55 ‚  45.45 ‚  25.00 ‚   0.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      4 ‚      3 ‚      4 ‚      5 ‚      6 ‚      2 ‚      2 ‚     23
+                        ‚   3.00 ‚   4.00 ‚   5.00 ‚   6.00 ‚   2.00 ‚   2.00 ‚  23.00
+                        ‚  13.04 ‚  17.39 ‚  21.74 ‚  26.09 ‚   8.70 ‚   8.70 ‚
+                        ‚   6.00 ‚  18.18 ‚  45.45 ‚  75.00 ‚ 100.00 ‚ 100.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      5 ‚      0 ‚      0 ‚      0 ‚      0 ‚      0 ‚      0 ‚      3
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   3.00
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      6 ‚      0 ‚      0 ‚      0 ‚      0 ‚      0 ‚      0 ‚      1
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   1.00
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+               Total          50       22       11        8        2        2      100
+                           50.00    22.00    11.00     8.00     2.00     2.00   100.00
+               (Continued)
+
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      128
+                                                                         02:23 Thursday, June 12, 2025
+
+                                          The FREQ Procedure
+
+                                           Table of m by y
+
+               m         y
+
+               Frequency‚
+               Percent  ‚
+               Row Pct  ‚
+               Col Pct  ‚       7‚       8‚      13‚      23‚      33‚  Total
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      1 ‚      0 ‚      0 ‚      0 ‚      0 ‚      0 ‚      5
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   5.00
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      2 ‚      0 ‚      0 ‚      0 ‚      0 ‚      0 ‚     29
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚  29.00
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      3 ‚      0 ‚      0 ‚      0 ‚      0 ‚      0 ‚     39
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚  39.00
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      4 ‚      1 ‚      0 ‚      0 ‚      0 ‚      0 ‚     23
+                        ‚   1.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚  23.00
+                        ‚   4.35 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+                        ‚ 100.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      5 ‚      0 ‚      1 ‚      1 ‚      1 ‚      0 ‚      3
+                        ‚   0.00 ‚   1.00 ‚   1.00 ‚   1.00 ‚   0.00 ‚   3.00
+                        ‚   0.00 ‚  33.33 ‚  33.33 ‚  33.33 ‚   0.00 ‚
+                        ‚   0.00 ‚ 100.00 ‚ 100.00 ‚ 100.00 ‚   0.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                      6 ‚      0 ‚      0 ‚      0 ‚      0 ‚      1 ‚      1
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚   1.00 ‚   1.00
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚ 100.00 ‚
+                        ‚   0.00 ‚   0.00 ‚   0.00 ‚   0.00 ‚ 100.00 ‚
+               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+               Total           1        1        1        1        1      100
+                            1.00     1.00     1.00     1.00     1.00   100.00
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      129
+                                                                         02:23 Thursday, June 12, 2025
+
+                                          The FREQ Procedure
+
+                                                       Cumulative    Cumulative
+                       new    Frequency     Percent     Frequency      Percent
+                      ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                       100           5        5.00             5         5.00  
+                       200          22       22.00            27        27.00  
+                       201           6        6.00            33        33.00  
+                       300          12       12.00            45        45.00  
+                       301           8        8.00            53        53.00  
+                       302           5        5.00            58        58.00  
+                       303           1        1.00            59        59.00  
+                      1202           1        1.00            60        60.00  
+                      1300           8        8.00            68        68.00  
+                      1301           4        4.00            72        72.00  
+                      1303           1        1.00            73        73.00  
+                      1400           3        3.00            76        76.00  
+                      1401           4        4.00            80        80.00  
+                      1402           5        5.00            85        85.00  
+                      1403           6        6.00            91        91.00  
+                      1404           2        2.00            93        93.00  
+                      1405           2        2.00            95        95.00  
+                      1407           1        1.00            96        96.00  
+                      1508           1        1.00            97        97.00  
+                      1513           1        1.00            98        98.00  
+                      1523           1        1.00            99        99.00  
+                      1633           1        1.00           100       100.00  
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      130
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                                   Data Set              WORK.DATA
+                                   Distribution            Poisson
+                                   Link Function               Log
+                                   Dependent Variable            y
+
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                Criteria For Assessing Goodness Of Fit
+ 
+                   Criterion                     DF           Value        Value/DF
+
+                   Deviance                      97        115.9763          1.1956
+                   Scaled Deviance               97        115.9763          1.1956
+                   Pearson Chi-Square            97        120.7352          1.2447
+                   Scaled Pearson X2             97        120.7352          1.2447
+                   Log Likelihood                           91.9149                
+                   Full Log Likelihood                    -124.3180                
+                   AIC (smaller is better)                 254.6359                
+                   AICC (smaller is better)                254.8859                
+                   BIC (smaller is better)                 262.4514                
+
+
+             Algorithm converged.                                                       
+
+
+                         Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                    Standard     Wald 95% Confidence          Wald
+     Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+     Intercept     1     -4.2088      0.3063     -4.8092     -3.6084        188.77        <.0001
+     x             1     -0.0948      0.2683     -0.6207      0.4311          0.12        0.7239
+     m             1      1.3284      0.0864      1.1591      1.4976        236.58        <.0001
+     Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      131
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                                   Data Set              WORK.DATA
+                                   Distribution            Poisson
+                                   Link Function               Log
+                                   Dependent Variable            y
+
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                Criteria For Assessing Goodness Of Fit
+ 
+                   Criterion                     DF           Value        Value/DF
+
+                   Deviance                      96        115.9294          1.2076
+                   Scaled Deviance               96        115.9294          1.2076
+                   Pearson Chi-Square            96        121.5390          1.2660
+                   Scaled Pearson X2             96        121.5390          1.2660
+                   Log Likelihood                           91.9383                
+                   Full Log Likelihood                    -124.2945                
+                   AIC (smaller is better)                 256.5890                
+                   AICC (smaller is better)                257.0101                
+                   BIC (smaller is better)                 267.0097                
+
+
+             Algorithm converged.                                                       
+
+
+                         Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                    Standard     Wald 95% Confidence          Wald
+     Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+     Intercept     1     -4.4649      1.2399     -6.8951     -2.0348         12.97        0.0003
+     x             1      0.1793      1.3098     -2.3879      2.7465          0.02        0.8911
+     m             1      1.4209      0.4409      0.5566      2.2851         10.38        0.0013
+     x*m           1     -0.0963      0.4497     -0.9777      0.7850          0.05        0.8304
+     Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      132
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                                   Data Set              WORK.DATA
+                                   Distribution            Poisson
+                                   Link Function               Log
+                                   Dependent Variable            y
+
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                Criteria For Assessing Goodness Of Fit
+ 
+                   Criterion                     DF           Value        Value/DF
+
+                   Deviance                      98        324.7259          3.3135
+                   Scaled Deviance               98        324.7259          3.3135
+                   Pearson Chi-Square            98        519.4664          5.3007
+                   Scaled Pearson X2             98        519.4664          5.3007
+                   Log Likelihood                          -12.4599                
+                   Full Log Likelihood                    -228.6928                
+                   AIC (smaller is better)                 461.3856                
+                   AICC (smaller is better)                461.5093                
+                   BIC (smaller is better)                 466.5959                
+
+
+             Algorithm converged.                                                       
+
+
+                         Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                    Standard     Wald 95% Confidence          Wald
+     Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+     Intercept     1     -0.7817      0.1925     -1.1589     -0.4045         16.50        <.0001
+     x             1      2.0310      0.2098      1.6197      2.4422         93.68        <.0001
+     Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      133
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                               Data Set                      WORK.DATA
+                               Distribution          Negative Binomial
+                               Link Function                       Log
+                               Dependent Variable                    y
+
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                Criteria For Assessing Goodness Of Fit
+ 
+                   Criterion                     DF           Value        Value/DF
+
+                   Deviance                      97         96.5853          0.9957
+                   Scaled Deviance               97         96.5853          0.9957
+                   Pearson Chi-Square            97        104.2247          1.0745
+                   Scaled Pearson X2             97        104.2247          1.0745
+                   Log Likelihood                           94.2696                
+                   Full Log Likelihood                    -121.9632                
+                   AIC (smaller is better)                 251.9264                
+                   AICC (smaller is better)                252.3475                
+                   BIC (smaller is better)                 262.3471                
+
+
+             Algorithm converged.                                                       
+
+
+                          Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+     Parameter     DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+     Intercept      1     -4.3727      0.4471     -5.2490     -3.4965         95.67        <.0001
+     x              1     -0.1890      0.3168     -0.8099      0.4319          0.36        0.5507
+     m              1      1.3877      0.1449      1.1036      1.6717         91.67        <.0001
+     Dispersion     1      0.1228      0.0952      0.0269      0.5610                            
+
+NOTE: The negative binomial dispersion parameter was estimated by maximum likelihood.
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      134
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                               Data Set                      WORK.DATA
+                               Distribution          Negative Binomial
+                               Link Function                       Log
+                               Dependent Variable                    y
+
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                Criteria For Assessing Goodness Of Fit
+ 
+                   Criterion                     DF           Value        Value/DF
+
+                   Deviance                      96         96.5728          1.0060
+                   Scaled Deviance               96         96.5728          1.0060
+                   Pearson Chi-Square            96        104.4088          1.0876
+                   Scaled Pearson X2             96        104.4088          1.0876
+                   Log Likelihood                           94.2732                
+                   Full Log Likelihood                    -121.9597                
+                   AIC (smaller is better)                 253.9194                
+                   AICC (smaller is better)                254.5577                
+                   BIC (smaller is better)                 266.9453                
+
+
+             Algorithm converged.                                                       
+
+
+                          Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+     Parameter     DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+     Intercept      1     -4.4708      1.2580     -6.9364     -2.0051         12.63        0.0004
+     x              1     -0.0732      1.4213     -2.8590      2.7126          0.00        0.9589
+     m              1      1.4232      0.4492      0.5427      2.3036         10.04        0.0015
+     x*m            1     -0.0397      0.4746     -0.9699      0.8906          0.01        0.9334
+     Dispersion     1      0.1229      0.0954      0.0268      0.5630                            
+
+NOTE: The negative binomial dispersion parameter was estimated by maximum likelihood.
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      135
+                                                                         02:23 Thursday, June 12, 2025
+
+                                         The GENMOD Procedure
+
+                                          Model Information
+
+                               Data Set                      WORK.DATA
+                               Distribution          Negative Binomial
+                               Link Function                       Log
+                               Dependent Variable                    y
+
+
+                               Number of Observations Read         100
+                               Number of Observations Used         100
+
+
+                                Criteria For Assessing Goodness Of Fit
+ 
+                   Criterion                     DF           Value        Value/DF
+
+                   Deviance                      98         88.9510          0.9077
+                   Scaled Deviance               98         88.9510          0.9077
+                   Pearson Chi-Square            98        116.6399          1.1902
+                   Scaled Pearson X2             98        116.6399          1.1902
+                   Log Likelihood                           66.1012                
+                   Full Log Likelihood                    -150.1317                
+                   AIC (smaller is better)                 306.2634                
+                   AICC (smaller is better)                306.5134                
+                   BIC (smaller is better)                 314.0789                
+
+
+             Algorithm converged.                                                       
+
+
+                          Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+     Parameter     DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+     Intercept      1     -0.7817      0.2472     -1.2661     -0.2973         10.00        0.0016
+     x              1      2.0310      0.3205      1.4028      2.6591         40.16        <.0001
+     Dispersion     1      1.4194      0.3516      0.8734      2.3066                            
+
+NOTE: The negative binomial dispersion parameter was estimated by maximum likelihood.

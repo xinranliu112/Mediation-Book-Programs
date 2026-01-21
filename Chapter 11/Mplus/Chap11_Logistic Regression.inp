@@ -1,0 +1,33 @@
+TITLE: WORD EXPERIMENT - BINARY Y MODERATION MODEL;
+DATA:
+  FILE = 'Chap11_WorddataFullnBinaryY.txt';
+  LISTWISE = ON;
+
+VARIABLE:
+  NAMES = s X concrete abstract Y i r gender verbal quant
+          remember understa enjoy enjoygen knmnemo usmnemo
+          knmnemo1 knmnemo2 usmnemo1 usmnemo2;
+  USEVARIABLES = y x i xi;
+  CATEGORICAL = y;
+  MISSING = .;
+
+DEFINE:
+  xi = x * i;
+
+ANALYSIS:
+  ESTIMATOR = WLSMV;
+  PARAMETERIZATION = THETA;
+
+MODEL:
+  [y$1] (beta0);
+  i ON x (gamma1);
+  [i*2] (gamma0);
+  y ON i (beta1)
+       x (beta2)
+       xi (beta3);
+
+MODEL CONSTRAINT:
+  NEW(tie de pie);
+  tie = beta1*gamma1 + beta3*gamma1;
+  pie = beta1*gamma1;
+  de = beta2 + beta3*gamma0;

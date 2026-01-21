@@ -1,0 +1,227 @@
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      109
+                                                                         02:23 Thursday, June 12, 2025
+
+                                        The LOGISTIC Procedure
+
+                                          Model Information
+
+                            Data Set                      WORK.A          
+                            Response Variable             y               
+                            Number of Response Levels     2               
+                            Model                         binary probit   
+                            Optimization Technique        Fisher's scoring
+
+
+                               Number of Observations Read         200
+                               Number of Observations Used         200
+
+
+                                           Response Profile
+ 
+                                  Ordered                      Total
+                                    Value            y     Frequency
+
+                                        1            1            95
+                                        2            0           105
+
+                                     Probability modeled is y=1.
+
+
+                                       Model Convergence Status
+
+                            Convergence criterion (GCONV=1E-8) satisfied.          
+
+
+                                         Model Fit Statistics
+ 
+                                                             Intercept
+                                              Intercept            and
+                                Criterion          Only     Covariates
+
+                                AIC             278.759        261.031
+                                SC              282.057        267.628
+                                -2 Log L        276.759        257.031
+
+
+                               Testing Global Null Hypothesis: BETA=0
+ 
+                       Test                 Chi-Square       DF     Pr > ChiSq
+
+                       Likelihood Ratio        19.7277        1         <.0001
+                       Score                   19.1531        1         <.0001
+                       Wald                    18.6302        1         <.0001
+
+
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      110
+                                                                         02:23 Thursday, June 12, 2025
+
+                                        The LOGISTIC Procedure
+
+                              Analysis of Maximum Likelihood Estimates
+ 
+                                                Standard          Wald
+                 Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+                 Intercept     1     -0.2841      0.1032        7.5853        0.0059
+                 x             1      0.9586      0.2221       18.6302        <.0001
+
+
+                    Association of Predicted Probabilities and Observed Responses
+
+                          Percent Concordant     33.6    Somers' D    0.265
+                          Percent Discordant      7.1    Gamma        0.651
+                          Percent Tied           59.3    Tau-a        0.133
+                          Pairs                  9975    c            0.632
+
+
+                              Parameter Estimates and Profile-Likelihood
+                                         Confidence Intervals
+ 
+                           Parameter     Estimate     95% Confidence Limits
+
+                           Intercept      -0.2841      -0.4873      -0.0827
+                           x               0.9586       0.5294       1.4011
+
+
+                                     Parameter Estimates and Wald
+                                         Confidence Intervals
+ 
+                           Parameter     Estimate     95% Confidence Limits
+
+                           Intercept      -0.2841      -0.4863      -0.0819
+                           x               0.9586       0.5233       1.3939
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      111
+                                                                         02:23 Thursday, June 12, 2025
+
+                                        The LOGISTIC Procedure
+
+                                          Model Information
+
+                            Data Set                      WORK.A          
+                            Response Variable             y               
+                            Number of Response Levels     2               
+                            Model                         binary probit   
+                            Optimization Technique        Fisher's scoring
+
+
+                               Number of Observations Read         200
+                               Number of Observations Used         200
+
+
+                                           Response Profile
+ 
+                                  Ordered                      Total
+                                    Value            y     Frequency
+
+                                        1            1            95
+                                        2            0           105
+
+                                     Probability modeled is y=1.
+
+
+                                       Model Convergence Status
+
+                            Convergence criterion (GCONV=1E-8) satisfied.          
+
+
+                                         Model Fit Statistics
+ 
+                                                             Intercept
+                                              Intercept            and
+                                Criterion          Only     Covariates
+
+                                AIC             278.759        193.047
+                                SC              282.057        202.942
+                                -2 Log L        276.759        187.047
+
+
+                               Testing Global Null Hypothesis: BETA=0
+ 
+                       Test                 Chi-Square       DF     Pr > ChiSq
+
+                       Likelihood Ratio        89.7116        2         <.0001
+                       Score                   71.3329        2         <.0001
+                       Wald                    58.6958        2         <.0001
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      112
+                                                                         02:23 Thursday, June 12, 2025
+
+                                        The LOGISTIC Procedure
+
+                              Analysis of Maximum Likelihood Estimates
+ 
+                                                Standard          Wald
+                 Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+                 Intercept     1     -4.2374      0.5837       52.6959        <.0001
+                 x             1      0.9033      0.2530       12.7460        0.0004
+                 m             1      0.9884      0.1414       48.8921        <.0001
+
+
+                    Association of Predicted Probabilities and Observed Responses
+
+                          Percent Concordant     78.2    Somers' D    0.690
+                          Percent Discordant      9.2    Gamma        0.789
+                          Percent Tied           12.6    Tau-a        0.346
+                          Pairs                  9975    c            0.845
+
+
+                              Parameter Estimates and Profile-Likelihood
+                                         Confidence Intervals
+ 
+                           Parameter     Estimate     95% Confidence Limits
+
+                           Intercept      -4.2374      -5.4458      -3.1418
+                           x               0.9033       0.4102       1.4164
+                           m               0.9884       0.7244       1.2773
+
+
+                                     Parameter Estimates and Wald
+                                         Confidence Intervals
+ 
+                           Parameter     Estimate     95% Confidence Limits
+
+                           Intercept      -4.2374      -5.3815      -3.0933
+                           x               0.9033       0.4074       1.3992
+                           m               0.9884       0.7113       1.2654
+
+
+                                     Estimated Covariance Matrix
+ 
+                         Parameter      Intercept             x             m
+
+                         Intercept       0.340736      -0.02354      -0.08076
+                         x               -0.02354      0.064016      0.002278
+                         m               -0.08076      0.002278       0.01998
+                        Chapter 11 Analysis Example: Logistic Mediation Model                      113
+                                                                         02:23 Thursday, June 12, 2025
+
+                                          The REG Procedure
+                                            Model: MODEL1
+                                        Dependent Variable: m 
+
+                               Number of Observations Read         200
+                               Number of Observations Used         200
+
+
+                                         Analysis of Variance
+ 
+                                                Sum of           Mean
+            Source                   DF        Squares         Square    F Value    Pr > F
+
+            Model                     1        7.88491        7.88491       7.88    0.0055
+            Error                   198      198.03509        1.00018                     
+            Corrected Total         199      205.92000                                    
+
+
+                         Root MSE              1.00009    R-Square     0.0383
+                         Dependent Mean        3.98000    Adj R-Sq     0.0334
+                         Coeff Var            25.12785                       
+
+
+                                         Parameter Estimates
+ 
+                                      Parameter       Standard
+                 Variable     DF       Estimate          Error    t Value    Pr > |t|
+
+                 Intercept     1        3.86842        0.08112      47.69      <.0001
+                 x             1        0.46491        0.16558       2.81      0.0055

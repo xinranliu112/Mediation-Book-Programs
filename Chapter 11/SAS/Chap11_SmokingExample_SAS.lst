@@ -1,0 +1,114 @@
+                                      Chapter 11 Analysis Example: 2x2 Smoking Data Example    10:48 Thursday, January 4, 2007  30
+
+                                                      The LOGISTIC Procedure
+
+                                                        Model Information
+
+                                          Data Set                      WORK.A
+                                          Response Variable             outcome
+                                          Number of Response Levels     2
+                                          Weight Variable               freq
+                                          Model                         binary logit
+                                          Optimization Technique        Fisher's scoring
+
+
+                                             Number of Observations Read           4
+                                             Number of Observations Used           4
+                                             Sum of Weights Read                 864
+                                             Sum of Weights Used                 864
+
+
+                                                         Response Profile
+
+                                        Ordered                      Total            Total
+                                          Value      outcome     Frequency           Weight
+
+                                              1            1             2        493.00000
+                                              2            0             2        371.00000
+
+                                                Probability modeled is outcome=1.
+
+
+                                                     Model Convergence Status
+
+                                          Convergence criterion (GCONV=1E-8) satisfied.
+
+
+                                                       Model Fit Statistics
+
+                                                                           Intercept
+                                                            Intercept            and
+                                              Criterion          Only     Covariates
+
+                                              AIC            1182.474       1176.362
+                                              SC             1181.860       1175.135
+                                              -2 Log L       1180.474       1172.362
+
+
+                                             Testing Global Null Hypothesis: BETA=0
+
+                                     Test                 Chi-Square       DF     Pr > ChiSq
+
+                                     Likelihood Ratio         8.1117        1         0.0044
+                                     Score                    8.1876        1         0.0042
+                                     Wald                     8.0920        1         0.0044
+
+
+                                      Chapter 11 Analysis Example: 2x2 Smoking Data Example    10:48 Thursday, January 4, 2007  31
+
+                                                      The LOGISTIC Procedure
+
+                                            Analysis of Maximum Likelihood Estimates
+
+                                                              Standard          Wald
+                               Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+                               Intercept     1      0.3773      0.0765       24.3203        <.0001
+                               group         1     -0.5057      0.1778        8.0920        0.0044
+
+
+                                                       Odds Ratio Estimates
+
+                                                         Point          95% Wald
+                                            Effect    Estimate      Confidence Limits
+
+                                            group        0.603       0.426       0.854
+
+
+                                  Association of Predicted Probabilities and Observed Responses
+
+                                        Percent Concordant     25.0    Somers' D    0.000
+                                        Percent Discordant     25.0    Gamma        0.000
+                                        Percent Tied           50.0    Tau-a        0.000
+                                        Pairs                     4    c            0.500
+
+
+                                                  Profile Likelihood Confidence
+                                                     Interval for Parameters
+
+                                         Parameter     Estimate     95% Confidence Limits
+
+                                         Intercept       0.3773       0.2280       0.5280
+                                         group          -0.5057      -0.8556      -0.1578
+
+
+                                             Wald Confidence Interval for Parameters
+
+                                         Parameter     Estimate     95% Confidence Limits
+
+                                         Intercept       0.3773       0.2273       0.5272
+                                         group          -0.5057      -0.8541      -0.1573
+
+
+                                  Profile Likelihood Confidence Interval for Adjusted Odds Ratios
+
+                                    Effect         Unit     Estimate     95% Confidence Limits
+
+                                    group        1.0000        0.603        0.425        0.854
+
+
+                                        Wald Confidence Interval for Adjusted Odds Ratios
+
+                                    Effect         Unit     Estimate     95% Confidence Limits
+
+                                    group        1.0000        0.603        0.426        0.854

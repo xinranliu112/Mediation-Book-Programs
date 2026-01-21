@@ -1,0 +1,210 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+07/19/2025  12:25 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE: WORD EXPERIMENT - BINARY Y MODERATION MODEL;
+  DATA:
+    FILE = 'Chap11_WorddataFullnBinaryY.txt';
+    LISTWISE = ON;
+
+  VARIABLE:
+    NAMES = s X concrete abstract Y i r gender verbal quant
+            remember understa enjoy enjoygen knmnemo usmnemo
+            knmnemo1 knmnemo2 usmnemo1 usmnemo2;
+    USEVARIABLES = y x i xi;
+    CATEGORICAL = y;
+    MISSING = .;
+
+  DEFINE:
+    xi = x * i;
+
+  ANALYSIS:
+    ESTIMATOR = WLSMV;
+    PARAMETERIZATION = THETA;
+
+  MODEL:
+    [y$1] (beta0);
+    i ON x (gamma1);
+    [i*2] (gamma0);
+    y ON i (beta1)
+         x (beta2)
+         xi (beta3);
+
+  MODEL CONSTRAINT:
+    NEW(tie de pie);
+    tie = beta1*gamma1 + beta3*gamma1;
+    pie = beta1*gamma1;
+    de = beta2 + beta3*gamma0;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+WORD EXPERIMENT - BINARY Y MODERATION MODEL;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                          44
+
+Number of dependent variables                                    2
+Number of independent variables                                  2
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   I
+
+  Binary and ordered categorical (ordinal)
+   Y
+
+Observed independent variables
+   X           XI
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Parameterization                                             THETA
+Link                                                        PROBIT
+
+Input data file(s)
+  Chap11_WorddataFullnBinaryY.txt
+
+Input data format  FREE
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    Y
+      Category 1    0.523           23.000
+      Category 2    0.477           21.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     I                     6.159      -0.659       1.000   11.36%       3.000      6.000      7.000
+              44.000       8.088      -1.021       9.000   29.55%       8.000      9.000
+     X                     0.455       0.183       0.000   54.55%       0.000      0.000      0.000
+              44.000       0.248      -1.967       1.000   45.45%       1.000      1.000
+     XI                    3.682       0.279       0.000   54.55%       0.000      0.000      0.000
+              44.000      16.899      -1.832       9.000   22.73%       6.000      9.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        7
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000*
+          Degrees of Freedom                     1
+          P-Value                           1.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            224.914
+          Degrees of Freedom                     5
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.739
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.11268054D+00
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ I        ON
+    X                 -4.542      0.000  *********      0.000
+
+ Y        ON
+    I                  0.168      0.084      2.008      0.045
+    X                 -3.820      3.752     -1.018      0.309
+    XI                 0.674      0.446      1.513      0.130
+
+ Intercepts
+    I                  4.542      0.318     14.301      0.000
+
+ Thresholds
+    Y$1                1.219      0.466      2.618      0.009
+
+ Residual Variances
+    I                  4.317      0.947      4.559      0.000
+
+New/Additional Parameters
+    TIE               -3.823      2.087     -1.832      0.067
+    DE                -0.759      1.787     -0.425      0.671
+    PIE               -0.762      0.380     -2.008      0.045
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.609E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu445\downloads\chap11_logistic regression.dgm
+
+     Beginning Time:  00:25:35
+        Ending Time:  00:25:35
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen

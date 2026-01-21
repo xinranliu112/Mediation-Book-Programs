@@ -1,0 +1,25 @@
+TITLE:
+  Table 11.15
+DATA:
+  FILE IS Chap11_Pancreatic Cancer Data.txt;
+
+VARIABLE:
+  NAMES = ID X M Y;
+  USEVARIABLES = X M Y;
+
+  CATEGORICAL = Y;      
+
+ANALYSIS:
+  ESTIMATOR = WLSMV;       
+  PARAMETERIZATION = THETA;
+
+MODEL:
+  M ON X (a);
+  Y ON M (b)
+       X (cp);
+
+MODEL INDIRECT:
+  Y IND X;
+
+OUTPUT:
+  STDYX CINTERVAL TECH1 TECH4;

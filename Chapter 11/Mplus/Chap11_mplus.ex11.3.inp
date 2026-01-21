@@ -1,0 +1,16 @@
+title: Exercise 11.3
+Data:
+File is "c:\Bookfinal\ex11.3.txt";
+Variable:
+names are id x m y;
+usevariables are x m y;
+categorical y;
+analysis:
+type is general;
+estimator is wlsmv;
+iterations=1000;
+convergence=.00005;
+output: samp standardized
+model
+y on x m;
+m on x;

@@ -1,0 +1,199 @@
+                                    Program for Exercise 11.3   18:39 Sunday, August 26, 2007   6
+
+                                        The REG Procedure
+                                          Model: MODEL1
+                                     Dependent Variable: m
+
+                             Number of Observations Read          32
+                             Number of Observations Used          32
+
+
+                                          Weight: freq
+
+                                      Analysis of Variance
+
+                                             Sum of           Mean
+         Source                   DF        Squares         Square    F Value    Pr > F
+
+         Model                     1       38.02284       38.02284       4.00    0.0546
+         Error                    30      285.08827        9.50294
+         Corrected Total          31      323.11111
+
+
+                      Root MSE              3.08268    R-Square     0.1177
+                      Dependent Mean        2.11111    Adj R-Sq     0.0883
+                      Coeff Var           146.02189
+
+
+                                      Parameter Estimates
+
+                                                                                   Squared
+                           Parameter       Standard                           Semi-partial
+      Variable     DF       Estimate          Error    t Value    Pr > |t|     Corr Type I
+
+      Intercept     1        1.78228        0.26007       6.85      <.0001               .
+      x             1        0.33748        0.16872       2.00      0.0546         0.11768
+                                    Program for Exercise 11.3   18:39 Sunday, August 26, 2007   7
+
+                                     The LOGISTIC Procedure
+
+                                       Model Information
+
+                         Data Set                      WORK.PANCREAS
+                         Response Variable             y
+                         Number of Response Levels     2
+                         Weight Variable               freq
+                         Model                         binary logit
+                         Optimization Technique        Fisher's scoring
+
+
+                             Number of Observations Read          32
+                             Number of Observations Used          32
+                             Sum of Weights Read                 234
+                             Sum of Weights Used                 234
+
+
+                                        Response Profile
+
+                       Ordered                      Total            Total
+                         Value            y     Frequency           Weight
+
+                             1            1            16         96.00000
+                             2            0            16        138.00000
+
+                                   Probability modeled is y=1.
+
+
+                                    Model Convergence Status
+
+                         Convergence criterion (GCONV=1E-8) satisfied.
+
+
+                                      Model Fit Statistics
+
+                                                          Intercept
+                                           Intercept            and
+                             Criterion          Only     Covariates
+
+                             AIC             318.813        314.599
+                             SC              320.279        317.530
+                             -2 Log L        316.813        310.599
+
+
+                             Testing Global Null Hypothesis: BETA=0
+
+                     Test                 Chi-Square       DF     Pr > ChiSq
+
+                     Likelihood Ratio         6.2146        1         0.0127
+                     Score                    6.2462        1         0.0124
+                     Wald                     6.1435        1         0.0132
+                                    Program for Exercise 11.3   18:39 Sunday, August 26, 2007   8
+
+                                     The LOGISTIC Procedure
+
+                            Analysis of Maximum Likelihood Estimates
+
+                                              Standard          Wald
+               Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+               Intercept     1     -0.6409      0.1768       13.1317        0.0003
+               x             1      0.2771      0.1118        6.1435        0.0132
+
+
+                                      Odds Ratio Estimates
+
+                                        Point          95% Wald
+                           Effect    Estimate      Confidence Limits
+
+                           x            1.319       1.060       1.643
+
+
+                  Association of Predicted Probabilities and Observed Responses
+
+                        Percent Concordant     37.5    Somers' D    0.000
+                        Percent Discordant     37.5    Gamma        0.000
+                        Percent Tied           25.0    Tau-a        0.000
+                        Pairs                   256    c            0.500
+                                    Program for Exercise 11.3   18:39 Sunday, August 26, 2007   9
+
+                                     The LOGISTIC Procedure
+
+                                       Model Information
+
+                         Data Set                      WORK.PANCREAS
+                         Response Variable             y
+                         Number of Response Levels     2
+                         Weight Variable               freq
+                         Model                         binary logit
+                         Optimization Technique        Fisher's scoring
+
+
+                             Number of Observations Read          32
+                             Number of Observations Used          32
+                             Sum of Weights Read                 234
+                             Sum of Weights Used                 234
+
+
+                                        Response Profile
+
+                       Ordered                      Total            Total
+                         Value            y     Frequency           Weight
+
+                             1            1            16         96.00000
+                             2            0            16        138.00000
+
+                                   Probability modeled is y=1.
+
+
+                                    Model Convergence Status
+
+                         Convergence criterion (GCONV=1E-8) satisfied.
+
+
+                                      Model Fit Statistics
+
+                                                          Intercept
+                                           Intercept            and
+                             Criterion          Only     Covariates
+
+                             AIC             318.813        303.590
+                             SC              320.279        307.988
+                             -2 Log L        316.813        297.590
+
+
+                             Testing Global Null Hypothesis: BETA=0
+
+                     Test                 Chi-Square       DF     Pr > ChiSq
+
+                     Likelihood Ratio        19.2229        2         <.0001
+                     Score                   19.0802        2         <.0001
+                     Wald                    18.0448        2         0.0001
+                                    Program for Exercise 11.3   18:39 Sunday, August 26, 2007  10
+
+                                     The LOGISTIC Procedure
+
+                            Analysis of Maximum Likelihood Estimates
+
+                                              Standard          Wald
+               Parameter    DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+               Intercept     1     -1.4507      0.2955       24.1005        <.0001
+               x             1      0.1390      0.1213        1.3127        0.2519
+               m             1      0.4406      0.1244       12.5376        0.0004
+
+
+                                      Odds Ratio Estimates
+
+                                        Point          95% Wald
+                           Effect    Estimate      Confidence Limits
+
+                           x            1.149       0.906       1.457
+                           m            1.554       1.217       1.983
+
+
+                  Association of Predicted Probabilities and Observed Responses
+
+                        Percent Concordant     46.9    Somers' D    0.000
+                        Percent Discordant     46.9    Gamma        0.000
+                        Percent Tied            6.3    Tau-a        0.000
+                        Pairs                   256    c            0.500

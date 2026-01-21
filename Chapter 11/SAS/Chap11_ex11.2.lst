@@ -1,0 +1,27 @@
+                        Chapter 10 Analysis Example: Mediated-Moderation                       35
+                                                                    18:04 Sunday, August 26, 2007
+
+ Obs     c       sec    estimate    LCLn     UCLn     LCLb     UCLb    lcoef     lcl      ucl
+
+  1   1.00650  0.19180     c      0.63057  1.38243  0.63057  1.38243  2.73601  1.87868  3.98456
+  2   1.04990  0.22870     cp     0.60165  1.49815  0.60165  1.49815  2.85737  1.82512  4.47341
+  3   1.73730  0.27550     b      1.19732  2.27728  1.19732  2.27728  5.68198  3.31123  9.75012
+  4   0.21488  0.07472     a      0.06843  0.36133  0.06843  0.36133  1.23971  1.07082  1.43524
+                        Chapter 10 Analysis Example: Mediated-Moderation                       36
+                                                                    18:04 Sunday, August 26, 2007
+
+                        Obs    estimate     lcoef       lcl        ucl
+
+                         1        c        2.73601    1.87868    3.98456
+                         2        cp       2.85737    1.82512    4.47341
+                         3        b        5.68198    3.31123    9.75012
+                         4        a        1.23971    1.07082    1.43524
+                        Chapter 10 Analysis Example: Mediated-Moderation                       37
+                                                                    18:04 Sunday, August 26, 2007
+
+                        Obs    estimate       c         LCLn       UCLn
+
+                         1        c        1.00650    0.63057    1.38243
+                         2        cp       1.04990    0.60165    1.49815
+                         3        b        1.73730    1.19732    2.27728
+                         4        a        0.21488    0.06843    0.36133

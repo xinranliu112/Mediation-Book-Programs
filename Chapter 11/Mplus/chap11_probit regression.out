@@ -1,0 +1,570 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+12/02/2025   2:23 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+    Table 11.15
+  DATA:
+    FILE IS Chap11_Pancreatic Cancer Data.txt;
+
+  VARIABLE:
+    NAMES = ID X M Y;
+    USEVARIABLES = X M Y;
+
+    CATEGORICAL = Y;
+
+  ANALYSIS:
+    ESTIMATOR = WLSMV;
+    PARAMETERIZATION = THETA;
+
+  MODEL:
+    M ON X (a);
+    Y ON M (b)
+         X (cp);
+
+  MODEL INDIRECT:
+    Y IND X;
+
+  OUTPUT:
+    STDYX CINTERVAL TECH1 TECH4;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+
+Table 11.15
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         200
+
+Number of dependent variables                                    2
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   M
+
+  Binary and ordered categorical (ordinal)
+   Y
+
+Observed independent variables
+   X
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Parameterization                                             THETA
+Link                                                        PROBIT
+
+Input data file(s)
+  Chap11_Pancreatic Cancer Data.txt
+
+Input data format  FREE
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    Y
+      Category 1    0.525          105.000
+      Category 2    0.475           95.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     M                     3.980       0.155       1.000    0.50%       3.000      4.000      4.000
+             200.000       1.030       0.132       7.000    1.00%       4.000      5.000
+     X                     3.855       0.292       1.000    0.50%       3.000      4.000      4.000
+             200.000       0.894       0.134       7.000    0.50%       4.000      5.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        6
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000*
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            142.132
+          Degrees of Freedom                     3
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.26253431D-09
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ M        ON
+    X                  0.215      0.082      2.614      0.009
+
+ Y        ON
+    M                  1.011      0.138      7.343      0.000
+    X                  0.635      0.118      5.360      0.000
+
+ Intercepts
+    M                  3.152      0.326      9.663      0.000
+
+ Thresholds
+    Y$1                6.558      0.791      8.294      0.000
+
+ Residual Variances
+    M                  0.988      0.096     10.292      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.194E-01
+       (ratio of smallest to largest eigenvalue)
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ M        ON
+    X                  0.201      0.075      2.665      0.008
+
+ Y        ON
+    M                  0.629      0.052     12.049      0.000
+    X                  0.369      0.059      6.258      0.000
+
+ Intercepts
+    M                  3.106      0.392      7.921      0.000
+
+ Thresholds
+    Y$1                4.019      0.234     17.157      0.000
+
+ Residual Variances
+    M                  0.960      0.030     31.748      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed     Scale
+    Variable        Estimate       S.E.  Est./S.E.    P-Value     Factors
+
+    M                  0.040      0.030      1.333      0.183
+    Y                  0.624      0.061     10.204      0.000      0.705
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from X to Y
+
+  Total                0.852      0.150      5.684      0.000
+  Total indirect       0.217      0.088      2.469      0.014
+
+  Specific indirect 1
+    Y
+    M
+    X                  0.217      0.088      2.469      0.014
+
+  Direct
+    Y
+    X                  0.635      0.118      5.360      0.000
+
+
+
+STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from X to Y
+
+  Total                0.495      0.065      7.618      0.000
+  Total indirect       0.126      0.047      2.699      0.007
+
+  Specific indirect 1
+    Y
+    M
+    X                  0.126      0.047      2.699      0.007
+
+  Direct
+    Y
+    X                  0.369      0.059      6.258      0.000
+
+
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ M        ON
+    X                0.003       0.054       0.080       0.215       0.350       0.376       0.427
+
+ Y        ON
+    M                0.656       0.741       0.785       1.011       1.238       1.281       1.366
+    X                0.330       0.403       0.440       0.635       0.830       0.867       0.940
+
+ Intercepts
+    M                2.311       2.512       2.615       3.152       3.688       3.791       3.992
+
+ Thresholds
+    Y$1              4.521       5.008       5.257       6.558       7.859       8.108       8.595
+
+ Residual Variances
+    M                0.741       0.800       0.830       0.988       1.146       1.177       1.236
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ M        ON
+    X                0.007       0.053       0.077       0.201       0.325       0.348       0.395
+
+ Y        ON
+    M                0.494       0.526       0.543       0.629       0.715       0.731       0.763
+    X                0.217       0.253       0.272       0.369       0.466       0.484       0.521
+
+ Intercepts
+    M                2.096       2.337       2.461       3.106       3.751       3.874       4.115
+
+ Thresholds
+    Y$1              3.415       3.560       3.633       4.019       4.404       4.478       4.622
+
+ Residual Variances
+    M                0.882       0.900       0.910       0.960       1.009       1.019       1.038
+
+
+CONFIDENCE INTERVALS OF TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from X to Y
+
+  Total              0.466       0.558       0.606       0.852       1.099       1.146       1.239
+  Total indirect    -0.009       0.045       0.073       0.217       0.362       0.390       0.444
+
+  Specific indirect 1
+    Y
+    M
+    X               -0.009       0.045       0.073       0.217       0.362       0.390       0.444
+
+  Direct
+    Y
+    X                0.330       0.403       0.440       0.635       0.830       0.867       0.940
+
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from X to Y
+
+  Total              0.328       0.368       0.388       0.495       0.602       0.622       0.662
+  Total indirect     0.006       0.035       0.049       0.126       0.203       0.218       0.247
+
+  Specific indirect 1
+    Y
+    M
+    X                0.006       0.035       0.049       0.126       0.203       0.218       0.247
+
+  Direct
+    Y
+    X                0.217       0.253       0.272       0.369       0.466       0.484       0.521
+
+
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           TAU
+              Y$1
+              ________
+                  1
+
+
+           NU
+              M             Y
+              ________      ________
+                  0             0
+
+
+           LAMBDA
+              M             Y
+              ________      ________
+ M                  0             0
+ Y                  0             0
+
+
+           THETA
+              M             Y
+              ________      ________
+ M                  0
+ Y                  0             0
+
+
+           ALPHA
+              M             Y
+              ________      ________
+                  2             0
+
+
+           BETA
+              M             Y
+              ________      ________
+ M                  0             0
+ Y                  3             0
+
+
+           GAMMA
+              X
+              ________
+ M                  4
+ Y                  5
+
+
+           PSI
+              M             Y
+              ________      ________
+ M                  6
+ Y                  0             0
+
+
+     STARTING VALUES
+
+
+           TAU
+              Y$1
+              ________
+                0.063
+
+
+           NU
+              M             Y
+              ________      ________
+                0.000         0.000
+
+
+           LAMBDA
+              M             Y
+              ________      ________
+ M              1.000         0.000
+ Y              0.000         1.000
+
+
+           THETA
+              M             Y
+              ________      ________
+ M              0.000
+ Y              0.000         0.000
+
+
+           ALPHA
+              M             Y
+              ________      ________
+                3.980         0.000
+
+
+           BETA
+              M             Y
+              ________      ________
+ M              0.000         0.000
+ Y              0.000         0.000
+
+
+           GAMMA
+              X
+              ________
+ M              0.000
+ Y              0.000
+
+
+           PSI
+              M             Y
+              ________      ________
+ M              0.515
+ Y              0.000         1.000
+
+
+TECHNICAL 4 OUTPUT
+
+
+     ESTIMATES DERIVED FROM THE MODEL
+
+
+           ESTIMATED MEANS FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+                3.980         6.472
+
+
+           ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+ M              1.030
+ Y              1.164         2.663
+
+
+           ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+ M              1.000
+ Y              0.703         1.000
+
+
+     ESTIMATES DERIVED FROM THE MODEL
+
+
+           S.E. FOR ESTIMATED MEANS FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+                0.072         0.784
+
+
+           EST./S.E. FOR ESTIMATED MEANS FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+               55.246         8.255
+
+
+           TWO-TAILED P-VALUE FOR ESTIMATED MEANS FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+                0.000         0.000
+
+
+           S.E. FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+ M              0.100
+ Y              0.194         0.434
+
+
+           EST./S.E. FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+ M             10.312
+ Y              5.998         6.136
+
+
+           TWO-TAILED P-VALUE FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+ M              0.000
+ Y              0.000         0.000
+
+
+           S.E. FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+ M              0.000
+ Y              0.049         0.000
+
+
+           EST./S.E. FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+ M            999.000
+ Y             14.458       999.000
+
+
+           TWO-TAILED P-VALUE FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              M             Y
+              ________      ________
+ M              0.000
+ Y              0.000         0.000
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\asu dropbox\xinran liu\pc (3)\downloads\chap11_probit regression.dgm
+
+     Beginning Time:  14:23:43
+        Ending Time:  14:23:43
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen
