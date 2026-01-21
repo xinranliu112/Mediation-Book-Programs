@@ -346,4 +346,3 @@ There are no data sets, program files, or output files for Chapter 18.
 
 ### Chapter 19:		
 There are no data sets, program files, or output files for Chapter 19.
-<img width="480" height="635" alt="image" src="https://github.com/user-attachments/assets/84caf830-4e9c-48f9-8f41-1e03e5872ad0" />
