@@ -1,0 +1,717 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+05/28/2025   9:25 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Chapter 12 Multiple Mediator Model Path Analysis with OCG Data
+
+  DATA:
+   Type is STD Correlation;
+   Ngroups=1;
+   Nobservations=3214;
+   File is Chap12_ocgexample.txt;
+
+  VARIABLE:
+   Names are INC1961 OCC1962 EDUC NUMSIB FATHOCC FATHEDUC;
+   Usevariables are INC1961 OCC1962 EDUC NUMSIB FATHOCC FATHEDUC;
+
+  ANALYSIS:
+   Type is general;
+   Estimator is ML;
+   Iterations are 1000;
+   Convergence is 0.00005;
+
+  MODEL:
+   INC1961 on EDUC OCC1962 FATHEDUC NUMSIB FATHOCC;
+   EDUC on FATHOCC FATHEDUC NUMSIB;
+   OCC1962 on FATHOCC FATHEDUC NUMSIB EDUC;
+
+  MODEL INDIRECT:
+   INC1961 ind EDUC FATHEDUC;
+   INC1961 ind FATHOCC;
+
+  OUTPUT:
+      sampstat mod standardized tech1 tech2;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Chapter 12 Multiple Mediator Model Path Analysis with OCG Data
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        3214
+
+Number of dependent variables                                    3
+Number of independent variables                                  3
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   INC1961     OCC1962     EDUC
+
+Observed independent variables
+   NUMSIB      FATHOCC     FATHEDUC
+
+
+Estimator                                                       ML
+Information matrix                                        EXPECTED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  Chap12_ocgexample.txt
+
+Input data format  FREE
+
+
+SAMPLE STATISTICS
+
+
+     SAMPLE STATISTICS
+
+
+           Covariances/Correlations/Residual Correlations
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961       28.730
+ OCC1962       58.514       610.584
+ EDUC           6.447        50.812        10.240
+ NUMSIB        -2.705       -19.577        -3.051         8.294
+ FATHOCC       32.087       222.941        32.144       -16.501       535.460
+ FATHEDUC       4.650        29.360         4.819        -3.076        45.623
+
+
+           Covariances/Correlations/Residual Correlations
+              FATHEDUC
+              ________
+ FATHEDUC      13.838
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       15
+
+Loglikelihood
+
+          H0 Value                      -31322.178
+          H1 Value                      -31322.178
+
+Information Criteria
+
+          Akaike (AIC)                   62674.356
+          Bayesian (BIC)                 62765.485
+          Sample-Size Adjusted BIC       62717.824
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           3600.501
+          Degrees of Freedom                    12
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ INC1961  ON
+    EDUC               0.200      0.036      5.494      0.000
+    OCC1962            0.070      0.004     15.685      0.000
+    FATHEDUC           0.071      0.028      2.585      0.010
+    NUMSIB            -0.037      0.031     -1.186      0.236
+    FATHOCC            0.011      0.004      2.535      0.011
+
+ EDUC     ON
+    FATHOCC            0.038      0.002     15.528      0.000
+    FATHEDUC           0.171      0.016     10.958      0.000
+    NUMSIB            -0.228      0.018    -12.947      0.000
+
+ OCC1962  ON
+    FATHOCC            0.135      0.017      7.725      0.000
+    FATHEDUC           0.049      0.108      0.453      0.650
+    NUMSIB            -0.463      0.123     -3.761      0.000
+    EDUC               4.377      0.120     36.413      0.000
+
+ Residual Variances
+    INC1961           22.516      0.562     40.087      0.000
+    OCC1962          347.452      8.667     40.087      0.000
+    EDUC               7.483      0.187     40.087      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.269E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ INC1961  ON
+    EDUC               0.119      0.022      5.513      0.000
+    OCC1962            0.325      0.020     16.164      0.000
+    FATHEDUC           0.049      0.019      2.586      0.010
+    NUMSIB            -0.020      0.017     -1.186      0.236
+    FATHOCC            0.049      0.019      2.537      0.011
+
+ EDUC     ON
+    FATHOCC            0.278      0.017     15.921      0.000
+    FATHEDUC           0.198      0.018     11.089      0.000
+    NUMSIB            -0.205      0.016    -13.145      0.000
+
+ OCC1962  ON
+    FATHOCC            0.127      0.016      7.746      0.000
+    FATHEDUC           0.007      0.016      0.453      0.650
+    NUMSIB            -0.054      0.014     -3.763      0.000
+    EDUC               0.567      0.014     41.428      0.000
+
+ Residual Variances
+    INC1961            0.784      0.013     60.986      0.000
+    OCC1962            0.569      0.013     43.188      0.000
+    EDUC               0.731      0.013     54.651      0.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ INC1961  ON
+    EDUC               0.119      0.022      5.513      0.000
+    OCC1962            0.325      0.020     16.164      0.000
+    FATHEDUC           0.013      0.005      2.587      0.010
+    NUMSIB            -0.007      0.006     -1.186      0.235
+    FATHOCC            0.002      0.001      2.538      0.011
+
+ EDUC     ON
+    FATHOCC            0.012      0.001     16.121      0.000
+    FATHEDUC           0.053      0.005     11.161      0.000
+    NUMSIB            -0.071      0.005    -13.285      0.000
+
+ OCC1962  ON
+    FATHOCC            0.005      0.001      7.771      0.000
+    FATHEDUC           0.002      0.004      0.453      0.650
+    NUMSIB            -0.019      0.005     -3.767      0.000
+    EDUC               0.567      0.014     41.428      0.000
+
+ Residual Variances
+    INC1961            0.784      0.013     60.986      0.000
+    OCC1962            0.569      0.013     43.188      0.000
+    EDUC               0.731      0.013     54.651      0.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ INC1961  ON
+    EDUC               0.200      0.036      5.494      0.000
+    OCC1962            0.070      0.004     15.685      0.000
+    FATHEDUC           0.071      0.028      2.585      0.010
+    NUMSIB            -0.037      0.031     -1.186      0.236
+    FATHOCC            0.011      0.004      2.535      0.011
+
+ EDUC     ON
+    FATHOCC            0.038      0.002     15.528      0.000
+    FATHEDUC           0.171      0.016     10.958      0.000
+    NUMSIB            -0.228      0.018    -12.947      0.000
+
+ OCC1962  ON
+    FATHOCC            0.135      0.017      7.725      0.000
+    FATHEDUC           0.049      0.108      0.453      0.650
+    NUMSIB            -0.463      0.123     -3.761      0.000
+    EDUC               4.377      0.120     36.413      0.000
+
+ Residual Variances
+    INC1961           22.516      0.562     40.087      0.000
+    OCC1962          347.452      8.667     40.087      0.000
+    EDUC               7.483      0.187     40.087      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    INC1961            0.216      0.013     16.806      0.000
+    OCC1962            0.431      0.013     32.684      0.000
+    EDUC               0.269      0.013     20.113      0.000
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from FATHOCC to INC1961
+
+  Total                0.040      0.005      8.734      0.000
+  Total indirect       0.029      0.002     13.334      0.000
+
+  Specific indirect 1
+    INC1961
+    OCC1962
+    FATHOCC            0.010      0.001      6.930      0.000
+
+  Specific indirect 2
+    INC1961
+    EDUC
+    FATHOCC            0.008      0.001      5.180      0.000
+
+  Specific indirect 3
+    INC1961
+    OCC1962
+    EDUC
+    FATHOCC            0.012      0.001     10.561      0.000
+
+  Direct
+    INC1961
+    FATHOCC            0.011      0.004      2.535      0.011
+
+
+Effects from FATHEDUC to INC1961
+
+  Indirect             0.034      0.007      4.912      0.000
+
+
+STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from FATHOCC to INC1961
+
+  Total                0.175      0.020      8.828      0.000
+  Total indirect       0.125      0.009     13.715      0.000
+
+  Specific indirect 1
+    INC1961
+    OCC1962
+    FATHOCC            0.041      0.006      6.977      0.000
+
+  Specific indirect 2
+    INC1961
+    EDUC
+    FATHOCC            0.033      0.006      5.200      0.000
+
+  Specific indirect 3
+    INC1961
+    OCC1962
+    EDUC
+    FATHOCC            0.051      0.005     10.770      0.000
+
+  Direct
+    INC1961
+    FATHOCC            0.049      0.019      2.537      0.011
+
+
+Effects from FATHEDUC to INC1961
+
+  Indirect             0.024      0.005      4.928      0.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from FATHOCC to INC1961
+
+  Total                0.008      0.001      8.875      0.000
+  Total indirect       0.005      0.000     13.892      0.000
+
+  Specific indirect 1
+    INC1961
+    OCC1962
+    FATHOCC            0.002      0.000      7.000      0.000
+
+  Specific indirect 2
+    INC1961
+    EDUC
+    FATHOCC            0.001      0.000      5.209      0.000
+
+  Specific indirect 3
+    INC1961
+    OCC1962
+    EDUC
+    FATHOCC            0.002      0.000     10.856      0.000
+
+  Direct
+    INC1961
+    FATHOCC            0.002      0.001      2.538      0.011
+
+
+Effects from FATHEDUC to INC1961
+
+  Indirect             0.006      0.001      4.936      0.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from FATHOCC to INC1961
+
+  Total                0.040      0.005      8.734      0.000
+  Total indirect       0.029      0.002     13.334      0.000
+
+  Specific indirect 1
+    INC1961
+    OCC1962
+    FATHOCC            0.010      0.001      6.930      0.000
+
+  Specific indirect 2
+    INC1961
+    EDUC
+    FATHOCC            0.008      0.001      5.180      0.000
+
+  Specific indirect 3
+    INC1961
+    OCC1962
+    EDUC
+    FATHOCC            0.012      0.001     10.561      0.000
+
+  Direct
+    INC1961
+    FATHOCC            0.011      0.004      2.535      0.011
+
+
+Effects from FATHEDUC to INC1961
+
+  Indirect             0.034      0.007      4.912      0.000
+
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates may not be included.  To include these, request
+MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index    10.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+No modification indices above the minimum value.
+
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           LAMBDA
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961            0             0             0             0             0
+ OCC1962            0             0             0             0             0
+ EDUC               0             0             0             0             0
+ NUMSIB             0             0             0             0             0
+ FATHOCC            0             0             0             0             0
+ FATHEDUC           0             0             0             0             0
+
+
+           LAMBDA
+              FATHEDUC
+              ________
+ INC1961            0
+ OCC1962            0
+ EDUC               0
+ NUMSIB             0
+ FATHOCC            0
+ FATHEDUC           0
+
+
+           THETA
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961            0
+ OCC1962            0             0
+ EDUC               0             0             0
+ NUMSIB             0             0             0             0
+ FATHOCC            0             0             0             0             0
+ FATHEDUC           0             0             0             0             0
+
+
+           THETA
+              FATHEDUC
+              ________
+ FATHEDUC           0
+
+
+           BETA
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961            0             1             2             3             4
+ OCC1962            0             0             6             7             8
+ EDUC               0             0             0            10            11
+ NUMSIB             0             0             0             0             0
+ FATHOCC            0             0             0             0             0
+ FATHEDUC           0             0             0             0             0
+
+
+           BETA
+              FATHEDUC
+              ________
+ INC1961            5
+ OCC1962            9
+ EDUC              12
+ NUMSIB             0
+ FATHOCC            0
+ FATHEDUC           0
+
+
+           PSI
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961           13
+ OCC1962            0            14
+ EDUC               0             0            15
+ NUMSIB             0             0             0             0
+ FATHOCC            0             0             0             0             0
+ FATHEDUC           0             0             0             0             0
+
+
+           PSI
+              FATHEDUC
+              ________
+ FATHEDUC           0
+
+
+     STARTING VALUES
+
+
+           LAMBDA
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961        1.000         0.000         0.000         0.000         0.000
+ OCC1962        0.000         1.000         0.000         0.000         0.000
+ EDUC           0.000         0.000         1.000         0.000         0.000
+ NUMSIB         0.000         0.000         0.000         1.000         0.000
+ FATHOCC        0.000         0.000         0.000         0.000         1.000
+ FATHEDUC       0.000         0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              FATHEDUC
+              ________
+ INC1961        0.000
+ OCC1962        0.000
+ EDUC           0.000
+ NUMSIB         0.000
+ FATHOCC        0.000
+ FATHEDUC       1.000
+
+
+           THETA
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961        0.000
+ OCC1962        0.000         0.000
+ EDUC           0.000         0.000         0.000
+ NUMSIB         0.000         0.000         0.000         0.000
+ FATHOCC        0.000         0.000         0.000         0.000         0.000
+ FATHEDUC       0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              FATHEDUC
+              ________
+ FATHEDUC       0.000
+
+
+           BETA
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961        0.000         0.000         0.000         0.000         0.000
+ OCC1962        0.000         0.000         0.000         0.000         0.000
+ EDUC           0.000         0.000         0.000         0.000         0.000
+ NUMSIB         0.000         0.000         0.000         0.000         0.000
+ FATHOCC        0.000         0.000         0.000         0.000         0.000
+ FATHEDUC       0.000         0.000         0.000         0.000         0.000
+
+
+           BETA
+              FATHEDUC
+              ________
+ INC1961        0.000
+ OCC1962        0.000
+ EDUC           0.000
+ NUMSIB         0.000
+ FATHOCC        0.000
+ FATHEDUC       0.000
+
+
+           PSI
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961       14.365
+ OCC1962        0.000       305.292
+ EDUC           0.000         0.000         5.120
+ NUMSIB         0.000         0.000         0.000         8.292
+ FATHOCC        0.000         0.000         0.000       -16.496       535.293
+ FATHEDUC       0.000         0.000         0.000        -3.075        45.609
+
+
+           PSI
+              FATHEDUC
+              ________
+ FATHEDUC      13.834
+
+
+TECHNICAL 2 OUTPUT
+
+
+     DERIVATIVES
+
+
+           Derivatives With Respect to LAMBDA
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961        0.000         0.000         0.000         0.000         0.000
+ OCC1962        0.000         0.000         0.000         0.000         0.000
+ EDUC           0.000         0.000         0.000         0.000         0.000
+ NUMSIB         0.000         0.000         0.000         0.000         0.000
+ FATHOCC        0.000         0.000         0.000         0.000         0.000
+ FATHEDUC       0.000         0.000         0.000         0.000         0.000
+
+
+           Derivatives With Respect to LAMBDA
+              FATHEDUC
+              ________
+ INC1961        0.000
+ OCC1962        0.000
+ EDUC           0.000
+ NUMSIB         0.000
+ FATHOCC        0.000
+ FATHEDUC       0.000
+
+
+           Derivatives With Respect to THETA
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961        0.000
+ OCC1962        0.000         0.000
+ EDUC           0.000         0.000         0.000
+ NUMSIB         0.000         0.000         0.000         0.000
+ FATHOCC        0.000         0.000         0.000         0.000         0.000
+ FATHEDUC       0.000         0.000         0.000         0.000         0.000
+
+
+           Derivatives With Respect to THETA
+              FATHEDUC
+              ________
+ FATHEDUC       0.000
+
+
+           Derivatives With Respect to BETA
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961        0.000         0.000         0.000         0.000         0.000
+ OCC1962        0.000         0.000         0.000         0.000         0.000
+ EDUC           0.000         0.000         0.000         0.000         0.000
+ NUMSIB         0.000         0.000         0.000         0.000         0.000
+ FATHOCC        0.000         0.000         0.000         0.000         0.000
+ FATHEDUC       0.000         0.000         0.000         0.000         0.000
+
+
+           Derivatives With Respect to BETA
+              FATHEDUC
+              ________
+ INC1961        0.000
+ OCC1962        0.000
+ EDUC           0.000
+ NUMSIB         0.000
+ FATHOCC        0.000
+ FATHEDUC       0.000
+
+
+           Derivatives With Respect to PSI
+              INC1961       OCC1962       EDUC          NUMSIB        FATHOCC
+              ________      ________      ________      ________      ________
+ INC1961        0.000
+ OCC1962        0.000         0.000
+ EDUC           0.000         0.000         0.000
+ NUMSIB         0.000         0.000         0.000         0.000
+ FATHOCC        0.000         0.000         0.000         0.000         0.000
+ FATHEDUC       0.000         0.000         0.000         0.000         0.000
+
+
+           Derivatives With Respect to PSI
+              FATHEDUC
+              ________
+ FATHEDUC       0.000
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\asu dropbox\xinran liu\pc (3)\downloads\mediation book 2025-20250527t092340z-1-001\mediation book 202
+
+     Beginning Time:  21:25:48
+        Ending Time:  21:25:48
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen

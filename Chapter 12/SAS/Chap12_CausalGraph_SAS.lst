@@ -1,0 +1,183 @@
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                          1
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                                         Variables in Models
+ 
+                                                       N    Variables
+
+                                Measured               3    X Y Z    
+                                Unmeasured             0             
+
+
+                                       Graphical Model Summary
+ 
+  Model                       Nodes       Edges    Treatments    Outcomes    Measured    Unmeasured
+
+  Confounding Covariate           3           3             1           1           3             0
+  Mediating Covariate             3           3             1           1           3             0
+  Collider Covariate              3           3             1           1           3             0
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                          2
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                              Covariate Adjustment Test: No Adjustment
+ 
+                                       Causal Effect of X on Y
+ 
+                                                                           -Covariates-
+              Model                        Size    Valid       Minimal          Z
+
+              Confounding Covariate           0    No          No                      
+              Mediating Covariate             0    Yes         Yes                     
+              Collider Covariate              0    Yes         Yes                     
+
+
+                           Covariate Adjustment Test: Covariate Adjustment
+ 
+                                       Causal Effect of X on Y
+ 
+                                                                           -Covariates-
+              Model                        Size    Valid       Minimal          Z
+
+              Confounding Covariate           1    Yes         Yes              *      
+              Mediating Covariate             1    No          No               *      
+              Collider Covariate              1    No          No               *      
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                          3
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                                         Variables in Model
+ 
+                                                      N    Variables
+
+                               Measured               5    M U1 U2 X Y
+                               Unmeasured             0               
+
+
+                                       Graphical Model Summary
+ 
+  Model                                 Nodes     Edges  Treatments  Outcomes  Measured  Unmeasured
+
+  One Mediator with two Confounders         5         7           1         1         5           0
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                          4
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                Local Conditional Independencies for One Mediator with two Confounders
+ 
+                                                              Conditioning
+                                       -Independence Sets-    Set
+
+                                  1    U1             U2                  
+                                  2    U2             U1 X                
+                                  3    X              U2      U1          
+                                  4    Y              U1      M U2 X      
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                          5
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                               Covariate Adjustment Test: No Adjustment
+ 
+                                       Causal Effect of X on Y
+ 
+                                                                                 -Covariates--
+        Model                                    Size    Valid       Minimal     M    U1    U2
+
+        One Mediator with two Confounders           0    No          No                       
+
+
+                           Covariate Adjustment Test: Covariate Adjustment
+ 
+                                       Causal Effect of X on Y
+ 
+                                                                                 -Covariates--
+        Model                                    Size    Valid       Minimal     M    U1    U2
+
+        One Mediator with two Confounders           2    Yes         No               *     * 
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                          6
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                   Covariate Adjustment Sets for One Mediator with two Confounders
+                                       Causal Effect of X on Y
+ 
+                                                              -Covariates--
+                                          Size    Minimal     M    U1    U2
+
+                                 1           1    Yes              *       
+                                 2           2    No               *     * 
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                          7
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                                         Variables in Model
+ 
+                                                      N    Variables
+
+                               Measured               5    M U1 U2 X Y
+                               Unmeasured             0               
+
+
+                                       Graphical Model Summary
+ 
+  Model                                 Nodes     Edges  Treatments  Outcomes  Measured  Unmeasured
+
+  One Mediator with two Confounders         5         7           1         1         5           0
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                          8
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                Local Conditional Independencies for One Mediator with two Confounders
+ 
+                                                              Conditioning
+                                       -Independence Sets-    Set
+
+                                  1    U1             U2                  
+                                  2    U2             U1 X                
+                                  3    X              U2      U1          
+                                  4    Y              U1      M U2 X      
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                          9
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                               Covariate Adjustment Test: No Adjustment
+ 
+                                       Causal Effect of M on Y
+ 
+                                                                                 -Covariates--
+        Model                                    Size    Valid       Minimal     U1    U2    X
+
+        One Mediator with two Confounders           0    No          No                       
+
+
+                           Covariate Adjustment Test: Covariate Adjustment
+ 
+                                       Causal Effect of M on Y
+ 
+                                                                                 -Covariates--
+        Model                                    Size    Valid       Minimal     U1    U2    X
+
+        One Mediator with two Confounders           2    No          No          *     *      
+                          Chapter 12 Path Analysis SAS CAUSALGRAPH Examples                         10
+                                                                          05:04 Thursday, July 3, 2025
+
+                                      The CAUSALGRAPH Procedure
+
+                   Covariate Adjustment Sets for One Mediator with two Confounders
+                                       Causal Effect of M on Y
+ 
+                                                              -Covariates--
+                                          Size    Minimal     U1    U2    X
+
+                                 1           2    Yes               *     *
+                                 2           3    No          *     *     *

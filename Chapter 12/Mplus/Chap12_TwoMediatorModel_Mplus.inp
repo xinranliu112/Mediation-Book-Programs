@@ -1,0 +1,29 @@
+Title: CHAPTER 12 Two Mediator Model Example;
+
+Data:
+Nobs=40;
+Ngroups=1;
+File is Chap12_twomed.txt;
+
+Variable:
+Names are ID X M1 M2 Y;
+Usevariables are X M1 M2 Y;
+
+Analysis:
+Type is general;
+Estimator is ML;
+Iterations are 1000;
+Convergence is 0.000001;
+
+Model:
+Y on M1 M2 X;
+M1 on X;
+M2 on X;
+M1 with M2;
+X;
+
+Model Indirect:
+Y ind X;
+
+Output:
+sampstat residual standardized cinterval tech1 tech2 tech3 tech4 tech5;

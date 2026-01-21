@@ -1,0 +1,562 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fprq12\fcharset238{\*\fname Courier New;}Courier New CE;}}
+{\colortbl ;\red0\green0\blue255;\red0\green128\blue0;}
+\viewkind4\uc1\pard\tx288\tx576\tx864\tx1152\tx1440\tx1728\tx2016\tx2304\tx2592\tx2880\tx3168\tx3456\tx3744\tx4032\tx4320\tx4608\tx4896\tx5184\tx5472\tx5760\tx6048\tx6336\tx6624\tx6912\tx7200\tx7488\tx7776\tx8064\tx8352\tx8640\tx8928\tx9216\f0\fs20 1
+\par   EQS, A STRUCTURAL EQUATION PROGRAM          MULTIVARIATE SOFTWARE, INC.
+\par   COPYRIGHT BY P.M. BENTLER                   VERSION 6.1 (\cf1 C\cf0 ) 1985 - 2006 (B90).
+\par 
+\par 
+\par     PROGRAM CONTROL INFORMATION
+\par 
+\par      1  /TITLE                                                                          
+\par      2  \tab Chapter 12 Multiple Mediator Model Path Analysis with OCG Data                  
+\par      3                                                                                  
+\par      4  /SPECIFICATIONS                                                                 
+\par      5   CASES=3214; VARIABLES=6; ME=ML; ANALYSIS=Covariance; MATRIX=Correlation;       
+\par      6                                                                                  
+\par      7  /LABEL                                                                          
+\par      8   V1=INC1961; V2=OCC1962; V3=EDUC; V4=NUMSIB; V5=FATHOCC; V6=FATHEDUC;           
+\par      9                                                                                  
+\par     10  /EQUATIONS                                                                      
+\par     11   V1=1*V2+1*V3+1*V6+1*V5+1*V4+E1;                                                
+\par     12   V2=1*V3+1*V5+1*V4+1*V6+E2;                                                     
+\par     13   V3=1*V4+1*V5+1*V6+E3;                                                          
+\par     14                                                                                  
+\par     15  /VARIANCES                                                                      
+\par     16   V4=9*; V5=423*; V6=36*;                                                        
+\par     17   E1=25*; E2=525*; E3=9.2*;                                                      
+\par     18                                                                                  
+\par     19  /COVARIANCES                                                                    
+\par     20   V6,V5=45*; V6,V4=-3*; V5,V4=-16*;                                              
+\par     21                                                                                  
+\par     22  /PRINT                                                                          
+\par     23   Effects=Yes; Parameters=Yes;                                                   
+\par     24                                                                                  
+\par     25  /MATRIX=KM                                                                      
+\par     26   1.000                                                                          
+\par     27   0.4418 1.000                                                                   
+\par     28   0.3759 0.6426 1.000                                                            
+\par     29  -0.1752 -0.2751 -0.3311 1.000                                                   
+\par     30   0.2587 0.3899 0.4341 -0.2476 1.000                                             
+\par     31   0.2332 0.3194 0.4048 -0.2871 0.5300 1.000                                      
+\par     32                                                                                  
+\par     33  /STANDARD DEVIATIONS                                                            
+\par     34  \tab 5.36 24.71 3.20 2.88 23.14 3.72                                                
+\par     35                                                                                  
+\par     36  /END                                                                            
+\par 
+\par 
+\par        36 RECORDS OF INPUT MODEL FILE WERE READ
+\par \page 
+\par  12-Jun-07      PAGE :  2  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   COVARIANCE  MATRIX TO BE ANALYZED:   6 VARIABLES (SELECTED FROM   6 VARIABLES)
+\par   BASED ON  3214 CASES.
+\par 
+\par 
+\par                        INC1961    OCC1962      EDUC     NUMSIB     FATHOCC 
+\par                           V1         V2         V3         V4         V5  
+\par      INC1961  V1        28.730
+\par      OCC1962  V2        58.514    610.584
+\par        EDUC   V3         6.447     50.812     10.240
+\par      NUMSIB   V4        -2.705    -19.577     -3.051      8.294
+\par      FATHOCC  V5        32.087    222.941     32.144    -16.501    535.460
+\par      FATHEDUC V6         4.650     29.360      4.819     -3.076     45.623
+\par 
+\par 
+\par                        FATHEDUC
+\par                           V6  
+\par      FATHEDUC V6        13.838
+\par 
+\par 
+\par 
+\par   BENTLER-WEEKS STRUCTURAL REPRESENTATION:
+\par 
+\par         NUMBER OF DEPENDENT VARIABLES =  3
+\par             DEPENDENT V'S :     1    2    3
+\par 
+\par         NUMBER OF INDEPENDENT VARIABLES =  6
+\par             INDEPENDENT V'S :     4    5    6
+\par             INDEPENDENT E'S :     1    2    3
+\par 
+\par         NUMBER OF FREE PARAMETERS =  21
+\par         NUMBER OF FIXED NONZERO PARAMETERS =   3
+\par 
+\par  *** WARNING MESSAGES ABOVE, IF ANY, REFER TO THE MODEL PROVIDED.
+\par      CALCULATIONS FOR INDEPENDENCE MODEL NOW BEGIN.
+\par 
+\par  *** WARNING MESSAGES ABOVE, IF ANY, REFER TO INDEPENDENCE MODEL.
+\par      CALCULATIONS FOR USER'S MODEL NOW BEGIN.
+\par 
+\par 
+\par   3RD STAGE OF COMPUTATION REQUIRED      3305 WORDS OF MEMORY.
+\par   PROGRAM ALLOCATED   2000000 WORDS
+\par 
+\par   DETERMINANT OF INPUT MATRIX IS    .23434D+10
+\par 
+\par   PARAMETER ESTIMATES APPEAR IN ORDER,
+\par   NO SPECIAL PROBLEMS WERE ENCOUNTERED DURING OPTIMIZATION.
+\par 
+\par   CORRELATIONS OF PARAMETER ESTIMATES
+\par 
+\par 
+\par                    1         2         3         4         5         6
+\par                  V4,V4     V5,V4     V5,V5     V6,V4     V6,V5     V6,V6  
+\par    1   V4,V4      1.000
+\par    2   V5,V4      -.340     1.000
+\par    3   V5,V5       .061     -.340     1.000
+\par    4   V6,V4      -.390      .561     -.178     1.000
+\par    5   V6,V5       .089     -.359      .662     -.340     1.000
+\par    6   V6,V6       .082     -.209      .281     -.390      .662     1.000
+\par    7   E1,E1       .000      .000      .000      .000      .000      .000
+\par    8   E2,E2       .000      .000      .000      .000      .000      .000
+\par    9   E3,E3       .000      .000      .000      .000      .000      .000
+\par   10   V1,V4       .000      .000      .000      .000      .000      .000
+\par   11   V1,V5       .000      .000      .000      .000      .000      .000
+\par   12   V1,V6       .000      .000      .000      .000      .000      .000
+\par   13   V2,V4       .000      .000      .000      .000      .000      .000
+\par   14   V2,V5       .000      .000      .000      .000      .000      .000
+\par   15   V2,V6       .000      .000      .000      .000      .000      .000
+\par   16   V3,V4       .000      .000      .000      .000      .000      .000
+\par   17   V3,V5       .000      .000      .000      .000      .000      .000
+\par   18   V3,V6       .000      .000      .000      .000      .000      .000
+\par   19   V1,V2       .000      .000      .000      .000      .000      .000
+\par   20   V1,V3       .000      .000      .000      .000      .000      .000
+\par   21   V2,V3       .000      .000      .000      .000      .000      .000
+\par 
+\par 
+\par                    7         8         9        10        11        12
+\par                  E1,E1     E2,E2     E3,E3     V1,V4     V1,V5     V1,V6  
+\par    7   E1,E1      1.000
+\par    8   E2,E2       .000     1.000
+\par    9   E3,E3       .000      .000     1.000
+\par   10   V1,V4       .000      .000      .000     1.000
+\par   11   V1,V5       .000      .000      .000      .042     1.000
+\par   12   V1,V6       .000      .000      .000      .139     -.413     1.000
+\par   13   V2,V4       .000      .000      .000      .000      .000      .000
+\par   14   V2,V5       .000      .000      .000      .000      .000      .000
+\par   15   V2,V6       .000      .000      .000      .000      .000      .000
+\par   16   V3,V4       .000      .000      .000      .000      .000      .000
+\par   17   V3,V5       .000      .000      .000      .000      .000      .000
+\par   18   V3,V6       .000      .000      .000      .000      .000      .000
+\par   19   V1,V2       .000      .000      .000      .066     -.135     -.008
+\par   20   V1,V3       .000      .000      .000      .151     -.147     -.155
+\par   21   V2,V3       .000      .000      .000      .000      .000      .000
+\par 
+\par 
+\par                   13        14        15        16        17        18
+\par                  V2,V4     V2,V5     V2,V6     V3,V4     V3,V5     V3,V6  
+\par   13   V2,V4      1.000
+\par   14   V2,V5       .052     1.000
+\par   15   V2,V6       .139     -.418     1.000
+\par   16   V3,V4       .000      .000      .000     1.000
+\par   17   V3,V5       .000      .000      .000      .117     1.000
+\par   18   V3,V6       .000      .000      .000      .190     -.494     1.000
+\par   19   V1,V2       .000      .000      .000      .000      .000      .000
+\par   20   V1,V3       .000      .000      .000      .000      .000      .000
+\par   21   V2,V3       .223     -.264     -.190      .000      .000      .000
+\par 
+\par 
+\par                   19        20        21
+\par                  V1,V2     V1,V3     V2,V3  
+\par   19   V1,V2      1.000
+\par   20   V1,V3      -.540     1.000
+\par   21   V2,V3       .000      .000     1.000
+\par \page 
+\par  12-Jun-07      PAGE :  3  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par 
+\par   RESIDUAL COVARIANCE MATRIX  (S-SIGMA) :       
+\par 
+\par 
+\par                        INC1961    OCC1962      EDUC     NUMSIB     FATHOCC 
+\par                           V1         V2         V3         V4         V5  
+\par      INC1961  V1          .000
+\par      OCC1962  V2          .000       .000
+\par        EDUC   V3          .000       .000       .000
+\par      NUMSIB   V4          .000       .000       .000       .000
+\par      FATHOCC  V5          .000       .000       .000       .000       .000
+\par      FATHEDUC V6          .000       .000       .000       .000       .000
+\par 
+\par 
+\par                        FATHEDUC
+\par                           V6  
+\par      FATHEDUC V6          .000
+\par 
+\par                                   AVERAGE ABSOLUTE RESIDUAL =          .0000
+\par                      AVERAGE OFF-DIAGONAL ABSOLUTE RESIDUAL =          .0000
+\par 
+\par 
+\par 
+\par   STANDARDIZED RESIDUAL MATRIX:                 
+\par 
+\par 
+\par                        INC1961    OCC1962      EDUC     NUMSIB     FATHOCC 
+\par                           V1         V2         V3         V4         V5  
+\par      INC1961  V1          .000
+\par      OCC1962  V2          .000       .000
+\par        EDUC   V3          .000       .000       .000
+\par      NUMSIB   V4          .000       .000       .000       .000
+\par      FATHOCC  V5          .000       .000       .000       .000       .000
+\par      FATHEDUC V6          .000       .000       .000       .000       .000
+\par 
+\par 
+\par                        FATHEDUC
+\par                           V6  
+\par      FATHEDUC V6          .000
+\par 
+\par                      AVERAGE ABSOLUTE STANDARDIZED RESIDUAL =          .0000
+\par         AVERAGE OFF-DIAGONAL ABSOLUTE STANDARDIZED RESIDUAL =          .0000
+\par \page 
+\par  12-Jun-07      PAGE :  4  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par   LARGEST STANDARDIZED RESIDUALS:
+\par 
+\par       NO.    PARAMETER   ESTIMATE      NO.    PARAMETER   ESTIMATE
+\par       ---    ---------   --------      ---    ---------   --------
+\par        1     V2,  V2         .000      11     V6,  V1         .000
+\par        2     V3,  V3         .000      12     V6,  V5         .000
+\par        3     V1,  V1         .000      13     V5,  V5         .000
+\par        4     V6,  V3         .000      14     V5,  V4         .000
+\par        5     V2,  V1         .000      15     V5,  V3         .000
+\par        6     V3,  V1         .000      16     V5,  V1         .000
+\par        7     V5,  V2         .000      17     V4,  V4         .000
+\par        8     V6,  V2         .000      18     V4,  V3         .000
+\par        9     V4,  V1         .000      19     V4,  V2         .000
+\par       10     V6,  V4         .000      20     V3,  V2         .000
+\par 
+\par 
+\par 
+\par   DISTRIBUTION OF STANDARDIZED RESIDUALS
+\par 
+\par 
+\par 
+\par      ----------------------------------------                     
+\par      \cf2 !                                      !                     \cf0 
+\par    20-                                      -                     
+\par      \cf2 !                                      !                     \cf0 
+\par      \cf2 !                                      !                     \cf0 
+\par      \cf2 !                                      !                     \cf0 
+\par      \cf2 !                                      !            RANGE      FREQ PERCENT\cf0 
+\par    15-                    *                 -                     
+\par      \cf2 !                    *                 !    1   -0.5  -  --       0    .00%\cf0 
+\par      \cf2 !                    *                 !    2   -0.4  -  -0.5     0    .00%\cf0 
+\par      \cf2 !                    *                 !    3   -0.3  -  -0.4     0    .00%\cf0 
+\par      \cf2 !                    *                 !    4   -0.2  -  -0.3     0    .00%\cf0 
+\par    10-                    *                 -    5   -0.1  -  -0.2     0    .00%
+\par      \cf2 !                    *                 !    6    0.0  -  -0.1     6  28.57%\cf0 
+\par      \cf2 !                    *                 !    7    0.1  -   0.0    15  71.43%\cf0 
+\par      \cf2 !                    *                 !    8    0.2  -   0.1     0    .00%\cf0 
+\par      \cf2 !                 *  *                 !    9    0.3  -   0.2     0    .00%\cf0 
+\par     5-                 *  *                 -    A    0.4  -   0.3     0    .00%
+\par      \cf2 !                 *  *                 !    B    0.5  -   0.4     0    .00%\cf0 
+\par      \cf2 !                 *  *                 !    C     ++  -   0.5     0    .00%\cf0 
+\par      \cf2 !                 *  *                 !    -------------------------------\cf0 
+\par      \cf2 !                 *  *                 !            TOTAL        21 100.00%\cf0 
+\par      ----------------------------------------                     
+\par         1  2  3  4  5  6  7  8  9  A  B  \cf1 C\cf0     EACH "*" REPRESENTS    1 RESIDUALS
+\par \page 
+\par  12-Jun-07      PAGE :  5  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par 
+\par 
+\par   GOODNESS OF FIT SUMMARY FOR METHOD = ML    
+\par 
+\par   INDEPENDENCE MODEL CHI-SQUARE        =    4979.935 ON    15 DEGREES OF FREEDOM
+\par 
+\par   INDEPENDENCE AIC =    4949.935   INDEPENDENCE CAIC =    4843.806
+\par          MODEL AIC =        .000          MODEL CAIC =        .000
+\par 
+\par   CHI-SQUARE =         .000 BASED ON       0 DEGREES OF FREEDOM
+\par   NONPOSITIVE DEGREES OF FREEDOM. PROBABILITY COMPUTATIONS ARE UNDEFINED.
+\par 
+\par   FIT INDICES
+\par   -----------
+\par   BENTLER-BONETT     NORMED FIT INDEX =     1.000
+\par 
+\par   NON-NORMED FIT INDEX WILL NOT BE COMPUTED BECAUSE A DEGREES OF FREEDOM IS ZERO.
+\par 
+\par   RELIABILITY COEFFICIENTS
+\par   ------------------------
+\par   CRONBACH'S ALPHA                    =      .508
+\par 
+\par 
+\par 
+\par 
+\par                          ITERATIVE SUMMARY
+\par 
+\par                      PARAMETER
+\par   ITERATION          ABS CHANGE         ALPHA                FUNCTION
+\par       1             146.396900          .01198              50.72154
+\par       2              72.354880          .15092              20.08167
+\par       3             117.099100          .50000              11.70428
+\par       4             205.473600         1.00000               8.66531
+\par       5             322.831000         1.00000               5.65326
+\par       6             333.803600         1.00000               4.09336
+\par       7             161.331600         1.00000                .99574
+\par       8               5.565669         1.00000                .00471
+\par       9                .111307         1.00000                .00000
+\par      10                .000005         1.00000                .00000
+\par \page 
+\par  12-Jun-07      PAGE :  6  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par   MEASUREMENT EQUATIONS WITH STANDARD ERRORS AND TEST STATISTICS
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par 
+\par 
+\par  INC1961 =V1  =     .070*V2    +   .200*V3    -   .037*V4    +   .011*V5  
+\par                     .004           .036           .031           .004 
+\par                   15.682@         5.493@        -1.186          2.534@
+\par 
+\par                 +   .071*V6    +  1.000 E1  
+\par                     .028                
+\par                    2.585@               
+\par 
+\par  OCC1962 =V2  =    4.377*V3    -   .463*V4    +   .135*V5    +   .049*V6  
+\par                     .120           .123           .017           .108 
+\par                   36.408@        -3.761@         7.724@          .453 
+\par 
+\par                 +  1.000 E2  
+\par                          
+\par                          
+\par 
+\par    EDUC  =V3  =    -.228*V4    +   .038*V5    +   .171*V6    +  1.000 E3  
+\par                     .018           .002           .016                
+\par                  -12.945@        15.526@        10.956@               
+\par 
+\par \page 
+\par  12-Jun-07      PAGE :  7  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   VARIANCES OF INDEPENDENT VARIABLES
+\par   ----------------------------------
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par                   V                                F
+\par                  ---                              ---
+\par  V4  -NUMSIB              8.294*I                                I              
+\par                            .207 I                                I              
+\par                          40.081@I                                I              
+\par                                 I                                I              
+\par  V5  -FATHOCC           535.460*I                                I              
+\par                          13.359 I                                I              
+\par                          40.081@I                                I              
+\par                                 I                                I              
+\par  V6  -FATHEDUC           13.838*I                                I              
+\par                            .345 I                                I              
+\par                          40.081@I                                I              
+\par                                 I                                I              
+\par \page 
+\par  12-Jun-07      PAGE :  8  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   VARIANCES OF INDEPENDENT VARIABLES
+\par   ----------------------------------
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par                   E                                D
+\par                  ---                              ---
+\par  E1  -INC1961            22.523*I                                I              
+\par                            .562 I                                I              
+\par                          40.081@I                                I              
+\par                                 I                                I              
+\par  E2  -OCC1962           347.556*I                                I              
+\par                           8.671 I                                I              
+\par                          40.081@I                                I              
+\par                                 I                                I              
+\par  E3  -  EDUC              7.485*I                                I              
+\par                            .187 I                                I              
+\par                          40.081@I                                I              
+\par                                 I                                I              
+\par \page 
+\par  12-Jun-07      PAGE :  9  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   COVARIANCES AMONG INDEPENDENT VARIABLES
+\par   ---------------------------------------
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par                   V                                F
+\par                  ---                              ---
+\par  V5  -FATHOCC           -16.501*I                                I              
+\par  V4  -NUMSIB              1.211 I                                I              
+\par                         -13.623@I                                I              
+\par                                 I                                I              
+\par  V6  -FATHEDUC           -3.076*I                                I              
+\par  V4  -NUMSIB               .197 I                                I              
+\par                         -15.642@I                                I              
+\par                                 I                                I              
+\par  V6  -FATHEDUC           45.623*I                                I              
+\par  V5  -FATHOCC             1.719 I                                I              
+\par                          26.544@I                                I              
+\par                                 I                                I              
+\par \page 
+\par  12-Jun-07      PAGE : 10  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   DECOMPOSITION OF EFFECTS WITH NONSTANDARDIZED VALUES
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par   PARAMETER TOTAL EFFECTS
+\par   -----------------------
+\par 
+\par  INC1961 =V1  =     .070*V2    +   .508*V3    -   .186*V4    +   .040*V5  
+\par                     .004           .032           .033           .005 
+\par                   15.682@        16.000@        -5.638@         8.733@
+\par 
+\par                 +   .161*V6    +  1.000 E1    +   .070 E2    +   .508 E3  
+\par                     .029                          .004           .032 
+\par                    5.537@                       15.682@        16.000@
+\par 
+\par 
+\par  OCC1962 =V2  =    4.377*V3    -  1.461*V4    +   .303*V5    +   .796*V6  
+\par                     .120           .143           .020           .126 
+\par                   36.408@       -10.242@        15.129@         6.309@
+\par 
+\par                 +  1.000 E2    +  4.377 E3  
+\par                                    .120 
+\par                                  36.408@
+\par 
+\par    EDUC  =V3  =    -.228*V4    +   .038*V5    +   .171*V6    +  1.000 E3  
+\par                                                                       
+\par                                                                       
+\par 
+\par 
+\par \page 
+\par  12-Jun-07      PAGE : 11  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   DECOMPOSITION OF EFFECTS WITH NONSTANDARDIZED VALUES
+\par   STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+\par 
+\par   PARAMETER INDIRECT EFFECTS
+\par   --------------------------
+\par 
+\par  INC1961 =V1  =     .308*V3    -   .148*V4    +   .029*V5    +   .090*V6  
+\par                     .021           .014           .002           .012 
+\par                   14.403@       -10.380@        13.332@         7.466@
+\par 
+\par                 +   .070 E2    +   .508 E3  
+\par                     .004           .032 
+\par                   15.682@        16.000@
+\par 
+\par  OCC1962 =V2  =    -.998*V4    +   .168*V5    +   .747*V6    +  4.377 E3  
+\par                     .082           .012           .071           .120 
+\par                  -12.197@        14.281@        10.492@        36.408@
+\par 
+\par 
+\par \page 
+\par  12-Jun-07      PAGE : 12  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   DECOMPOSITION OF EFFECTS WITH STANDARDIZED VALUES
+\par 
+\par   PARAMETER TOTAL EFFECTS
+\par   -----------------------
+\par 
+\par  INC1961 =V1  =     .325*V2    +   .303*V3    -   .100*V4    +   .175*V5  
+\par                 +   .112*V6    +   .885 E1    +   .245 E2    +   .259 E3  
+\par 
+\par  OCC1962 =V2  =     .567*V3    -   .170*V4    +   .284*V5    +   .120*V6  
+\par                 +   .754 E2    +   .485 E3  
+\par 
+\par    EDUC  =V3  =    -.205*V4    +   .278*V5    +   .198*V6    +   .855 E3  
+\par 
+\par \page 
+\par  12-Jun-07      PAGE : 13  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   DECOMPOSITION OF EFFECTS WITH STANDARDIZED VALUES
+\par 
+\par   PARAMETER INDIRECT EFFECTS
+\par   --------------------------
+\par 
+\par  INC1961 =V1  =     .184*V3    -   .080*V4    +   .125*V5    +   .063*V6  
+\par                 +   .245 E2    +   .259 E3  
+\par 
+\par  OCC1962 =V2  =    -.116*V4    +   .158*V5    +   .113*V6    +   .485 E3  
+\par 
+\par \page 
+\par  12-Jun-07      PAGE : 14  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par 
+\par   STANDARDIZED SOLUTION:                                              R-SQUARED
+\par 
+\par 
+\par 
+\par  INC1961 =V1  =     .325*V2    +   .119*V3    -   .020*V4  
+\par                 +   .049*V5    +   .049*V6    +   .885 E1                  .216 
+\par  OCC1962 =V2  =     .567*V3    -   .054*V4    +   .127*V5  
+\par                 +   .007*V6    +   .754 E2                                 .431 
+\par    EDUC  =V3  =    -.205*V4    +   .278*V5    +   .198*V6  
+\par                 +   .855 E3                                                .269 
+\par \page 
+\par  12-Jun-07      PAGE : 15  EQS     Licensee:                               
+\par   TITLE:   \tab Chapter 6 Multiple Mediator Model Path Analysis with OCG Da
+\par 
+\par   MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+\par 
+\par   CORRELATIONS AMONG INDEPENDENT VARIABLES
+\par   ---------------------------------------
+\par 
+\par                   V                                F
+\par                  ---                              ---
+\par  V5  -FATHOCC             -.248*I                                I              
+\par  V4  -NUMSIB                    I                                I              
+\par                                 I                                I              
+\par  V6  -FATHEDUC            -.287*I                                I              
+\par  V4  -NUMSIB                    I                                I              
+\par                                 I                                I              
+\par  V6  -FATHEDUC             .530*I                                I              
+\par  V5  -FATHOCC                   I                                I              
+\par                                 I                                I              
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par 
+\par  -------------------------------------------------------------------------------
+\par                            E N D    O F    M E T H O D
+\par  -------------------------------------------------------------------------------
+\par 1
+\par   Execution begins at 13:16:30   
+\par   Execution ends   at 13:16:31   
+\par   Elapsed time =       1.00 seconds  }
+ 

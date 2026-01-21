@@ -1,0 +1,17 @@
+Chapter 12 Multiple Mediator Model Path Analysis with OCG Data
+DA NI=6 NO=3214 MA=CM ME=ML
+KM
+1.000                                                                          
+0.4418 1.000                                                                   
+0.3759 0.6426 1.000                                                            
+-0.1752 -0.2751 -0.3311 1.000                                                   
+0.2587 0.3899 0.4341 -0.2476 1.000                                             
+0.2332 0.3194 0.4048 -0.2871 0.5300 1.000 
+SD
+5.36 24.71 3.20 2.88 23.14 3.72
+LA
+'INC1961' 'OCC1962' 'EDUC' 'NUMSIB' 'FATHOCC' 'FATHEDUC'
+SE
+3 2 1 5 6 4
+MO NY=3 NX=3 BE=SD GA=FR
+OU EF SE TV PC EF SS ND=4

@@ -1,0 +1,29 @@
+TITLE: Chapter 12 Multiple Mediator Model Path Analysis with OCG Data
+
+DATA:
+ Type is STD Correlation;
+ Ngroups=1;
+ Nobservations=3214;
+ File is Chap12_ocgexample.txt;
+
+VARIABLE:
+ Names are INC1961 OCC1962 EDUC NUMSIB FATHOCC FATHEDUC;
+ Usevariables are INC1961 OCC1962 EDUC NUMSIB FATHOCC FATHEDUC;
+
+ANALYSIS:
+ Type is general;
+ Estimator is ML;
+ Iterations are 1000;
+ Convergence is 0.00005;
+
+MODEL:
+ INC1961 on EDUC OCC1962 FATHEDUC NUMSIB FATHOCC;
+ EDUC on FATHOCC FATHEDUC NUMSIB;
+ OCC1962 on FATHOCC FATHEDUC NUMSIB EDUC;
+
+MODEL INDIRECT:
+ INC1961 ind EDUC FATHEDUC;
+ INC1961 ind FATHOCC;
+
+OUTPUT:
+    sampstat mod standardized tech1 tech2;

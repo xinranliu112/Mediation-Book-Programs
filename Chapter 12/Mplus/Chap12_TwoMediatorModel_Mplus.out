@@ -1,0 +1,1346 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+05/28/2025   9:17 PM
+
+INPUT INSTRUCTIONS
+
+  Title: CHAPTER 12 Two Mediator Model Example;
+
+  Data:
+  Nobs=40;
+  Ngroups=1;
+  File is Chap12_twomed.txt;
+
+  Variable:
+  Names are ID X M1 M2 Y;
+  Usevariables are X M1 M2 Y;
+
+  Analysis:
+  Type is general;
+  Estimator is ML;
+  Iterations are 1000;
+  Convergence is 0.000001;
+
+  Model:
+  Y on M1 M2 X;
+  M1 on X;
+  M2 on X;
+  M1 with M2;
+  X;
+
+  Model Indirect:
+  Y ind X;
+
+  Output:
+  sampstat residual standardized cinterval tech1 tech2 tech3 tech4 tech5;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+CHAPTER 12 Two Mediator Model Example;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                          40
+
+Number of dependent variables                                    3
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   M1          M2          Y
+
+Observed independent variables
+   X
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.100D-05
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  Chap12_twomed.txt
+
+Input data format  FREE
+
+
+SAMPLE STATISTICS
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              M1            M2            Y             X
+              ________      ________      ________      ________
+               49.650        51.950        70.575        50.650
+
+
+           Covariances
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1           136.828
+ M2            -6.092        71.097
+ Y             82.426        36.254       135.994
+ X             69.502        18.358        58.551        82.728
+
+
+           Correlations
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             1.000
+ M2            -0.062         1.000
+ Y              0.604         0.369         1.000
+ X              0.653         0.239         0.552         1.000
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     M1                   49.650       0.375      22.000    2.50%      40.000     42.000     49.000
+              40.000     136.827       0.047      80.000    2.50%      51.000     60.000
+     M2                   51.950       0.719      37.000    2.50%      45.000     51.000     52.500
+              40.000      71.097       1.139      79.000    2.50%      54.000     56.000
+     Y                    70.575       0.001      46.000    2.50%      60.000     68.000     69.500
+              40.000     135.994      -0.208      99.000    2.50%      73.000     82.000
+     X                    50.650       0.059      32.000    2.50%      45.000     48.000     50.500
+              40.000      82.728       0.033      73.000    2.50%      53.000     56.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       14
+
+Loglikelihood
+
+          H0 Value                        -567.809
+          H1 Value                        -567.809
+
+Information Criteria
+
+          Akaike (AIC)                    1163.617
+          Bayesian (BIC)                  1187.261
+          Sample-Size Adjusted BIC        1143.452
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             58.881
+          Degrees of Freedom                     6
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ Y        ON
+    M1                 0.569      0.149      3.825      0.000
+    M2                 0.530      0.161      3.292      0.001
+    X                  0.112      0.197      0.570      0.569
+
+ M1       ON
+    X                  0.840      0.154      5.457      0.000
+
+ M2       ON
+    X                  0.222      0.142      1.559      0.119
+
+ M1       WITH
+    M2               -21.515     11.958     -1.799      0.072
+
+ Means
+    X                 50.650      1.438     35.220      0.000
+
+ Intercepts
+    M1                 7.097      7.923      0.896      0.370
+    M2                40.711      7.324      5.559      0.000
+    Y                  9.123      9.941      0.918      0.359
+
+ Variances
+    X                 82.728     18.498      4.472      0.000
+
+ Residual Variances
+    M1                78.436     17.539      4.472      0.000
+    M2                67.024     14.987      4.472      0.000
+    Y                 63.321     14.159      4.472      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.399E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ Y        ON
+    M1                 0.571      0.141      4.051      0.000
+    M2                 0.383      0.115      3.322      0.001
+    X                  0.087      0.153      0.571      0.568
+
+ M1       ON
+    X                  0.653      0.091      7.207      0.000
+
+ M2       ON
+    X                  0.239      0.149      1.606      0.108
+
+ M1       WITH
+    M2                -0.297      0.144     -2.058      0.040
+
+ Means
+    X                  5.569      0.642      8.669      0.000
+
+ Intercepts
+    M1                 0.607      0.726      0.836      0.403
+    M2                 4.828      1.162      4.157      0.000
+    Y                  0.782      0.911      0.859      0.391
+
+ Variances
+    X                  1.000      0.000    999.000    999.000
+
+ Residual Variances
+    M1                 0.573      0.118      4.841      0.000
+    M2                 0.943      0.071     13.211      0.000
+    Y                  0.466      0.108      4.326      0.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ Y        ON
+    M1                 0.571      0.141      4.051      0.000
+    M2                 0.383      0.115      3.322      0.001
+    X                  0.087      0.153      0.571      0.568
+
+ M1       ON
+    X                  0.653      0.091      7.207      0.000
+
+ M2       ON
+    X                  0.239      0.149      1.606      0.108
+
+ M1       WITH
+    M2                -0.297      0.144     -2.058      0.040
+
+ Means
+    X                  5.569      0.642      8.669      0.000
+
+ Intercepts
+    M1                 0.607      0.726      0.836      0.403
+    M2                 4.828      1.162      4.157      0.000
+    Y                  0.782      0.911      0.859      0.391
+
+ Variances
+    X                  1.000      0.000    999.000    999.000
+
+ Residual Variances
+    M1                 0.573      0.118      4.841      0.000
+    M2                 0.943      0.071     13.211      0.000
+    Y                  0.466      0.108      4.326      0.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ Y        ON
+    M1                 0.569      0.149      3.825      0.000
+    M2                 0.530      0.161      3.292      0.001
+    X                  0.112      0.197      0.570      0.569
+
+ M1       ON
+    X                  0.840      0.154      5.457      0.000
+
+ M2       ON
+    X                  0.222      0.142      1.559      0.119
+
+ M1       WITH
+    M2               -21.515     11.958     -1.799      0.072
+
+ Means
+    X                 50.650      1.438     35.220      0.000
+
+ Intercepts
+    M1                 7.097      7.923      0.896      0.370
+    M2                40.711      7.324      5.559      0.000
+    Y                  9.123      9.941      0.918      0.359
+
+ Variances
+    X                 82.728     18.498      4.472      0.000
+
+ Residual Variances
+    M1                78.436     17.539      4.472      0.000
+    M2                67.024     14.987      4.472      0.000
+    Y                 63.321     14.159      4.472      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    M1                 0.427      0.118      3.604      0.000
+    M2                 0.057      0.071      0.803      0.422
+    Y                  0.534      0.108      4.965      0.000
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from X to Y
+
+  Total                0.708      0.169      4.187      0.000
+  Total indirect       0.596      0.170      3.499      0.000
+
+  Specific indirect 1
+    Y
+    M1
+    X                  0.478      0.153      3.132      0.002
+
+  Specific indirect 2
+    Y
+    M2
+    X                  0.118      0.083      1.409      0.159
+
+  Direct
+    Y
+    X                  0.112      0.197      0.570      0.569
+
+
+
+STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from X to Y
+
+  Total                0.552      0.110      5.021      0.000
+  Total indirect       0.465      0.116      4.011      0.000
+
+  Specific indirect 1
+    Y
+    M1
+    X                  0.373      0.109      3.415      0.001
+
+  Specific indirect 2
+    Y
+    M2
+    X                  0.092      0.063      1.458      0.145
+
+  Direct
+    Y
+    X                  0.087      0.153      0.571      0.568
+
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from X to Y
+
+  Total                0.552      0.110      5.021      0.000
+  Total indirect       0.465      0.116      4.011      0.000
+
+  Specific indirect 1
+    Y
+    M1
+    X                  0.373      0.109      3.415      0.001
+
+  Specific indirect 2
+    Y
+    M2
+    X                  0.092      0.063      1.458      0.145
+
+  Direct
+    Y
+    X                  0.087      0.153      0.571      0.568
+
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from X to Y
+
+  Total                0.708      0.169      4.187      0.000
+  Total indirect       0.596      0.170      3.499      0.000
+
+  Specific indirect 1
+    Y
+    M1
+    X                  0.478      0.153      3.132      0.002
+
+  Specific indirect 2
+    Y
+    M2
+    X                  0.118      0.083      1.409      0.159
+
+  Direct
+    Y
+    X                  0.112      0.197      0.570      0.569
+
+
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ Y        ON
+    M1               0.186       0.277       0.324       0.569       0.814       0.861       0.952
+    M2               0.115       0.214       0.265       0.530       0.794       0.845       0.944
+    X               -0.394      -0.273      -0.211       0.112       0.436       0.498       0.619
+
+ M1       ON
+    X                0.444       0.538       0.587       0.840       1.093       1.142       1.237
+
+ M2       ON
+    X               -0.145      -0.057      -0.012       0.222       0.456       0.501       0.588
+
+ M1       WITH
+    M2             -52.317     -44.953     -41.187     -21.515      -1.844       1.923       9.287
+
+ Means
+    X               46.946      47.831      48.284      50.650      53.016      53.469      54.354
+
+ Intercepts
+    M1             -13.310      -8.431      -5.936       7.097      20.130      22.626      27.504
+    M2              21.846      26.356      28.663      40.711      52.758      55.065      59.575
+    Y              -16.482     -10.360      -7.229       9.123      25.476      28.607      34.729
+
+ Variances
+    X               35.079      46.471      52.298      82.728     113.158     118.985     130.376
+
+ Residual Variances
+    M1              33.259      44.060      49.585      78.436     107.287     112.812     123.612
+    M2              28.420      37.649      42.370      67.024      91.678      96.398     105.627
+    Y               26.850      35.569      40.029      63.321      86.612      91.072      99.791
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ Y        ON
+    M1               0.208       0.295       0.339       0.571       0.803       0.847       0.934
+    M2               0.086       0.157       0.193       0.383       0.573       0.609       0.680
+    X               -0.307      -0.213      -0.165       0.087       0.340       0.388       0.482
+
+ M1       ON
+    X                0.420       0.476       0.504       0.653       0.802       0.831       0.887
+
+ M2       ON
+    X               -0.145      -0.053      -0.006       0.239       0.485       0.532       0.623
+
+ M1       WITH
+    M2              -0.668      -0.579      -0.534      -0.297      -0.060      -0.014       0.075
+
+ Means
+    X                3.914       4.310       4.512       5.569       6.625       6.828       7.223
+
+ Intercepts
+    M1              -1.262      -0.816      -0.587       0.607       1.800       2.029       2.476
+    M2               1.836       2.552       2.917       4.828       6.739       7.105       7.820
+    Y               -1.565      -1.004      -0.717       0.782       2.281       2.568       3.129
+
+ Variances
+    X                1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    M1               0.268       0.341       0.378       0.573       0.768       0.805       0.878
+    M2               0.759       0.803       0.825       0.943       1.060       1.083       1.127
+    Y                0.188       0.255       0.289       0.466       0.643       0.677       0.743
+
+
+STDY Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ Y        ON
+    M1               0.208       0.295       0.339       0.571       0.803       0.847       0.934
+    M2               0.086       0.157       0.193       0.383       0.573       0.609       0.680
+    X               -0.307      -0.213      -0.165       0.087       0.340       0.388       0.482
+
+ M1       ON
+    X                0.420       0.476       0.504       0.653       0.802       0.831       0.887
+
+ M2       ON
+    X               -0.145      -0.053      -0.006       0.239       0.485       0.532       0.623
+
+ M1       WITH
+    M2              -0.668      -0.579      -0.534      -0.297      -0.060      -0.014       0.075
+
+ Means
+    X                3.914       4.310       4.512       5.569       6.625       6.828       7.223
+
+ Intercepts
+    M1              -1.262      -0.816      -0.587       0.607       1.800       2.029       2.476
+    M2               1.836       2.552       2.917       4.828       6.739       7.105       7.820
+    Y               -1.565      -1.004      -0.717       0.782       2.281       2.568       3.129
+
+ Variances
+    X                1.000       1.000       1.000       1.000       1.000       1.000       1.000
+
+ Residual Variances
+    M1               0.268       0.341       0.378       0.573       0.768       0.805       0.878
+    M2               0.759       0.803       0.825       0.943       1.060       1.083       1.127
+    Y                0.188       0.255       0.289       0.466       0.643       0.677       0.743
+
+
+STD Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ Y        ON
+    M1               0.186       0.277       0.324       0.569       0.814       0.861       0.952
+    M2               0.115       0.214       0.265       0.530       0.794       0.845       0.944
+    X               -0.394      -0.273      -0.211       0.112       0.436       0.498       0.619
+
+ M1       ON
+    X                0.444       0.538       0.587       0.840       1.093       1.142       1.237
+
+ M2       ON
+    X               -0.145      -0.057      -0.012       0.222       0.456       0.501       0.588
+
+ M1       WITH
+    M2             -52.317     -44.953     -41.187     -21.515      -1.844       1.923       9.287
+
+ Means
+    X               46.946      47.831      48.284      50.650      53.016      53.469      54.354
+
+ Intercepts
+    M1             -13.310      -8.431      -5.936       7.097      20.130      22.626      27.504
+    M2              21.846      26.356      28.663      40.711      52.758      55.065      59.575
+    Y              -16.482     -10.360      -7.229       9.123      25.476      28.607      34.729
+
+ Variances
+    X               35.079      46.471      52.298      82.728     113.158     118.985     130.376
+
+ Residual Variances
+    M1              33.259      44.060      49.585      78.436     107.287     112.812     123.612
+    M2              28.420      37.649      42.370      67.024      91.678      96.398     105.627
+    Y               26.850      35.569      40.029      63.321      86.612      91.072      99.791
+
+
+CONFIDENCE INTERVALS OF TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from X to Y
+
+  Total              0.272       0.376       0.430       0.708       0.986       1.039       1.143
+  Total indirect     0.157       0.262       0.316       0.596       0.876       0.929       1.034
+
+  Specific indirect 1
+    Y
+    M1
+    X                0.085       0.179       0.227       0.478       0.729       0.777       0.871
+
+  Specific indirect 2
+    Y
+    M2
+    X               -0.097      -0.046      -0.020       0.118       0.255       0.281       0.332
+
+  Direct
+    Y
+    X               -0.394      -0.273      -0.211       0.112       0.436       0.498       0.619
+
+
+
+CONFIDENCE INTERVALS OF STANDARDIZED TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+STDYX Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from X to Y
+
+  Total              0.269       0.337       0.371       0.552       0.733       0.767       0.835
+  Total indirect     0.166       0.238       0.274       0.465       0.655       0.692       0.763
+
+  Specific indirect 1
+    Y
+    M1
+    X                0.092       0.159       0.193       0.373       0.552       0.587       0.654
+
+  Specific indirect 2
+    Y
+    M2
+    X               -0.070      -0.032      -0.012       0.092       0.195       0.215       0.254
+
+  Direct
+    Y
+    X               -0.307      -0.213      -0.165       0.087       0.340       0.388       0.482
+
+
+
+STDY Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from X to Y
+
+  Total              0.269       0.337       0.371       0.552       0.733       0.767       0.835
+  Total indirect     0.166       0.238       0.274       0.465       0.655       0.692       0.763
+
+  Specific indirect 1
+    Y
+    M1
+    X                0.092       0.159       0.193       0.373       0.552       0.587       0.654
+
+  Specific indirect 2
+    Y
+    M2
+    X               -0.070      -0.032      -0.012       0.092       0.195       0.215       0.254
+
+  Direct
+    Y
+    X               -0.307      -0.213      -0.165       0.087       0.340       0.388       0.482
+
+
+
+STD Standardization
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from X to Y
+
+  Total              0.272       0.376       0.430       0.708       0.986       1.039       1.143
+  Total indirect     0.157       0.262       0.316       0.596       0.876       0.929       1.034
+
+  Specific indirect 1
+    Y
+    M1
+    X                0.085       0.179       0.227       0.478       0.729       0.777       0.871
+
+  Specific indirect 2
+    Y
+    M2
+    X               -0.097      -0.046      -0.020       0.118       0.255       0.281       0.332
+
+  Direct
+    Y
+    X               -0.394      -0.273      -0.211       0.112       0.436       0.498       0.619
+
+
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means
+              M1            M2            Y             X
+              ________      ________      ________      ________
+               49.650        51.950        70.575        50.650
+
+
+           Residuals for Means
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           Normalized Residuals for Means
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           Model Estimated Covariances
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1           136.828
+ M2            -6.093        71.097
+ Y             82.426        36.254       135.994
+ X             69.503        18.357        58.551        82.728
+
+
+           Model Estimated Correlations
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             1.000
+ M2            -0.062         1.000
+ Y              0.604         0.369         1.000
+ X              0.653         0.239         0.552         1.000
+
+
+           Residuals for Covariances
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.000         0.000
+ Y              0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+           Residuals for Correlations
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.000         0.000
+ Y              0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1           999.000
+ M2             0.000         0.001
+ Y            999.000         0.000         0.001
+ X            999.000         0.000       999.000       999.000
+
+
+           Normalized Residuals for Covariances
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.000         0.000
+ Y              0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                  0             0             0             0
+
+
+           LAMBDA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1                 0             0             0             0
+ M2                 0             0             0             0
+ Y                  0             0             0             0
+ X                  0             0             0             0
+
+
+           THETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1                 0
+ M2                 0             0
+ Y                  0             0             0
+ X                  0             0             0             0
+
+
+           ALPHA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                  1             2             3             4
+
+
+           BETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1                 0             0             0             5
+ M2                 0             0             0             6
+ Y                  7             8             0             9
+ X                  0             0             0             0
+
+
+           PSI
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1                10
+ M2                11            12
+ Y                  0             0            13
+ X                  0             0             0            14
+
+
+     STARTING VALUES
+
+
+           NU
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             1.000         0.000         0.000         0.000
+ M2             0.000         1.000         0.000         0.000
+ Y              0.000         0.000         1.000         0.000
+ X              0.000         0.000         0.000         1.000
+
+
+           THETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.000         0.000
+ Y              0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+           ALPHA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+               49.650        51.950        70.575        50.650
+
+
+           BETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000         0.000         0.000         0.000
+ M2             0.000         0.000         0.000         0.000
+ Y              0.000         0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+           PSI
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1            68.414
+ M2             0.000        35.549
+ Y              0.000         0.000        67.997
+ X              0.000         0.000         0.000        41.364
+
+
+TECHNICAL 2 OUTPUT
+
+
+     DERIVATIVES
+
+
+           Derivatives With Respect to NU
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           Derivatives With Respect to LAMBDA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000         0.000         0.000         0.000
+ M2             0.000         0.000         0.000         0.000
+ Y              0.000         0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+           Derivatives With Respect to THETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.000         0.000
+ Y              0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+           Derivatives With Respect to ALPHA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           Derivatives With Respect to BETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000         0.000         0.000         0.000
+ M2             0.000         0.000         0.000         0.000
+ Y              0.000         0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+           Derivatives With Respect to PSI
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.000         0.000
+ Y              0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+TECHNICAL 3 OUTPUT
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+      1     0.627693D+02
+      2    -0.172179D+02  0.536367D+02
+      3     0.741335D-13 -0.838673D-13  0.988170D+02
+      4     0.110229D-13 -0.231768D-14 -0.763849D-14  0.206819D+01
+      5    -0.120056D+01  0.329319D+00 -0.110651D-14 -0.212890D-15  0.237031D-01
+      6     0.329319D+00 -0.102589D+01  0.151459D-14  0.483552D-16 -0.650186D-02
+      7    -0.683734D-14 -0.318994D-14 -0.446283D+00 -0.778886D-16  0.129645D-15
+      8    -0.767664D-14  0.262132D-14 -0.110479D+01 -0.262850D-16  0.146832D-15
+      9     0.131057D-13  0.211503D-14 -0.349106D+00  0.251429D-15 -0.255690D-15
+     10     0.163304D-04 -0.447950D-05  0.468690D-13  0.294022D-20 -0.315319D-06
+     11     0.238652D-04 -0.183497D-06  0.285397D-14  0.435893D-20 -0.460839D-06
+     12    -0.143214D-04  0.446137D-04 -0.239325D-13 -0.198359D-20  0.276546D-06
+     13     0.333723D-13  0.516170D-14  0.195075D-05 -0.758441D-22 -0.658880D-15
+     14     0.116231D-12 -0.252158D-12  0.137010D-13  0.143251D-09 -0.229479D-14
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+      6     0.202544D-01
+      7     0.647461D-16  0.221310D-01
+      8    -0.489782D-16  0.710427D-02  0.258992D-01
+      9    -0.436046D-16 -0.201696D-01 -0.117157D-01  0.386802D-01
+     10     0.864936D-07 -0.190471D-14  0.151047D-15  0.786827D-15  0.307609D+03
+     11     0.355197D-08 -0.234053D-15 -0.542879D-15  0.729898D-15 -0.843785D+02
+     12    -0.861490D-06  0.791378D-15  0.180359D-15 -0.488235D-15  0.231454D+02
+     13    -0.101909D-15 -0.898109D-06  0.581541D-06  0.271500D-06 -0.284624D-13
+     14     0.497844D-14  0.239967D-14  0.176815D-14 -0.443633D-14 -0.413198D-12
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                 11            12            13            14
+              ________      ________      ________      ________
+     11     0.143000D+03
+     12    -0.721020D+02  0.224610D+03
+     13    -0.445823D-14 -0.197732D-13  0.200474D+03
+     14     0.208480D-12  0.340967D-13 -0.660098D-13  0.342193D+03
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+      1         1.000
+      2        -0.297         1.000
+      3         0.000         0.000         1.000
+      4         0.000         0.000         0.000         1.000
+      5        -0.984         0.292         0.000         0.000         1.000
+      6         0.292        -0.984         0.000         0.000        -0.297
+      7         0.000         0.000        -0.302         0.000         0.000
+      8         0.000         0.000        -0.691         0.000         0.000
+      9         0.000         0.000        -0.179         0.000         0.000
+     10         0.000         0.000         0.000         0.000         0.000
+     11         0.000         0.000         0.000         0.000         0.000
+     12         0.000         0.000         0.000         0.000         0.000
+     13         0.000         0.000         0.000         0.000         0.000
+     14         0.000         0.000         0.000         0.000         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+      6         1.000
+      7         0.000         1.000
+      8         0.000         0.297         1.000
+      9         0.000        -0.689        -0.370         1.000
+     10         0.000         0.000         0.000         0.000         1.000
+     11         0.000         0.000         0.000         0.000        -0.402
+     12         0.000         0.000         0.000         0.000         0.088
+     13         0.000         0.000         0.000         0.000         0.000
+     14         0.000         0.000         0.000         0.000         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                 11            12            13            14
+              ________      ________      ________      ________
+     11         1.000
+     12        -0.402         1.000
+     13         0.000         0.000         1.000
+     14         0.000         0.000         0.000         1.000
+
+
+TECHNICAL 4 OUTPUT
+
+
+     ESTIMATES DERIVED FROM THE MODEL
+
+
+           ESTIMATED MEANS FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+               49.650        51.950        70.575        50.650
+
+
+           S.E. FOR ESTIMATED MEANS FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                1.850         1.333         1.844         1.438
+
+
+           EST./S.E. FOR ESTIMATED MEANS FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+               26.845        38.966        38.275        35.220
+
+
+           TWO-TAILED P-VALUE FOR ESTIMATED MEANS FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1           136.828
+ M2            -6.093        71.097
+ Y             82.426        36.254       135.994
+ X             69.503        18.357        58.551        82.728
+
+
+           S.E. FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1            30.596
+ M2            15.625        15.898
+ Y             25.200        16.570        30.409
+ X             20.094        12.469        19.156        18.498
+
+
+           EST./S.E. FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             4.472
+ M2            -0.390         4.472
+ Y              3.271         2.188         4.472
+ X              3.459         1.472         3.056         4.472
+
+
+           TWO-TAILED P-VALUE FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.697         0.000
+ Y              0.001         0.029         0.000
+ X              0.001         0.141         0.002         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             1.000
+ M2            -0.062         1.000
+ Y              0.604         0.369         1.000
+ X              0.653         0.239         0.552         1.000
+
+
+           S.E. FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.158         0.000
+ Y              0.100         0.137         0.000
+ X              0.091         0.149         0.110         0.000
+
+
+           EST./S.E. FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1           999.000
+ M2            -0.392       999.000
+ Y              6.019         2.699       999.000
+ X              7.207         1.606         5.021       999.000
+
+
+           TWO-TAILED P-VALUE FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.695         0.000
+ Y              0.000         0.007         0.000
+ X              0.000         0.108         0.000         0.000
+
+
+TECHNICAL 5/6 OUTPUT
+
+
+
+TECHNICAL OUTPUT FROM EM ALGORITHM ITERATIONS FOR THE H1 MODEL
+
+   ITER        FUNCTION     ABS CHANGE   REL CHANGE
+
+      1     0.22512210D+02
+      2     0.21038917D+02   -1.4732929   -0.0654442
+      3     0.21038917D+02   -1.4732929   -0.0654442
+
+   TECHNICAL OUTPUT FROM QUASI-NEWTON ITERATIONS
+
+
+   ITERATIONS USING GRADIENT
+
+
+   ITER STEP   FUNCTION     ABS CHANGE   REL CHANGE   STEP LENGTH   DERIVATIVE
+
+      1   0 0.13497165D+01                           0.000000D+00 -.194792D+01
+          1 0.15773075D+01    0.2275911    0.1686214 0.100000D+00 0.649971D+01
+          2 0.13272584D+01   -0.2500492   -0.1585291 0.230586D-01 0.354142D-10
+      1   0 0.13497165D+01                           0.000000D+00 -.174210D+01
+          1 0.15097663D+01    0.1600498    0.1185803 0.100000D+00 0.494191D+01
+          2 0.13270236D+01   -0.1827426   -0.1210403 0.260535D-01 0.806387D-07
+      2   0 0.13270236D+01                           0.000000D+00 -.930716D+00
+          1 0.13207982D+01   -0.0062255   -0.0046913 0.230586D-01 0.390745D+00
+          2 0.13194661D+01   -0.0013321   -0.0010086 0.162404D-01 0.105508D-05
+      2   0 0.13270236D+01                           0.000000D+00 -.421045D+00
+          1 0.13196423D+01   -0.0073813   -0.0055623 0.260535D-01 -.145595D+00
+          2 0.13186396D+01   -0.0010027   -0.0007598 0.398272D-01 0.331221D-08
+      3   0 0.13186396D+01                           0.000000D+00 -.827719D+00
+          1 0.13150682D+01   -0.0035714   -0.0027084 0.162404D-01 0.387899D+00
+          2 0.13140631D+01   -0.0010051   -0.0007643 0.110581D-01 0.815266D-06
+      3   0 0.13186396D+01                           0.000000D+00 -.420897D+00
+          1 0.13151270D+01   -0.0035126   -0.0026638 0.398272D-01 0.244449D+00
+          2 0.13133382D+01   -0.0017888   -0.0013602 0.251924D-01 -.110265D-08
+      4   0 0.13133382D+01                           0.000000D+00 -.643642D+00
+          1 0.13095923D+01   -0.0037459   -0.0028522 0.110581D-01 -.338545D-01
+      4   0 0.13133382D+01                           0.000000D+00 -.224259D+00
+          1 0.13093442D+01   -0.0039940   -0.0030411 0.251924D-01 -.928275D-01
+          2 0.13085182D+01   -0.0008260   -0.0006308 0.429890D-01 0.257322D-08
+      5   0 0.13085182D+01                           0.000000D+00 -.755859D+00
+          1 0.13047700D+01   -0.0037482   -0.0028645 0.110581D-01 0.779458D-01
+          2 0.13047297D+01   -0.0000403   -0.0000309 0.100244D-01 0.159391D-06
+      5   0 0.13085182D+01                           0.000000D+00 -.350742D+00
+          1 0.13058988D+01   -0.0026195   -0.0020019 0.429890D-01 0.228826D+00
+          2 0.13039565D+01   -0.0019423   -0.0014873 0.260134D-01 -.844647D-09
+      6   0 0.13039565D+01                           0.000000D+00 -.605103D+00
+          1 0.13006958D+01   -0.0032606   -0.0025006 0.100244D-01 -.454365D-01
+      6   0 0.13039565D+01                           0.000000D+00 -.203225D+00
+          1 0.13002728D+01   -0.0036836   -0.0028250 0.260134D-01 -.799904D-01
+          2 0.12995974D+01   -0.0006754   -0.0005195 0.429019D-01 0.212057D-08
+      7   0 0.12995974D+01                           0.000000D+00 -.719228D+00
+          1 0.12962119D+01   -0.0033855   -0.0026051 0.100244D-01 0.437693D-01
+      7   0 0.12995974D+01                           0.000000D+00 -.321943D+00
+          1 0.12972239D+01   -0.0023735   -0.0018263 0.429019D-01 0.211252D+00
+          2 0.12954282D+01   -0.0017957   -0.0013843 0.259016D-01 -.747154D-09
+      8   0 0.12954282D+01                           0.000000D+00 -.574345D+00
+          1 0.12925105D+01   -0.0029177   -0.0022523 0.100244D-01 -.776746D-02
+      8   0 0.12954282D+01                           0.000000D+00 -.188217D+00
+          1 0.12920421D+01   -0.0033861   -0.0026139 0.259016D-01 -.732483D-01
+          2 0.12914376D+01   -0.0006045   -0.0004679 0.424072D-01 0.187852D-08
+      9   0 0.12914376D+01                           0.000000D+00 -.685487D+00
+          1 0.12884274D+01   -0.0030101   -0.0023309 0.100244D-01 0.849205D-01
+          2 0.12883805D+01   -0.0000469   -0.0000364 0.891942D-02 0.165042D-06
+      9   0 0.12914376D+01                           0.000000D+00 -.297113D+00
+          1 0.12892220D+01   -0.0022156   -0.0017156 0.424072D-01 0.192580D+00
+          2 0.12876158D+01   -0.0016062   -0.0012458 0.257274D-01 -.676916D-09
+     10   0 0.12876158D+01                           0.000000D+00 -.545710D+00
+          1 0.12850263D+01   -0.0025895   -0.0020111 0.891942D-02 -.349382D-01
+     10   0 0.12876158D+01                           0.000000D+00 -.174784D+00
+          1 0.12844993D+01   -0.0031165   -0.0024204 0.257274D-01 -.674905D-01
+          2 0.12839531D+01   -0.0005462   -0.0004252 0.419138D-01 0.167892D-08
+     11   0 0.12839531D+01                           0.000000D+00 -.653998D+00
+          1 0.12812082D+01   -0.0027449   -0.0021378 0.891942D-02 0.385177D-01
+     11   0 0.12839531D+01                           0.000000D+00 -.274786D+00
+          1 0.12818770D+01   -0.0020761   -0.0016169 0.419138D-01 0.175686D+00
+          2 0.12804408D+01   -0.0014362   -0.0011204 0.255648D-01 -.616378D-09
+     12   0 0.12804408D+01                           0.000000D+00 -.518925D+00
+          1 0.12781225D+01   -0.0023184   -0.0018106 0.891942D-02 -.919452D-03
+     12   0 0.12804408D+01                           0.000000D+00 -.162621D+00
+          1 0.12775655D+01   -0.0028753   -0.0022456 0.255648D-01 -.623273D-01
+          2 0.12770703D+01   -0.0004952   -0.0003876 0.414553D-01 0.150910D-08
+     13   0 0.12770703D+01                           0.000000D+00 -.624616D+00
+          1 0.12746209D+01   -0.0024494   -0.0019180 0.891942D-02 0.753868D-01
+          2 0.12745847D+01   -0.0000362   -0.0000284 0.795884D-02 0.139661D-06
+     13   0 0.12770703D+01                           0.000000D+00 -.254665D+00
+          1 0.12751219D+01   -0.0019484   -0.0015257 0.414553D-01 0.160631D+00
+          2 0.12738339D+01   -0.0012880   -0.0010101 0.254186D-01 -.563119D-09
+     14   0 0.12738339D+01                           0.000000D+00 -.493880D+00
+          1 0.12717704D+01   -0.0020635   -0.0016199 0.795884D-02 -.246539D-01
+     14   0 0.12738339D+01                           0.000000D+00 -.151606D+00
+          1 0.12711740D+01   -0.0026598   -0.0020881 0.254186D-01 -.576817D-01
+          2 0.12707237D+01   -0.0004503   -0.0003542 0.410320D-01 0.136272D-08
+     15   0 0.12707237D+01                           0.000000D+00 -.597226D+00
+          1 0.12684843D+01   -0.0022394   -0.0017623 0.795884D-02 0.344796D-01
+     15   0 0.12707237D+01                           0.000000D+00 -.236545D+00
+          1 0.12688923D+01   -0.0018314   -0.0014412 0.410320D-01 0.147248D+00
+          2 0.12677331D+01   -0.0011592   -0.0009136 0.252872D-01 -.516176D-09
+     16   0 0.12677331D+01                           0.000000D+00 -.470478D+00
+          1 0.12658860D+01   -0.0018471   -0.0014570 0.795884D-02 0.632291D-02
+     16   0 0.12677331D+01                           0.000000D+00 -.141641D+00
+          1 0.12652658D+01   -0.0024673   -0.0019462 0.252872D-01 -.535054D-01
+          2 0.12648550D+01   -0.0004108   -0.0003246 0.406415D-01 0.123462D-08
+     17   0 0.12648550D+01                           0.000000D+00 -.571717D+00
+          1 0.12628485D+01   -0.0020066   -0.0015864 0.795884D-02 0.674752D-01
+          2 0.12628201D+01   -0.0000283   -0.0000224 0.711868D-02 0.119409D-06
+     17   0 0.12648550D+01                           0.000000D+00 -.220245D+00
+          1 0.12631308D+01   -0.0017242   -0.0013632 0.406415D-01 0.135366D+00
+          2 0.12620835D+01   -0.0010473   -0.0008291 0.251688D-01 -.474601D-09
+     18   0 0.12620835D+01                           0.000000D+00 -.448632D+00
+          1 0.12604338D+01   -0.0016498   -0.0013072 0.711868D-02 -.148683D-01
+     18   0 0.12620835D+01                           0.000000D+00 -.132634D+00
+          1 0.12597883D+01   -0.0022952   -0.0018186 0.251688D-01 -.497550D-01
+          2 0.12594124D+01   -0.0003760   -0.0002984 0.402784D-01 -.956552D-05
+     19   0 0.12594124D+01                           0.000000D+00 -.547941D+00
+          1 0.12575716D+01   -0.0018408   -0.0014616 0.711868D-02 0.307726D-01
+     19   0 0.12594124D+01                           0.000000D+00 -.205565D+00
+          1 0.12577853D+01   -0.0016271   -0.0012920 0.402784D-01 0.124746D+00
+          2 0.12568363D+01   -0.0009490   -0.0007545 0.250645D-01 -.438092D-09
+     20   0 0.12568363D+01                           0.000000D+00 -.428286D+00
+          1 0.12553594D+01   -0.0014769   -0.0011751 0.711868D-02 0.133499D-01
+     20   0 0.12568363D+01                           0.000000D+00 -.124514D+00
+          1 0.12546947D+01   -0.0021416   -0.0017040 0.250645D-01 -.463760D-01
+          2 0.12543497D+01   -0.0003450   -0.0002750 0.399408D-01 -.883728D-05
+
+   ITERATIONS USING QUASI-NEWTON
+
+
+   ITER STEP   FUNCTION     ABS CHANGE   REL CHANGE   STEP LENGTH   DERIVATIVE
+
+      1   0 0.12543497D+01                           0.000000D+00 -.525850D+00
+          1 0.16133760D+01    0.3590263    0.2862251 0.100000D+00 0.770630D+01
+          2 0.12526702D+01   -0.3607058   -0.2235720 0.638760D-02 0.134358D-09
+      2   0 0.12526702D+01                           0.000000D+00 -.280118D+00
+          1 0.12509147D+01   -0.0017556   -0.0014015 0.638760D-02 -.269564D+00
+          2 0.12289251D+01   -0.0219895   -0.0175787 0.169527D+00 -.227622D-04
+      3   0 0.12289251D+01                           0.000000D+00 -.206613D+00
+          1 0.14781088D+01    0.2491836    0.2027655 0.169527D+00 0.314615D+01
+          2 0.12278461D+01   -0.2502627   -0.1693128 0.104452D-01 0.441974D-08
+      4   0 0.12278461D+01                           0.000000D+00 -.104304D+00
+          1 0.12286076D+01    0.0007615    0.0006202 0.104452D-01 0.250113D+00
+          2 0.12276858D+01   -0.0009218   -0.0007503 0.307388D-02 0.383531D-10
+      5   0 0.12276858D+01                           0.000000D+00 -.577586D-01
+          1 0.12275096D+01   -0.0001762   -0.0001435 0.307388D-02 -.569023D-01
+          2 0.12216958D+01   -0.0058137   -0.0047362 0.207349D+00 -.269496D-04
+      6   0 0.12216958D+01                           0.000000D+00 -.329472D-01
+          1 0.12148804D+01   -0.0068154   -0.0055787 0.207349D+00 -.327920D-01
+          2 0.32877211D+00   -0.8861083   -0.7293790 0.440223D+02 -.103572D-01
+          3 0.18749977D+00   -0.1412723   -0.4296969 0.642498D+02 -.386181D-02
+          4 0.16020644D+00   -0.0272933   -0.1455646 0.793192D+02 0.139370D-03
+      7   0 0.16020644D+00                           0.000000D+00 -.304552D-02
+          1 0.54130285D+01    5.2528221   32.7878343 0.793192D+02 0.153175D+00
+          2 0.15695069D+00   -5.2560778   -0.9710050 0.230684D+01 0.231757D-03
+      8   0 0.15695069D+00                           0.000000D+00 -.523499D-03
+          1 0.15641822D+00   -0.0005325   -0.0033926 0.230684D+01 0.597399D-04
+          2 0.15641109D+00   -0.0000071   -0.0000456 0.207056D+01 0.580518D-06
+      9   0 0.15641109D+00                           0.000000D+00 -.237654D-02
+          1 0.18102050D+00    0.0246094    0.1573380 0.207056D+01 0.260881D-01
+          2 0.15620688D+00   -0.0248136   -0.1370763 0.171888D+00 0.319005D-07
+     10   0 0.15620688D+00                           0.000000D+00 -.748790D-02
+          1 0.15492361D+00   -0.0012833   -0.0082152 0.171888D+00 -.744362D-02
+          2 0.41141398D-01   -0.1137822   -0.7344407 0.290690D+02 -.612103D-03
+     10   0 0.15620688D+00                           0.000000D+00 -.180589D-01
+          1 0.13875363D+00   -0.0174533   -0.1117316 0.100000D+01 -.168334D-01
+          2 0.14439306D+00    0.0056394    0.0406434 0.109458D+02 0.370237D-01
+          3 0.77965508D-01   -0.0664275   -0.4600467 0.669267D+01 -.552459D-03
+     10   0 0.15620688D+00                           0.000000D+00 -.761093D-02
+          1 0.14869304D+00   -0.0075138   -0.0481019 0.100000D+01 -.741667D-02
+          2 0.19241862D-01   -0.1294512   -0.8705934 0.391778D+02 0.114376D-02
+          3 0.16829791D-01   -0.0024121   -0.1253554 0.347716D+02 -.360641D-04
+     11   0 0.16829791D-01                           0.000000D+00 -.232810D-02
+          1 0.44834244D-01    0.0280045    1.6639810 0.290690D+02 0.594883D-02
+          2 0.13825250D-02   -0.0434517   -0.9691636 0.125557D+02 0.594813D-04
+     12   0 0.13825250D-02                           0.000000D+00 -.888616D-03
+          1 0.14231882D-01    0.0128494    9.2941231 0.125557D+02 0.295267D-02
+          2 0.83048688D-04   -0.0141488   -0.9941646 0.293487D+01 0.276679D-05
+     13   0 0.83048688D-04                           0.000000D+00 -.157522D-03
+          1 0.26537915D-03    0.0001823    2.1954647 0.293487D+01 0.273256D-03
+          2 0.22606324D-05   -0.0002631   -0.9914815 0.103348D+01 0.553543D-07
+     14   0 0.22606324D-05                           0.000000D+00 -.272322D-04
+          1 0.63706141D-04    0.0000614   27.1806727 0.103348D+01 0.146719D-03
+          2 0.38174456D-07   -0.0000637   -0.9994008 0.161792D+00 -.226962D-06
+     15   0 0.38174456D-07                           0.000000D+00 -.320776D-05
+          1 0.14974619D-05    0.0000015   38.2268036 0.161792D+00 0.212668D-04
+          2 0.40877985D-08   -0.0000015   -0.9972702 0.212052D-01 -.683524D-08
+     16   0 0.40877985D-08                           0.000000D+00 -.111514D-05
+          1 0.16417859D-07    0.0000000    3.0163083 0.212052D-01 0.227810D-05
+          2 0.20210855D-09    0.0000000   -0.9876897 0.696880D-02 -.201688D-10
+     17   0 0.20210855D-09                           0.000000D+00 -.295187D-06
+          1 0.35656065D-08    0.0000000   16.6420366 0.696880D-02 0.126051D-05
+          2 0.69384498D-11    0.0000000   -0.9980541 0.132230D-02 -.107002D-10
+     18   0 0.69384498D-11                           0.000000D+00 -.606546D-07
+          1 0.16870239D-09    0.0000000   23.3141321 0.132230D-02 0.305326D-06
+          2 0.29132252D-12    0.0000000   -0.9982732 0.219147D-03 -.543041D-12
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\asu dropbox\xinran liu\pc (3)\downloads\mediation book 2025-20250527t092340z-1-001\mediation book 202
+
+     Beginning Time:  21:17:17
+        Ending Time:  21:17:17
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen

@@ -1,0 +1,165 @@
+> ##########################
+> ###     OCG Example    ###
+> ##########################
+> # Read data
+> chap12OCGExample <- read.table("Chap12_ocgexample_R.txt", quote="\"", comment.char="")
+> sd <- as.matrix(chap12OCGExample[1,])
+> cor <- as.matrix(chap12OCGExample[-1,])
+> cov <- cor * matrix(outer(sd, sd), nrow = 6, byrow = TRUE)   
+> colnames(cov) <- rownames(cov) <- c("x1", "x2", "x3", "y1", "y2", "y3")
+> 
+> # Load package
+> # install.packages("lavaan")
+> library(lavaan)
+> 
+> # Model syntax
+> OCGModel <- "
++ y1 ~ lambda11*x1 + lambda12*x2 + lambda13*x3
++ y2 ~ lambda21*x1 + lambda22*x2 + lambda23*x3 + beta21*y1
++ y3 ~ lambda31*x1 + lambda32*x2 + lambda33*x3 + beta31*y1 + beta32*y2
++ 
++ specIndX1Y1Y2 := lambda11*beta21
++ specIndX1Y2Y3 := lambda21*beta32
++ specIndX1Y1Y3 := lambda11*beta31
++ specIndX1Y1Y2Y3 := lambda11*beta21*beta32
++ specIndX2Y1Y2 := lambda12*beta21
++ specIndX2Y2Y3 := lambda22*beta32
++ specIndX2Y1Y3 := lambda12*beta31
++ specIndX2Y1Y2Y3 := lambda12*beta21*beta32
++ specIndX3Y1Y2 := lambda13*beta21
++ specIndX3Y2Y3 := lambda23*beta32
++ specIndX3Y1Y3 := lambda13*beta31
++ specIndX3Y1Y2Y3 := lambda13*beta21*beta32
++ specIndY1Y2Y3 := beta21*beta32
++ 
++ totalIndX1Y3 := lambda11*beta31 + lambda21*beta32 + lambda11*beta21*beta32
++ totalIndX2Y3 := lambda12*beta31 + lambda22*beta32 + lambda12*beta21*beta32
++ totalIndX3Y3 := lambda13*beta31 + lambda23*beta32 + lambda13*beta21*beta32
++ 
++ totalX1Y2 := lambda11*beta21 + lambda21
++ totalX1Y3 := lambda11*beta31 + lambda21*beta32 + lambda11*beta21*beta32 + lambda31
++ totalX2Y2 := lambda12*beta21 + lambda22
++ totalX2Y3 := lambda12*beta31 + lambda22*beta32 + lambda12*beta21*beta32 + lambda32
++ totalX3Y2 := lambda13*beta21 + lambda23
++ totalX3Y3 := lambda13*beta31 + lambda23*beta32 + lambda13*beta21*beta32 + lambda33
++ totalY1Y3 := beta21*beta32 + beta31
++ "
+> 
+> # Fit the model
+> OCGFit <- sem(model = OCGModel, sample.cov = cov, sample.nobs = 3214)
+> summary(OCGFit)
+lavaan 0.6-19 ended normally after 1 iteration
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        15
+
+  Number of observations                          3214
+
+Model Test User Model:
+                                                      
+  Test statistic                                 0.000
+  Degrees of freedom                                 0
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(>|z|)
+  y1 ~                                                
+    x1      (lm11)   -0.020    0.010   -2.001    0.045
+    x2      (lm12)   -0.011    0.003   -4.146    0.000
+    x3      (lm13)   -0.231    0.020  -11.777    0.000
+  y2 ~                                                
+    x1      (lm21)    0.299    0.076    3.952    0.000
+    x2      (lm22)    0.145    0.020    7.287    0.000
+    x3      (lm23)    1.989    0.151   13.149    0.000
+    y1      (bt21)   -0.819    0.133   -6.156    0.000
+  y3 ~                                                
+    x1      (lm31)    0.029    0.011    2.585    0.010
+    x2      (lm32)   -0.001    0.003   -0.252    0.801
+    x3      (lm33)    0.199    0.023    8.606    0.000
+    y1      (bt31)   -0.157    0.020   -7.863    0.000
+    y2      (bt32)    0.067    0.003   25.508    0.000
+
+Variances:
+                   Estimate  Std.Err  z-value  P(>|z|)
+   .y1                7.319    0.183   40.087    0.000
+   .y2              416.039   10.378   40.087    0.000
+   .y3                9.225    0.230   40.087    0.000
+
+Defined Parameters:
+                   Estimate  Std.Err  z-value  P(>|z|)
+    specIndX1Y1Y2     0.016    0.009    1.903    0.057
+    specIndX1Y2Y3     0.020    0.005    3.906    0.000
+    specIndX1Y1Y3     0.003    0.002    1.939    0.053
+    spcIndX1Y1Y2Y3    0.001    0.001    1.897    0.058
+    specIndX2Y1Y2     0.009    0.003    3.439    0.001
+    specIndX2Y2Y3     0.010    0.001    7.007    0.000
+    specIndX2Y1Y3     0.002    0.000    3.667    0.000
+    spcIndX2Y1Y2Y3    0.001    0.000    3.408    0.001
+    specIndX3Y1Y2     0.189    0.035    5.456    0.000
+    specIndX3Y2Y3     0.133    0.011   11.687    0.000
+    specIndX3Y1Y3     0.036    0.006    6.539    0.000
+    spcIndX3Y1Y2Y3    0.013    0.002    5.335    0.000
+    specIndY1Y2Y3    -0.055    0.009   -5.984    0.000
+    totalIndX1Y3      0.024    0.006    4.365    0.000
+    totalIndX2Y3      0.012    0.002    7.981    0.000
+    totalIndX3Y3      0.182    0.013   14.226    0.000
+    totalX1Y2         0.315    0.076    4.148    0.000
+    totalX1Y3         0.053    0.013    4.268    0.000
+    totalX2Y2         0.154    0.020    7.712    0.000
+    totalX2Y3         0.011    0.003    3.427    0.001
+    totalX3Y2         2.178    0.149   14.622    0.000
+    totalX3Y3         0.381    0.025   15.534    0.000
+    totalY1Y3        -0.211    0.022   -9.738    0.000
+
+> fitted(OCGFit)
+$cov
+        y1      y2      y3      x1      x2      x3
+y1   8.292                                        
+y2 -16.496 535.293                                
+y3  -3.075  45.609  13.834                        
+x1  -2.704  32.077   4.648  28.721                
+x2 -19.571 222.871  29.350  58.496 610.394        
+x3  -3.050  32.134   4.817   6.445  50.796  10.237
+
+> lavInspect(OCGFit, what = "est")
+$lambda
+   y1 y2 y3 x1 x2 x3
+y1  1  0  0  0  0  0
+y2  0  1  0  0  0  0
+y3  0  0  1  0  0  0
+x1  0  0  0  1  0  0
+x2  0  0  0  0  1  0
+x3  0  0  0  0  0  1
+
+$theta
+   y1 y2 y3 x1 x2 x3
+y1  0               
+y2  0  0            
+y3  0  0  0         
+x1  0  0  0  0      
+x2  0  0  0  0  0   
+x3  0  0  0  0  0  0
+
+$psi
+        y1      y2      y3      x1      x2      x3
+y1   7.319                                        
+y2   0.000 416.039                                
+y3   0.000   0.000   9.225                        
+x1   0.000   0.000   0.000  28.721                
+x2   0.000   0.000   0.000  58.496 610.394        
+x3   0.000   0.000   0.000   6.445  50.796  10.237
+
+$beta
+       y1    y2 y3     x1     x2     x3
+y1  0.000 0.000  0 -0.020 -0.011 -0.231
+y2 -0.819 0.000  0  0.299  0.145  1.989
+y3 -0.157 0.067  0  0.029 -0.001  0.199
+x1  0.000 0.000  0  0.000  0.000  0.000
+x2  0.000 0.000  0  0.000  0.000  0.000
+x3  0.000 0.000  0  0.000  0.000  0.000

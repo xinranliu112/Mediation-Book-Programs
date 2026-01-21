@@ -1,0 +1,477 @@
+1
+  EQS, A STRUCTURAL EQUATION PROGRAM          MULTIVARIATE SOFTWARE, INC.
+  COPYRIGHT BY P.M. BENTLER                   VERSION 6.1 (C) 1985 - 2006 (B90).
+
+
+    PROGRAM CONTROL INFORMATION
+
+     1  /TITLE                                                                          
+     2     CHAPTER 12 Two Mediator Model Example                                         
+     3  /SPECIFICATIONS                                                                 
+     4     CAS=40; VAR=5; ME=ML; DA='Chap12_twomed.txt';MA=Raw;                          
+     5  /LABEL                                                                          
+     6    V1=S; V2=X; V3=M1; V4=M2; V5=Y;                                               
+     7  /EQUATIONS                                                                      
+     8  	V3=1*V2+E1;                                                                    
+     9  	V4=1*v2+E2;                                                                    
+    10  	V5=1*V2+1*V3+1*V4+E3;                                                          
+    11  /VARIANCES                                                                      
+    12     V2  = 1*;                                                                    
+    13     E1=2*; E2=2*; E3=2*;                                                         
+    14  /COVARIANCES                                                                    
+    15     E1,E2  = 1*;	                                                                
+    16  /PRINT                                                                          
+    17  Effects=yes; Parameters=yes;                                                    
+    18  /END                                                                            
+
+
+       18 RECORDS OF INPUT MODEL FILE WERE READ
+
+ 12-Jun-07      PAGE :  2  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+
+  SAMPLE STATISTICS BASED ON COMPLETE CASES
+
+
+                            UNIVARIATE STATISTICS
+                            ---------------------
+
+
+   VARIABLE           X          M1         M2         Y     
+                       V2         V3         V4         V5  
+
+   MEAN              50.6500    49.6500    51.9500    70.5750
+
+   SKEWNESS (G1)       .0594      .3751      .7193      .0008
+
+   KURTOSIS (G2)       .0334      .0468     1.1389     -.2080
+
+   STANDARD DEV.      9.2113    11.8463     8.5394    11.8102
+
+
+                            MULTIVARIATE KURTOSIS
+                            ---------------------
+
+   MARDIA'S COEFFICIENT (G2,P) =      -.2396
+   NORMALIZED ESTIMATE =              -.1093
+
+   BONETT-WOODWARD-RANDALL TEST SHOWS NO SIGNIFICANT EXCESS
+   KURTOSIS INDICATIVE OF NON-NORMALITY.
+
+
+                     ELLIPTICAL THEORY KURTOSIS ESTIMATES
+                     ------------------------------------
+
+   MARDIA-BASED KAPPA =      -.0100 MEAN SCALED UNIVARIATE KURTOSIS =      .0843
+
+   MARDIA-BASED KAPPA IS USED IN COMPUTATION. KAPPA=           -.0100
+
+
+   CASE NUMBERS WITH LARGEST CONTRIBUTION TO NORMALIZED MULTIVARIATE KURTOSIS:
+   ---------------------------------------------------------------------------
+
+   CASE NUMBER         6           10           14           17           31
+
+   ESTIMATE        41.3453      20.5566      23.7612       9.0252      58.5580
+
+ 12-Jun-07      PAGE :  3  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  COVARIANCE  MATRIX TO BE ANALYZED:   4 VARIABLES (SELECTED FROM   5 VARIABLES)
+  BASED ON    40 CASES.
+
+
+                         X          M1         M2         Y     
+                          V2         V3         V4         V5  
+       X      V2        84.849
+       M1     V3        71.285    140.336
+       M2     V4        18.828     -6.249     72.921
+       Y      V5        60.053     84.540     37.183    139.481
+
+
+
+  BENTLER-WEEKS STRUCTURAL REPRESENTATION:
+
+        NUMBER OF DEPENDENT VARIABLES =  3
+            DEPENDENT V'S :     3    4    5
+
+        NUMBER OF INDEPENDENT VARIABLES =  4
+            INDEPENDENT V'S :     2
+            INDEPENDENT E'S :     1    2    3
+
+        NUMBER OF FREE PARAMETERS =  10
+        NUMBER OF FIXED NONZERO PARAMETERS =   3
+
+ *** WARNING MESSAGES ABOVE, IF ANY, REFER TO THE MODEL PROVIDED.
+     CALCULATIONS FOR INDEPENDENCE MODEL NOW BEGIN.
+
+ *** WARNING MESSAGES ABOVE, IF ANY, REFER TO INDEPENDENCE MODEL.
+     CALCULATIONS FOR USER'S MODEL NOW BEGIN.
+
+
+  3RD STAGE OF COMPUTATION REQUIRED      1823 WORDS OF MEMORY.
+  PROGRAM ALLOCATED   2000000 WORDS
+
+  DETERMINANT OF INPUT MATRIX IS    .27790D+08
+
+ IN ITERATION #  1, MATRIX W_CFUNCT MAY BE SINGULAR.  TOLERANCE =    .100000D-05
+  YOU HAVE BAD START VALUES TO BEGIN WITH.
+  IF ABOVE MESSAGE APPEARS ON EVERY ITERATION, PLEASE PROVIDE BETTER START VALUES AND RE-RUN THE JOB.
+
+  PARAMETER ESTIMATES APPEAR IN ORDER,
+  NO SPECIAL PROBLEMS WERE ENCOUNTERED DURING OPTIMIZATION.
+
+  CORRELATIONS OF PARAMETER ESTIMATES
+
+
+                   1         2         3         4         5         6
+                 V2,V2     E1,E1     E2,E1     E2,E2     E3,E3     V3,V2  
+   1   V2,V2      1.000
+   2   E1,E1       .000     1.000
+   3   E2,E1       .000     -.402     1.000
+   4   E2,E2       .000      .088     -.402     1.000
+   5   E3,E3       .000      .000      .000      .000     1.000
+   6   V3,V2       .000      .000      .000      .000      .000     1.000
+   7   V4,V2       .000      .000      .000      .000      .000     -.297
+   8   V5,V2       .000      .000      .000      .000      .000      .000
+   9   V5,V3       .000      .000      .000      .000      .000      .000
+  10   V5,V4       .000      .000      .000      .000      .000      .000
+
+
+                   7         8         9        10
+                 V4,V2     V5,V2     V5,V3     V5,V4  
+   7   V4,V2      1.000
+   8   V5,V2       .000     1.000
+   9   V5,V3       .000     -.689     1.000
+  10   V5,V4       .000     -.370      .297     1.000
+
+ 12-Jun-07      PAGE :  4  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+
+
+  RESIDUAL COVARIANCE MATRIX  (S-SIGMA) :       
+
+
+                         X          M1         M2         Y     
+                          V2         V3         V4         V5  
+       X      V2          .000
+       M1     V3          .000       .000
+       M2     V4          .000       .000       .000
+       Y      V5          .000       .000       .000       .000
+
+                                  AVERAGE ABSOLUTE RESIDUAL =          .0000
+                     AVERAGE OFF-DIAGONAL ABSOLUTE RESIDUAL =          .0000
+
+
+
+  STANDARDIZED RESIDUAL MATRIX:                 
+
+
+                         X          M1         M2         Y     
+                          V2         V3         V4         V5  
+       X      V2          .000
+       M1     V3          .000       .000
+       M2     V4          .000       .000       .000
+       Y      V5          .000       .000       .000       .000
+
+                     AVERAGE ABSOLUTE STANDARDIZED RESIDUAL =          .0000
+        AVERAGE OFF-DIAGONAL ABSOLUTE STANDARDIZED RESIDUAL =          .0000
+
+ 12-Jun-07      PAGE :  5  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+
+  LARGEST STANDARDIZED RESIDUALS:
+
+      NO.    PARAMETER   ESTIMATE
+      ---    ---------   --------
+       1     V5,  V5         .000
+       2     V5,  V4         .000
+       3     V5,  V2         .000
+       4     V4,  V3         .000
+       5     V4,  V2         .000
+       6     V4,  V4         .000
+       7     V3,  V3         .000
+       8     V5,  V3         .000
+       9     V3,  V2         .000
+      10     V2,  V2         .000
+
+
+
+  DISTRIBUTION OF STANDARDIZED RESIDUALS
+
+
+
+     ----------------------------------------                     
+     !                                      !                     
+   20-                                      -                     
+     !                                      !                     
+     !                                      !                     
+     !                                      !                     
+     !                                      !            RANGE      FREQ PERCENT
+   15-                                      -                     
+     !                                      !    1   -0.5  -  --       0    .00%
+     !                                      !    2   -0.4  -  -0.5     0    .00%
+     !                                      !    3   -0.3  -  -0.4     0    .00%
+     !                                      !    4   -0.2  -  -0.3     0    .00%
+   10-                                      -    5   -0.1  -  -0.2     0    .00%
+     !                    *                 !    6    0.0  -  -0.1     1  10.00%
+     !                    *                 !    7    0.1  -   0.0     9  90.00%
+     !                    *                 !    8    0.2  -   0.1     0    .00%
+     !                    *                 !    9    0.3  -   0.2     0    .00%
+    5-                    *                 -    A    0.4  -   0.3     0    .00%
+     !                    *                 !    B    0.5  -   0.4     0    .00%
+     !                    *                 !    C     ++  -   0.5     0    .00%
+     !                    *                 !    -------------------------------
+     !                 *  *                 !            TOTAL        10 100.00%
+     ----------------------------------------                     
+        1  2  3  4  5  6  7  8  9  A  B  C    EACH "*" REPRESENTS    1 RESIDUALS
+
+ 12-Jun-07      PAGE :  6  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+
+
+
+  GOODNESS OF FIT SUMMARY FOR METHOD = ML    
+
+  INDEPENDENCE MODEL CHI-SQUARE        =      57.409 ON     6 DEGREES OF FREEDOM
+
+  INDEPENDENCE AIC =      45.409   INDEPENDENCE CAIC =      29.276
+         MODEL AIC =        .000          MODEL CAIC =        .000
+
+  CHI-SQUARE =         .000 BASED ON       0 DEGREES OF FREEDOM
+  NONPOSITIVE DEGREES OF FREEDOM. PROBABILITY COMPUTATIONS ARE UNDEFINED.
+
+  FIT INDICES
+  -----------
+  BENTLER-BONETT     NORMED FIT INDEX =     1.000
+
+  NON-NORMED FIT INDEX WILL NOT BE COMPUTED BECAUSE A DEGREES OF FREEDOM IS ZERO.
+
+  RELIABILITY COEFFICIENTS
+  ------------------------
+  CRONBACH'S ALPHA                    =      .731
+
+
+
+
+                         ITERATIVE SUMMARY
+
+                     PARAMETER
+  ITERATION          ABS CHANGE         ALPHA                FUNCTION
+      1              82.208530          .01173             111.23910
+      2              43.180120          .25000              99.63046
+      3             400.182500         1.00000               9.91746
+      4            2228.511000         1.00000               5.00682
+      5            2578.523000         1.00000                .73900
+      6              23.207230         1.00000                .00000
+      7                .003376         1.00000                .00000
+      8                .000000         1.00000                .00000
+
+ 12-Jun-07      PAGE :  7  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+
+  MEASUREMENT EQUATIONS WITH STANDARD ERRORS AND TEST STATISTICS
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+
+
+   M1    =V3  =     .840*V2    +  1.000 E1  
+                    .156                
+                   5.388@               
+
+   M2    =V4  =     .222*V2    +  1.000 E2  
+                    .144                
+                   1.540                
+
+   Y     =V5  =     .569*V3    +   .530*V4    +   .112*V2    +  1.000 E3  
+                    .151           .163           .199                
+                   3.777@         3.250@          .563                
+
+
+ 12-Jun-07      PAGE :  8  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  VARIANCES OF INDEPENDENT VARIABLES
+  ----------------------------------
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+                  V                                F
+                 ---                              ---
+ V2  -  X                84.849*I                                I              
+                         19.214 I                                I              
+                          4.416@I                                I              
+                                I                                I              
+
+ 12-Jun-07      PAGE :  9  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  VARIANCES OF INDEPENDENT VARIABLES
+  ----------------------------------
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+                  E                                D
+                 ---                              ---
+ E1  -  M1               80.447*I                                I              
+                         18.218 I                                I              
+                          4.416@I                                I              
+                                I                                I              
+ E2  -  M2               68.742*I                                I              
+                         15.567 I                                I              
+                          4.416@I                                I              
+                                I                                I              
+ E3  -  Y                64.944*I                                I              
+                         14.707 I                                I              
+                          4.416@I                                I              
+                                I                                I              
+
+ 12-Jun-07      PAGE : 10  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  COVARIANCES AMONG INDEPENDENT VARIABLES
+  ---------------------------------------
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+                  E                                D
+                 ---                              ---
+ E2  -  M2              -22.067*I                                I              
+ E1  -  M1               12.421 I                                I              
+                         -1.777 I                                I              
+                                I                                I              
+
+ 12-Jun-07      PAGE : 11  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  DECOMPOSITION OF EFFECTS WITH NONSTANDARDIZED VALUES
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+  PARAMETER TOTAL EFFECTS
+  -----------------------
+
+   M1    =V3  =     .840*V2    +  1.000 E1  
+                                        
+                                        
+
+   M2    =V4  =     .222*V2    +  1.000 E2  
+                                        
+                                        
+
+   Y     =V5  =     .569*V3    +   .530*V4    +   .708*V2    +   .569 E1  
+                    .151           .163           .171           .151 
+                   3.777@         3.250@         4.134@         3.777@
+
+                +   .530 E2    +  1.000 E3  
+                    .163                
+                   3.250@               
+
+
+ 12-Jun-07      PAGE : 12  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  DECOMPOSITION OF EFFECTS WITH NONSTANDARDIZED VALUES
+  STATISTICS SIGNIFICANT AT THE 5% LEVEL ARE MARKED WITH @.
+
+  PARAMETER INDIRECT EFFECTS
+  --------------------------
+
+   Y     =V5  =     .596*V2    +   .569 E1    +   .530 E2  
+                    .172           .151           .163 
+                   3.455@         3.777@         3.250@
+
+
+ 12-Jun-07      PAGE : 13  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  DECOMPOSITION OF EFFECTS WITH STANDARDIZED VALUES
+
+  PARAMETER TOTAL EFFECTS
+  -----------------------
+
+   M1    =V3  =     .653*V2    +   .757 E1  
+
+   M2    =V4  =     .239*V2    +   .971 E2  
+
+   Y     =V5  =     .571*V3    +   .383*V4    +   .552*V2    +   .432 E1  
+                +   .372 E2    +   .682 E3  
+
+
+ 12-Jun-07      PAGE : 14  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  DECOMPOSITION OF EFFECTS WITH STANDARDIZED VALUES
+
+  PARAMETER INDIRECT EFFECTS
+  --------------------------
+
+   Y     =V5  =     .465*V2    +   .432 E1    +   .372 E2  
+
+
+ 12-Jun-07      PAGE : 15  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+
+  STANDARDIZED SOLUTION:                                              R-SQUARED
+
+
+
+   M1    =V3  =     .653*V2    +   .757 E1                                 .427 
+   M2    =V4  =     .239*V2    +   .971 E2                                 .057 
+   Y     =V5  =     .571*V3    +   .383*V4    +   .087*V2  
+                +   .682 E3                                                .534 
+
+ 12-Jun-07      PAGE : 16  EQS     Licensee:                               
+  TITLE:      CHAPTER 6 Two Mediator Model Example                     
+
+  MAXIMUM LIKELIHOOD SOLUTION (NORMAL DISTRIBUTION THEORY)
+
+  CORRELATIONS AMONG INDEPENDENT VARIABLES
+  ---------------------------------------
+
+                  E                                D
+                 ---                              ---
+ E2  -  M2                -.297*I                                I              
+ E1  -  M1                      I                                I              
+                                I                                I              
+
+
+
+
+
+
+
+
+ -------------------------------------------------------------------------------
+                           E N D    O F    M E T H O D
+ -------------------------------------------------------------------------------
+1
+  Execution begins at 11:35:21   
+  Execution ends   at 11:35:21   
+  Elapsed time =        .00 seconds 

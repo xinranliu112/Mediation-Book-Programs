@@ -1,0 +1,108 @@
+> ##########################
+> ### Two Mediator Model ###
+> ##########################
+> # Read data
+> chap12TwoMed <- read.table("Chap12_twomed.txt", quote="\"", comment.char="")
+> colnames(chap12TwoMed) <- c("id", "x", "m1", "m2", "y")
+> 
+> # Load package
+> # install.packages("lavaan")
+> library(lavaan)
+This is lavaan 0.6-19
+lavaan is FREE software! Please report any bugs.
+> 
+> # Model syntax
+> twoMedModel <- "
++ m1 ~ lambda1*x
++ m2 ~ lambda2*x
++ y ~ lambda3*x + beta31*m1 + beta32*m2
++ 
++ specIndXM1Y := lambda1*beta31
++ specIndXM2Y := lambda2*beta32
++ totalInd := lambda1*beta31 + lambda2*beta32
++ total := lambda1*beta31 + lambda2*beta32 + lambda3
++ "
+> 
+> # Fit the model
+> twoMedFit <- sem(model = twoMedModel, data = chap12TwoMed, se = "bootstrap")
+> summary(twoMedFit)
+lavaan 0.6-19 ended normally after 1 iteration
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                         8
+
+  Number of observations                            40
+
+Model Test User Model:
+                                                      
+  Test statistic                                 3.687
+  Degrees of freedom                                 1
+  P-value (Chi-square)                           0.055
+
+Parameter Estimates:
+
+  Standard errors                            Bootstrap
+  Number of requested bootstrap draws             1000
+  Number of successful bootstrap draws            1000
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(>|z|)
+  m1 ~                                                
+    x       (lmb1)    0.840    0.173    4.855    0.000
+  m2 ~                                                
+    x       (lmb2)    0.222    0.142    1.567    0.117
+  y ~                                                 
+    x       (lmb3)    0.112    0.198    0.567    0.571
+    m1      (bt31)    0.569    0.137    4.147    0.000
+    m2      (bt32)    0.530    0.168    3.162    0.002
+
+Variances:
+                   Estimate  Std.Err  z-value  P(>|z|)
+   .m1               78.436   13.593    5.770    0.000
+   .m2               67.024   17.319    3.870    0.000
+   .y                63.321   11.912    5.316    0.000
+
+Defined Parameters:
+                   Estimate  Std.Err  z-value  P(>|z|)
+    specIndXM1Y       0.478    0.172    2.787    0.005
+    specIndXM2Y       0.118    0.086    1.371    0.170
+    totalInd          0.596    0.192    3.104    0.002
+    total             0.708    0.173    4.090    0.000
+
+> fitted(twoMedFit)
+$cov
+        m1      m2       y       x
+m1 136.827                        
+m2  15.423  71.098                
+y   93.823  48.497 148.965        
+x   69.502  18.357  58.551  82.727
+
+> lavInspect(twoMedFit, what = "est")
+$lambda
+   m1 m2 y x
+m1  1  0 0 0
+m2  0  1 0 0
+y   0  0 1 0
+x   0  0 0 1
+
+$theta
+   m1 m2 y x
+m1  0       
+m2  0  0    
+y   0  0 0  
+x   0  0 0 0
+
+$psi
+       m1     m2      y      x
+m1 78.436                     
+m2  0.000 67.024              
+y   0.000  0.000 63.321       
+x   0.000  0.000  0.000 82.727
+
+$beta
+      m1   m2 y     x
+m1 0.000 0.00 0 0.840
+m2 0.000 0.00 0 0.222
+y  0.569 0.53 0 0.112
+x  0.000 0.00 0 0.000

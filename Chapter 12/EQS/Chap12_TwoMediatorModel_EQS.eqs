@@ -1,0 +1,19 @@
+/TITLE
+   CHAPTER 12 Two Mediator Model Example
+/SPECIFICATIONS
+   CAS=40; VAR=5; ME=ML; DA='Chap12_twomed.txt';MA=Raw;
+/LABEL
+  V1=S; V2=X; V3=M1; V4=M2; V5=Y;
+/EQUATIONS
+	V3=1*V2+E1;
+	V4=1*v2+E2;
+	V5=1*V2+1*V3+1*V4+E3;
+/VARIANCES
+   V2  = 1*;
+   E1=2*; E2=2*; E3=2*;
+/COVARIANCES
+   E1,E2  = 1*;	
+/PRINT
+Effects=yes; Parameters=yes; 
+/END
+

@@ -1,0 +1,487 @@
+Mplus VERSION 8.11
+MUTHEN & MUTHEN
+05/28/2025   9:22 PM
+
+INPUT INSTRUCTIONS
+
+  Title: CHAPTER 12 Two Mediator Model Example;
+
+  Data:
+  Nobs=40;
+  File is Chap12_twomed.txt;
+
+  Variable:
+  Names are ID X M1 M2 Y;
+  Usevariables are X M1 M2 Y;
+
+  Analysis:
+  Type is general;
+  Estimator is ML;
+  Iterations are 1000;
+  Convergence is 0.000001;
+
+  Model:
+  Y on M1 M2 X;
+  M1 on X;
+  M2 on X;
+  M1 with M2;
+  X;
+
+  Model Indirect:
+  Y ind X;
+
+  Output:
+   cinterval tech1  tech3 ;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+CHAPTER 12 Two Mediator Model Example;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                          40
+
+Number of dependent variables                                    3
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   M1          M2          Y
+
+Observed independent variables
+   X
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.100D-05
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  Chap12_twomed.txt
+
+Input data format  FREE
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     M1                   49.650       0.375      22.000    2.50%      40.000     42.000     49.000
+              40.000     136.827       0.047      80.000    2.50%      51.000     60.000
+     M2                   51.950       0.719      37.000    2.50%      45.000     51.000     52.500
+              40.000      71.097       1.139      79.000    2.50%      54.000     56.000
+     Y                    70.575       0.001      46.000    2.50%      60.000     68.000     69.500
+              40.000     135.994      -0.208      99.000    2.50%      73.000     82.000
+     X                    50.650       0.059      32.000    2.50%      45.000     48.000     50.500
+              40.000      82.728       0.033      73.000    2.50%      53.000     56.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       14
+
+Loglikelihood
+
+          H0 Value                        -567.809
+          H1 Value                        -567.809
+
+Information Criteria
+
+          Akaike (AIC)                    1163.617
+          Bayesian (BIC)                  1187.261
+          Sample-Size Adjusted BIC        1143.452
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                             58.881
+          Degrees of Freedom                     6
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ Y        ON
+    M1                 0.569      0.149      3.825      0.000
+    M2                 0.530      0.161      3.292      0.001
+    X                  0.112      0.197      0.570      0.569
+
+ M1       ON
+    X                  0.840      0.154      5.457      0.000
+
+ M2       ON
+    X                  0.222      0.142      1.559      0.119
+
+ M1       WITH
+    M2               -21.515     11.958     -1.799      0.072
+
+ Means
+    X                 50.650      1.438     35.220      0.000
+
+ Intercepts
+    M1                 7.097      7.923      0.896      0.370
+    M2                40.711      7.324      5.559      0.000
+    Y                  9.123      9.941      0.918      0.359
+
+ Variances
+    X                 82.728     18.498      4.472      0.000
+
+ Residual Variances
+    M1                78.436     17.539      4.472      0.000
+    M2                67.024     14.987      4.472      0.000
+    Y                 63.321     14.159      4.472      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.399E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Effects from X to Y
+
+  Total                0.708      0.169      4.187      0.000
+  Total indirect       0.596      0.170      3.499      0.000
+
+  Specific indirect 1
+    Y
+    M1
+    X                  0.478      0.153      3.132      0.002
+
+  Specific indirect 2
+    Y
+    M2
+    X                  0.118      0.083      1.409      0.159
+
+  Direct
+    Y
+    X                  0.112      0.197      0.570      0.569
+
+
+
+CONFIDENCE INTERVALS OF MODEL RESULTS
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+ Y        ON
+    M1               0.186       0.277       0.324       0.569       0.814       0.861       0.952
+    M2               0.115       0.214       0.265       0.530       0.794       0.845       0.944
+    X               -0.394      -0.273      -0.211       0.112       0.436       0.498       0.619
+
+ M1       ON
+    X                0.444       0.538       0.587       0.840       1.093       1.142       1.237
+
+ M2       ON
+    X               -0.145      -0.057      -0.012       0.222       0.456       0.501       0.588
+
+ M1       WITH
+    M2             -52.317     -44.953     -41.187     -21.515      -1.844       1.923       9.287
+
+ Means
+    X               46.946      47.831      48.284      50.650      53.016      53.469      54.354
+
+ Intercepts
+    M1             -13.310      -8.431      -5.936       7.097      20.130      22.626      27.504
+    M2              21.846      26.356      28.663      40.711      52.758      55.065      59.575
+    Y              -16.482     -10.360      -7.229       9.123      25.476      28.607      34.729
+
+ Variances
+    X               35.079      46.471      52.298      82.728     113.158     118.985     130.376
+
+ Residual Variances
+    M1              33.259      44.060      49.585      78.436     107.287     112.812     123.612
+    M2              28.420      37.649      42.370      67.024      91.678      96.398     105.627
+    Y               26.850      35.569      40.029      63.321      86.612      91.072      99.791
+
+
+CONFIDENCE INTERVALS OF TOTAL, TOTAL INDIRECT, SPECIFIC INDIRECT, AND DIRECT EFFECTS
+
+
+                  Lower .5%  Lower 2.5%    Lower 5%    Estimate    Upper 5%  Upper 2.5%   Upper .5%
+
+Effects from X to Y
+
+  Total              0.272       0.376       0.430       0.708       0.986       1.039       1.143
+  Total indirect     0.157       0.262       0.316       0.596       0.876       0.929       1.034
+
+  Specific indirect 1
+    Y
+    M1
+    X                0.085       0.179       0.227       0.478       0.729       0.777       0.871
+
+  Specific indirect 2
+    Y
+    M2
+    X               -0.097      -0.046      -0.020       0.118       0.255       0.281       0.332
+
+  Direct
+    Y
+    X               -0.394      -0.273      -0.211       0.112       0.436       0.498       0.619
+
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                  0             0             0             0
+
+
+           LAMBDA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1                 0             0             0             0
+ M2                 0             0             0             0
+ Y                  0             0             0             0
+ X                  0             0             0             0
+
+
+           THETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1                 0
+ M2                 0             0
+ Y                  0             0             0
+ X                  0             0             0             0
+
+
+           ALPHA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                  1             2             3             4
+
+
+           BETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1                 0             0             0             5
+ M2                 0             0             0             6
+ Y                  7             8             0             9
+ X                  0             0             0             0
+
+
+           PSI
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1                10
+ M2                11            12
+ Y                  0             0            13
+ X                  0             0             0            14
+
+
+     STARTING VALUES
+
+
+           NU
+              M1            M2            Y             X
+              ________      ________      ________      ________
+                0.000         0.000         0.000         0.000
+
+
+           LAMBDA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             1.000         0.000         0.000         0.000
+ M2             0.000         1.000         0.000         0.000
+ Y              0.000         0.000         1.000         0.000
+ X              0.000         0.000         0.000         1.000
+
+
+           THETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000
+ M2             0.000         0.000
+ Y              0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+           ALPHA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+               49.650        51.950        70.575        50.650
+
+
+           BETA
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1             0.000         0.000         0.000         0.000
+ M2             0.000         0.000         0.000         0.000
+ Y              0.000         0.000         0.000         0.000
+ X              0.000         0.000         0.000         0.000
+
+
+           PSI
+              M1            M2            Y             X
+              ________      ________      ________      ________
+ M1            68.414
+ M2             0.000        35.549
+ Y              0.000         0.000        67.997
+ X              0.000         0.000         0.000        41.364
+
+
+TECHNICAL 3 OUTPUT
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+      1     0.627693D+02
+      2    -0.172179D+02  0.536367D+02
+      3     0.741335D-13 -0.838673D-13  0.988170D+02
+      4     0.110229D-13 -0.231768D-14 -0.763849D-14  0.206819D+01
+      5    -0.120056D+01  0.329319D+00 -0.110651D-14 -0.212890D-15  0.237031D-01
+      6     0.329319D+00 -0.102589D+01  0.151459D-14  0.483552D-16 -0.650186D-02
+      7    -0.683734D-14 -0.318994D-14 -0.446283D+00 -0.778886D-16  0.129645D-15
+      8    -0.767664D-14  0.262132D-14 -0.110479D+01 -0.262850D-16  0.146832D-15
+      9     0.131057D-13  0.211503D-14 -0.349106D+00  0.251429D-15 -0.255690D-15
+     10     0.163304D-04 -0.447950D-05  0.468690D-13  0.294022D-20 -0.315319D-06
+     11     0.238652D-04 -0.183497D-06  0.285397D-14  0.435893D-20 -0.460839D-06
+     12    -0.143214D-04  0.446137D-04 -0.239325D-13 -0.198359D-20  0.276546D-06
+     13     0.333723D-13  0.516170D-14  0.195075D-05 -0.758441D-22 -0.658880D-15
+     14     0.116231D-12 -0.252158D-12  0.137010D-13  0.143251D-09 -0.229479D-14
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+      6     0.202544D-01
+      7     0.647461D-16  0.221310D-01
+      8    -0.489782D-16  0.710427D-02  0.258992D-01
+      9    -0.436046D-16 -0.201696D-01 -0.117157D-01  0.386802D-01
+     10     0.864936D-07 -0.190471D-14  0.151047D-15  0.786827D-15  0.307609D+03
+     11     0.355197D-08 -0.234053D-15 -0.542879D-15  0.729898D-15 -0.843785D+02
+     12    -0.861490D-06  0.791378D-15  0.180359D-15 -0.488235D-15  0.231454D+02
+     13    -0.101909D-15 -0.898109D-06  0.581541D-06  0.271500D-06 -0.284624D-13
+     14     0.497844D-14  0.239967D-14  0.176815D-14 -0.443633D-14 -0.413198D-12
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                 11            12            13            14
+              ________      ________      ________      ________
+     11     0.143000D+03
+     12    -0.721020D+02  0.224610D+03
+     13    -0.445823D-14 -0.197732D-13  0.200474D+03
+     14     0.208480D-12  0.340967D-13 -0.660098D-13  0.342193D+03
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                  1             2             3             4             5
+              ________      ________      ________      ________      ________
+      1         1.000
+      2        -0.297         1.000
+      3         0.000         0.000         1.000
+      4         0.000         0.000         0.000         1.000
+      5        -0.984         0.292         0.000         0.000         1.000
+      6         0.292        -0.984         0.000         0.000        -0.297
+      7         0.000         0.000        -0.302         0.000         0.000
+      8         0.000         0.000        -0.691         0.000         0.000
+      9         0.000         0.000        -0.179         0.000         0.000
+     10         0.000         0.000         0.000         0.000         0.000
+     11         0.000         0.000         0.000         0.000         0.000
+     12         0.000         0.000         0.000         0.000         0.000
+     13         0.000         0.000         0.000         0.000         0.000
+     14         0.000         0.000         0.000         0.000         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                  6             7             8             9            10
+              ________      ________      ________      ________      ________
+      6         1.000
+      7         0.000         1.000
+      8         0.000         0.297         1.000
+      9         0.000        -0.689        -0.370         1.000
+     10         0.000         0.000         0.000         0.000         1.000
+     11         0.000         0.000         0.000         0.000        -0.402
+     12         0.000         0.000         0.000         0.000         0.088
+     13         0.000         0.000         0.000         0.000         0.000
+     14         0.000         0.000         0.000         0.000         0.000
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                 11            12            13            14
+              ________      ________      ________      ________
+     11         1.000
+     12        -0.402         1.000
+     13         0.000         0.000         1.000
+     14         0.000         0.000         0.000         1.000
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    c:\users\xliu6\asu dropbox\xinran liu\pc (3)\downloads\mediation book 2025-20250527t092340z-1-001\mediation book 202
+
+     Beginning Time:  21:22:29
+        Ending Time:  21:22:29
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2024 Muthen & Muthen

@@ -1,0 +1,351 @@
+                                         The SAS System       13:24 Wednesday, August 2, 2006  33
+
+                                       The CALIS Procedure
+                    Covariance Structure Analysis: Pattern and Initial Values
+
+     Automatic Variable Selection, the Following Manifest Variables are not Used in the Model
+
+                                                s
+
+Using the VAR statement for variable selection could save memory and computing time.
+
+
+
+                                     LINEQS Model Statement
+
+
+                                Matrix      Rows    Columns    ------Matrix Type-------
+
+         Term 1            1    _SEL_          4          7    SELECTION
+                           2    _BETA_         7          7    EQSBETA        IMINUSINV
+                           3    _GAMMA_        7          4    EQSGAMMA
+                           4    _PHI_          4          4    SYMMETRIC
+
+
+                                   The 3 Endogenous Variables
+
+             Manifest        m1  m2  y
+             Latent
+
+
+                                   The 4 Exogenous Variables
+
+             Manifest        x
+             Latent
+             Error           E1  E2  E3
+                                         The SAS System       13:24 Wednesday, August 2, 2006  34
+
+                                       The CALIS Procedure
+                    Covariance Structure Analysis: Pattern and Initial Values
+
+                       Manifest Variable Equations with Initial Estimates
+
+
+            m1      =        .*x     +  1.0000 E1
+                               a1
+            m2      =        .*x     +  1.0000 E2
+                               a2
+            y       =        .*m1    +       .*m2    +       .*x     +  1.0000 E3
+                               b1              b2              c
+
+
+                                Variances of Exogenous Variables
+
+                                Variable Parameter      Estimate
+
+                                x                              .
+                                E1       Ee1                   .
+                                E2       Ee2                   .
+                                E3       Ee3                   .
+
+
+                              Covariances Among Exogenous Variables
+
+                                Var1 Var2 Parameter      Estimate
+
+                                E1   E2   CM1M3                 .
+                                         The SAS System       13:24 Wednesday, August 2, 2006  35
+
+                                       The CALIS Procedure
+                  Covariance Structure Analysis: Maximum Likelihood Estimation
+
+                     Observations          40    Model Terms              1
+                     Variables              4    Model Matrices           4
+                     Informations          10    Parameters               9
+
+
+                              Variable          Mean       Std Dev
+
+                              x             50.65000       9.21134
+                              m1            49.65000      11.84635
+                              m2            51.95000       8.53935
+                              y             70.57500      11.81022
+
+
+                         Set Covariances of Exogenous Manifest Variables
+
+                                                x
+
+NOTE: Some initial estimates computed by two-stage LS method.
+
+
+NOTE: Some initial estimates computed by McDonald's method.
+
+                                         The SAS System       13:24 Wednesday, August 2, 2006  36
+
+                                       The CALIS Procedure
+                  Covariance Structure Analysis: Maximum Likelihood Estimation
+
+                                   Vector of Initial Estimates
+
+                          Parameter      Estimate    Type
+
+                     1    b1              0.56903    Matrix Entry: _BETA_[3:1]
+                     2    b2              0.52972    Matrix Entry: _BETA_[3:2]
+                     3    a1              0.84014    Matrix Entry: _GAMMA_[1:1]
+                     4    a2              0.22190    Matrix Entry: _GAMMA_[2:1]
+                     5    c               0.11215    Matrix Entry: _GAMMA_[3:1]
+                     6    Ee1            80.44700    Matrix Entry: _PHI_[2:2]
+                     7    CM1M3         -22.06700    Matrix Entry: _PHI_[3:2]
+                     8    Ee2            68.74247    Matrix Entry: _PHI_[3:3]
+                     9    Ee3            64.94416    Matrix Entry: _PHI_[4:4]
+                                         The SAS System       13:24 Wednesday, August 2, 2006  37
+
+                                       The CALIS Procedure
+                  Covariance Structure Analysis: Maximum Likelihood Estimation
+
+                                Levenberg-Marquardt Optimization
+
+                                  Scaling Update of More (1978)
+
+                            Parameter Estimates                    9
+                            Functions (Observations)              10
+
+                                       Optimization Start
+
+Active Constraints                            0  Objective Function                 1.561251E-16
+Max Abs Gradient Element           4.367166E-16  Radius                                        1
+
+
+
+                                      Optimization Results
+
+Iterations                                    0  Function Calls                                2
+Jacobian Calls                                1  Active Constraints                            0
+Objective Function                 1.561251E-16  Max Abs Gradient Element           4.367166E-16
+Lambda                                        0  Actual Over Pred Change                       0
+Radius                                        1
+
+ABSGCONV convergence criterion satisfied.
+
+                      Approximate Covariance Matrix of Parameter Estimates
+
+                      b1                b2                a1                a2                 c
+
+ b1           0.02269848      0.0072864336      5.658163E-19      3.709552E-18      -0.020686734
+ b2         0.0072864336      0.0265632654      -2.28256E-18       5.56949E-18      -0.012016083
+ a1         5.658163E-19      -2.28256E-18       0.024310839      -0.006668582      -6.64531E-19
+ a2         3.709552E-18       5.56949E-18      -0.006668582      0.0207737672      -6.39653E-18
+ c          -0.020686734      -0.012016083      -6.64531E-19      -6.39653E-18      0.0396720428
+ Ee1        4.804978E-16      -1.41963E-16      4.687998E-16      -2.24778E-16      -4.04458E-16
+ CM1M3      -1.24123E-17      2.884386E-16      -3.06955E-16      4.675146E-16       -7.7929E-17
+ Ee2        -1.99746E-17      1.150713E-16      1.575038E-16      -3.88348E-16      8.483285E-17
+ Ee3        3.694031E-16      9.896527E-17      1.649341E-16      -1.72493E-16      -3.57692E-16
+
+                      Approximate Covariance Matrix of Parameter Estimates
+
+                              Ee1             CM1M3               Ee2               Ee3
+
+          b1         4.804978E-16      -1.24123E-17      -1.99746E-17      3.694031E-16
+          b2         -1.41963E-16      2.884386E-16      1.150713E-16      9.896527E-17
+          a1         4.687998E-16      -3.06955E-16      1.575038E-16      1.649341E-16
+          a2         -2.24778E-16      4.675146E-16      -3.88348E-16      -1.72493E-16
+          c          -4.04458E-16       -7.7929E-17      8.483285E-17      -3.57692E-16
+          Ee1        331.88304537      -91.03714248      24.971933416       -6.5173E-15
+          CM1M3      -91.03714248      154.28405792      -77.79181982      8.029216E-15
+          Ee2        24.971933416      -77.79181982      242.33474958      -8.23454E-15
+                                         The SAS System       13:24 Wednesday, August 2, 2006  38
+
+                                       The CALIS Procedure
+                  Covariance Structure Analysis: Maximum Likelihood Estimation
+
+                      Approximate Covariance Matrix of Parameter Estimates
+
+                              Ee1             CM1M3               Ee2               Ee3
+
+          Ee3         -6.5173E-15      8.029216E-15      -8.23454E-15      216.29453999
+
+                                   Factor sigm = 0.0512820513
+
+
+                                   Determinant = 9.2978953015
+
+                              Matrix has Only Positive Eigenvalues
+
+
+                      Approximate Correlation Matrix of Parameter Estimates
+
+                      b1                b2                a1                a2                 c
+
+ b1                    1      0.2967398644      2.408669E-17      1.708305E-16      -0.689368233
+ b2         0.2967398644                 1      -8.98217E-17      2.370921E-16      -0.370151832
+ a1         2.408669E-17      -8.98217E-17                 1      -0.296739864       -2.1398E-17
+ a2         1.708305E-16      2.370921E-16      -0.296739864                 1      -2.22815E-16
+ c          -0.689368233      -0.370151832       -2.1398E-17      -2.22815E-16                 1
+ Ee1        1.750654E-16      -4.78125E-17      1.650422E-16      -8.56059E-17      -1.11465E-16
+ CM1M3      -6.63277E-18      1.424794E-16      -1.58494E-16      2.611422E-16       -3.1499E-17
+ Ee2        -8.51669E-18      4.535428E-17       6.48908E-17      -1.73084E-16      2.735986E-17
+ Ee3        1.667168E-16      4.128757E-17       7.19263E-17      -8.13748E-17      -1.22108E-16
+
+                      Approximate Correlation Matrix of Parameter Estimates
+
+                              Ee1             CM1M3               Ee2               Ee3
+
+          b1         1.750654E-16      -6.63277E-18      -8.51669E-18      1.667168E-16
+          b2         -4.78125E-17      1.424794E-16      4.535428E-17      4.128757E-17
+          a1         1.650422E-16      -1.58494E-16       6.48908E-17       7.19263E-17
+          a2         -8.56059E-17      2.611422E-16      -1.73084E-16      -8.13748E-17
+          c          -1.11465E-16       -3.1499E-17      2.735986E-17      -1.22108E-16
+          Ee1                   1      -0.402314382      0.0880545471       -2.4325E-17
+          CM1M3      -0.402314382                 1      -0.402314382      4.395313E-17
+          Ee2        0.0880545471      -0.402314382                 1      -3.59674E-17
+          Ee3         -2.4325E-17      4.395313E-17      -3.59674E-17                 1
+
+                                   Determinant = 0.2867736683
+
+                              Matrix has Only Positive Eigenvalues
+
+                                         The SAS System       13:24 Wednesday, August 2, 2006  39
+
+                                       The CALIS Procedure
+                  Covariance Structure Analysis: Maximum Likelihood Estimation
+
+                           Information (Cross Product Jacobian) Matrix
+
+                      b1                b2                a1                a2                 c
+
+ b1         4.3217405197      -0.192433569      -3.04444E-16      -1.65991E-16      2.1952587782
+ b2         -0.192433569      2.2456373653      -8.16675E-17      -1.35525E-16      0.5798275317
+ a1         -3.04444E-16      -8.16675E-17      2.3131115603       0.742531387      1.593295E-16
+ a2         -1.65991E-16      -1.35525E-16       0.742531387      2.7069564277      3.082592E-16
+ c          2.1952587782      0.5798275317      1.593295E-16      3.082592E-16      2.6129746494
+ Ee1        -4.09286E-18      -1.21969E-34      -4.27512E-18      -5.19585E-19      8.314507E-34
+ CM1M3      -1.39252E-18      -4.09286E-18      1.712344E-18      -5.04667E-18      7.344489E-35
+ Ee2        2.270585E-34      -1.39252E-18      8.556777E-19      2.512361E-18      -7.42442E-35
+ Ee3         -5.4244E-18      2.419126E-18      -1.56532E-18      2.502982E-18      1.484002E-18
+
+                           Information (Cross Product Jacobian) Matrix
+
+                              Ee1             CM1M3               Ee2               Ee3
+
+          b1         -4.09286E-18      -1.39252E-18      2.270585E-34       -5.4244E-18
+          b2         -1.21969E-34      -4.09286E-18      -1.39252E-18      2.419126E-18
+          a1         -4.27512E-18      1.712344E-18      8.556777E-19      -1.56532E-18
+          a2         -5.19585E-19      -5.04667E-18      2.512361E-18      2.502982E-18
+          c          8.314507E-34      7.344489E-35      -7.42442E-35      1.484002E-18
+          Ee1        0.0001857987      0.0001192864       0.000019146      1.899207E-21
+          CM1M3      0.0001192864      0.0004731599      0.0001395968      -8.65562E-21
+          Ee2         0.000019146      0.0001395968      0.0002544556      5.082198E-21
+          Ee3        1.899207E-21      -8.65562E-21      5.082198E-21      0.0002370936
+                                         The SAS System       13:24 Wednesday, August 2, 2006  40
+
+                                       The CALIS Procedure
+                  Covariance Structure Analysis: Maximum Likelihood Estimation
+
+                  Fit Function                                          0.0000
+                  Goodness of Fit Index (GFI)                           1.0000
+                  GFI Adjusted for Degrees of Freedom (AGFI)                 .
+                  Root Mean Square Residual (RMR)                       0.0000
+                  Parsimonious GFI (Mulaik, 1989)                       0.0000
+                  Chi-Square                                            0.0000
+                  Chi-Square DF                                              0
+                  Pr > Chi-Square                                       <.0001
+                  Independence Model Chi-Square                         57.409
+                  Independence Model Chi-Square DF                           6
+                  RMSEA Estimate                                        0.0000
+                  RMSEA 90% Lower Confidence Limit                           .
+                  RMSEA 90% Upper Confidence Limit                           .
+                  ECVI Estimate                                         0.5882
+                  ECVI 90% Lower Confidence Limit                            .
+                  ECVI 90% Upper Confidence Limit                            .
+                  Probability of Close Fit                                   .
+                  Bentler's Comparative Fit Index                       1.0000
+                  Normal Theory Reweighted LS Chi-Square                0.0000
+                  Akaike's Information Criterion                        0.0000
+                  Bozdogan's (1987) CAIC                                0.0000
+                  Schwarz's Bayesian Criterion                          0.0000
+                  McDonald's (1989) Centrality                          1.0000
+                  Bentler & Bonett's (1980) Non-normed Index                 .
+                  Bentler & Bonett's (1980) NFI                         1.0000
+                  James, Mulaik, & Brett (1982) Parsimonious NFI        0.0000
+                  Z-Test of Wilson & Hilferty (1931)                         .
+                  Bollen (1986) Normed Index Rho1                            .
+                  Bollen (1988) Non-normed Index Delta2                 1.0000
+                  Hoelter's (1983) Critical N                                .
+                                         The SAS System       13:24 Wednesday, August 2, 2006  41
+
+                                       The CALIS Procedure
+                  Covariance Structure Analysis: Maximum Likelihood Estimation
+
+                           Manifest Variable Equations with Estimates
+
+
+      m1      =   0.8401*x        +  1.0000 E1
+      Std Err     0.1559 a1
+      t Value     5.3883
+      m2      =   0.2219*x        +  1.0000 E2
+      Std Err     0.1441 a2
+      t Value     1.5396
+      y       =   0.5690*m1       +  0.5297*m2       +  0.1122*x        +  1.0000 E3
+      Std Err     0.1507 b1          0.1630 b2          0.1992 c
+      t Value     3.7769             3.2502             0.5631
+
+
+                                Variances of Exogenous Variables
+
+                                                          Standard
+                    Variable Parameter      Estimate         Error    t Value
+
+                    x                       84.84872
+                    E1       Ee1            80.44700      18.21766       4.42
+                    E2       Ee2            68.74247      15.56710       4.42
+                    E3       Ee3            64.94416      14.70696       4.42
+
+
+                             Covariances Among Exogenous Variables
+
+                                                          Standard
+                   Var1 Var2 Parameter      Estimate         Error    t Value
+
+                   E1   E2   CM1M3         -22.06700      12.42111      -1.78
+                                         The SAS System       13:24 Wednesday, August 2, 2006  42
+
+                                       The CALIS Procedure
+                  Covariance Structure Analysis: Maximum Likelihood Estimation
+
+                     Manifest Variable Equations with Standardized Estimates
+
+
+            m1      =   0.6533*x     +  0.7571 E1
+                               a1
+            m2      =   0.2394*x     +  0.9709 E2
+                               a2
+            y       =   0.5708*m1    +  0.3830*m2    +  0.0875*x     +  0.6824 E3
+                               b1              b2              c
+
+
+                                  Squared Multiple Correlations
+
+                                              Error         Total
+                             Variable      Variance      Variance    R-Square
+
+                        1    m1            80.44700     140.33590      0.4268
+                        2    m2            68.74247      72.92051      0.0573
+                        3    y             64.94416     139.48141      0.5344
+
+
+                              Correlations Among Exogenous Variables
+
+                                Var1 Var2 Parameter      Estimate
+
+                                E1   E2   CM1M3          -0.29674

@@ -1,0 +1,11 @@
+CHAPTER 12 Two Mediator Model Example
+DA NI=5 NO=40 MA=CM
+RA FI=Chap12_twomed.txt
+LA
+'obs' 'X' 'M1' 'M2' 'Y'
+SE
+3 4 5 2 1
+MO NY=3 NX=1 BE=FU,FI GA=FR PS=FU,FI
+FR BE 3 1 BE 3 2
+FR PS 1 1 PS 2 2 PS 3 3 PS 2 1
+OU EF SE TV PC EF SS ND=4
