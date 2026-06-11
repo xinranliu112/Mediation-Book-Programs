@@ -1,9 +1,3 @@
-* The following code conducts a simulation study of the 
-single mediator model and computes various estimates 
- presented in Chapter 4 of the book, MacKinnon, D.P. (2007). 
-Introduction to Statistical Mediation Analysis, Mahwah, NJ: Erlbaum.
-The original version of this program was written in 1987;
-
 TITLE 'SIMULATION OF MEDIATION SIMME';
 title 'Chapter 4 Analysis Example- Single Mediator Model Simulation';
 
